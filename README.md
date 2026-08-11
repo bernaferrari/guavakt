@@ -1,47 +1,53 @@
 # GuavaKt
 
-**The useful parts of Guava, designed for Kotlin Multiplatform.**
+**The KMP primitives Kotlin does not have — not a kitchen-sink port of Guava.**
 
-GuavaKt supplies the data structures and utilities that Kotlin's standard library deliberately does
-not: multimaps, multisets, ranges, graphs, caches, hashing, public-suffix and networking helpers,
-Okio-native I/O, and coroutine-friendly coordination. It is written for `commonMain` first and
-keeps JVM-only facilities visibly JVM-only.
+GuavaKt brings the genuinely useful, portable ideas from Guava to Kotlin Multiplatform: rich
+collections, ranges, graphs, hashing, network parsing, exact math, and coroutine-aware
+coordination. It is designed for `commonMain` and uses Kotlin, coroutines, and Okio where they are
+the better tool.
 
 ![GuavaKt — Kotlin-first Multiplatform](assets/guavakt-social.png)
 
-> **Early alpha.** GuavaKt is an independent project, not an official Google product. It is not a
-> binary-compatible or drop-in replacement for `com.google.guava:guava`; its packages are
-> `dev.guavakt.*`. Every public surface has an explicit compatibility tier in
-> [compatibility matrix](docs/compatibility.md).
+> **Early alpha.** GuavaKt is independent of Google and uses `dev.guavakt.*` packages. It is not
+> binary-compatible with `com.google.guava:guava`, and it does not aim to reproduce every Java-era
+> convenience API.
 
-## Why use it?
+## The point
 
-Use GuavaKt when the capability matters across JVM, JS, Wasm, and Native—not because a Java API
-has a familiar name.
+Use GuavaKt when a concept is missing from Kotlin's common standard library and you need one API
+across JVM, JS, Wasm, and Native.
 
-| If you need… | Use… |
+| Need | GuavaKt provides |
 |---|---|
-| One key associated with many values | `Multimap`, `ListMultimap`, `SetMultimap`, `Multiset`, `BiMap`, or `Table` |
-| Intervals, disjoint ranges, or an arbitrary-precision discrete domain | `Range`, `RangeSet`, `RangeMap`, `ContiguousSet`, and `DiscreteDomain.bigIntegers()` |
-| Mutable or immutable dependency/data graphs | `Graph`, `ValueGraph`, `Network`, `Graphs`, and `Traverser` |
-| A bounded, expiring, observable in-memory cache | `CacheBuilder.buildCoroutine(scope)` |
-| Stable hashing or portable probabilistic membership | `Hashing`, `Hasher`, `Funnel`, and `BloomFilter` |
-| Exact numbers outside primitive limits | `BigInteger`, `BigDecimal`, `MathContext`, and Guava-shaped math helpers |
-| Sources, sinks, files, or stream hashing in common code | `ByteSource`, `CharSource`, `ByteSink`, `CharSink`, and injected Okio `FileSystem` |
-| A rate limit or guarded state without blocking a thread | `CoroutineRateLimiter` and `CoroutineMonitor` |
-| Migration from Guava | Compatibility shims for familiar concepts, followed by Kotlin simplification |
+| One key with many values, counted values, a two-way map, or a table | `Multimap`, `Multiset`, `BiMap`, `Table` |
+| Intervals, disjoint ranges, range-to-value lookup, or huge discrete domains | `Range`, `RangeSet`, `RangeMap`, `ContiguousSet`, `DiscreteDomain.bigIntegers()` |
+| Directed/undirected relationships with nodes, edge values, or edge objects | `Graph`, `ValueGraph`, `Network`, `Traverser` |
+| Portable hashes or probabilistic membership | `Hashing`, `Hasher`, `Funnel`, `BloomFilter` |
+| IP literals, ports, and registrable-domain logic without JVM networking objects | `InetAddresses`, `HostAndPort`, `InternetDomainName` |
+| A bounded, expiring cache whose loads belong to a coroutine scope | `CacheBuilder.buildCoroutine(scope)` |
+| A cancellable rate limit or guarded shared state | `CoroutineRateLimiter`, `CoroutineMonitor` |
+| Exact values beyond primitive limits | `BigInteger`, `BigDecimal`, Guava-shaped math helpers |
 
-For ordinary `List`, `Set`, `Map`, `map`/`filter`, nullable values, and asynchronous work, prefer
-the Kotlin standard library, `T?`, and `kotlinx.coroutines`. GuavaKt does not try to replace them.
+## Not the point
 
-## Availability
+GuavaKt deliberately stays out of the way when Kotlin or a focused library already wins.
 
-GuavaKt is an early alpha and release artifacts are not available yet. Evaluate it from source for
-now; a tagged public release will document the supported dependency coordinates. The `guavakt`
-umbrella module is useful for exploration, while applications should eventually select only the
-modules they use.
+| Prefer | Instead of |
+|---|---|
+| Kotlin `List`, `Set`, `Map`, sequence operators, `T?`, `require`, and `check` | Collection factories, `Optional`, and ordinary base helpers |
+| `kotlinx.coroutines`, `Flow`, `Channel`, `Mutex`, and structured concurrency | New `ListenableFuture`, executor, blocking monitor, or service code |
+| Okio `FileSystem`, `Path`, `Source`, `Sink`, and `ByteString` | A fake portable `java.io` or `java.nio.file` layer |
+| Caffeine on JVM when peak local-cache performance is the goal | Treating a Guava-shaped cache as the JVM performance leader |
+| Explicit dependencies or typed `Flow`/`Channel` pipelines | New EventBus designs |
 
-### A real multimap
+The last point is intentional: Guava itself recommends against new EventBus use in favour of more
+explicit/reactive designs. GuavaKt's EventBus exists only as a migration-oriented module and is not
+part of the recommended API for new code. See [Guava's guidance](https://github.com/google/guava/wiki/EventBusExplained).
+
+## A taste
+
+### A multimap, not `Map<K, MutableList<V>>` bookkeeping
 
 ```kotlin
 import dev.guavakt.collect.ArrayListMultimap
@@ -53,7 +59,20 @@ tags.put("kotlin", "coroutines")
 val kotlinTags = tags["kotlin"] // [multiplatform, coroutines]
 ```
 
-### A cache that belongs to a coroutine scope
+### A range set, not a pile of boundary checks
+
+```kotlin
+import dev.guavakt.collect.Range
+import dev.guavakt.collect.TreeRangeSet
+
+val maintenance = TreeRangeSet.create<Int>()
+maintenance.add(Range.closedOpen(100, 200))
+
+maintenance.contains(150) // true
+maintenance.contains(200) // false
+```
+
+### A cache with explicit coroutine ownership
 
 ```kotlin
 import dev.guavakt.cache.CacheBuilder
@@ -66,108 +85,53 @@ val users = CacheBuilder.newBuilder<UserId, User>()
     .recordStats()
     .buildCoroutine(applicationScope) { id -> api.fetchUser(id) }
 
-val user = users.get(id) // suspends; concurrent misses for one key share one load
+val user = users.get(id) // suspends; same-key misses share one load
 ```
 
-The supplied scope owns shared loading work. Cancelling one caller stops only that wait; cancelling
-the scope stops the cache's owned work. The synchronous Guava-shaped builder is retained for
-migration, but new KMP code should use `buildCoroutine`.
+The supplied scope owns loads and refreshes. Cancelling one caller stops only its wait; cancelling
+the owner scope stops its shared work. That is the new-code API. The synchronous builder shape is
+retained for migration, not as the preferred concurrency model.
 
-### Portable exact arithmetic
+## What to depend on
 
-```kotlin
-import dev.guavakt.math.BigDecimal
-import dev.guavakt.math.BigInteger
-import dev.guavakt.math.MathContext
+Use the smallest module that fits the capability. The umbrella module is convenient for exploring
+the source tree, but production consumers should not need an all-or-nothing utility bundle.
 
-val total = BigInteger.parse("123456789012345678901234567890")
-val price = BigDecimal.parse("19.995")
-val rounded = price.multiply(BigDecimal.parse("1.21"), MathContext.DECIMAL64)
-
-val bits = total.bitLength() // 97
-val display = rounded.toPlainString() // "24.19395"
-```
-
-`BigInteger` covers arithmetic, radix and signed-byte conversion, two's-complement bit operations,
-modular arithmetic, roots, and probable-prime utilities. `BigDecimal` retains scale and supports
-exact/rounded division, `MathContext`, point movement, engineering/plain rendering, square roots,
-and exact `Double` construction. These are common immutable value types—not `java.math` wrappers.
-
-## What is implemented
-
-| Area | What matters in practice |
+| Module | Intended new-code use |
 |---|---|
-| Collections | Multimap, Multiset, BiMap, Table, immutable/sorted variants, class-to-instance maps, forwarding decorators, ordering, and traversal |
-| Ranges | `Range`, `RangeSet`, `RangeMap`, live mutable views, immutable variants, canonical discrete ranges, and arbitrary-precision `ContiguousSet` domains |
-| Graph | `Graph`, `ValueGraph`, `Network`, builders, element order, copy/transpose/closure utilities, and lazy tree traversal |
-| Cache | Size/weight eviction, expiry, refresh, stats, removal listeners, bulk loading, deterministic clocks, and coroutine load coalescing |
-| Hash | Murmur3, SHA-2/HMAC, CRC32, Adler32, SipHash, FarmHash/Fingerprint2011, hash composition, Okio hashing streams, and Guava-wire-compatible Bloom filters |
-| Base and escape | Preconditions, Optional migration shim, Joiner, Splitter, CharMatcher, converters, equivalence, suppliers, strings, escapers, and public-suffix lookup |
-| I/O and net | Okio-native sources/sinks, byte-array data I/O, injected filesystems, host/port and IP-literal helpers |
-| Concurrent | Coroutine rate limiting, monitor, time limiting, scheduled work, services, future/deferred bridges, plus JVM blocking migration APIs |
-| Math | Primitive math, statistics, quantiles, `BigInteger`, `BigDecimal`, and `BigDecimalMath.roundToDouble` |
+| `guavakt-collect` | Rich collections and ranges |
+| `guavakt-graph` | Graphs, networks, traversal |
+| `guavakt-hash` | Hash functions, funnels, Bloom filters |
+| `guavakt-net` | IP, host/port, and public-suffix utilities |
+| `guavakt-cache` | Coroutine-owned in-memory caching |
+| `guavakt-concurrent` | Coroutine rate limiting and guarded coordination |
+| `guavakt-math` | Primitive/statistical and arbitrary-precision math |
+| `guavakt-io` | Okio-native source/sink and filesystem adapters |
 
-The project directly compares high-value behavior and failures with pinned Guava 33.6 on the JVM;
-the exhaustive detail and deliberate KMP differences are in the [compatibility matrix](docs/compatibility.md). The short
-version is: core capabilities are substantial, while Java serialization, Java generic-reflection
-identity, and binary linkage to Guava are intentionally not promised.
+`base`, `escape`, `primitives`, annotations, and the Guava-shaped future/reflection/EventBus
+modules support the core or migration use cases. They are not the reason to adopt GuavaKt.
 
-## Kotlin-first by design
+## Status and honesty
 
-- **Coroutines over thread blocking.** `CoroutineRateLimiter`, `CoroutineMonitor`, `Flow`,
-  suspending waits, and explicit scope ownership are the primary API. Futures and blocking waits
-  exist for migration only.
-- **Okio over fake portable `java.io`.** Filesystem use takes an Okio `FileSystem` and `Path` so a
-  test, browser, and native application can choose their real storage boundary honestly.
-- **Kotlin values over Java compatibility theatre.** Kotlin nullability and collection types are
-  retained where they make the API safer. Immutable compatibility types are deep snapshots, not
-  mutable collections hidden behind a read-only interface.
-- **Honest platform tiers.** Weak references, classpath scanning, dynamic proxies, real blocking,
-  and system filesystems are documented per target instead of silently emulated.
+There are no published artifacts yet; evaluate the project from source until the first tagged
+release documents supported coordinates. This is alpha software, not a drop-in Guava replacement.
 
-Read the [Kotlin-first guide](docs/kotlin-first.md) for the boundary and migration guidance.
+High-value contracts are tested directly against pinned Guava 33.6 on the JVM, alongside JS, Wasm,
+and Linux Native test suites. The project has seeded range/graph/math traces, coroutine
+cancellation tests, Bloom-filter wire checks, and reproducible cache/graph/hash benchmarks.
 
-## Confidence and verification
+The current JVM parity gate has two known `BigDecimal` scale/presentation discrepancies, so treat
+arbitrary-precision decimal support as evaluation-only until that gate is green. Platform-specific
+facilities—weak references, real blocking, classpath scanning, proxies, and system filesystems—are
+always called out rather than silently approximated.
 
-The reference toolchain is JDK 17, Kotlin 2.4.10, and the checksum-pinned Gradle 9.6.0 wrapper.
+## Learn more
 
-```bash
-./gradlew apiCheck jvmTest :guavakt-parity:test dokkaGenerate --no-daemon
-python3 scripts/hollow_inventory.py
-python3 scripts/depth_inventory.py
-python3 scripts/count_tests.py
-python3 scripts/immutable_audit.py
-```
+- [Compatibility matrix](docs/compatibility.md) — evidence level, intentional differences, and platform limits
+- [Kotlin-first guide](docs/kotlin-first.md) — when Kotlin, coroutines, or Okio are the better API
+- [Architecture](docs/architecture.md) — module graph and target policy
+- [Roadmap](docs/roadmap.md) — priorities and definition of done
+- [Contributor guide](AGENTS.md) — verification gates and project conventions
 
-The tests include direct Guava/JDK differentials, deterministic concurrent traces, and
-arbitrary-precision fuzzing. Increase its replay budget when changing numeric or range code:
-
-```bash
-./gradlew :guavakt-parity:test --no-daemon -Pkotlin.incremental=false \
-  -PfuzzSeeds=128 -PfuzzCases=1024
-```
-
-Reproducible JMH workloads cover cache hot/miss/eviction paths, graph construction/reachability/
-mutation, and hash one-shot/streaming paths. See [benchmark guidance](docs/benchmarks.md).
-
-## Documentation
-
-The [documentation index](docs/README.md) separates reader guidance from maintainer references.
-The most useful starting points are:
-
-- [Compatibility matrix](docs/compatibility.md) — evidence tiers and deliberate KMP differences
-- [Kotlin-first guide](docs/kotlin-first.md) — when Kotlin or coroutines are the better API
-- [Architecture](docs/architecture.md) — module DAG and platform policy
-- [Roadmap](docs/roadmap.md) — current priorities and definition of done
-
-## What GuavaKt does not claim
-
-It does not promise source or binary compatibility with Guava, Java serialization formats, a full
-`java.lang.reflect.Type` system on non-JVM targets, or JDK-specific `BigInteger`/`BigDecimal`
-allocation and serialization behavior. The portable numeric values intentionally exclude Java
-constructors and `Random`/serialization interop, while preserving the operations a KMP caller can
-meaningfully use. If a behavior depends on JVM garbage collection, a `ClassLoader`, a Java proxy,
-or a blocking thread, check the relevant row in the [compatibility matrix](docs/compatibility.md) before relying on it.
-
-Maven Central publication is configured but not yet performed: the release owner must provide the
-verified `dev.guavakt` namespace, Central token, signing key, and public source URL.
+The full documentation index, including benchmarks, fuzzing, public-suffix refreshes, and release
+discipline, is in [docs](docs/README.md).
