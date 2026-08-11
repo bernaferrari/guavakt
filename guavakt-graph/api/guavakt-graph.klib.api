@@ -1,0 +1,727 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Alias: native => [iosArm64, iosSimulatorArm64, iosX64, linuxX64, macosArm64, macosX64, mingwX64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-graph>
+open annotation class dev.guavakt.graph/IgnoreJRERequirement : kotlin/Annotation { // dev.guavakt.graph/IgnoreJRERequirement|null[0]
+    constructor <init>() // dev.guavakt.graph/IgnoreJRERequirement.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.graph/ParametricNullness : kotlin/Annotation { // dev.guavakt.graph/ParametricNullness|null[0]
+    constructor <init>() // dev.guavakt.graph/ParametricNullness.<init>|<init>(){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/GraphConnections { // dev.guavakt.graph/GraphConnections|null[0]
+    abstract fun addPredecessor(#A, #B) // dev.guavakt.graph/GraphConnections.addPredecessor|addPredecessor(1:0;1:1){}[0]
+    abstract fun addSuccessor(#A, #B): #B? // dev.guavakt.graph/GraphConnections.addSuccessor|addSuccessor(1:0;1:1){}[0]
+    abstract fun adjacentNode(kotlin/Any?): #A // dev.guavakt.graph/GraphConnections.adjacentNode|adjacentNode(kotlin.Any?){}[0]
+    abstract fun adjacentNodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/GraphConnections.adjacentNodes|adjacentNodes(){}[0]
+    abstract fun incidentEdges(): kotlin.collections/Set<kotlin/Any?> // dev.guavakt.graph/GraphConnections.incidentEdges|incidentEdges(){}[0]
+    abstract fun predecessors(): kotlin.collections/Set<#A> // dev.guavakt.graph/GraphConnections.predecessors|predecessors(){}[0]
+    abstract fun removePredecessor(#A) // dev.guavakt.graph/GraphConnections.removePredecessor|removePredecessor(1:0){}[0]
+    abstract fun removeSuccessor(#A): #B? // dev.guavakt.graph/GraphConnections.removeSuccessor|removeSuccessor(1:0){}[0]
+    abstract fun successors(): kotlin.collections/Set<#A> // dev.guavakt.graph/GraphConnections.successors|successors(){}[0]
+    abstract fun value(#A): #B? // dev.guavakt.graph/GraphConnections.value|value(1:0){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/MutableNetwork : dev.guavakt.graph/Network<#A, #B> { // dev.guavakt.graph/MutableNetwork|null[0]
+    abstract fun addEdge(#A, #A, #B): kotlin/Boolean // dev.guavakt.graph/MutableNetwork.addEdge|addEdge(1:0;1:0;1:1){}[0]
+    abstract fun addNode(#A): kotlin/Boolean // dev.guavakt.graph/MutableNetwork.addNode|addNode(1:0){}[0]
+    abstract fun removeEdge(#B): kotlin/Boolean // dev.guavakt.graph/MutableNetwork.removeEdge|removeEdge(1:1){}[0]
+    abstract fun removeNode(#A): kotlin/Boolean // dev.guavakt.graph/MutableNetwork.removeNode|removeNode(1:0){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/MutableValueGraph : dev.guavakt.graph/ValueGraph<#A, #B> { // dev.guavakt.graph/MutableValueGraph|null[0]
+    abstract fun addNode(#A): kotlin/Boolean // dev.guavakt.graph/MutableValueGraph.addNode|addNode(1:0){}[0]
+    abstract fun putEdgeValue(#A, #A, #B): #B? // dev.guavakt.graph/MutableValueGraph.putEdgeValue|putEdgeValue(1:0;1:0;1:1){}[0]
+    abstract fun removeEdge(#A, #A): #B? // dev.guavakt.graph/MutableValueGraph.removeEdge|removeEdge(1:0;1:0){}[0]
+    abstract fun removeNode(#A): kotlin/Boolean // dev.guavakt.graph/MutableValueGraph.removeNode|removeNode(1:0){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/Network : dev.guavakt.graph/PredecessorsFunction<#A>, dev.guavakt.graph/SuccessorsFunction<#A> { // dev.guavakt.graph/Network|null[0]
+    abstract fun adjacentEdges(#B): kotlin.collections/Set<#B> // dev.guavakt.graph/Network.adjacentEdges|adjacentEdges(1:1){}[0]
+    abstract fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/Network.adjacentNodes|adjacentNodes(1:0){}[0]
+    abstract fun allowsParallelEdges(): kotlin/Boolean // dev.guavakt.graph/Network.allowsParallelEdges|allowsParallelEdges(){}[0]
+    abstract fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/Network.allowsSelfLoops|allowsSelfLoops(){}[0]
+    abstract fun degree(#A): kotlin/Int // dev.guavakt.graph/Network.degree|degree(1:0){}[0]
+    abstract fun edgeConnectingOrNull(#A, #A): #B? // dev.guavakt.graph/Network.edgeConnectingOrNull|edgeConnectingOrNull(1:0;1:0){}[0]
+    abstract fun edges(): kotlin.collections/Set<#B> // dev.guavakt.graph/Network.edges|edges(){}[0]
+    abstract fun edgesConnecting(#A, #A): kotlin.collections/Set<#B> // dev.guavakt.graph/Network.edgesConnecting|edgesConnecting(1:0;1:0){}[0]
+    abstract fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/Network.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    abstract fun inDegree(#A): kotlin/Int // dev.guavakt.graph/Network.inDegree|inDegree(1:0){}[0]
+    abstract fun inEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/Network.inEdges|inEdges(1:0){}[0]
+    abstract fun incidentEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/Network.incidentEdges|incidentEdges(1:0){}[0]
+    abstract fun incidentNodes(#B): dev.guavakt.graph/EndpointPair<#A> // dev.guavakt.graph/Network.incidentNodes|incidentNodes(1:1){}[0]
+    abstract fun isDirected(): kotlin/Boolean // dev.guavakt.graph/Network.isDirected|isDirected(){}[0]
+    abstract fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/Network.nodes|nodes(){}[0]
+    abstract fun outDegree(#A): kotlin/Int // dev.guavakt.graph/Network.outDegree|outDegree(1:0){}[0]
+    abstract fun outEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/Network.outEdges|outEdges(1:0){}[0]
+    abstract fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/Network.predecessors|predecessors(1:0){}[0]
+    abstract fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/Network.successors|successors(1:0){}[0]
+    open fun asGraph(): dev.guavakt.graph/Graph<#A> // dev.guavakt.graph/Network.asGraph|asGraph(){}[0]
+    open fun edgeOrder(): dev.guavakt.graph/ElementOrder<#B> // dev.guavakt.graph/Network.edgeOrder|edgeOrder(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/Network.nodeOrder|nodeOrder(){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/NetworkConnections { // dev.guavakt.graph/NetworkConnections|null[0]
+    abstract fun addInEdge(#B, #A, kotlin/Boolean) // dev.guavakt.graph/NetworkConnections.addInEdge|addInEdge(1:1;1:0;kotlin.Boolean){}[0]
+    abstract fun addOutEdge(#B, #A): #A? // dev.guavakt.graph/NetworkConnections.addOutEdge|addOutEdge(1:1;1:0){}[0]
+    abstract fun adjacentNode(#B): #A // dev.guavakt.graph/NetworkConnections.adjacentNode|adjacentNode(1:1){}[0]
+    abstract fun adjacentNodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/NetworkConnections.adjacentNodes|adjacentNodes(){}[0]
+    abstract fun edgesConnecting(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/NetworkConnections.edgesConnecting|edgesConnecting(1:0){}[0]
+    abstract fun inEdges(): kotlin.collections/Set<#B> // dev.guavakt.graph/NetworkConnections.inEdges|inEdges(){}[0]
+    abstract fun incidentEdges(): kotlin.collections/Set<#B> // dev.guavakt.graph/NetworkConnections.incidentEdges|incidentEdges(){}[0]
+    abstract fun outEdges(): kotlin.collections/Set<#B> // dev.guavakt.graph/NetworkConnections.outEdges|outEdges(){}[0]
+    abstract fun predecessors(): kotlin.collections/Set<#A> // dev.guavakt.graph/NetworkConnections.predecessors|predecessors(){}[0]
+    abstract fun removeInEdge(#B, kotlin/Boolean): #A // dev.guavakt.graph/NetworkConnections.removeInEdge|removeInEdge(1:1;kotlin.Boolean){}[0]
+    abstract fun removeOutEdge(#B): #A // dev.guavakt.graph/NetworkConnections.removeOutEdge|removeOutEdge(1:1){}[0]
+    abstract fun successors(): kotlin.collections/Set<#A> // dev.guavakt.graph/NetworkConnections.successors|successors(){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/ValueGraph : dev.guavakt.graph/PredecessorsFunction<#A>, dev.guavakt.graph/SuccessorsFunction<#A> { // dev.guavakt.graph/ValueGraph|null[0]
+    abstract fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ValueGraph.adjacentNodes|adjacentNodes(1:0){}[0]
+    abstract fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/ValueGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    abstract fun degree(#A): kotlin/Int // dev.guavakt.graph/ValueGraph.degree|degree(1:0){}[0]
+    abstract fun edgeValueOrDefault(#A, #A, #B?): #B? // dev.guavakt.graph/ValueGraph.edgeValueOrDefault|edgeValueOrDefault(1:0;1:0;1:1?){}[0]
+    abstract fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ValueGraph.edges|edges(){}[0]
+    abstract fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/ValueGraph.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    abstract fun inDegree(#A): kotlin/Int // dev.guavakt.graph/ValueGraph.inDegree|inDegree(1:0){}[0]
+    abstract fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ValueGraph.incidentEdges|incidentEdges(1:0){}[0]
+    abstract fun isDirected(): kotlin/Boolean // dev.guavakt.graph/ValueGraph.isDirected|isDirected(){}[0]
+    abstract fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/ValueGraph.nodes|nodes(){}[0]
+    abstract fun outDegree(#A): kotlin/Int // dev.guavakt.graph/ValueGraph.outDegree|outDegree(1:0){}[0]
+    abstract fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ValueGraph.predecessors|predecessors(1:0){}[0]
+    abstract fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ValueGraph.successors|successors(1:0){}[0]
+    open fun asGraph(): dev.guavakt.graph/Graph<#A> // dev.guavakt.graph/ValueGraph.asGraph|asGraph(){}[0]
+    open fun asNetwork(): dev.guavakt.graph/Network<#A, dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ValueGraph.asNetwork|asNetwork(){}[0]
+    open fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ValueGraph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ValueGraph.nodeOrder|nodeOrder(){}[0]
+}
+
+abstract interface <#A: kotlin/Any?> dev.guavakt.graph/Graph : dev.guavakt.graph/PredecessorsFunction<#A>, dev.guavakt.graph/SuccessorsFunction<#A> { // dev.guavakt.graph/Graph|null[0]
+    abstract fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/Graph.adjacentNodes|adjacentNodes(1:0){}[0]
+    abstract fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/Graph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    abstract fun degree(#A): kotlin/Int // dev.guavakt.graph/Graph.degree|degree(1:0){}[0]
+    abstract fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/Graph.edges|edges(){}[0]
+    abstract fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/Graph.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    abstract fun inDegree(#A): kotlin/Int // dev.guavakt.graph/Graph.inDegree|inDegree(1:0){}[0]
+    abstract fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/Graph.incidentEdges|incidentEdges(1:0){}[0]
+    abstract fun isDirected(): kotlin/Boolean // dev.guavakt.graph/Graph.isDirected|isDirected(){}[0]
+    abstract fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/Graph.nodes|nodes(){}[0]
+    abstract fun outDegree(#A): kotlin/Int // dev.guavakt.graph/Graph.outDegree|outDegree(1:0){}[0]
+    abstract fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/Graph.predecessors|predecessors(1:0){}[0]
+    abstract fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/Graph.successors|successors(1:0){}[0]
+    open fun asNetwork(): dev.guavakt.graph/Network<#A, dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/Graph.asNetwork|asNetwork(){}[0]
+    open fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/Graph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/Graph.nodeOrder|nodeOrder(){}[0]
+}
+
+abstract interface <#A: kotlin/Any?> dev.guavakt.graph/MutableGraph : dev.guavakt.graph/Graph<#A> { // dev.guavakt.graph/MutableGraph|null[0]
+    abstract fun addNode(#A): kotlin/Boolean // dev.guavakt.graph/MutableGraph.addNode|addNode(1:0){}[0]
+    abstract fun putEdge(#A, #A): kotlin/Boolean // dev.guavakt.graph/MutableGraph.putEdge|putEdge(1:0;1:0){}[0]
+    abstract fun removeEdge(#A, #A): kotlin/Boolean // dev.guavakt.graph/MutableGraph.removeEdge|removeEdge(1:0;1:0){}[0]
+    abstract fun removeNode(#A): kotlin/Boolean // dev.guavakt.graph/MutableGraph.removeNode|removeNode(1:0){}[0]
+}
+
+abstract interface <#A: kotlin/Any?> dev.guavakt.graph/PredecessorsFunction { // dev.guavakt.graph/PredecessorsFunction|null[0]
+    abstract fun predecessors(#A): kotlin.collections/Iterable<#A> // dev.guavakt.graph/PredecessorsFunction.predecessors|predecessors(1:0){}[0]
+}
+
+abstract interface <#A: kotlin/Any?> dev.guavakt.graph/SuccessorsFunction { // dev.guavakt.graph/SuccessorsFunction|null[0]
+    abstract fun successors(#A): kotlin.collections/Iterable<#A> // dev.guavakt.graph/SuccessorsFunction.successors|successors(1:0){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/AbstractNetwork : dev.guavakt.graph/Network<#A, #B> { // dev.guavakt.graph/AbstractNetwork|null[0]
+    constructor <init>() // dev.guavakt.graph/AbstractNetwork.<init>|<init>(){}[0]
+
+    abstract fun allowsParallelEdges(): kotlin/Boolean // dev.guavakt.graph/AbstractNetwork.allowsParallelEdges|allowsParallelEdges(){}[0]
+    abstract fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/AbstractNetwork.allowsSelfLoops|allowsSelfLoops(){}[0]
+    abstract fun edges(): kotlin.collections/Set<#B> // dev.guavakt.graph/AbstractNetwork.edges|edges(){}[0]
+    abstract fun edgesConnecting(#A, #A): kotlin.collections/Set<#B> // dev.guavakt.graph/AbstractNetwork.edgesConnecting|edgesConnecting(1:0;1:0){}[0]
+    abstract fun inEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/AbstractNetwork.inEdges|inEdges(1:0){}[0]
+    abstract fun incidentEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/AbstractNetwork.incidentEdges|incidentEdges(1:0){}[0]
+    abstract fun incidentNodes(#B): dev.guavakt.graph/EndpointPair<#A> // dev.guavakt.graph/AbstractNetwork.incidentNodes|incidentNodes(1:1){}[0]
+    abstract fun isDirected(): kotlin/Boolean // dev.guavakt.graph/AbstractNetwork.isDirected|isDirected(){}[0]
+    abstract fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractNetwork.nodes|nodes(){}[0]
+    abstract fun outEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/AbstractNetwork.outEdges|outEdges(1:0){}[0]
+    abstract fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractNetwork.predecessors|predecessors(1:0){}[0]
+    abstract fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractNetwork.successors|successors(1:0){}[0]
+    open fun adjacentEdges(#B): kotlin.collections/Set<#B> // dev.guavakt.graph/AbstractNetwork.adjacentEdges|adjacentEdges(1:1){}[0]
+    open fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractNetwork.adjacentNodes|adjacentNodes(1:0){}[0]
+    open fun degree(#A): kotlin/Int // dev.guavakt.graph/AbstractNetwork.degree|degree(1:0){}[0]
+    open fun edgeConnectingOrNull(#A, #A): #B? // dev.guavakt.graph/AbstractNetwork.edgeConnectingOrNull|edgeConnectingOrNull(1:0;1:0){}[0]
+    open fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/AbstractNetwork.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    open fun inDegree(#A): kotlin/Int // dev.guavakt.graph/AbstractNetwork.inDegree|inDegree(1:0){}[0]
+    open fun outDegree(#A): kotlin/Int // dev.guavakt.graph/AbstractNetwork.outDegree|outDegree(1:0){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/AbstractValueGraph : dev.guavakt.graph/ValueGraph<#A, #B> { // dev.guavakt.graph/AbstractValueGraph|null[0]
+    constructor <init>() // dev.guavakt.graph/AbstractValueGraph.<init>|<init>(){}[0]
+
+    abstract fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/AbstractValueGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    abstract fun edgeValueOrDefault(#A, #A, #B?): #B? // dev.guavakt.graph/AbstractValueGraph.edgeValueOrDefault|edgeValueOrDefault(1:0;1:0;1:1?){}[0]
+    abstract fun isDirected(): kotlin/Boolean // dev.guavakt.graph/AbstractValueGraph.isDirected|isDirected(){}[0]
+    abstract fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractValueGraph.nodes|nodes(){}[0]
+    abstract fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractValueGraph.predecessors|predecessors(1:0){}[0]
+    abstract fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractValueGraph.successors|successors(1:0){}[0]
+    open fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractValueGraph.adjacentNodes|adjacentNodes(1:0){}[0]
+    open fun degree(#A): kotlin/Int // dev.guavakt.graph/AbstractValueGraph.degree|degree(1:0){}[0]
+    open fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/AbstractValueGraph.edges|edges(){}[0]
+    open fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/AbstractValueGraph.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    open fun inDegree(#A): kotlin/Int // dev.guavakt.graph/AbstractValueGraph.inDegree|inDegree(1:0){}[0]
+    open fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/AbstractValueGraph.incidentEdges|incidentEdges(1:0){}[0]
+    open fun outDegree(#A): kotlin/Int // dev.guavakt.graph/AbstractValueGraph.outDegree|outDegree(1:0){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/ForwardingNetwork : dev.guavakt.graph/AbstractNetwork<#A, #B> { // dev.guavakt.graph/ForwardingNetwork|null[0]
+    constructor <init>() // dev.guavakt.graph/ForwardingNetwork.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.graph/Network<#A, #B> // dev.guavakt.graph/ForwardingNetwork.delegate|delegate(){}[0]
+    open fun allowsParallelEdges(): kotlin/Boolean // dev.guavakt.graph/ForwardingNetwork.allowsParallelEdges|allowsParallelEdges(){}[0]
+    open fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/ForwardingNetwork.allowsSelfLoops|allowsSelfLoops(){}[0]
+    open fun edgeOrder(): dev.guavakt.graph/ElementOrder<#B> // dev.guavakt.graph/ForwardingNetwork.edgeOrder|edgeOrder(){}[0]
+    open fun edges(): kotlin.collections/Set<#B> // dev.guavakt.graph/ForwardingNetwork.edges|edges(){}[0]
+    open fun edgesConnecting(#A, #A): kotlin.collections/Set<#B> // dev.guavakt.graph/ForwardingNetwork.edgesConnecting|edgesConnecting(1:0;1:0){}[0]
+    open fun inEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/ForwardingNetwork.inEdges|inEdges(1:0){}[0]
+    open fun incidentEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/ForwardingNetwork.incidentEdges|incidentEdges(1:0){}[0]
+    open fun incidentNodes(#B): dev.guavakt.graph/EndpointPair<#A> // dev.guavakt.graph/ForwardingNetwork.incidentNodes|incidentNodes(1:1){}[0]
+    open fun isDirected(): kotlin/Boolean // dev.guavakt.graph/ForwardingNetwork.isDirected|isDirected(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ForwardingNetwork.nodeOrder|nodeOrder(){}[0]
+    open fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingNetwork.nodes|nodes(){}[0]
+    open fun outEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/ForwardingNetwork.outEdges|outEdges(1:0){}[0]
+    open fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingNetwork.predecessors|predecessors(1:0){}[0]
+    open fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingNetwork.successors|successors(1:0){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/ForwardingValueGraph : dev.guavakt.graph/AbstractValueGraph<#A, #B> { // dev.guavakt.graph/ForwardingValueGraph|null[0]
+    constructor <init>() // dev.guavakt.graph/ForwardingValueGraph.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.graph/ValueGraph<#A, #B> // dev.guavakt.graph/ForwardingValueGraph.delegate|delegate(){}[0]
+    open fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/ForwardingValueGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    open fun edgeValueOrDefault(#A, #A, #B?): #B? // dev.guavakt.graph/ForwardingValueGraph.edgeValueOrDefault|edgeValueOrDefault(1:0;1:0;1:1?){}[0]
+    open fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ForwardingValueGraph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    open fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ForwardingValueGraph.incidentEdges|incidentEdges(1:0){}[0]
+    open fun isDirected(): kotlin/Boolean // dev.guavakt.graph/ForwardingValueGraph.isDirected|isDirected(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ForwardingValueGraph.nodeOrder|nodeOrder(){}[0]
+    open fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingValueGraph.nodes|nodes(){}[0]
+    open fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingValueGraph.predecessors|predecessors(1:0){}[0]
+    open fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingValueGraph.successors|successors(1:0){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.graph/AbstractBaseGraph : dev.guavakt.graph/AbstractGraph<#A> { // dev.guavakt.graph/AbstractBaseGraph|null[0]
+    constructor <init>() // dev.guavakt.graph/AbstractBaseGraph.<init>|<init>(){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.graph/AbstractGraph : dev.guavakt.graph/Graph<#A> { // dev.guavakt.graph/AbstractGraph|null[0]
+    constructor <init>() // dev.guavakt.graph/AbstractGraph.<init>|<init>(){}[0]
+
+    abstract fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/AbstractGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    abstract fun isDirected(): kotlin/Boolean // dev.guavakt.graph/AbstractGraph.isDirected|isDirected(){}[0]
+    abstract fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractGraph.nodes|nodes(){}[0]
+    abstract fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractGraph.predecessors|predecessors(1:0){}[0]
+    abstract fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractGraph.successors|successors(1:0){}[0]
+    open fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/AbstractGraph.adjacentNodes|adjacentNodes(1:0){}[0]
+    open fun degree(#A): kotlin/Int // dev.guavakt.graph/AbstractGraph.degree|degree(1:0){}[0]
+    open fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/AbstractGraph.edges|edges(){}[0]
+    open fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/AbstractGraph.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    open fun inDegree(#A): kotlin/Int // dev.guavakt.graph/AbstractGraph.inDegree|inDegree(1:0){}[0]
+    open fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/AbstractGraph.incidentEdges|incidentEdges(1:0){}[0]
+    open fun outDegree(#A): kotlin/Int // dev.guavakt.graph/AbstractGraph.outDegree|outDegree(1:0){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.graph/AbstractGraphBuilder { // dev.guavakt.graph/AbstractGraphBuilder|null[0]
+    constructor <init>(kotlin/Boolean) // dev.guavakt.graph/AbstractGraphBuilder.<init>|<init>(kotlin.Boolean){}[0]
+
+    final val directed // dev.guavakt.graph/AbstractGraphBuilder.directed|{}directed[0]
+        final fun <get-directed>(): kotlin/Boolean // dev.guavakt.graph/AbstractGraphBuilder.directed.<get-directed>|<get-directed>(){}[0]
+
+    final var allowsSelfLoops // dev.guavakt.graph/AbstractGraphBuilder.allowsSelfLoops|{}allowsSelfLoops[0]
+        final fun <get-allowsSelfLoops>(): kotlin/Boolean // dev.guavakt.graph/AbstractGraphBuilder.allowsSelfLoops.<get-allowsSelfLoops>|<get-allowsSelfLoops>(){}[0]
+        final fun <set-allowsSelfLoops>(kotlin/Boolean) // dev.guavakt.graph/AbstractGraphBuilder.allowsSelfLoops.<set-allowsSelfLoops>|<set-allowsSelfLoops>(kotlin.Boolean){}[0]
+    final var nodeOrder // dev.guavakt.graph/AbstractGraphBuilder.nodeOrder|{}nodeOrder[0]
+        final fun <get-nodeOrder>(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/AbstractGraphBuilder.nodeOrder.<get-nodeOrder>|<get-nodeOrder>(){}[0]
+        final fun <set-nodeOrder>(dev.guavakt.graph/ElementOrder<#A>) // dev.guavakt.graph/AbstractGraphBuilder.nodeOrder.<set-nodeOrder>|<set-nodeOrder>(dev.guavakt.graph.ElementOrder<1:0>){}[0]
+
+    final fun allowsSelfLoops(kotlin/Boolean): dev.guavakt.graph/AbstractGraphBuilder<#A> // dev.guavakt.graph/AbstractGraphBuilder.allowsSelfLoops|allowsSelfLoops(kotlin.Boolean){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.graph/BaseGraph : dev.guavakt.graph/AbstractGraph<#A> { // dev.guavakt.graph/BaseGraph|null[0]
+    constructor <init>() // dev.guavakt.graph/BaseGraph.<init>|<init>(){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.graph/ForwardingGraph : dev.guavakt.graph/AbstractGraph<#A> { // dev.guavakt.graph/ForwardingGraph|null[0]
+    constructor <init>() // dev.guavakt.graph/ForwardingGraph.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.graph/Graph<#A> // dev.guavakt.graph/ForwardingGraph.delegate|delegate(){}[0]
+    open fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingGraph.adjacentNodes|adjacentNodes(1:0){}[0]
+    open fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/ForwardingGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    open fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ForwardingGraph.edges|edges(){}[0]
+    open fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/ForwardingGraph.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    open fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ForwardingGraph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    open fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ForwardingGraph.incidentEdges|incidentEdges(1:0){}[0]
+    open fun isDirected(): kotlin/Boolean // dev.guavakt.graph/ForwardingGraph.isDirected|isDirected(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ForwardingGraph.nodeOrder|nodeOrder(){}[0]
+    open fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingGraph.nodes|nodes(){}[0]
+    open fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingGraph.predecessors|predecessors(1:0){}[0]
+    open fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ForwardingGraph.successors|successors(1:0){}[0]
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/ImmutableNetwork : dev.guavakt.graph/AbstractNetwork<#A, #B> { // dev.guavakt.graph/ImmutableNetwork|null[0]
+    final fun allowsParallelEdges(): kotlin/Boolean // dev.guavakt.graph/ImmutableNetwork.allowsParallelEdges|allowsParallelEdges(){}[0]
+    final fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/ImmutableNetwork.allowsSelfLoops|allowsSelfLoops(){}[0]
+    final fun edges(): kotlin.collections/Set<#B> // dev.guavakt.graph/ImmutableNetwork.edges|edges(){}[0]
+    final fun edgesConnecting(#A, #A): kotlin.collections/Set<#B> // dev.guavakt.graph/ImmutableNetwork.edgesConnecting|edgesConnecting(1:0;1:0){}[0]
+    final fun inEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/ImmutableNetwork.inEdges|inEdges(1:0){}[0]
+    final fun incidentEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/ImmutableNetwork.incidentEdges|incidentEdges(1:0){}[0]
+    final fun incidentNodes(#B): dev.guavakt.graph/EndpointPair<#A> // dev.guavakt.graph/ImmutableNetwork.incidentNodes|incidentNodes(1:1){}[0]
+    final fun isDirected(): kotlin/Boolean // dev.guavakt.graph/ImmutableNetwork.isDirected|isDirected(){}[0]
+    final fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableNetwork.nodes|nodes(){}[0]
+    final fun outEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/ImmutableNetwork.outEdges|outEdges(1:0){}[0]
+    final fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableNetwork.predecessors|predecessors(1:0){}[0]
+    final fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableNetwork.successors|successors(1:0){}[0]
+
+    final object Companion { // dev.guavakt.graph/ImmutableNetwork.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> copyOf(dev.guavakt.graph/Network<#A2, #B2>): dev.guavakt.graph/ImmutableNetwork<#A2, #B2> // dev.guavakt.graph/ImmutableNetwork.Companion.copyOf|copyOf(dev.guavakt.graph.Network<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/ImmutableValueGraph : dev.guavakt.graph/AbstractValueGraph<#A, #B> { // dev.guavakt.graph/ImmutableValueGraph|null[0]
+    final fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/ImmutableValueGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    final fun edgeValueOrDefault(#A, #A, #B?): #B? // dev.guavakt.graph/ImmutableValueGraph.edgeValueOrDefault|edgeValueOrDefault(1:0;1:0;1:1?){}[0]
+    final fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ImmutableValueGraph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    final fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ImmutableValueGraph.incidentEdges|incidentEdges(1:0){}[0]
+    final fun isDirected(): kotlin/Boolean // dev.guavakt.graph/ImmutableValueGraph.isDirected|isDirected(){}[0]
+    final fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableValueGraph.nodes|nodes(){}[0]
+    final fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableValueGraph.predecessors|predecessors(1:0){}[0]
+    final fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableValueGraph.successors|successors(1:0){}[0]
+
+    final object Companion { // dev.guavakt.graph/ImmutableValueGraph.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> copyOf(dev.guavakt.graph/ValueGraph<#A2, #B2>): dev.guavakt.graph/ImmutableValueGraph<#A2, #B2> // dev.guavakt.graph/ImmutableValueGraph.Companion.copyOf|copyOf(dev.guavakt.graph.ValueGraph<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/NetworkBuilder { // dev.guavakt.graph/NetworkBuilder|null[0]
+    final fun <#A1: #A, #B1: #B> build(): dev.guavakt.graph/MutableNetwork<#A1, #B1> // dev.guavakt.graph/NetworkBuilder.build|build(){0§<1:0>;1§<1:1>}[0]
+    final fun allowsParallelEdges(kotlin/Boolean): dev.guavakt.graph/NetworkBuilder<#A, #B> // dev.guavakt.graph/NetworkBuilder.allowsParallelEdges|allowsParallelEdges(kotlin.Boolean){}[0]
+    final fun allowsSelfLoops(kotlin/Boolean): dev.guavakt.graph/NetworkBuilder<#A, #B> // dev.guavakt.graph/NetworkBuilder.allowsSelfLoops|allowsSelfLoops(kotlin.Boolean){}[0]
+    final fun edgeOrder(dev.guavakt.graph/ElementOrder<#B>): dev.guavakt.graph/NetworkBuilder<#A, #B> // dev.guavakt.graph/NetworkBuilder.edgeOrder|edgeOrder(dev.guavakt.graph.ElementOrder<1:1>){}[0]
+    final fun nodeOrder(dev.guavakt.graph/ElementOrder<#A>): dev.guavakt.graph/NetworkBuilder<#A, #B> // dev.guavakt.graph/NetworkBuilder.nodeOrder|nodeOrder(dev.guavakt.graph.ElementOrder<1:0>){}[0]
+
+    final object Companion { // dev.guavakt.graph/NetworkBuilder.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> directed(): dev.guavakt.graph/NetworkBuilder<#A2, #B2> // dev.guavakt.graph/NetworkBuilder.Companion.directed|directed(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> from(dev.guavakt.graph/Network<#A2, #B2>): dev.guavakt.graph/NetworkBuilder<#A2, #B2> // dev.guavakt.graph/NetworkBuilder.Companion.from|from(dev.guavakt.graph.Network<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> undirected(): dev.guavakt.graph/NetworkBuilder<#A2, #B2> // dev.guavakt.graph/NetworkBuilder.Companion.undirected|undirected(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/StandardNetwork : dev.guavakt.graph/StandardMutableNetwork<#A, #B> { // dev.guavakt.graph/StandardNetwork|null[0]
+    constructor <init>(kotlin/Boolean, kotlin/Boolean, kotlin/Boolean) // dev.guavakt.graph/StandardNetwork.<init>|<init>(kotlin.Boolean;kotlin.Boolean;kotlin.Boolean){}[0]
+
+    final fun edges(): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardNetwork.edges|edges(){}[0]
+    final fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardNetwork.nodes|nodes(){}[0]
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/StandardValueGraph : dev.guavakt.graph/StandardMutableValueGraph<#A, #B> { // dev.guavakt.graph/StandardValueGraph|null[0]
+    constructor <init>(kotlin/Boolean, kotlin/Boolean) // dev.guavakt.graph/StandardValueGraph.<init>|<init>(kotlin.Boolean;kotlin.Boolean){}[0]
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/ValueGraphBuilder { // dev.guavakt.graph/ValueGraphBuilder|null[0]
+    final fun <#A1: #A, #B1: #B> build(): dev.guavakt.graph/MutableValueGraph<#A1, #B1> // dev.guavakt.graph/ValueGraphBuilder.build|build(){0§<1:0>;1§<1:1>}[0]
+    final fun allowsSelfLoops(kotlin/Boolean): dev.guavakt.graph/ValueGraphBuilder<#A, #B> // dev.guavakt.graph/ValueGraphBuilder.allowsSelfLoops|allowsSelfLoops(kotlin.Boolean){}[0]
+    final fun incidentEdgeOrder(dev.guavakt.graph/ElementOrder<#A>): dev.guavakt.graph/ValueGraphBuilder<#A, #B> // dev.guavakt.graph/ValueGraphBuilder.incidentEdgeOrder|incidentEdgeOrder(dev.guavakt.graph.ElementOrder<1:0>){}[0]
+    final fun nodeOrder(dev.guavakt.graph/ElementOrder<#A>): dev.guavakt.graph/ValueGraphBuilder<#A, #B> // dev.guavakt.graph/ValueGraphBuilder.nodeOrder|nodeOrder(dev.guavakt.graph.ElementOrder<1:0>){}[0]
+
+    final object Companion { // dev.guavakt.graph/ValueGraphBuilder.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> directed(): dev.guavakt.graph/ValueGraphBuilder<#A2, #B2> // dev.guavakt.graph/ValueGraphBuilder.Companion.directed|directed(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> from(dev.guavakt.graph/ValueGraph<#A2, #B2>): dev.guavakt.graph/ValueGraphBuilder<#A2, #B2> // dev.guavakt.graph/ValueGraphBuilder.Companion.from|from(dev.guavakt.graph.ValueGraph<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> undirected(): dev.guavakt.graph/ValueGraphBuilder<#A2, #B2> // dev.guavakt.graph/ValueGraphBuilder.Companion.undirected|undirected(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.graph/ElementOrder { // dev.guavakt.graph/ElementOrder|null[0]
+    final fun <#A1: #A> cast(): dev.guavakt.graph/ElementOrder<#A1> // dev.guavakt.graph/ElementOrder.cast|cast(){0§<1:0>}[0]
+    final fun <#A1: kotlin/Any?> createMap(kotlin/Int): kotlin.collections/MutableMap<#A, #A1> // dev.guavakt.graph/ElementOrder.createMap|createMap(kotlin.Int){0§<kotlin.Any?>}[0]
+    final fun comparator(): kotlin/Comparator<#A> // dev.guavakt.graph/ElementOrder.comparator|comparator(){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.graph/ElementOrder.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.graph/ElementOrder.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.graph/ElementOrder.toString|toString(){}[0]
+    final fun type(): dev.guavakt.graph/ElementOrder.Type // dev.guavakt.graph/ElementOrder.type|type(){}[0]
+
+    final enum class Type : kotlin/Enum<dev.guavakt.graph/ElementOrder.Type> { // dev.guavakt.graph/ElementOrder.Type|null[0]
+        enum entry INSERTION // dev.guavakt.graph/ElementOrder.Type.INSERTION|null[0]
+        enum entry SORTED // dev.guavakt.graph/ElementOrder.Type.SORTED|null[0]
+        enum entry STABLE // dev.guavakt.graph/ElementOrder.Type.STABLE|null[0]
+        enum entry UNORDERED // dev.guavakt.graph/ElementOrder.Type.UNORDERED|null[0]
+
+        final val entries // dev.guavakt.graph/ElementOrder.Type.entries|#static{}entries[0]
+            final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.graph/ElementOrder.Type> // dev.guavakt.graph/ElementOrder.Type.entries.<get-entries>|<get-entries>#static(){}[0]
+
+        final fun valueOf(kotlin/String): dev.guavakt.graph/ElementOrder.Type // dev.guavakt.graph/ElementOrder.Type.valueOf|valueOf#static(kotlin.String){}[0]
+        final fun values(): kotlin/Array<dev.guavakt.graph/ElementOrder.Type> // dev.guavakt.graph/ElementOrder.Type.values|values#static(){}[0]
+    }
+
+    final object Companion { // dev.guavakt.graph/ElementOrder.Companion|null[0]
+        final fun <#A2: kotlin/Any?> insertion(): dev.guavakt.graph/ElementOrder<#A2> // dev.guavakt.graph/ElementOrder.Companion.insertion|insertion(){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> sorted(kotlin/Comparator<#A2>): dev.guavakt.graph/ElementOrder<#A2> // dev.guavakt.graph/ElementOrder.Companion.sorted|sorted(kotlin.Comparator<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> stable(): dev.guavakt.graph/ElementOrder<#A2> // dev.guavakt.graph/ElementOrder.Companion.stable|stable(){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> unordered(): dev.guavakt.graph/ElementOrder<#A2> // dev.guavakt.graph/ElementOrder.Companion.unordered|unordered(){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Comparable<#A2>> natural(): dev.guavakt.graph/ElementOrder<#A2> // dev.guavakt.graph/ElementOrder.Companion.natural|natural(){0§<kotlin.Comparable<0:0>>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.graph/EndpointPair : kotlin.collections/Iterable<#A> { // dev.guavakt.graph/EndpointPair|null[0]
+    final val isOrdered // dev.guavakt.graph/EndpointPair.isOrdered|{}isOrdered[0]
+        final fun <get-isOrdered>(): kotlin/Boolean // dev.guavakt.graph/EndpointPair.isOrdered.<get-isOrdered>|<get-isOrdered>(){}[0]
+    final val nodeU // dev.guavakt.graph/EndpointPair.nodeU|{}nodeU[0]
+        final fun <get-nodeU>(): #A // dev.guavakt.graph/EndpointPair.nodeU.<get-nodeU>|<get-nodeU>(){}[0]
+    final val nodeV // dev.guavakt.graph/EndpointPair.nodeV|{}nodeV[0]
+        final fun <get-nodeV>(): #A // dev.guavakt.graph/EndpointPair.nodeV.<get-nodeV>|<get-nodeV>(){}[0]
+
+    final fun adjacentNode(#A): #A // dev.guavakt.graph/EndpointPair.adjacentNode|adjacentNode(1:0){}[0]
+    final fun component1(): #A // dev.guavakt.graph/EndpointPair.component1|component1(){}[0]
+    final fun component2(): #A // dev.guavakt.graph/EndpointPair.component2|component2(){}[0]
+    final fun component3(): kotlin/Boolean // dev.guavakt.graph/EndpointPair.component3|component3(){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.graph/EndpointPair.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.graph/EndpointPair.hashCode|hashCode(){}[0]
+    final fun iterator(): kotlin.collections/Iterator<#A> // dev.guavakt.graph/EndpointPair.iterator|iterator(){}[0]
+    final fun source(): #A // dev.guavakt.graph/EndpointPair.source|source(){}[0]
+    final fun target(): #A // dev.guavakt.graph/EndpointPair.target|target(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.graph/EndpointPair.toString|toString(){}[0]
+
+    final object Companion { // dev.guavakt.graph/EndpointPair.Companion|null[0]
+        final fun <#A2: kotlin/Any?> ordered(#A2, #A2): dev.guavakt.graph/EndpointPair<#A2> // dev.guavakt.graph/EndpointPair.Companion.ordered|ordered(0:0;0:0){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> unordered(#A2, #A2): dev.guavakt.graph/EndpointPair<#A2> // dev.guavakt.graph/EndpointPair.Companion.unordered|unordered(0:0;0:0){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.graph/GraphBuilder { // dev.guavakt.graph/GraphBuilder|null[0]
+    final fun <#A1: #A> build(): dev.guavakt.graph/MutableGraph<#A1> // dev.guavakt.graph/GraphBuilder.build|build(){0§<1:0>}[0]
+    final fun allowsSelfLoops(kotlin/Boolean): dev.guavakt.graph/GraphBuilder<#A> // dev.guavakt.graph/GraphBuilder.allowsSelfLoops|allowsSelfLoops(kotlin.Boolean){}[0]
+    final fun incidentEdgeOrder(dev.guavakt.graph/ElementOrder<#A>): dev.guavakt.graph/GraphBuilder<#A> // dev.guavakt.graph/GraphBuilder.incidentEdgeOrder|incidentEdgeOrder(dev.guavakt.graph.ElementOrder<1:0>){}[0]
+    final fun nodeOrder(dev.guavakt.graph/ElementOrder<#A>): dev.guavakt.graph/GraphBuilder<#A> // dev.guavakt.graph/GraphBuilder.nodeOrder|nodeOrder(dev.guavakt.graph.ElementOrder<1:0>){}[0]
+
+    final object Companion { // dev.guavakt.graph/GraphBuilder.Companion|null[0]
+        final fun <#A2: kotlin/Any?> directed(): dev.guavakt.graph/GraphBuilder<#A2> // dev.guavakt.graph/GraphBuilder.Companion.directed|directed(){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> from(dev.guavakt.graph/Graph<#A2>): dev.guavakt.graph/GraphBuilder<#A2> // dev.guavakt.graph/GraphBuilder.Companion.from|from(dev.guavakt.graph.Graph<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> undirected(): dev.guavakt.graph/GraphBuilder<#A2> // dev.guavakt.graph/GraphBuilder.Companion.undirected|undirected(){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.graph/ImmutableGraph : dev.guavakt.graph/AbstractGraph<#A> { // dev.guavakt.graph/ImmutableGraph|null[0]
+    final fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/ImmutableGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    final fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ImmutableGraph.edges|edges(){}[0]
+    final fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/ImmutableGraph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    final fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/ImmutableGraph.incidentEdges|incidentEdges(1:0){}[0]
+    final fun isDirected(): kotlin/Boolean // dev.guavakt.graph/ImmutableGraph.isDirected|isDirected(){}[0]
+    final fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableGraph.nodes|nodes(){}[0]
+    final fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableGraph.predecessors|predecessors(1:0){}[0]
+    final fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/ImmutableGraph.successors|successors(1:0){}[0]
+
+    final object Companion { // dev.guavakt.graph/ImmutableGraph.Companion|null[0]
+        final fun <#A2: kotlin/Any?> copyOf(dev.guavakt.graph/Graph<#A2>): dev.guavakt.graph/ImmutableGraph<#A2> // dev.guavakt.graph/ImmutableGraph.Companion.copyOf|copyOf(dev.guavakt.graph.Graph<0:0>){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.graph/StandardMutableGraph : dev.guavakt.graph/MutableGraph<#A> { // dev.guavakt.graph/StandardMutableGraph|null[0]
+    constructor <init>(kotlin/Boolean, kotlin/Boolean, dev.guavakt.graph/ElementOrder<#A> = ..., dev.guavakt.graph/ElementOrder<#A> = ...) // dev.guavakt.graph/StandardMutableGraph.<init>|<init>(kotlin.Boolean;kotlin.Boolean;dev.guavakt.graph.ElementOrder<1:0>;dev.guavakt.graph.ElementOrder<1:0>){}[0]
+
+    final fun addNode(#A): kotlin/Boolean // dev.guavakt.graph/StandardMutableGraph.addNode|addNode(1:0){}[0]
+    final fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableGraph.adjacentNodes|adjacentNodes(1:0){}[0]
+    final fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/StandardMutableGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    final fun degree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableGraph.degree|degree(1:0){}[0]
+    final fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/StandardMutableGraph.edges|edges(){}[0]
+    final fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/StandardMutableGraph.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    final fun inDegree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableGraph.inDegree|inDegree(1:0){}[0]
+    final fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/StandardMutableGraph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    final fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/StandardMutableGraph.incidentEdges|incidentEdges(1:0){}[0]
+    final fun isDirected(): kotlin/Boolean // dev.guavakt.graph/StandardMutableGraph.isDirected|isDirected(){}[0]
+    final fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/StandardMutableGraph.nodeOrder|nodeOrder(){}[0]
+    final fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableGraph.nodes|nodes(){}[0]
+    final fun outDegree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableGraph.outDegree|outDegree(1:0){}[0]
+    final fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableGraph.predecessors|predecessors(1:0){}[0]
+    final fun putEdge(#A, #A): kotlin/Boolean // dev.guavakt.graph/StandardMutableGraph.putEdge|putEdge(1:0;1:0){}[0]
+    final fun removeEdge(#A, #A): kotlin/Boolean // dev.guavakt.graph/StandardMutableGraph.removeEdge|removeEdge(1:0;1:0){}[0]
+    final fun removeNode(#A): kotlin/Boolean // dev.guavakt.graph/StandardMutableGraph.removeNode|removeNode(1:0){}[0]
+    final fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableGraph.successors|successors(1:0){}[0]
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.graph/Traverser { // dev.guavakt.graph/Traverser|null[0]
+    final fun breadthFirst(#A): kotlin.collections/Iterable<#A> // dev.guavakt.graph/Traverser.breadthFirst|breadthFirst(1:0){}[0]
+    final fun breadthFirst(kotlin.collections/Iterable<#A>): kotlin.collections/Iterable<#A> // dev.guavakt.graph/Traverser.breadthFirst|breadthFirst(kotlin.collections.Iterable<1:0>){}[0]
+    final fun depthFirstPostOrder(#A): kotlin.collections/Iterable<#A> // dev.guavakt.graph/Traverser.depthFirstPostOrder|depthFirstPostOrder(1:0){}[0]
+    final fun depthFirstPostOrder(kotlin.collections/Iterable<#A>): kotlin.collections/Iterable<#A> // dev.guavakt.graph/Traverser.depthFirstPostOrder|depthFirstPostOrder(kotlin.collections.Iterable<1:0>){}[0]
+    final fun depthFirstPreOrder(#A): kotlin.collections/Iterable<#A> // dev.guavakt.graph/Traverser.depthFirstPreOrder|depthFirstPreOrder(1:0){}[0]
+    final fun depthFirstPreOrder(kotlin.collections/Iterable<#A>): kotlin.collections/Iterable<#A> // dev.guavakt.graph/Traverser.depthFirstPreOrder|depthFirstPreOrder(kotlin.collections.Iterable<1:0>){}[0]
+
+    final object Companion { // dev.guavakt.graph/Traverser.Companion|null[0]
+        final fun <#A2: kotlin/Any?> forGraph(dev.guavakt.graph/SuccessorsFunction<#A2>): dev.guavakt.graph/Traverser<#A2> // dev.guavakt.graph/Traverser.Companion.forGraph|forGraph(dev.guavakt.graph.SuccessorsFunction<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> forTree(dev.guavakt.graph/SuccessorsFunction<#A2>): dev.guavakt.graph/Traverser<#A2> // dev.guavakt.graph/Traverser.Companion.forTree|forTree(dev.guavakt.graph.SuccessorsFunction<0:0>){0§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/AbstractDirectedNetworkConnections : dev.guavakt.graph/StandardNetworkConnections<#A, #B> { // dev.guavakt.graph/AbstractDirectedNetworkConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/AbstractDirectedNetworkConnections.<init>|<init>(){}[0]
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/AbstractUndirectedNetworkConnections : dev.guavakt.graph/StandardNetworkConnections<#A, #B> { // dev.guavakt.graph/AbstractUndirectedNetworkConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/AbstractUndirectedNetworkConnections.<init>|<init>(){}[0]
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/DirectedGraphConnections : dev.guavakt.graph/StandardGraphConnections<#A, #B> { // dev.guavakt.graph/DirectedGraphConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/DirectedGraphConnections.<init>|<init>(){}[0]
+
+    final object Companion { // dev.guavakt.graph/DirectedGraphConnections.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> of(): dev.guavakt.graph/DirectedGraphConnections<#A2, #B2> // dev.guavakt.graph/DirectedGraphConnections.Companion.of|of(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/DirectedMultiNetworkConnections : dev.guavakt.graph/DirectedGraphConnections<#A, #B> { // dev.guavakt.graph/DirectedMultiNetworkConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/DirectedMultiNetworkConnections.<init>|<init>(){}[0]
+
+    final object Companion { // dev.guavakt.graph/DirectedMultiNetworkConnections.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> of(): dev.guavakt.graph/DirectedMultiNetworkConnections<#A2, #B2> // dev.guavakt.graph/DirectedMultiNetworkConnections.Companion.of|of(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/DirectedNetworkConnections : dev.guavakt.graph/DirectedGraphConnections<#A, #B> { // dev.guavakt.graph/DirectedNetworkConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/DirectedNetworkConnections.<init>|<init>(){}[0]
+
+    final object Companion { // dev.guavakt.graph/DirectedNetworkConnections.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> of(): dev.guavakt.graph/DirectedNetworkConnections<#A2, #B2> // dev.guavakt.graph/DirectedNetworkConnections.Companion.of|of(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/StandardGraphConnections : dev.guavakt.graph/GraphConnections<#A, #B> { // dev.guavakt.graph/StandardGraphConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/StandardGraphConnections.<init>|<init>(){}[0]
+
+    open fun addPredecessor(#A, #B) // dev.guavakt.graph/StandardGraphConnections.addPredecessor|addPredecessor(1:0;1:1){}[0]
+    open fun addSuccessor(#A, #B): #B? // dev.guavakt.graph/StandardGraphConnections.addSuccessor|addSuccessor(1:0;1:1){}[0]
+    open fun adjacentNode(kotlin/Any?): #A // dev.guavakt.graph/StandardGraphConnections.adjacentNode|adjacentNode(kotlin.Any?){}[0]
+    open fun adjacentNodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardGraphConnections.adjacentNodes|adjacentNodes(){}[0]
+    open fun incidentEdges(): kotlin.collections/Set<kotlin/Any?> // dev.guavakt.graph/StandardGraphConnections.incidentEdges|incidentEdges(){}[0]
+    open fun predecessors(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardGraphConnections.predecessors|predecessors(){}[0]
+    open fun removePredecessor(#A) // dev.guavakt.graph/StandardGraphConnections.removePredecessor|removePredecessor(1:0){}[0]
+    open fun removeSuccessor(#A): #B? // dev.guavakt.graph/StandardGraphConnections.removeSuccessor|removeSuccessor(1:0){}[0]
+    open fun successors(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardGraphConnections.successors|successors(){}[0]
+    open fun value(#A): #B? // dev.guavakt.graph/StandardGraphConnections.value|value(1:0){}[0]
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/StandardMutableNetwork : dev.guavakt.graph/MutableNetwork<#A, #B> { // dev.guavakt.graph/StandardMutableNetwork|null[0]
+    constructor <init>(kotlin/Boolean, kotlin/Boolean, kotlin/Boolean, dev.guavakt.graph/ElementOrder<#A> = ..., dev.guavakt.graph/ElementOrder<#B> = ...) // dev.guavakt.graph/StandardMutableNetwork.<init>|<init>(kotlin.Boolean;kotlin.Boolean;kotlin.Boolean;dev.guavakt.graph.ElementOrder<1:0>;dev.guavakt.graph.ElementOrder<1:1>){}[0]
+
+    open fun addEdge(#A, #A, #B): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.addEdge|addEdge(1:0;1:0;1:1){}[0]
+    open fun addNode(#A): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.addNode|addNode(1:0){}[0]
+    open fun adjacentEdges(#B): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardMutableNetwork.adjacentEdges|adjacentEdges(1:1){}[0]
+    open fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableNetwork.adjacentNodes|adjacentNodes(1:0){}[0]
+    open fun allowsParallelEdges(): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.allowsParallelEdges|allowsParallelEdges(){}[0]
+    open fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.allowsSelfLoops|allowsSelfLoops(){}[0]
+    open fun degree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableNetwork.degree|degree(1:0){}[0]
+    open fun edgeConnectingOrNull(#A, #A): #B? // dev.guavakt.graph/StandardMutableNetwork.edgeConnectingOrNull|edgeConnectingOrNull(1:0;1:0){}[0]
+    open fun edgeOrder(): dev.guavakt.graph/ElementOrder<#B> // dev.guavakt.graph/StandardMutableNetwork.edgeOrder|edgeOrder(){}[0]
+    open fun edges(): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardMutableNetwork.edges|edges(){}[0]
+    open fun edgesConnecting(#A, #A): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardMutableNetwork.edgesConnecting|edgesConnecting(1:0;1:0){}[0]
+    open fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    open fun inDegree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableNetwork.inDegree|inDegree(1:0){}[0]
+    open fun inEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardMutableNetwork.inEdges|inEdges(1:0){}[0]
+    open fun incidentEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardMutableNetwork.incidentEdges|incidentEdges(1:0){}[0]
+    open fun incidentNodes(#B): dev.guavakt.graph/EndpointPair<#A> // dev.guavakt.graph/StandardMutableNetwork.incidentNodes|incidentNodes(1:1){}[0]
+    open fun isDirected(): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.isDirected|isDirected(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/StandardMutableNetwork.nodeOrder|nodeOrder(){}[0]
+    open fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableNetwork.nodes|nodes(){}[0]
+    open fun outDegree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableNetwork.outDegree|outDegree(1:0){}[0]
+    open fun outEdges(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardMutableNetwork.outEdges|outEdges(1:0){}[0]
+    open fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableNetwork.predecessors|predecessors(1:0){}[0]
+    open fun removeEdge(#B): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.removeEdge|removeEdge(1:1){}[0]
+    open fun removeNode(#A): kotlin/Boolean // dev.guavakt.graph/StandardMutableNetwork.removeNode|removeNode(1:0){}[0]
+    open fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableNetwork.successors|successors(1:0){}[0]
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/StandardMutableValueGraph : dev.guavakt.graph/MutableValueGraph<#A, #B> { // dev.guavakt.graph/StandardMutableValueGraph|null[0]
+    constructor <init>(kotlin/Boolean, kotlin/Boolean, dev.guavakt.graph/ElementOrder<#A> = ..., dev.guavakt.graph/ElementOrder<#A> = ...) // dev.guavakt.graph/StandardMutableValueGraph.<init>|<init>(kotlin.Boolean;kotlin.Boolean;dev.guavakt.graph.ElementOrder<1:0>;dev.guavakt.graph.ElementOrder<1:0>){}[0]
+
+    open fun addNode(#A): kotlin/Boolean // dev.guavakt.graph/StandardMutableValueGraph.addNode|addNode(1:0){}[0]
+    open fun adjacentNodes(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableValueGraph.adjacentNodes|adjacentNodes(1:0){}[0]
+    open fun allowsSelfLoops(): kotlin/Boolean // dev.guavakt.graph/StandardMutableValueGraph.allowsSelfLoops|allowsSelfLoops(){}[0]
+    open fun degree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableValueGraph.degree|degree(1:0){}[0]
+    open fun edgeValueOrDefault(#A, #A, #B?): #B? // dev.guavakt.graph/StandardMutableValueGraph.edgeValueOrDefault|edgeValueOrDefault(1:0;1:0;1:1?){}[0]
+    open fun edges(): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/StandardMutableValueGraph.edges|edges(){}[0]
+    open fun hasEdgeConnecting(#A, #A): kotlin/Boolean // dev.guavakt.graph/StandardMutableValueGraph.hasEdgeConnecting|hasEdgeConnecting(1:0;1:0){}[0]
+    open fun inDegree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableValueGraph.inDegree|inDegree(1:0){}[0]
+    open fun incidentEdgeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/StandardMutableValueGraph.incidentEdgeOrder|incidentEdgeOrder(){}[0]
+    open fun incidentEdges(#A): kotlin.collections/Set<dev.guavakt.graph/EndpointPair<#A>> // dev.guavakt.graph/StandardMutableValueGraph.incidentEdges|incidentEdges(1:0){}[0]
+    open fun isDirected(): kotlin/Boolean // dev.guavakt.graph/StandardMutableValueGraph.isDirected|isDirected(){}[0]
+    open fun nodeOrder(): dev.guavakt.graph/ElementOrder<#A> // dev.guavakt.graph/StandardMutableValueGraph.nodeOrder|nodeOrder(){}[0]
+    open fun nodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableValueGraph.nodes|nodes(){}[0]
+    open fun outDegree(#A): kotlin/Int // dev.guavakt.graph/StandardMutableValueGraph.outDegree|outDegree(1:0){}[0]
+    open fun predecessors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableValueGraph.predecessors|predecessors(1:0){}[0]
+    open fun putEdgeValue(#A, #A, #B): #B? // dev.guavakt.graph/StandardMutableValueGraph.putEdgeValue|putEdgeValue(1:0;1:0;1:1){}[0]
+    open fun removeEdge(#A, #A): #B? // dev.guavakt.graph/StandardMutableValueGraph.removeEdge|removeEdge(1:0;1:0){}[0]
+    open fun removeNode(#A): kotlin/Boolean // dev.guavakt.graph/StandardMutableValueGraph.removeNode|removeNode(1:0){}[0]
+    open fun successors(#A): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardMutableValueGraph.successors|successors(1:0){}[0]
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/StandardNetworkConnections : dev.guavakt.graph/NetworkConnections<#A, #B> { // dev.guavakt.graph/StandardNetworkConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/StandardNetworkConnections.<init>|<init>(){}[0]
+
+    open fun addInEdge(#B, #A, kotlin/Boolean) // dev.guavakt.graph/StandardNetworkConnections.addInEdge|addInEdge(1:1;1:0;kotlin.Boolean){}[0]
+    open fun addOutEdge(#B, #A): #A? // dev.guavakt.graph/StandardNetworkConnections.addOutEdge|addOutEdge(1:1;1:0){}[0]
+    open fun adjacentNode(#B): #A // dev.guavakt.graph/StandardNetworkConnections.adjacentNode|adjacentNode(1:1){}[0]
+    open fun adjacentNodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardNetworkConnections.adjacentNodes|adjacentNodes(){}[0]
+    open fun edgesConnecting(#A): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardNetworkConnections.edgesConnecting|edgesConnecting(1:0){}[0]
+    open fun inEdges(): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardNetworkConnections.inEdges|inEdges(){}[0]
+    open fun incidentEdges(): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardNetworkConnections.incidentEdges|incidentEdges(){}[0]
+    open fun outEdges(): kotlin.collections/Set<#B> // dev.guavakt.graph/StandardNetworkConnections.outEdges|outEdges(){}[0]
+    open fun predecessors(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardNetworkConnections.predecessors|predecessors(){}[0]
+    open fun removeInEdge(#B, kotlin/Boolean): #A // dev.guavakt.graph/StandardNetworkConnections.removeInEdge|removeInEdge(1:1;kotlin.Boolean){}[0]
+    open fun removeOutEdge(#B): #A // dev.guavakt.graph/StandardNetworkConnections.removeOutEdge|removeOutEdge(1:1){}[0]
+    open fun successors(): kotlin.collections/Set<#A> // dev.guavakt.graph/StandardNetworkConnections.successors|successors(){}[0]
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/UndirectedGraphConnections : dev.guavakt.graph/GraphConnections<#A, #B> { // dev.guavakt.graph/UndirectedGraphConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/UndirectedGraphConnections.<init>|<init>(){}[0]
+
+    open fun addPredecessor(#A, #B) // dev.guavakt.graph/UndirectedGraphConnections.addPredecessor|addPredecessor(1:0;1:1){}[0]
+    open fun addSuccessor(#A, #B): #B? // dev.guavakt.graph/UndirectedGraphConnections.addSuccessor|addSuccessor(1:0;1:1){}[0]
+    open fun adjacentNode(kotlin/Any?): #A // dev.guavakt.graph/UndirectedGraphConnections.adjacentNode|adjacentNode(kotlin.Any?){}[0]
+    open fun adjacentNodes(): kotlin.collections/Set<#A> // dev.guavakt.graph/UndirectedGraphConnections.adjacentNodes|adjacentNodes(){}[0]
+    open fun incidentEdges(): kotlin.collections/Set<kotlin/Any?> // dev.guavakt.graph/UndirectedGraphConnections.incidentEdges|incidentEdges(){}[0]
+    open fun predecessors(): kotlin.collections/Set<#A> // dev.guavakt.graph/UndirectedGraphConnections.predecessors|predecessors(){}[0]
+    open fun removePredecessor(#A) // dev.guavakt.graph/UndirectedGraphConnections.removePredecessor|removePredecessor(1:0){}[0]
+    open fun removeSuccessor(#A): #B? // dev.guavakt.graph/UndirectedGraphConnections.removeSuccessor|removeSuccessor(1:0){}[0]
+    open fun successors(): kotlin.collections/Set<#A> // dev.guavakt.graph/UndirectedGraphConnections.successors|successors(){}[0]
+    open fun value(#A): #B? // dev.guavakt.graph/UndirectedGraphConnections.value|value(1:0){}[0]
+
+    final object Companion { // dev.guavakt.graph/UndirectedGraphConnections.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> of(): dev.guavakt.graph/UndirectedGraphConnections<#A2, #B2> // dev.guavakt.graph/UndirectedGraphConnections.Companion.of|of(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/UndirectedMultiNetworkConnections : dev.guavakt.graph/UndirectedGraphConnections<#A, #B> { // dev.guavakt.graph/UndirectedMultiNetworkConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/UndirectedMultiNetworkConnections.<init>|<init>(){}[0]
+
+    final object Companion { // dev.guavakt.graph/UndirectedMultiNetworkConnections.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> of(): dev.guavakt.graph/UndirectedMultiNetworkConnections<#A2, #B2> // dev.guavakt.graph/UndirectedMultiNetworkConnections.Companion.of|of(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.graph/UndirectedNetworkConnections : dev.guavakt.graph/UndirectedGraphConnections<#A, #B> { // dev.guavakt.graph/UndirectedNetworkConnections|null[0]
+    constructor <init>() // dev.guavakt.graph/UndirectedNetworkConnections.<init>|<init>(){}[0]
+
+    final object Companion { // dev.guavakt.graph/UndirectedNetworkConnections.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> of(): dev.guavakt.graph/UndirectedNetworkConnections<#A2, #B2> // dev.guavakt.graph/UndirectedNetworkConnections.Companion.of|of(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.graph/EndpointPairIterator : kotlin.collections/Iterator<#A> { // dev.guavakt.graph/EndpointPairIterator|null[0]
+    constructor <init>(kotlin.collections/List<#A>) // dev.guavakt.graph/EndpointPairIterator.<init>|<init>(kotlin.collections.List<1:0>){}[0]
+
+    open fun hasNext(): kotlin/Boolean // dev.guavakt.graph/EndpointPairIterator.hasNext|hasNext(){}[0]
+    open fun next(): #A // dev.guavakt.graph/EndpointPairIterator.next|next(){}[0]
+
+    final object Companion { // dev.guavakt.graph/EndpointPairIterator.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(kotlin.collections/Iterable<#A2>): dev.guavakt.graph/EndpointPairIterator<#A2> // dev.guavakt.graph/EndpointPairIterator.Companion.create|create(kotlin.collections.Iterable<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> empty(): dev.guavakt.graph/EndpointPairIterator<#A2> // dev.guavakt.graph/EndpointPairIterator.Companion.empty|empty(){0§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.graph/IncidentEdgeSet : kotlin.collections/AbstractMutableSet<#A> { // dev.guavakt.graph/IncidentEdgeSet|null[0]
+    final val delegate // dev.guavakt.graph/IncidentEdgeSet.delegate|{}delegate[0]
+        // Targets: [native, wasmJs]
+        final fun <get-delegate>(): kotlin.collections/HashSet<#A> // dev.guavakt.graph/IncidentEdgeSet.delegate.<get-delegate>|<get-delegate>(){}[0]
+
+        // Targets: [js]
+        final fun <get-delegate>(): kotlin.collections/LinkedHashSet<#A> // dev.guavakt.graph/IncidentEdgeSet.delegate.<get-delegate>|<get-delegate>(){}[0]
+    open val size // dev.guavakt.graph/IncidentEdgeSet.size|{}size[0]
+        open fun <get-size>(): kotlin/Int // dev.guavakt.graph/IncidentEdgeSet.size.<get-size>|<get-size>(){}[0]
+
+    open fun add(#A): kotlin/Boolean // dev.guavakt.graph/IncidentEdgeSet.add|add(1:0){}[0]
+    open fun clear() // dev.guavakt.graph/IncidentEdgeSet.clear|clear(){}[0]
+    open fun contains(#A): kotlin/Boolean // dev.guavakt.graph/IncidentEdgeSet.contains|contains(1:0){}[0]
+    open fun iterator(): kotlin.collections/MutableIterator<#A> // dev.guavakt.graph/IncidentEdgeSet.iterator|iterator(){}[0]
+    open fun remove(#A): kotlin/Boolean // dev.guavakt.graph/IncidentEdgeSet.remove|remove(1:0){}[0]
+
+    final object Companion { // dev.guavakt.graph/IncidentEdgeSet.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(): dev.guavakt.graph/IncidentEdgeSet<#A2> // dev.guavakt.graph/IncidentEdgeSet.Companion.create|create(){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> create(kotlin.collections/Collection<#A2>): dev.guavakt.graph/IncidentEdgeSet<#A2> // dev.guavakt.graph/IncidentEdgeSet.Companion.create|create(kotlin.collections.Collection<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> createWithExpectedSize(kotlin/Int): dev.guavakt.graph/IncidentEdgeSet<#A2> // dev.guavakt.graph/IncidentEdgeSet.Companion.createWithExpectedSize|createWithExpectedSize(kotlin.Int){0§<kotlin.Any?>}[0]
+    }
+
+    // Targets: [native, wasmJs]
+    constructor <init>(kotlin.collections/HashSet<#A> = ...) // dev.guavakt.graph/IncidentEdgeSet.<init>|<init>(kotlin.collections.HashSet<1:0>){}[0]
+
+    // Targets: [js]
+    constructor <init>(kotlin.collections/LinkedHashSet<#A> = ...) // dev.guavakt.graph/IncidentEdgeSet.<init>|<init>(kotlin.collections.LinkedHashSet<1:0>){}[0]
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.graph/InvalidatableSet : kotlin.collections/AbstractMutableSet<#A> { // dev.guavakt.graph/InvalidatableSet|null[0]
+    final val delegate // dev.guavakt.graph/InvalidatableSet.delegate|{}delegate[0]
+        // Targets: [native, wasmJs]
+        final fun <get-delegate>(): kotlin.collections/HashSet<#A> // dev.guavakt.graph/InvalidatableSet.delegate.<get-delegate>|<get-delegate>(){}[0]
+
+        // Targets: [js]
+        final fun <get-delegate>(): kotlin.collections/LinkedHashSet<#A> // dev.guavakt.graph/InvalidatableSet.delegate.<get-delegate>|<get-delegate>(){}[0]
+    open val size // dev.guavakt.graph/InvalidatableSet.size|{}size[0]
+        open fun <get-size>(): kotlin/Int // dev.guavakt.graph/InvalidatableSet.size.<get-size>|<get-size>(){}[0]
+
+    open fun add(#A): kotlin/Boolean // dev.guavakt.graph/InvalidatableSet.add|add(1:0){}[0]
+    open fun clear() // dev.guavakt.graph/InvalidatableSet.clear|clear(){}[0]
+    open fun contains(#A): kotlin/Boolean // dev.guavakt.graph/InvalidatableSet.contains|contains(1:0){}[0]
+    open fun iterator(): kotlin.collections/MutableIterator<#A> // dev.guavakt.graph/InvalidatableSet.iterator|iterator(){}[0]
+    open fun remove(#A): kotlin/Boolean // dev.guavakt.graph/InvalidatableSet.remove|remove(1:0){}[0]
+
+    final object Companion { // dev.guavakt.graph/InvalidatableSet.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(): dev.guavakt.graph/InvalidatableSet<#A2> // dev.guavakt.graph/InvalidatableSet.Companion.create|create(){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> create(kotlin.collections/Collection<#A2>): dev.guavakt.graph/InvalidatableSet<#A2> // dev.guavakt.graph/InvalidatableSet.Companion.create|create(kotlin.collections.Collection<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> createWithExpectedSize(kotlin/Int): dev.guavakt.graph/InvalidatableSet<#A2> // dev.guavakt.graph/InvalidatableSet.Companion.createWithExpectedSize|createWithExpectedSize(kotlin.Int){0§<kotlin.Any?>}[0]
+    }
+
+    // Targets: [native, wasmJs]
+    constructor <init>(kotlin.collections/HashSet<#A> = ...) // dev.guavakt.graph/InvalidatableSet.<init>|<init>(kotlin.collections.HashSet<1:0>){}[0]
+
+    // Targets: [js]
+    constructor <init>(kotlin.collections/LinkedHashSet<#A> = ...) // dev.guavakt.graph/InvalidatableSet.<init>|<init>(kotlin.collections.LinkedHashSet<1:0>){}[0]
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.graph/MapIteratorCache : kotlin.collections/Iterator<#A> { // dev.guavakt.graph/MapIteratorCache|null[0]
+    constructor <init>(kotlin.collections/List<#A>) // dev.guavakt.graph/MapIteratorCache.<init>|<init>(kotlin.collections.List<1:0>){}[0]
+
+    open fun hasNext(): kotlin/Boolean // dev.guavakt.graph/MapIteratorCache.hasNext|hasNext(){}[0]
+    open fun next(): #A // dev.guavakt.graph/MapIteratorCache.next|next(){}[0]
+
+    final object Companion { // dev.guavakt.graph/MapIteratorCache.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(kotlin.collections/Iterable<#A2>): dev.guavakt.graph/MapIteratorCache<#A2> // dev.guavakt.graph/MapIteratorCache.Companion.create|create(kotlin.collections.Iterable<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> empty(): dev.guavakt.graph/MapIteratorCache<#A2> // dev.guavakt.graph/MapIteratorCache.Companion.empty|empty(){0§<kotlin.Any?>}[0]
+    }
+}
+
+final object dev.guavakt.graph/Graphs { // dev.guavakt.graph/Graphs|null[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> copyOf(dev.guavakt.graph/Network<#A1, #B1>): dev.guavakt.graph/MutableNetwork<#A1, #B1> // dev.guavakt.graph/Graphs.copyOf|copyOf(dev.guavakt.graph.Network<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> copyOf(dev.guavakt.graph/ValueGraph<#A1, #B1>): dev.guavakt.graph/MutableValueGraph<#A1, #B1> // dev.guavakt.graph/Graphs.copyOf|copyOf(dev.guavakt.graph.ValueGraph<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> inducedSubgraph(dev.guavakt.graph/Network<#A1, #B1>, kotlin.collections/Iterable<#A1>): dev.guavakt.graph/MutableNetwork<#A1, #B1> // dev.guavakt.graph/Graphs.inducedSubgraph|inducedSubgraph(dev.guavakt.graph.Network<0:0,0:1>;kotlin.collections.Iterable<0:0>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> inducedSubgraph(dev.guavakt.graph/ValueGraph<#A1, #B1>, kotlin.collections/Iterable<#A1>): dev.guavakt.graph/MutableValueGraph<#A1, #B1> // dev.guavakt.graph/Graphs.inducedSubgraph|inducedSubgraph(dev.guavakt.graph.ValueGraph<0:0,0:1>;kotlin.collections.Iterable<0:0>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> transpose(dev.guavakt.graph/Network<#A1, #B1>): dev.guavakt.graph/Network<#A1, #B1> // dev.guavakt.graph/Graphs.transpose|transpose(dev.guavakt.graph.Network<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> transpose(dev.guavakt.graph/ValueGraph<#A1, #B1>): dev.guavakt.graph/ValueGraph<#A1, #B1> // dev.guavakt.graph/Graphs.transpose|transpose(dev.guavakt.graph.ValueGraph<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> copyOf(dev.guavakt.graph/Graph<#A1>): dev.guavakt.graph/MutableGraph<#A1> // dev.guavakt.graph/Graphs.copyOf|copyOf(dev.guavakt.graph.Graph<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> hasCycle(dev.guavakt.graph/Graph<#A1>): kotlin/Boolean // dev.guavakt.graph/Graphs.hasCycle|hasCycle(dev.guavakt.graph.Graph<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> inducedSubgraph(dev.guavakt.graph/Graph<#A1>, kotlin.collections/Iterable<#A1>): dev.guavakt.graph/MutableGraph<#A1> // dev.guavakt.graph/Graphs.inducedSubgraph|inducedSubgraph(dev.guavakt.graph.Graph<0:0>;kotlin.collections.Iterable<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> reachableNodes(dev.guavakt.graph/SuccessorsFunction<#A1>, #A1): kotlin.collections/Set<#A1> // dev.guavakt.graph/Graphs.reachableNodes|reachableNodes(dev.guavakt.graph.SuccessorsFunction<0:0>;0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> transitiveClosure(dev.guavakt.graph/Graph<#A1>): dev.guavakt.graph/ImmutableGraph<#A1> // dev.guavakt.graph/Graphs.transitiveClosure|transitiveClosure(dev.guavakt.graph.Graph<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> transitiveClosure(dev.guavakt.graph/Graph<#A1>, dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy): dev.guavakt.graph/ImmutableGraph<#A1> // dev.guavakt.graph/Graphs.transitiveClosure|transitiveClosure(dev.guavakt.graph.Graph<0:0>;dev.guavakt.graph.Graphs.TransitiveClosureSelfLoopStrategy){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> transpose(dev.guavakt.graph/Graph<#A1>): dev.guavakt.graph/Graph<#A1> // dev.guavakt.graph/Graphs.transpose|transpose(dev.guavakt.graph.Graph<0:0>){0§<kotlin.Any?>}[0]
+    final fun hasCycle(dev.guavakt.graph/Network<*, *>): kotlin/Boolean // dev.guavakt.graph/Graphs.hasCycle|hasCycle(dev.guavakt.graph.Network<*,*>){}[0]
+
+    final enum class TransitiveClosureSelfLoopStrategy : kotlin/Enum<dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy> { // dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy|null[0]
+        enum entry ADD_SELF_LOOPS_ALWAYS // dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy.ADD_SELF_LOOPS_ALWAYS|null[0]
+        enum entry ADD_SELF_LOOPS_FOR_CYCLES // dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy.ADD_SELF_LOOPS_FOR_CYCLES|null[0]
+
+        final val entries // dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy.entries|#static{}entries[0]
+            final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy> // dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy.entries.<get-entries>|<get-entries>#static(){}[0]
+
+        final fun valueOf(kotlin/String): dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy // dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy.valueOf|valueOf#static(kotlin.String){}[0]
+        final fun values(): kotlin/Array<dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy> // dev.guavakt.graph/Graphs.TransitiveClosureSelfLoopStrategy.values|values#static(){}[0]
+    }
+}

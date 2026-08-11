@@ -1,0 +1,341 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-cache>
+open annotation class dev.guavakt.cache/IgnoreJRERequirement : kotlin/Annotation { // dev.guavakt.cache/IgnoreJRERequirement|null[0]
+    constructor <init>() // dev.guavakt.cache/IgnoreJRERequirement.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.cache/ParametricNullness : kotlin/Annotation { // dev.guavakt.cache/ParametricNullness|null[0]
+    constructor <init>() // dev.guavakt.cache/ParametricNullness.<init>|<init>(){}[0]
+}
+
+abstract enum class dev.guavakt.cache/RemovalCause : kotlin/Enum<dev.guavakt.cache/RemovalCause> { // dev.guavakt.cache/RemovalCause|null[0]
+    enum entry COLLECTED // dev.guavakt.cache/RemovalCause.COLLECTED|null[0]
+    enum entry EXPIRED // dev.guavakt.cache/RemovalCause.EXPIRED|null[0]
+    enum entry EXPLICIT // dev.guavakt.cache/RemovalCause.EXPLICIT|null[0]
+    enum entry REPLACED // dev.guavakt.cache/RemovalCause.REPLACED|null[0]
+    enum entry SIZE // dev.guavakt.cache/RemovalCause.SIZE|null[0]
+
+    final val entries // dev.guavakt.cache/RemovalCause.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.cache/RemovalCause> // dev.guavakt.cache/RemovalCause.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    abstract fun wasEvicted(): kotlin/Boolean // dev.guavakt.cache/RemovalCause.wasEvicted|wasEvicted(){}[0]
+    final fun valueOf(kotlin/String): dev.guavakt.cache/RemovalCause // dev.guavakt.cache/RemovalCause.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<dev.guavakt.cache/RemovalCause> // dev.guavakt.cache/RemovalCause.values|values#static(){}[0]
+    final fun wireName(): kotlin/String // dev.guavakt.cache/RemovalCause.wireName|wireName(){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/CacheLoader { // dev.guavakt.cache/CacheLoader|null[0]
+    abstract fun load(#A): #B // dev.guavakt.cache/CacheLoader.load|load(1:0){}[0]
+    open fun loadAll(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/CacheLoader.loadAll|loadAll(kotlin.collections.Iterable<1:0>){}[0]
+
+    final class InvalidCacheLoadException : kotlin/IllegalStateException { // dev.guavakt.cache/CacheLoader.InvalidCacheLoadException|null[0]
+        constructor <init>(kotlin/String) // dev.guavakt.cache/CacheLoader.InvalidCacheLoadException.<init>|<init>(kotlin.String){}[0]
+    }
+
+    final class UnsupportedLoadingOperationException : kotlin/UnsupportedOperationException { // dev.guavakt.cache/CacheLoader.UnsupportedLoadingOperationException|null[0]
+        constructor <init>() // dev.guavakt.cache/CacheLoader.UnsupportedLoadingOperationException.<init>|<init>(){}[0]
+    }
+}
+
+abstract fun interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/RemovalListener { // dev.guavakt.cache/RemovalListener|null[0]
+    abstract fun onRemoval(dev.guavakt.cache/RemovalNotification<#A, #B>) // dev.guavakt.cache/RemovalListener.onRemoval|onRemoval(dev.guavakt.cache.RemovalNotification<1:0,1:1>){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/SuspendingCacheLoader { // dev.guavakt.cache/SuspendingCacheLoader|null[0]
+    abstract suspend fun load(#A): #B // dev.guavakt.cache/SuspendingCacheLoader.load|load(1:0){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/Weigher { // dev.guavakt.cache/Weigher|null[0]
+    abstract fun weigh(#A, #B): kotlin/Int // dev.guavakt.cache/Weigher.weigh|weigh(1:0;1:1){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/Cache { // dev.guavakt.cache/Cache|null[0]
+    abstract fun asMap(): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/Cache.asMap|asMap(){}[0]
+    abstract fun cleanUp() // dev.guavakt.cache/Cache.cleanUp|cleanUp(){}[0]
+    abstract fun get(#A, kotlin/Function0<#B>): #B // dev.guavakt.cache/Cache.get|get(1:0;kotlin.Function0<1:1>){}[0]
+    abstract fun getAllPresent(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/Cache.getAllPresent|getAllPresent(kotlin.collections.Iterable<1:0>){}[0]
+    abstract fun getIfPresent(#A): #B? // dev.guavakt.cache/Cache.getIfPresent|getIfPresent(1:0){}[0]
+    abstract fun invalidate(#A) // dev.guavakt.cache/Cache.invalidate|invalidate(1:0){}[0]
+    abstract fun invalidateAll() // dev.guavakt.cache/Cache.invalidateAll|invalidateAll(){}[0]
+    abstract fun invalidateAll(kotlin.collections/Iterable<#A>) // dev.guavakt.cache/Cache.invalidateAll|invalidateAll(kotlin.collections.Iterable<1:0>){}[0]
+    abstract fun put(#A, #B) // dev.guavakt.cache/Cache.put|put(1:0;1:1){}[0]
+    abstract fun putAll(kotlin.collections/Map<out #A, #B>) // dev.guavakt.cache/Cache.putAll|putAll(kotlin.collections.Map<out|1:0,1:1>){}[0]
+    abstract fun size(): kotlin/Long // dev.guavakt.cache/Cache.size|size(){}[0]
+    abstract fun stats(): dev.guavakt.cache/CacheStats // dev.guavakt.cache/Cache.stats|stats(){}[0]
+}
+
+abstract interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/LoadingCache : dev.guavakt.cache/Cache<#A, #B> { // dev.guavakt.cache/LoadingCache|null[0]
+    abstract fun get(#A): #B // dev.guavakt.cache/LoadingCache.get|get(1:0){}[0]
+    abstract fun getAll(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/LoadingCache.getAll|getAll(kotlin.collections.Iterable<1:0>){}[0]
+    abstract fun refresh(#A) // dev.guavakt.cache/LoadingCache.refresh|refresh(1:0){}[0]
+}
+
+abstract interface dev.guavakt.cache/LongAddable { // dev.guavakt.cache/LongAddable|null[0]
+    abstract fun add(kotlin/Long) // dev.guavakt.cache/LongAddable.add|add(kotlin.Long){}[0]
+    abstract fun increment() // dev.guavakt.cache/LongAddable.increment|increment(){}[0]
+    abstract fun sum(): kotlin/Long // dev.guavakt.cache/LongAddable.sum|sum(){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/AbstractCache : dev.guavakt.cache/Cache<#A, #B> { // dev.guavakt.cache/AbstractCache|null[0]
+    constructor <init>() // dev.guavakt.cache/AbstractCache.<init>|<init>(){}[0]
+
+    open fun asMap(): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/AbstractCache.asMap|asMap(){}[0]
+    open fun cleanUp() // dev.guavakt.cache/AbstractCache.cleanUp|cleanUp(){}[0]
+    open fun get(#A, kotlin/Function0<#B>): #B // dev.guavakt.cache/AbstractCache.get|get(1:0;kotlin.Function0<1:1>){}[0]
+    open fun getAllPresent(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/AbstractCache.getAllPresent|getAllPresent(kotlin.collections.Iterable<1:0>){}[0]
+    open fun invalidate(#A) // dev.guavakt.cache/AbstractCache.invalidate|invalidate(1:0){}[0]
+    open fun invalidateAll() // dev.guavakt.cache/AbstractCache.invalidateAll|invalidateAll(){}[0]
+    open fun invalidateAll(kotlin.collections/Iterable<#A>) // dev.guavakt.cache/AbstractCache.invalidateAll|invalidateAll(kotlin.collections.Iterable<1:0>){}[0]
+    open fun put(#A, #B) // dev.guavakt.cache/AbstractCache.put|put(1:0;1:1){}[0]
+    open fun putAll(kotlin.collections/Map<out #A, #B>) // dev.guavakt.cache/AbstractCache.putAll|putAll(kotlin.collections.Map<out|1:0,1:1>){}[0]
+    open fun size(): kotlin/Long // dev.guavakt.cache/AbstractCache.size|size(){}[0]
+    open fun stats(): dev.guavakt.cache/CacheStats // dev.guavakt.cache/AbstractCache.stats|stats(){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/AbstractLoadingCache : dev.guavakt.cache/AbstractCache<#A, #B>, dev.guavakt.cache/LoadingCache<#A, #B> { // dev.guavakt.cache/AbstractLoadingCache|null[0]
+    constructor <init>() // dev.guavakt.cache/AbstractLoadingCache.<init>|<init>(){}[0]
+
+    open fun getAll(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/AbstractLoadingCache.getAll|getAll(kotlin.collections.Iterable<1:0>){}[0]
+    open fun refresh(#A) // dev.guavakt.cache/AbstractLoadingCache.refresh|refresh(1:0){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/ForwardingCache : dev.guavakt.cache/Cache<#A, #B> { // dev.guavakt.cache/ForwardingCache|null[0]
+    constructor <init>() // dev.guavakt.cache/ForwardingCache.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.cache/Cache<#A, #B> // dev.guavakt.cache/ForwardingCache.delegate|delegate(){}[0]
+    open fun asMap(): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/ForwardingCache.asMap|asMap(){}[0]
+    open fun cleanUp() // dev.guavakt.cache/ForwardingCache.cleanUp|cleanUp(){}[0]
+    open fun get(#A, kotlin/Function0<#B>): #B // dev.guavakt.cache/ForwardingCache.get|get(1:0;kotlin.Function0<1:1>){}[0]
+    open fun getAllPresent(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/ForwardingCache.getAllPresent|getAllPresent(kotlin.collections.Iterable<1:0>){}[0]
+    open fun getIfPresent(#A): #B? // dev.guavakt.cache/ForwardingCache.getIfPresent|getIfPresent(1:0){}[0]
+    open fun invalidate(#A) // dev.guavakt.cache/ForwardingCache.invalidate|invalidate(1:0){}[0]
+    open fun invalidateAll() // dev.guavakt.cache/ForwardingCache.invalidateAll|invalidateAll(){}[0]
+    open fun invalidateAll(kotlin.collections/Iterable<#A>) // dev.guavakt.cache/ForwardingCache.invalidateAll|invalidateAll(kotlin.collections.Iterable<1:0>){}[0]
+    open fun put(#A, #B) // dev.guavakt.cache/ForwardingCache.put|put(1:0;1:1){}[0]
+    open fun putAll(kotlin.collections/Map<out #A, #B>) // dev.guavakt.cache/ForwardingCache.putAll|putAll(kotlin.collections.Map<out|1:0,1:1>){}[0]
+    open fun size(): kotlin/Long // dev.guavakt.cache/ForwardingCache.size|size(){}[0]
+    open fun stats(): dev.guavakt.cache/CacheStats // dev.guavakt.cache/ForwardingCache.stats|stats(){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/ForwardingLoadingCache : dev.guavakt.cache/ForwardingCache<#A, #B>, dev.guavakt.cache/LoadingCache<#A, #B> { // dev.guavakt.cache/ForwardingLoadingCache|null[0]
+    constructor <init>() // dev.guavakt.cache/ForwardingLoadingCache.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.cache/LoadingCache<#A, #B> // dev.guavakt.cache/ForwardingLoadingCache.delegate|delegate(){}[0]
+    open fun get(#A): #B // dev.guavakt.cache/ForwardingLoadingCache.get|get(1:0){}[0]
+    open fun getAll(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/ForwardingLoadingCache.getAll|getAll(kotlin.collections.Iterable<1:0>){}[0]
+    open fun refresh(#A) // dev.guavakt.cache/ForwardingLoadingCache.refresh|refresh(1:0){}[0]
+}
+
+final class <#A: kotlin/Any> dev.guavakt.cache/PlatformSoftRef { // dev.guavakt.cache/PlatformSoftRef|null[0]
+    constructor <init>(#A) // dev.guavakt.cache/PlatformSoftRef.<init>|<init>(1:0){}[0]
+
+    final fun clear() // dev.guavakt.cache/PlatformSoftRef.clear|clear(){}[0]
+    final fun get(): #A? // dev.guavakt.cache/PlatformSoftRef.get|get(){}[0]
+}
+
+final class <#A: kotlin/Any> dev.guavakt.cache/PlatformWeakRef { // dev.guavakt.cache/PlatformWeakRef|null[0]
+    constructor <init>(#A) // dev.guavakt.cache/PlatformWeakRef.<init>|<init>(1:0){}[0]
+
+    final fun clear() // dev.guavakt.cache/PlatformWeakRef.clear|clear(){}[0]
+    final fun get(): #A? // dev.guavakt.cache/PlatformWeakRef.get|get(){}[0]
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/CacheBuilder { // dev.guavakt.cache/CacheBuilder|null[0]
+    final fun <#A1: #A, #B1: #B> build(): dev.guavakt.cache/Cache<#A1, #B1> // dev.guavakt.cache/CacheBuilder.build|build(){0§<1:0>;1§<1:1>}[0]
+    final fun <#A1: #A, #B1: #B> build(dev.guavakt.cache/CacheLoader<#A1, #B1>): dev.guavakt.cache/LoadingCache<#A1, #B1> // dev.guavakt.cache/CacheBuilder.build|build(dev.guavakt.cache.CacheLoader<0:0,0:1>){0§<1:0>;1§<1:1>}[0]
+    final fun buildCoroutine(kotlinx.coroutines/CoroutineScope, dev.guavakt.cache/SuspendingCacheLoader<#A, #B>): dev.guavakt.cache/CoroutineLoadingCache<#A, #B> // dev.guavakt.cache/CacheBuilder.buildCoroutine|buildCoroutine(kotlinx.coroutines.CoroutineScope;dev.guavakt.cache.SuspendingCacheLoader<1:0,1:1>){}[0]
+    final fun concurrencyLevel(kotlin/Int): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.concurrencyLevel|concurrencyLevel(kotlin.Int){}[0]
+    final fun concurrencyLevelOrDefault(): kotlin/Int // dev.guavakt.cache/CacheBuilder.concurrencyLevelOrDefault|concurrencyLevelOrDefault(){}[0]
+    final fun expireAfterAccess(kotlin.time/Duration): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.expireAfterAccess|expireAfterAccess(kotlin.time.Duration){}[0]
+    final fun expireAfterAccessMillis(kotlin/Long): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.expireAfterAccessMillis|expireAfterAccessMillis(kotlin.Long){}[0]
+    final fun expireAfterWrite(kotlin.time/Duration): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.expireAfterWrite|expireAfterWrite(kotlin.time.Duration){}[0]
+    final fun expireAfterWriteMillis(kotlin/Long): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.expireAfterWriteMillis|expireAfterWriteMillis(kotlin.Long){}[0]
+    final fun maximumSize(kotlin/Long): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.maximumSize|maximumSize(kotlin.Long){}[0]
+    final fun maximumWeight(kotlin/Long): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.maximumWeight|maximumWeight(kotlin.Long){}[0]
+    final fun recordStats(): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.recordStats|recordStats(){}[0]
+    final fun refreshAfterWrite(kotlin.time/Duration): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.refreshAfterWrite|refreshAfterWrite(kotlin.time.Duration){}[0]
+    final fun refreshAfterWriteMillis(kotlin/Long): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.refreshAfterWriteMillis|refreshAfterWriteMillis(kotlin.Long){}[0]
+    final fun removalListener(dev.guavakt.cache/RemovalListener<#A, #B>): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.removalListener|removalListener(dev.guavakt.cache.RemovalListener<1:0,1:1>){}[0]
+    final fun removalListener(kotlin/Function1<dev.guavakt.cache/RemovalNotification<#A, #B>, kotlin/Unit>): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.removalListener|removalListener(kotlin.Function1<dev.guavakt.cache.RemovalNotification<1:0,1:1>,kotlin.Unit>){}[0]
+    final fun softValues(): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.softValues|softValues(){}[0]
+    final fun ticker(dev.guavakt.base/Ticker): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.ticker|ticker(dev.guavakt.base.Ticker){}[0]
+    final fun weakKeys(): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.weakKeys|weakKeys(){}[0]
+    final fun weakValues(): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.weakValues|weakValues(){}[0]
+    final fun weigher(dev.guavakt.cache/Weigher<#A, #B>): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.weigher|weigher(dev.guavakt.cache.Weigher<1:0,1:1>){}[0]
+    final fun weigher(kotlin/Function2<#A, #B, kotlin/Int>): dev.guavakt.cache/CacheBuilder<#A, #B> // dev.guavakt.cache/CacheBuilder.weigher|weigher(kotlin.Function2<1:0,1:1,kotlin.Int>){}[0]
+
+    final object Companion { // dev.guavakt.cache/CacheBuilder.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> newBuilder(): dev.guavakt.cache/CacheBuilder<#A2, #B2> // dev.guavakt.cache/CacheBuilder.Companion.newBuilder|newBuilder(){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/CoroutineLoadingCache { // dev.guavakt.cache/CoroutineLoadingCache|null[0]
+    constructor <init>(dev.guavakt.cache/Cache<#A, #B>, kotlinx.coroutines/CoroutineScope, dev.guavakt.cache/SuspendingCacheLoader<#A, #B>, dev.guavakt.base/Ticker = ...) // dev.guavakt.cache/CoroutineLoadingCache.<init>|<init>(dev.guavakt.cache.Cache<1:0,1:1>;kotlinx.coroutines.CoroutineScope;dev.guavakt.cache.SuspendingCacheLoader<1:0,1:1>;dev.guavakt.base.Ticker){}[0]
+
+    final val synchronousCache // dev.guavakt.cache/CoroutineLoadingCache.synchronousCache|{}synchronousCache[0]
+        final fun <get-synchronousCache>(): dev.guavakt.cache/Cache<#A, #B> // dev.guavakt.cache/CoroutineLoadingCache.synchronousCache.<get-synchronousCache>|<get-synchronousCache>(){}[0]
+
+    final fun asMap(): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/CoroutineLoadingCache.asMap|asMap(){}[0]
+    final fun cacheStats(): dev.guavakt.cache/CacheStats // dev.guavakt.cache/CoroutineLoadingCache.cacheStats|cacheStats(){}[0]
+    final fun cleanUp() // dev.guavakt.cache/CoroutineLoadingCache.cleanUp|cleanUp(){}[0]
+    final fun getAllPresent(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/CoroutineLoadingCache.getAllPresent|getAllPresent(kotlin.collections.Iterable<1:0>){}[0]
+    final fun getIfPresent(#A): #B? // dev.guavakt.cache/CoroutineLoadingCache.getIfPresent|getIfPresent(1:0){}[0]
+    final fun refresh(#A): kotlinx.coroutines/Deferred<#B> // dev.guavakt.cache/CoroutineLoadingCache.refresh|refresh(1:0){}[0]
+    final fun size(): kotlin/Long // dev.guavakt.cache/CoroutineLoadingCache.size|size(){}[0]
+    final suspend fun coroutineStats(): dev.guavakt.cache/CoroutineCacheStats // dev.guavakt.cache/CoroutineLoadingCache.coroutineStats|coroutineStats(){}[0]
+    final suspend fun get(#A): #B // dev.guavakt.cache/CoroutineLoadingCache.get|get(1:0){}[0]
+    final suspend fun getAll(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/CoroutineLoadingCache.getAll|getAll(kotlin.collections.Iterable<1:0>){}[0]
+    final suspend fun inFlightCount(): kotlin/Int // dev.guavakt.cache/CoroutineLoadingCache.inFlightCount|inFlightCount(){}[0]
+    final suspend fun invalidate(#A) // dev.guavakt.cache/CoroutineLoadingCache.invalidate|invalidate(1:0){}[0]
+    final suspend fun invalidateAll() // dev.guavakt.cache/CoroutineLoadingCache.invalidateAll|invalidateAll(){}[0]
+    final suspend fun invalidateAll(kotlin.collections/Iterable<#A>) // dev.guavakt.cache/CoroutineLoadingCache.invalidateAll|invalidateAll(kotlin.collections.Iterable<1:0>){}[0]
+    final suspend fun put(#A, #B) // dev.guavakt.cache/CoroutineLoadingCache.put|put(1:0;1:1){}[0]
+    final suspend fun putAll(kotlin.collections/Map<out #A, #B>) // dev.guavakt.cache/CoroutineLoadingCache.putAll|putAll(kotlin.collections.Map<out|1:0,1:1>){}[0]
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/LocalCache : dev.guavakt.cache/LoadingCache<#A, #B> { // dev.guavakt.cache/LocalCache|null[0]
+    constructor <init>(kotlin/Long, kotlin/Long, dev.guavakt.base/Ticker, kotlin/Boolean, dev.guavakt.cache/CacheLoader<#A, #B>?, kotlin/Long = ..., kotlin/Function1<dev.guavakt.cache/RemovalNotification<#A, #B>, kotlin/Unit>? = ..., dev.guavakt.base.internal/Strength = ..., dev.guavakt.base.internal/Strength = ..., kotlin/Long = ..., kotlin/Function2<#A, #B, kotlin/Int>? = ..., kotlin/Long = ..., kotlin/Int = ...) // dev.guavakt.cache/LocalCache.<init>|<init>(kotlin.Long;kotlin.Long;dev.guavakt.base.Ticker;kotlin.Boolean;dev.guavakt.cache.CacheLoader<1:0,1:1>?;kotlin.Long;kotlin.Function1<dev.guavakt.cache.RemovalNotification<1:0,1:1>,kotlin.Unit>?;dev.guavakt.base.internal.Strength;dev.guavakt.base.internal.Strength;kotlin.Long;kotlin.Function2<1:0,1:1,kotlin.Int>?;kotlin.Long;kotlin.Int){}[0]
+
+    final fun asMap(): kotlin.collections/MutableMap<#A, #B> // dev.guavakt.cache/LocalCache.asMap|asMap(){}[0]
+    final fun cleanUp() // dev.guavakt.cache/LocalCache.cleanUp|cleanUp(){}[0]
+    final fun concurrencyLevel(): kotlin/Int // dev.guavakt.cache/LocalCache.concurrencyLevel|concurrencyLevel(){}[0]
+    final fun get(#A): #B // dev.guavakt.cache/LocalCache.get|get(1:0){}[0]
+    final fun get(#A, kotlin/Function0<#B>): #B // dev.guavakt.cache/LocalCache.get|get(1:0;kotlin.Function0<1:1>){}[0]
+    final fun getAll(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/LocalCache.getAll|getAll(kotlin.collections.Iterable<1:0>){}[0]
+    final fun getAllPresent(kotlin.collections/Iterable<#A>): kotlin.collections/Map<#A, #B> // dev.guavakt.cache/LocalCache.getAllPresent|getAllPresent(kotlin.collections.Iterable<1:0>){}[0]
+    final fun getIfPresent(#A): #B? // dev.guavakt.cache/LocalCache.getIfPresent|getIfPresent(1:0){}[0]
+    final fun invalidate(#A) // dev.guavakt.cache/LocalCache.invalidate|invalidate(1:0){}[0]
+    final fun invalidateAll() // dev.guavakt.cache/LocalCache.invalidateAll|invalidateAll(){}[0]
+    final fun invalidateAll(kotlin.collections/Iterable<#A>) // dev.guavakt.cache/LocalCache.invalidateAll|invalidateAll(kotlin.collections.Iterable<1:0>){}[0]
+    final fun isWeakKeysEnabled(): kotlin/Boolean // dev.guavakt.cache/LocalCache.isWeakKeysEnabled|isWeakKeysEnabled(){}[0]
+    final fun keyStrength(): dev.guavakt.base.internal/Strength // dev.guavakt.cache/LocalCache.keyStrength|keyStrength(){}[0]
+    final fun put(#A, #B) // dev.guavakt.cache/LocalCache.put|put(1:0;1:1){}[0]
+    final fun putAll(kotlin.collections/Map<out #A, #B>) // dev.guavakt.cache/LocalCache.putAll|putAll(kotlin.collections.Map<out|1:0,1:1>){}[0]
+    final fun refresh(#A) // dev.guavakt.cache/LocalCache.refresh|refresh(1:0){}[0]
+    final fun size(): kotlin/Long // dev.guavakt.cache/LocalCache.size|size(){}[0]
+    final fun stats(): dev.guavakt.cache/CacheStats // dev.guavakt.cache/LocalCache.stats|stats(){}[0]
+    final fun usesPlatformWeakOrSoftValues(): kotlin/Boolean // dev.guavakt.cache/LocalCache.usesPlatformWeakOrSoftValues|usesPlatformWeakOrSoftValues(){}[0]
+    final fun valueStrength(): dev.guavakt.base.internal/Strength // dev.guavakt.cache/LocalCache.valueStrength|valueStrength(){}[0]
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.cache/RemovalNotification { // dev.guavakt.cache/RemovalNotification|null[0]
+    final val cause // dev.guavakt.cache/RemovalNotification.cause|{}cause[0]
+        final fun <get-cause>(): dev.guavakt.cache/RemovalCause // dev.guavakt.cache/RemovalNotification.cause.<get-cause>|<get-cause>(){}[0]
+
+    final fun getKey(): #A? // dev.guavakt.cache/RemovalNotification.getKey|getKey(){}[0]
+    final fun getValue(): #B? // dev.guavakt.cache/RemovalNotification.getValue|getValue(){}[0]
+    final fun wasEvicted(): kotlin/Boolean // dev.guavakt.cache/RemovalNotification.wasEvicted|wasEvicted(){}[0]
+
+    final object Companion { // dev.guavakt.cache/RemovalNotification.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> create(#A2?, #B2?, dev.guavakt.cache/RemovalCause): dev.guavakt.cache/RemovalNotification<#A2, #B2> // dev.guavakt.cache/RemovalNotification.Companion.create|create(0:0?;0:1?;dev.guavakt.cache.RemovalCause){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+final class dev.guavakt.cache/CacheBuilderSpec { // dev.guavakt.cache/CacheBuilderSpec|null[0]
+    final val expireAfterAccessMillis // dev.guavakt.cache/CacheBuilderSpec.expireAfterAccessMillis|{}expireAfterAccessMillis[0]
+        final fun <get-expireAfterAccessMillis>(): kotlin/Long? // dev.guavakt.cache/CacheBuilderSpec.expireAfterAccessMillis.<get-expireAfterAccessMillis>|<get-expireAfterAccessMillis>(){}[0]
+    final val expireAfterWriteMillis // dev.guavakt.cache/CacheBuilderSpec.expireAfterWriteMillis|{}expireAfterWriteMillis[0]
+        final fun <get-expireAfterWriteMillis>(): kotlin/Long? // dev.guavakt.cache/CacheBuilderSpec.expireAfterWriteMillis.<get-expireAfterWriteMillis>|<get-expireAfterWriteMillis>(){}[0]
+    final val maximumSize // dev.guavakt.cache/CacheBuilderSpec.maximumSize|{}maximumSize[0]
+        final fun <get-maximumSize>(): kotlin/Long? // dev.guavakt.cache/CacheBuilderSpec.maximumSize.<get-maximumSize>|<get-maximumSize>(){}[0]
+    final val recordStats // dev.guavakt.cache/CacheBuilderSpec.recordStats|{}recordStats[0]
+        final fun <get-recordStats>(): kotlin/Boolean // dev.guavakt.cache/CacheBuilderSpec.recordStats.<get-recordStats>|<get-recordStats>(){}[0]
+    final val softValues // dev.guavakt.cache/CacheBuilderSpec.softValues|{}softValues[0]
+        final fun <get-softValues>(): kotlin/Boolean // dev.guavakt.cache/CacheBuilderSpec.softValues.<get-softValues>|<get-softValues>(){}[0]
+    final val weakKeys // dev.guavakt.cache/CacheBuilderSpec.weakKeys|{}weakKeys[0]
+        final fun <get-weakKeys>(): kotlin/Boolean // dev.guavakt.cache/CacheBuilderSpec.weakKeys.<get-weakKeys>|<get-weakKeys>(){}[0]
+    final val weakValues // dev.guavakt.cache/CacheBuilderSpec.weakValues|{}weakValues[0]
+        final fun <get-weakValues>(): kotlin/Boolean // dev.guavakt.cache/CacheBuilderSpec.weakValues.<get-weakValues>|<get-weakValues>(){}[0]
+
+    final fun toCacheBuilder(): dev.guavakt.cache/CacheBuilder<kotlin/Any, kotlin/Any> // dev.guavakt.cache/CacheBuilderSpec.toCacheBuilder|toCacheBuilder(){}[0]
+
+    final object Companion { // dev.guavakt.cache/CacheBuilderSpec.Companion|null[0]
+        final fun parse(kotlin/String): dev.guavakt.cache/CacheBuilderSpec // dev.guavakt.cache/CacheBuilderSpec.Companion.parse|parse(kotlin.String){}[0]
+    }
+}
+
+final class dev.guavakt.cache/CacheStats { // dev.guavakt.cache/CacheStats|null[0]
+    constructor <init>(kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long) // dev.guavakt.cache/CacheStats.<init>|<init>(kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long){}[0]
+
+    final val evictionCount // dev.guavakt.cache/CacheStats.evictionCount|{}evictionCount[0]
+        final fun <get-evictionCount>(): kotlin/Long // dev.guavakt.cache/CacheStats.evictionCount.<get-evictionCount>|<get-evictionCount>(){}[0]
+    final val hitCount // dev.guavakt.cache/CacheStats.hitCount|{}hitCount[0]
+        final fun <get-hitCount>(): kotlin/Long // dev.guavakt.cache/CacheStats.hitCount.<get-hitCount>|<get-hitCount>(){}[0]
+    final val loadExceptionCount // dev.guavakt.cache/CacheStats.loadExceptionCount|{}loadExceptionCount[0]
+        final fun <get-loadExceptionCount>(): kotlin/Long // dev.guavakt.cache/CacheStats.loadExceptionCount.<get-loadExceptionCount>|<get-loadExceptionCount>(){}[0]
+    final val loadSuccessCount // dev.guavakt.cache/CacheStats.loadSuccessCount|{}loadSuccessCount[0]
+        final fun <get-loadSuccessCount>(): kotlin/Long // dev.guavakt.cache/CacheStats.loadSuccessCount.<get-loadSuccessCount>|<get-loadSuccessCount>(){}[0]
+    final val missCount // dev.guavakt.cache/CacheStats.missCount|{}missCount[0]
+        final fun <get-missCount>(): kotlin/Long // dev.guavakt.cache/CacheStats.missCount.<get-missCount>|<get-missCount>(){}[0]
+    final val totalLoadTime // dev.guavakt.cache/CacheStats.totalLoadTime|{}totalLoadTime[0]
+        final fun <get-totalLoadTime>(): kotlin/Long // dev.guavakt.cache/CacheStats.totalLoadTime.<get-totalLoadTime>|<get-totalLoadTime>(){}[0]
+
+    final fun component1(): kotlin/Long // dev.guavakt.cache/CacheStats.component1|component1(){}[0]
+    final fun component2(): kotlin/Long // dev.guavakt.cache/CacheStats.component2|component2(){}[0]
+    final fun component3(): kotlin/Long // dev.guavakt.cache/CacheStats.component3|component3(){}[0]
+    final fun component4(): kotlin/Long // dev.guavakt.cache/CacheStats.component4|component4(){}[0]
+    final fun component5(): kotlin/Long // dev.guavakt.cache/CacheStats.component5|component5(){}[0]
+    final fun component6(): kotlin/Long // dev.guavakt.cache/CacheStats.component6|component6(){}[0]
+    final fun copy(kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ...): dev.guavakt.cache/CacheStats // dev.guavakt.cache/CacheStats.copy|copy(kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.cache/CacheStats.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.cache/CacheStats.hashCode|hashCode(){}[0]
+    final fun hitRate(): kotlin/Double // dev.guavakt.cache/CacheStats.hitRate|hitRate(){}[0]
+    final fun missRate(): kotlin/Double // dev.guavakt.cache/CacheStats.missRate|missRate(){}[0]
+    final fun requestCount(): kotlin/Long // dev.guavakt.cache/CacheStats.requestCount|requestCount(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.cache/CacheStats.toString|toString(){}[0]
+}
+
+final class dev.guavakt.cache/CoroutineCacheStats { // dev.guavakt.cache/CoroutineCacheStats|null[0]
+    constructor <init>(kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long) // dev.guavakt.cache/CoroutineCacheStats.<init>|<init>(kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long){}[0]
+
+    final val averageLoadTimeNanos // dev.guavakt.cache/CoroutineCacheStats.averageLoadTimeNanos|{}averageLoadTimeNanos[0]
+        final fun <get-averageLoadTimeNanos>(): kotlin/Double // dev.guavakt.cache/CoroutineCacheStats.averageLoadTimeNanos.<get-averageLoadTimeNanos>|<get-averageLoadTimeNanos>(){}[0]
+    final val coalescedRequestCount // dev.guavakt.cache/CoroutineCacheStats.coalescedRequestCount|{}coalescedRequestCount[0]
+        final fun <get-coalescedRequestCount>(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.coalescedRequestCount.<get-coalescedRequestCount>|<get-coalescedRequestCount>(){}[0]
+    final val loadCancellationCount // dev.guavakt.cache/CoroutineCacheStats.loadCancellationCount|{}loadCancellationCount[0]
+        final fun <get-loadCancellationCount>(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.loadCancellationCount.<get-loadCancellationCount>|<get-loadCancellationCount>(){}[0]
+    final val loadCount // dev.guavakt.cache/CoroutineCacheStats.loadCount|{}loadCount[0]
+        final fun <get-loadCount>(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.loadCount.<get-loadCount>|<get-loadCount>(){}[0]
+    final val loadFailureCount // dev.guavakt.cache/CoroutineCacheStats.loadFailureCount|{}loadFailureCount[0]
+        final fun <get-loadFailureCount>(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.loadFailureCount.<get-loadFailureCount>|<get-loadFailureCount>(){}[0]
+    final val loadSuccessCount // dev.guavakt.cache/CoroutineCacheStats.loadSuccessCount|{}loadSuccessCount[0]
+        final fun <get-loadSuccessCount>(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.loadSuccessCount.<get-loadSuccessCount>|<get-loadSuccessCount>(){}[0]
+    final val refreshRequestCount // dev.guavakt.cache/CoroutineCacheStats.refreshRequestCount|{}refreshRequestCount[0]
+        final fun <get-refreshRequestCount>(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.refreshRequestCount.<get-refreshRequestCount>|<get-refreshRequestCount>(){}[0]
+    final val totalLoadTimeNanos // dev.guavakt.cache/CoroutineCacheStats.totalLoadTimeNanos|{}totalLoadTimeNanos[0]
+        final fun <get-totalLoadTimeNanos>(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.totalLoadTimeNanos.<get-totalLoadTimeNanos>|<get-totalLoadTimeNanos>(){}[0]
+
+    final fun component1(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.component1|component1(){}[0]
+    final fun component2(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.component2|component2(){}[0]
+    final fun component3(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.component3|component3(){}[0]
+    final fun component4(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.component4|component4(){}[0]
+    final fun component5(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.component5|component5(){}[0]
+    final fun component6(): kotlin/Long // dev.guavakt.cache/CoroutineCacheStats.component6|component6(){}[0]
+    final fun copy(kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ...): dev.guavakt.cache/CoroutineCacheStats // dev.guavakt.cache/CoroutineCacheStats.copy|copy(kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.cache/CoroutineCacheStats.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.cache/CoroutineCacheStats.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.cache/CoroutineCacheStats.toString|toString(){}[0]
+}
+
+final object dev.guavakt.cache/LongAddables { // dev.guavakt.cache/LongAddables|null[0]
+    final fun create(): dev.guavakt.cache/LongAddable // dev.guavakt.cache/LongAddables.create|create(){}[0]
+}
+
+final object dev.guavakt.cache/RemovalListeners { // dev.guavakt.cache/RemovalListeners|null[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> asynchronous(dev.guavakt.cache/RemovalListener<#A1, #B1>, dev.guavakt.cache/RemovalListeners.ExecutorLike): dev.guavakt.cache/RemovalListener<#A1, #B1> // dev.guavakt.cache/RemovalListeners.asynchronous|asynchronous(dev.guavakt.cache.RemovalListener<0:0,0:1>;dev.guavakt.cache.RemovalListeners.ExecutorLike){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> asynchronous(kotlin/Function1<dev.guavakt.cache/RemovalNotification<#A1, #B1>, kotlin/Unit>, dev.guavakt.cache/RemovalListeners.ExecutorLike): kotlin/Function1<dev.guavakt.cache/RemovalNotification<#A1, #B1>, kotlin/Unit> // dev.guavakt.cache/RemovalListeners.asynchronous|asynchronous(kotlin.Function1<dev.guavakt.cache.RemovalNotification<0:0,0:1>,kotlin.Unit>;dev.guavakt.cache.RemovalListeners.ExecutorLike){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+
+    abstract fun interface ExecutorLike { // dev.guavakt.cache/RemovalListeners.ExecutorLike|null[0]
+        abstract fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.cache/RemovalListeners.ExecutorLike.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    }
+}
+
+final fun dev.guavakt.cache/platformIdentityHashCode(kotlin/Any): kotlin/Int // dev.guavakt.cache/platformIdentityHashCode|platformIdentityHashCode(kotlin.Any){}[0]
+final fun dev.guavakt.cache/platformSupportsWeakReferences(): kotlin/Boolean // dev.guavakt.cache/platformSupportsWeakReferences|platformSupportsWeakReferences(){}[0]
+final fun dev.guavakt.cache/pollClearedWeakOrSoftReferences(): kotlin/Int // dev.guavakt.cache/pollClearedWeakOrSoftReferences|pollClearedWeakOrSoftReferences(){}[0]

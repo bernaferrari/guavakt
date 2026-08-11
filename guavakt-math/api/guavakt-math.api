@@ -1,0 +1,418 @@
+public final class dev/guavakt/math/BigDecimal : java/lang/Comparable {
+	public static final field Companion Ldev/guavakt/math/BigDecimal$Companion;
+	public synthetic fun <init> (Ldev/guavakt/math/BigInteger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun abs ()Ldev/guavakt/math/BigDecimal;
+	public final fun abs (Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun add (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun add (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public fun compareTo (Ldev/guavakt/math/BigDecimal;)I
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public final fun div (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun divide (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun divide (Ldev/guavakt/math/BigDecimal;ILdev/guavakt/math/RoundingMode;)Ldev/guavakt/math/BigDecimal;
+	public final fun divide (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun divide (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/RoundingMode;)Ldev/guavakt/math/BigDecimal;
+	public final fun divideAndRemainder (Ldev/guavakt/math/BigDecimal;)Lkotlin/Pair;
+	public final fun divideAndRemainder (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/MathContext;)Lkotlin/Pair;
+	public final fun divideToIntegralValue (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun divideToIntegralValue (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getScale ()I
+	public final fun getSignum ()I
+	public final fun getUnscaledValue ()Ldev/guavakt/math/BigInteger;
+	public fun hashCode ()I
+	public final fun max (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun min (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun minus (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun movePointLeft (I)Ldev/guavakt/math/BigDecimal;
+	public final fun movePointRight (I)Ldev/guavakt/math/BigDecimal;
+	public final fun multiply (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun multiply (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun negate ()Ldev/guavakt/math/BigDecimal;
+	public final fun negate (Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun plus ()Ldev/guavakt/math/BigDecimal;
+	public final fun plus (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun plus (Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun pow (I)Ldev/guavakt/math/BigDecimal;
+	public final fun pow (ILdev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun precision ()I
+	public final fun remainder (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun remainder (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun round (Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun scale ()I
+	public final fun scaleByPowerOfTen (I)Ldev/guavakt/math/BigDecimal;
+	public final fun setScale (ILdev/guavakt/math/RoundingMode;)Ldev/guavakt/math/BigDecimal;
+	public static synthetic fun setScale$default (Ldev/guavakt/math/BigDecimal;ILdev/guavakt/math/RoundingMode;ILjava/lang/Object;)Ldev/guavakt/math/BigDecimal;
+	public final fun signum ()I
+	public final fun sqrt (Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun stripTrailingZeros ()Ldev/guavakt/math/BigDecimal;
+	public final fun subtract (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun subtract (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/MathContext;)Ldev/guavakt/math/BigDecimal;
+	public final fun times (Ldev/guavakt/math/BigDecimal;)Ldev/guavakt/math/BigDecimal;
+	public final fun toBigInteger ()Ldev/guavakt/math/BigInteger;
+	public final fun toBigIntegerExact ()Ldev/guavakt/math/BigInteger;
+	public final fun toByte ()B
+	public final fun toByteExact ()B
+	public final fun toDouble ()D
+	public final fun toEngineeringString ()Ljava/lang/String;
+	public final fun toFloat ()F
+	public final fun toInt ()I
+	public final fun toIntExact ()I
+	public final fun toLong ()J
+	public final fun toLongExact ()J
+	public final fun toPlainString ()Ljava/lang/String;
+	public final fun toShort ()S
+	public final fun toShortExact ()S
+	public fun toString ()Ljava/lang/String;
+	public final fun ulp ()Ldev/guavakt/math/BigDecimal;
+	public final fun unaryMinus ()Ldev/guavakt/math/BigDecimal;
+	public final fun unscaledValue ()Ldev/guavakt/math/BigInteger;
+}
+
+public final class dev/guavakt/math/BigDecimal$Companion {
+	public final fun fromDoubleExact (D)Ldev/guavakt/math/BigDecimal;
+	public final fun getONE ()Ldev/guavakt/math/BigDecimal;
+	public final fun getTEN ()Ldev/guavakt/math/BigDecimal;
+	public final fun getZERO ()Ldev/guavakt/math/BigDecimal;
+	public final fun of (D)Ldev/guavakt/math/BigDecimal;
+	public final fun of (J)Ldev/guavakt/math/BigDecimal;
+	public final fun of (Ldev/guavakt/math/BigInteger;I)Ldev/guavakt/math/BigDecimal;
+	public static synthetic fun of$default (Ldev/guavakt/math/BigDecimal$Companion;Ldev/guavakt/math/BigInteger;IILjava/lang/Object;)Ldev/guavakt/math/BigDecimal;
+	public final fun parse (Ljava/lang/String;)Ldev/guavakt/math/BigDecimal;
+}
+
+public final class dev/guavakt/math/BigDecimalMath {
+	public static final field INSTANCE Ldev/guavakt/math/BigDecimalMath;
+	public final fun roundToDouble (JILdev/guavakt/math/RoundingMode;)D
+	public final fun roundToDouble (JILdev/guavakt/math/RoundingModeLike;)D
+	public final fun roundToDouble (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/RoundingMode;)D
+	public final fun roundToDouble (Ldev/guavakt/math/BigDecimal;Ldev/guavakt/math/RoundingModeLike;)D
+}
+
+public final class dev/guavakt/math/BigInteger : java/lang/Comparable {
+	public static final field Companion Ldev/guavakt/math/BigInteger$Companion;
+	public synthetic fun <init> (I[ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun abs ()Ldev/guavakt/math/BigInteger;
+	public final fun add (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun and (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun andNot (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun bitCount ()I
+	public final fun bitLength ()I
+	public final fun clearBit (I)Ldev/guavakt/math/BigInteger;
+	public fun compareTo (Ldev/guavakt/math/BigInteger;)I
+	public synthetic fun compareTo (Ljava/lang/Object;)I
+	public final fun div (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun divide (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun divideAndRemainder (Ldev/guavakt/math/BigInteger;)Lkotlin/Pair;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun flipBit (I)Ldev/guavakt/math/BigInteger;
+	public final fun gcd (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun getLowestSetBit ()I
+	public final fun getSignum ()I
+	public fun hashCode ()I
+	public final fun isPowerOfTwo ()Z
+	public final fun isProbablePrime (I)Z
+	public final fun isZero ()Z
+	public final fun max (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun min (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun minus (J)Ldev/guavakt/math/BigInteger;
+	public final fun minus (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun mod (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun modInverse (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun modPow (Ldev/guavakt/math/BigInteger;Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun multiply (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun negate ()Ldev/guavakt/math/BigInteger;
+	public final fun nextProbablePrime ()Ldev/guavakt/math/BigInteger;
+	public final fun not ()Ldev/guavakt/math/BigInteger;
+	public final fun or (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun plus (J)Ldev/guavakt/math/BigInteger;
+	public final fun plus (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun pow (I)Ldev/guavakt/math/BigInteger;
+	public final fun rem (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun remainder (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun setBit (I)Ldev/guavakt/math/BigInteger;
+	public final fun shiftLeft (I)Ldev/guavakt/math/BigInteger;
+	public final fun shiftRight (I)Ldev/guavakt/math/BigInteger;
+	public final fun signum ()I
+	public final fun sqrt ()Ldev/guavakt/math/BigInteger;
+	public final fun sqrtAndRemainder ()Lkotlin/Pair;
+	public final fun subtract (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun testBit (I)Z
+	public final fun times (I)Ldev/guavakt/math/BigInteger;
+	public final fun times (J)Ldev/guavakt/math/BigInteger;
+	public final fun times (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+	public final fun toByte ()B
+	public final fun toByteArray ()[B
+	public final fun toByteExact ()B
+	public final fun toDouble ()D
+	public final fun toFloat ()F
+	public final fun toInt ()I
+	public final fun toIntExact ()I
+	public final fun toLong ()J
+	public final fun toLongExact ()J
+	public final fun toShort ()S
+	public final fun toShortExact ()S
+	public fun toString ()Ljava/lang/String;
+	public final fun toString (I)Ljava/lang/String;
+	public final fun unaryMinus ()Ldev/guavakt/math/BigInteger;
+	public final fun xor (Ldev/guavakt/math/BigInteger;)Ldev/guavakt/math/BigInteger;
+}
+
+public final class dev/guavakt/math/BigInteger$Companion {
+	public final fun fromByteArray ([B)Ldev/guavakt/math/BigInteger;
+	public final fun fromSignMagnitude (I[B)Ldev/guavakt/math/BigInteger;
+	public final fun getMINUS_ONE ()Ldev/guavakt/math/BigInteger;
+	public final fun getONE ()Ldev/guavakt/math/BigInteger;
+	public final fun getTEN ()Ldev/guavakt/math/BigInteger;
+	public final fun getTHREE ()Ldev/guavakt/math/BigInteger;
+	public final fun getTWO ()Ldev/guavakt/math/BigInteger;
+	public final fun getZERO ()Ldev/guavakt/math/BigInteger;
+	public final fun of (I)Ldev/guavakt/math/BigInteger;
+	public final fun of (J)Ldev/guavakt/math/BigInteger;
+	public final fun parse (Ljava/lang/String;)Ldev/guavakt/math/BigInteger;
+	public final fun parse (Ljava/lang/String;I)Ldev/guavakt/math/BigInteger;
+	public final fun probablePrime (ILkotlin/random/Random;)Ldev/guavakt/math/BigInteger;
+	public static synthetic fun probablePrime$default (Ldev/guavakt/math/BigInteger$Companion;ILkotlin/random/Random;ILjava/lang/Object;)Ldev/guavakt/math/BigInteger;
+	public final fun random (ILkotlin/random/Random;)Ldev/guavakt/math/BigInteger;
+	public static synthetic fun random$default (Ldev/guavakt/math/BigInteger$Companion;ILkotlin/random/Random;ILjava/lang/Object;)Ldev/guavakt/math/BigInteger;
+}
+
+public final class dev/guavakt/math/BigIntegerMath {
+	public static final field INSTANCE Ldev/guavakt/math/BigIntegerMath;
+	public final fun binomial (II)Ldev/guavakt/math/BigInteger;
+	public final fun binomialLong (II)J
+	public final fun div (JJLdev/guavakt/math/RoundingMode;)J
+	public final fun div (Ldev/guavakt/math/BigInteger;Ldev/guavakt/math/BigInteger;Ldev/guavakt/math/RoundingMode;)Ldev/guavakt/math/BigInteger;
+	public final fun factorial (I)Ldev/guavakt/math/BigInteger;
+	public final fun factorialLong (I)J
+	public final fun log2 (JLdev/guavakt/math/RoundingMode;)I
+	public final fun log2 (Ldev/guavakt/math/BigInteger;Ldev/guavakt/math/RoundingMode;)I
+	public final fun sqrt (JLdev/guavakt/math/RoundingMode;)J
+	public final fun sqrt (Ldev/guavakt/math/BigInteger;Ldev/guavakt/math/RoundingMode;)Ldev/guavakt/math/BigInteger;
+}
+
+public final class dev/guavakt/math/DoubleMath {
+	public static final field INSTANCE Ldev/guavakt/math/DoubleMath;
+	public final fun isMathematicalInteger (D)Z
+	public final fun log2 (D)D
+	public final fun roundToInt (DLdev/guavakt/math/RoundingMode;)I
+	public final fun roundToLong (DLdev/guavakt/math/RoundingMode;)J
+}
+
+public abstract interface annotation class dev/guavakt/math/IgnoreJRERequirement : java/lang/annotation/Annotation {
+}
+
+public final class dev/guavakt/math/IntMath {
+	public static final field INSTANCE Ldev/guavakt/math/IntMath;
+	public final fun checkedAdd (II)I
+	public final fun checkedMultiply (II)I
+	public final fun checkedPower (II)I
+	public final fun checkedSubtract (II)I
+	public final fun divide (IILdev/guavakt/math/RoundingMode;)I
+	public final fun factorial (I)I
+	public final fun gcd (II)I
+	public final fun isPowerOfTwo (I)Z
+	public final fun log2 (ILdev/guavakt/math/RoundingMode;)I
+	public final fun mod (II)I
+	public final fun power (II)I
+	public final fun saturatedAbs (I)I
+	public final fun saturatedAdd (II)I
+	public final fun saturatedMultiply (II)I
+	public final fun saturatedPower (II)I
+	public final fun saturatedSubtract (II)I
+	public final fun sqrt (ILdev/guavakt/math/RoundingMode;)I
+}
+
+public abstract class dev/guavakt/math/LinearTransformation {
+	public static final field Companion Ldev/guavakt/math/LinearTransformation$Companion;
+	public fun <init> ()V
+	public abstract fun inverse ()Ldev/guavakt/math/LinearTransformation;
+	public abstract fun isHorizontal ()Z
+	public abstract fun isVertical ()Z
+	public abstract fun slope ()D
+	public abstract fun transform (D)D
+}
+
+public final class dev/guavakt/math/LinearTransformation$Companion {
+	public final fun forNaN ()Ldev/guavakt/math/LinearTransformation;
+	public final fun horizontal (D)Ldev/guavakt/math/LinearTransformation;
+	public final fun mapping (DD)Ldev/guavakt/math/LinearTransformation$LinearTransformationBuilder;
+	public final fun vertical (D)Ldev/guavakt/math/LinearTransformation;
+}
+
+public final class dev/guavakt/math/LinearTransformation$LinearTransformationBuilder {
+	public final fun and (DD)Ldev/guavakt/math/LinearTransformation;
+	public final fun withSlope (D)Ldev/guavakt/math/LinearTransformation;
+}
+
+public final class dev/guavakt/math/LongMath {
+	public static final field INSTANCE Ldev/guavakt/math/LongMath;
+	public final fun binomial (II)J
+	public final fun ceilingPowerOfTwo (J)J
+	public final fun checkedAdd (JJ)J
+	public final fun checkedMultiply (JJ)J
+	public final fun checkedPower (JI)J
+	public final fun checkedSubtract (JJ)J
+	public final fun divide (JJLdev/guavakt/math/RoundingMode;)J
+	public final fun factorial (I)J
+	public final fun floorPowerOfTwo (J)J
+	public final fun gcd (JJ)J
+	public final fun isPowerOfTwo (J)Z
+	public final fun isPrime (J)Z
+	public final fun log10 (JLdev/guavakt/math/RoundingMode;)I
+	public final fun log2 (JLdev/guavakt/math/RoundingMode;)I
+	public final fun mean (JJ)J
+	public final fun mod (JI)I
+	public final fun mod (JJ)J
+	public final fun power (JI)J
+	public final fun saturatedAbs (J)J
+	public final fun saturatedAdd (JJ)J
+	public final fun saturatedMultiply (JJ)J
+	public final fun saturatedPower (JI)J
+	public final fun saturatedSubtract (JJ)J
+	public final fun sqrt (JLdev/guavakt/math/RoundingMode;)J
+}
+
+public final class dev/guavakt/math/MathContext {
+	public static final field Companion Ldev/guavakt/math/MathContext$Companion;
+	public fun <init> (ILdev/guavakt/math/RoundingMode;)V
+	public synthetic fun <init> (ILdev/guavakt/math/RoundingMode;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPrecision ()I
+	public final fun getRoundingMode ()Ldev/guavakt/math/RoundingMode;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/math/MathContext$Companion {
+	public final fun getDECIMAL128 ()Ldev/guavakt/math/MathContext;
+	public final fun getDECIMAL32 ()Ldev/guavakt/math/MathContext;
+	public final fun getDECIMAL64 ()Ldev/guavakt/math/MathContext;
+	public final fun getUNLIMITED ()Ldev/guavakt/math/MathContext;
+}
+
+public final class dev/guavakt/math/PairedStats {
+	public static final field Companion Ldev/guavakt/math/PairedStats$Companion;
+	public final fun count ()J
+	public final fun leastSquaresFit ()Ldev/guavakt/math/LinearTransformation;
+	public final fun pearsonsCorrelationCoefficient ()D
+	public final fun populationCovariance ()D
+	public final fun sampleCovariance ()D
+	public final fun xStats ()Ldev/guavakt/math/Stats;
+	public final fun yStats ()Ldev/guavakt/math/Stats;
+}
+
+public final class dev/guavakt/math/PairedStats$Companion {
+	public final fun from (Ldev/guavakt/math/Stats;Ldev/guavakt/math/Stats;D)Ldev/guavakt/math/PairedStats;
+}
+
+public final class dev/guavakt/math/PairedStatsAccumulator {
+	public fun <init> ()V
+	public final fun add (DD)V
+	public final fun addAll (Ldev/guavakt/math/PairedStats;)V
+	public final fun count ()J
+	public final fun populationCovariance ()D
+	public final fun snapshot ()Ldev/guavakt/math/PairedStats;
+}
+
+public abstract interface annotation class dev/guavakt/math/ParametricNullness : java/lang/annotation/Annotation {
+}
+
+public final class dev/guavakt/math/Quantiles {
+	public static final field INSTANCE Ldev/guavakt/math/Quantiles;
+	public final fun median ()Ldev/guavakt/math/Quantiles$ScaleAndIndex;
+	public final fun percentiles ()Ldev/guavakt/math/Quantiles$Scale;
+	public final fun quartiles ()Ldev/guavakt/math/Quantiles$Scale;
+	public final fun scale (I)Ldev/guavakt/math/Quantiles$Scale;
+}
+
+public final class dev/guavakt/math/Quantiles$Scale {
+	public final fun index (I)Ldev/guavakt/math/Quantiles$ScaleAndIndex;
+	public final fun indexes (Ljava/util/Collection;)Ldev/guavakt/math/Quantiles$ScaleAndIndexes;
+	public final fun indexes ([I)Ldev/guavakt/math/Quantiles$ScaleAndIndexes;
+}
+
+public final class dev/guavakt/math/Quantiles$ScaleAndIndex {
+	public final fun compute (Ljava/util/Collection;)D
+	public final fun compute ([D)D
+	public final fun compute ([I)D
+	public final fun compute ([J)D
+	public final fun computeInPlace ([D)D
+}
+
+public final class dev/guavakt/math/Quantiles$ScaleAndIndexes {
+	public final fun compute (Ljava/util/Collection;)Ljava/util/Map;
+	public final fun compute ([D)Ljava/util/Map;
+	public final fun computeInPlace ([D)Ljava/util/Map;
+}
+
+public final class dev/guavakt/math/RoundingMode : java/lang/Enum {
+	public static final field CEILING Ldev/guavakt/math/RoundingMode;
+	public static final field DOWN Ldev/guavakt/math/RoundingMode;
+	public static final field FLOOR Ldev/guavakt/math/RoundingMode;
+	public static final field HALF_DOWN Ldev/guavakt/math/RoundingMode;
+	public static final field HALF_EVEN Ldev/guavakt/math/RoundingMode;
+	public static final field HALF_UP Ldev/guavakt/math/RoundingMode;
+	public static final field UNNECESSARY Ldev/guavakt/math/RoundingMode;
+	public static final field UP Ldev/guavakt/math/RoundingMode;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/math/RoundingMode;
+	public static fun values ()[Ldev/guavakt/math/RoundingMode;
+}
+
+public final class dev/guavakt/math/RoundingModeLike : java/lang/Enum {
+	public static final field CEILING Ldev/guavakt/math/RoundingModeLike;
+	public static final field DOWN Ldev/guavakt/math/RoundingModeLike;
+	public static final field FLOOR Ldev/guavakt/math/RoundingModeLike;
+	public static final field HALF_DOWN Ldev/guavakt/math/RoundingModeLike;
+	public static final field HALF_EVEN Ldev/guavakt/math/RoundingModeLike;
+	public static final field HALF_UP Ldev/guavakt/math/RoundingModeLike;
+	public static final field UNNECESSARY Ldev/guavakt/math/RoundingModeLike;
+	public static final field UP Ldev/guavakt/math/RoundingModeLike;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/math/RoundingModeLike;
+	public static fun values ()[Ldev/guavakt/math/RoundingModeLike;
+}
+
+public final class dev/guavakt/math/Stats {
+	public static final field Companion Ldev/guavakt/math/Stats$Companion;
+	public fun <init> (JDDDD)V
+	public final fun copy (JDDDD)Ldev/guavakt/math/Stats;
+	public static synthetic fun copy$default (Ldev/guavakt/math/Stats;JDDDDILjava/lang/Object;)Ldev/guavakt/math/Stats;
+	public final fun count ()J
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public final fun max ()D
+	public final fun mean ()D
+	public final fun min ()D
+	public final fun populationStandardDeviation ()D
+	public final fun populationVariance ()D
+	public final fun sampleStandardDeviation ()D
+	public final fun sampleVariance ()D
+	public final fun sum ()D
+	public final fun sumOfSquaresOfDeltas ()D
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/math/Stats$Companion {
+	public final fun of (Ljava/lang/Iterable;)Ldev/guavakt/math/Stats;
+	public final fun of ([D)Ldev/guavakt/math/Stats;
+}
+
+public final class dev/guavakt/math/StatsAccumulator {
+	public fun <init> ()V
+	public final fun add (D)V
+	public final fun addAll (Ldev/guavakt/math/Stats;)V
+	public final fun addAll (Ljava/lang/Iterable;)V
+	public final fun count ()J
+	public final fun max ()D
+	public final fun mean ()D
+	public final fun min ()D
+	public final fun populationStandardDeviation ()D
+	public final fun populationVariance ()D
+	public final fun sampleStandardDeviation ()D
+	public final fun sampleVariance ()D
+	public final fun snapshot ()Ldev/guavakt/math/Stats;
+	public final fun sum ()D
+}
+

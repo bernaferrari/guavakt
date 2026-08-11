@@ -1,0 +1,1008 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-concurrent>
+open annotation class dev.guavakt.util.concurrent/GwtIncompatible : kotlin/Annotation { // dev.guavakt.util.concurrent/GwtIncompatible|null[0]
+    constructor <init>(kotlin/String = ...) // dev.guavakt.util.concurrent/GwtIncompatible.<init>|<init>(kotlin.String){}[0]
+
+    final val value // dev.guavakt.util.concurrent/GwtIncompatible.value|{}value[0]
+        final fun <get-value>(): kotlin/String // dev.guavakt.util.concurrent/GwtIncompatible.value.<get-value>|<get-value>(){}[0]
+}
+
+open annotation class dev.guavakt.util.concurrent/IgnoreJRERequirement : kotlin/Annotation { // dev.guavakt.util.concurrent/IgnoreJRERequirement|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/IgnoreJRERequirement.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.util.concurrent/ParametricNullness : kotlin/Annotation { // dev.guavakt.util.concurrent/ParametricNullness|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ParametricNullness.<init>|<init>(){}[0]
+}
+
+final enum class dev.guavakt.util.concurrent/DirectExecutor : kotlin/Enum<dev.guavakt.util.concurrent/DirectExecutor> { // dev.guavakt.util.concurrent/DirectExecutor|null[0]
+    enum entry INSTANCE // dev.guavakt.util.concurrent/DirectExecutor.INSTANCE|null[0]
+
+    final val entries // dev.guavakt.util.concurrent/DirectExecutor.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.util.concurrent/DirectExecutor> // dev.guavakt.util.concurrent/DirectExecutor.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/DirectExecutor.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    final fun valueOf(kotlin/String): dev.guavakt.util.concurrent/DirectExecutor // dev.guavakt.util.concurrent/DirectExecutor.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<dev.guavakt.util.concurrent/DirectExecutor> // dev.guavakt.util.concurrent/DirectExecutor.values|values#static(){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.util.concurrent/AsyncFunction { // dev.guavakt.util.concurrent/AsyncFunction|null[0]
+    abstract fun apply(#A): dev.guavakt.util.concurrent/ListenableFuture<#B> // dev.guavakt.util.concurrent/AsyncFunction.apply|apply(1:0){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?> dev.guavakt.util.concurrent/AsyncCallable { // dev.guavakt.util.concurrent/AsyncCallable|null[0]
+    abstract fun call(): dev.guavakt.util.concurrent/ListenableFuture<#A> // dev.guavakt.util.concurrent/AsyncCallable.call|call(){}[0]
+}
+
+abstract fun interface dev.guavakt.util.concurrent/DirectExecutorLike { // dev.guavakt.util.concurrent/DirectExecutorLike|null[0]
+    abstract fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/DirectExecutorLike.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+}
+
+abstract fun interface dev.guavakt.util.concurrent/KmpThreadFactory { // dev.guavakt.util.concurrent/KmpThreadFactory|null[0]
+    abstract fun newThread(kotlin/Function0<kotlin/Unit>): dev.guavakt.util.concurrent/KmpThreadConfig // dev.guavakt.util.concurrent/KmpThreadFactory.newThread|newThread(kotlin.Function0<kotlin.Unit>){}[0]
+}
+
+abstract interface <#A: in kotlin/Any?> dev.guavakt.util.concurrent/FutureCallback { // dev.guavakt.util.concurrent/FutureCallback|null[0]
+    abstract fun onFailure(kotlin/Throwable) // dev.guavakt.util.concurrent/FutureCallback.onFailure|onFailure(kotlin.Throwable){}[0]
+    abstract fun onSuccess(#A) // dev.guavakt.util.concurrent/FutureCallback.onSuccess|onSuccess(1:0){}[0]
+}
+
+abstract interface <#A: kotlin/Any?> dev.guavakt.util.concurrent/ListenableFuture { // dev.guavakt.util.concurrent/ListenableFuture|null[0]
+    abstract fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ListenableFuture.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    abstract fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFuture.cancel|cancel(kotlin.Boolean){}[0]
+    abstract fun get(): #A // dev.guavakt.util.concurrent/ListenableFuture.get|get(){}[0]
+    abstract fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFuture.isCancelled|isCancelled(){}[0]
+    abstract fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFuture.isDone|isDone(){}[0]
+}
+
+abstract interface <#A: kotlin/Any?> dev.guavakt.util.concurrent/ListenableScheduledFuture : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/ListenableScheduledFuture|null[0]
+    abstract fun remainingDelay(): kotlin.time/Duration // dev.guavakt.util.concurrent/ListenableScheduledFuture.remainingDelay|remainingDelay(){}[0]
+}
+
+abstract interface dev.guavakt.util.concurrent/ConditionLike { // dev.guavakt.util.concurrent/ConditionLike|null[0]
+    abstract fun await() // dev.guavakt.util.concurrent/ConditionLike.await|await(){}[0]
+    abstract fun signal() // dev.guavakt.util.concurrent/ConditionLike.signal|signal(){}[0]
+    abstract fun signalAll() // dev.guavakt.util.concurrent/ConditionLike.signalAll|signalAll(){}[0]
+}
+
+abstract interface dev.guavakt.util.concurrent/ListeningExecutorService { // dev.guavakt.util.concurrent/ListeningExecutorService|null[0]
+    abstract fun <#A1: kotlin/Any?> submit(kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/ListeningExecutorService.submit|submit(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    abstract fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ListeningExecutorService.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun isShutdown(): kotlin/Boolean // dev.guavakt.util.concurrent/ListeningExecutorService.isShutdown|isShutdown(){}[0]
+    open fun shutdown() // dev.guavakt.util.concurrent/ListeningExecutorService.shutdown|shutdown(){}[0]
+}
+
+abstract interface dev.guavakt.util.concurrent/ListeningScheduledExecutorService : dev.guavakt.util.concurrent/ListeningExecutorService { // dev.guavakt.util.concurrent/ListeningScheduledExecutorService|null[0]
+    abstract fun <#A1: kotlin/Any?> schedule(kotlin.time/Duration, kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableScheduledFuture<#A1> // dev.guavakt.util.concurrent/ListeningScheduledExecutorService.schedule|schedule(kotlin.time.Duration;kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    abstract fun scheduleAtFixedRate(kotlin.time/Duration, kotlin.time/Duration, kotlin/Function0<kotlin/Unit>): dev.guavakt.util.concurrent/ListenableScheduledFuture<kotlin/Unit> // dev.guavakt.util.concurrent/ListeningScheduledExecutorService.scheduleAtFixedRate|scheduleAtFixedRate(kotlin.time.Duration;kotlin.time.Duration;kotlin.Function0<kotlin.Unit>){}[0]
+    abstract fun scheduleWithFixedDelay(kotlin.time/Duration, kotlin.time/Duration, kotlin/Function0<kotlin/Unit>): dev.guavakt.util.concurrent/ListenableScheduledFuture<kotlin/Unit> // dev.guavakt.util.concurrent/ListeningScheduledExecutorService.scheduleWithFixedDelay|scheduleWithFixedDelay(kotlin.time.Duration;kotlin.time.Duration;kotlin.Function0<kotlin.Unit>){}[0]
+}
+
+abstract interface dev.guavakt.util.concurrent/LockLike { // dev.guavakt.util.concurrent/LockLike|null[0]
+    abstract fun isHeldByCurrentThread(): kotlin/Boolean // dev.guavakt.util.concurrent/LockLike.isHeldByCurrentThread|isHeldByCurrentThread(){}[0]
+    abstract fun lock() // dev.guavakt.util.concurrent/LockLike.lock|lock(){}[0]
+    abstract fun tryLock(): kotlin/Boolean // dev.guavakt.util.concurrent/LockLike.tryLock|tryLock(){}[0]
+    abstract fun unlock() // dev.guavakt.util.concurrent/LockLike.unlock|unlock(){}[0]
+}
+
+abstract interface dev.guavakt.util.concurrent/Service { // dev.guavakt.util.concurrent/Service|null[0]
+    abstract fun addListener(dev.guavakt.util.concurrent/Service.Listener) // dev.guavakt.util.concurrent/Service.addListener|addListener(dev.guavakt.util.concurrent.Service.Listener){}[0]
+    abstract fun awaitRunning() // dev.guavakt.util.concurrent/Service.awaitRunning|awaitRunning(){}[0]
+    abstract fun awaitTerminated() // dev.guavakt.util.concurrent/Service.awaitTerminated|awaitTerminated(){}[0]
+    abstract fun failureCause(): kotlin/Throwable // dev.guavakt.util.concurrent/Service.failureCause|failureCause(){}[0]
+    abstract fun startAsync(): dev.guavakt.util.concurrent/Service // dev.guavakt.util.concurrent/Service.startAsync|startAsync(){}[0]
+    abstract fun state(): dev.guavakt.util.concurrent/Service.State // dev.guavakt.util.concurrent/Service.state|state(){}[0]
+    abstract fun stopAsync(): dev.guavakt.util.concurrent/Service // dev.guavakt.util.concurrent/Service.stopAsync|stopAsync(){}[0]
+    open fun isRunning(): kotlin/Boolean // dev.guavakt.util.concurrent/Service.isRunning|isRunning(){}[0]
+
+    final enum class State : kotlin/Enum<dev.guavakt.util.concurrent/Service.State> { // dev.guavakt.util.concurrent/Service.State|null[0]
+        enum entry FAILED // dev.guavakt.util.concurrent/Service.State.FAILED|null[0]
+        enum entry NEW // dev.guavakt.util.concurrent/Service.State.NEW|null[0]
+        enum entry RUNNING // dev.guavakt.util.concurrent/Service.State.RUNNING|null[0]
+        enum entry STARTING // dev.guavakt.util.concurrent/Service.State.STARTING|null[0]
+        enum entry STOPPING // dev.guavakt.util.concurrent/Service.State.STOPPING|null[0]
+        enum entry TERMINATED // dev.guavakt.util.concurrent/Service.State.TERMINATED|null[0]
+
+        final val entries // dev.guavakt.util.concurrent/Service.State.entries|#static{}entries[0]
+            final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.util.concurrent/Service.State> // dev.guavakt.util.concurrent/Service.State.entries.<get-entries>|<get-entries>#static(){}[0]
+
+        final fun valueOf(kotlin/String): dev.guavakt.util.concurrent/Service.State // dev.guavakt.util.concurrent/Service.State.valueOf|valueOf#static(kotlin.String){}[0]
+        final fun values(): kotlin/Array<dev.guavakt.util.concurrent/Service.State> // dev.guavakt.util.concurrent/Service.State.values|values#static(){}[0]
+    }
+
+    abstract class Listener { // dev.guavakt.util.concurrent/Service.Listener|null[0]
+        constructor <init>() // dev.guavakt.util.concurrent/Service.Listener.<init>|<init>(){}[0]
+
+        open fun failed(dev.guavakt.util.concurrent/Service.State, kotlin/Throwable) // dev.guavakt.util.concurrent/Service.Listener.failed|failed(dev.guavakt.util.concurrent.Service.State;kotlin.Throwable){}[0]
+        open fun running() // dev.guavakt.util.concurrent/Service.Listener.running|running(){}[0]
+        open fun starting() // dev.guavakt.util.concurrent/Service.Listener.starting|starting(){}[0]
+        open fun stopping(dev.guavakt.util.concurrent/Service.State) // dev.guavakt.util.concurrent/Service.Listener.stopping|stopping(dev.guavakt.util.concurrent.Service.State){}[0]
+        open fun terminated(dev.guavakt.util.concurrent/Service.State) // dev.guavakt.util.concurrent/Service.Listener.terminated|terminated(dev.guavakt.util.concurrent.Service.State){}[0]
+    }
+}
+
+abstract interface dev.guavakt.util.concurrent/TimeLimiter { // dev.guavakt.util.concurrent/TimeLimiter|null[0]
+    abstract fun <#A1: kotlin/Any?> callUninterruptiblyWithTimeout(kotlin/Function0<#A1>, kotlin/Long): #A1 // dev.guavakt.util.concurrent/TimeLimiter.callUninterruptiblyWithTimeout|callUninterruptiblyWithTimeout(kotlin.Function0<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    abstract fun <#A1: kotlin/Any?> callWithTimeout(kotlin/Function0<#A1>, kotlin/Long): #A1 // dev.guavakt.util.concurrent/TimeLimiter.callWithTimeout|callWithTimeout(kotlin.Function0<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    abstract fun <#A1: kotlin/Any?> newProxy(#A1, kotlin/Any, kotlin/Long): #A1 // dev.guavakt.util.concurrent/TimeLimiter.newProxy|newProxy(0:0;kotlin.Any;kotlin.Long){0§<kotlin.Any?>}[0]
+    abstract fun runUninterruptiblyWithTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Long) // dev.guavakt.util.concurrent/TimeLimiter.runUninterruptiblyWithTimeout|runUninterruptiblyWithTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Long){}[0]
+    abstract fun runWithTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Long) // dev.guavakt.util.concurrent/TimeLimiter.runWithTimeout|runWithTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Long){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.util.concurrent/AbstractFuture : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/AbstractFuture|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/AbstractFuture.<init>|<init>(){}[0]
+
+    final fun getIfDone(): #A? // dev.guavakt.util.concurrent/AbstractFuture.getIfDone|getIfDone(){}[0]
+    final fun setAsync(dev.guavakt.util.concurrent/ListenableFuture<out #A>): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractFuture.setAsync|setAsync(dev.guavakt.util.concurrent.ListenableFuture<out|1:0>){}[0]
+    final fun setFailure(kotlin/Throwable): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractFuture.setFailure|setFailure(kotlin.Throwable){}[0]
+    final fun setValue(#A): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractFuture.setValue|setValue(1:0){}[0]
+    final fun wasInterrupted(): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractFuture.wasInterrupted|wasInterrupted(){}[0]
+    open fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/AbstractFuture.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun afterDone() // dev.guavakt.util.concurrent/AbstractFuture.afterDone|afterDone(){}[0]
+    open fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractFuture.cancel|cancel(kotlin.Boolean){}[0]
+    open fun get(): #A // dev.guavakt.util.concurrent/AbstractFuture.get|get(){}[0]
+    open fun interruptTask() // dev.guavakt.util.concurrent/AbstractFuture.interruptTask|interruptTask(){}[0]
+    open fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractFuture.isCancelled|isCancelled(){}[0]
+    open fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractFuture.isDone|isDone(){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.util.concurrent/ForwardingFluentFuture : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/ForwardingFluentFuture|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ForwardingFluentFuture.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.util.concurrent/FluentFuture<#A> // dev.guavakt.util.concurrent/ForwardingFluentFuture.delegate|delegate(){}[0]
+    open fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ForwardingFluentFuture.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingFluentFuture.cancel|cancel(kotlin.Boolean){}[0]
+    open fun get(): #A // dev.guavakt.util.concurrent/ForwardingFluentFuture.get|get(){}[0]
+    open fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingFluentFuture.isCancelled|isCancelled(){}[0]
+    open fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingFluentFuture.isDone|isDone(){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.util.concurrent/ForwardingFuture : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/ForwardingFuture|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ForwardingFuture.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.util.concurrent/ListenableFuture<#A> // dev.guavakt.util.concurrent/ForwardingFuture.delegate|delegate(){}[0]
+    open fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ForwardingFuture.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingFuture.cancel|cancel(kotlin.Boolean){}[0]
+    open fun get(): #A // dev.guavakt.util.concurrent/ForwardingFuture.get|get(){}[0]
+    open fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingFuture.isCancelled|isCancelled(){}[0]
+    open fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingFuture.isDone|isDone(){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.util.concurrent/ForwardingListenableFuture : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/ForwardingListenableFuture|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ForwardingListenableFuture.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.util.concurrent/ListenableFuture<#A> // dev.guavakt.util.concurrent/ForwardingListenableFuture.delegate|delegate(){}[0]
+    open fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ForwardingListenableFuture.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingListenableFuture.cancel|cancel(kotlin.Boolean){}[0]
+    open fun get(): #A // dev.guavakt.util.concurrent/ForwardingListenableFuture.get|get(){}[0]
+    open fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingListenableFuture.isCancelled|isCancelled(){}[0]
+    open fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingListenableFuture.isDone|isDone(){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.util.concurrent/Striped { // dev.guavakt.util.concurrent/Striped|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/Striped.<init>|<init>(){}[0]
+
+    abstract fun get(kotlin/Any): #A // dev.guavakt.util.concurrent/Striped.get|get(kotlin.Any){}[0]
+    abstract fun getAt(kotlin/Int): #A // dev.guavakt.util.concurrent/Striped.getAt|getAt(kotlin.Int){}[0]
+    abstract fun size(): kotlin/Int // dev.guavakt.util.concurrent/Striped.size|size(){}[0]
+    final fun bulkGet(kotlin.collections/Iterable<kotlin/Any>): kotlin.collections/List<#A> // dev.guavakt.util.concurrent/Striped.bulkGet|bulkGet(kotlin.collections.Iterable<kotlin.Any>){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/Striped.Companion|null[0]
+        final fun <#A2: kotlin/Any?> custom(kotlin/Int, kotlin/Function0<#A2>): dev.guavakt.util.concurrent/Striped<#A2> // dev.guavakt.util.concurrent/Striped.Companion.custom|custom(kotlin.Int;kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+        final fun lazyWeakLock(kotlin/Int): dev.guavakt.util.concurrent/Striped<kotlin/Any> // dev.guavakt.util.concurrent/Striped.Companion.lazyWeakLock|lazyWeakLock(kotlin.Int){}[0]
+        final fun lock(kotlin/Int): dev.guavakt.util.concurrent/Striped<kotlin/Any> // dev.guavakt.util.concurrent/Striped.Companion.lock|lock(kotlin.Int){}[0]
+        final fun semaphore(kotlin/Int, kotlin/Int): dev.guavakt.util.concurrent/Striped<dev.guavakt.util.concurrent/SemaphoreStripe> // dev.guavakt.util.concurrent/Striped.Companion.semaphore|semaphore(kotlin.Int;kotlin.Int){}[0]
+    }
+}
+
+abstract class dev.guavakt.util.concurrent/AbstractExecutionThreadService : dev.guavakt.util.concurrent/AbstractService { // dev.guavakt.util.concurrent/AbstractExecutionThreadService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/AbstractExecutionThreadService.<init>|<init>(){}[0]
+
+    abstract fun run() // dev.guavakt.util.concurrent/AbstractExecutionThreadService.run|run(){}[0]
+    final fun isShutdownRequested(): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractExecutionThreadService.isShutdownRequested|isShutdownRequested(){}[0]
+    open fun doStart() // dev.guavakt.util.concurrent/AbstractExecutionThreadService.doStart|doStart(){}[0]
+    open fun doStop() // dev.guavakt.util.concurrent/AbstractExecutionThreadService.doStop|doStop(){}[0]
+    open fun serviceName(): kotlin/String // dev.guavakt.util.concurrent/AbstractExecutionThreadService.serviceName|serviceName(){}[0]
+    open fun shutDown() // dev.guavakt.util.concurrent/AbstractExecutionThreadService.shutDown|shutDown(){}[0]
+    open fun startUp() // dev.guavakt.util.concurrent/AbstractExecutionThreadService.startUp|startUp(){}[0]
+    open fun triggerShutdown() // dev.guavakt.util.concurrent/AbstractExecutionThreadService.triggerShutdown|triggerShutdown(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/AbstractIdleService : dev.guavakt.util.concurrent/AbstractService { // dev.guavakt.util.concurrent/AbstractIdleService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/AbstractIdleService.<init>|<init>(){}[0]
+
+    abstract fun shutDown() // dev.guavakt.util.concurrent/AbstractIdleService.shutDown|shutDown(){}[0]
+    abstract fun startUp() // dev.guavakt.util.concurrent/AbstractIdleService.startUp|startUp(){}[0]
+    open fun doStart() // dev.guavakt.util.concurrent/AbstractIdleService.doStart|doStart(){}[0]
+    open fun doStop() // dev.guavakt.util.concurrent/AbstractIdleService.doStop|doStop(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/AbstractListeningExecutorService : dev.guavakt.util.concurrent/ListeningExecutorService { // dev.guavakt.util.concurrent/AbstractListeningExecutorService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/AbstractListeningExecutorService.<init>|<init>(){}[0]
+
+    abstract fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/AbstractListeningExecutorService.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun <#A1: kotlin/Any?> submit(kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/AbstractListeningExecutorService.submit|submit(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    open fun isShutdown(): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractListeningExecutorService.isShutdown|isShutdown(){}[0]
+    open fun shutdown() // dev.guavakt.util.concurrent/AbstractListeningExecutorService.shutdown|shutdown(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/AbstractScheduledService : dev.guavakt.util.concurrent/AbstractService { // dev.guavakt.util.concurrent/AbstractScheduledService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/AbstractScheduledService.<init>|<init>(){}[0]
+
+    abstract fun runOneIteration() // dev.guavakt.util.concurrent/AbstractScheduledService.runOneIteration|runOneIteration(){}[0]
+    open fun doStart() // dev.guavakt.util.concurrent/AbstractScheduledService.doStart|doStart(){}[0]
+    open fun doStop() // dev.guavakt.util.concurrent/AbstractScheduledService.doStop|doStop(){}[0]
+    open fun scheduler(): dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler // dev.guavakt.util.concurrent/AbstractScheduledService.scheduler|scheduler(){}[0]
+    open fun shutDown() // dev.guavakt.util.concurrent/AbstractScheduledService.shutDown|shutDown(){}[0]
+    open fun startUp() // dev.guavakt.util.concurrent/AbstractScheduledService.startUp|startUp(){}[0]
+
+    final class Scheduler { // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler|null[0]
+        final val delayMillis // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.delayMillis|{}delayMillis[0]
+            final fun <get-delayMillis>(): kotlin/Long // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.delayMillis.<get-delayMillis>|<get-delayMillis>(){}[0]
+        final val fixedRate // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.fixedRate|{}fixedRate[0]
+            final fun <get-fixedRate>(): kotlin/Boolean // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.fixedRate.<get-fixedRate>|<get-fixedRate>(){}[0]
+        final val initialDelayMillis // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.initialDelayMillis|{}initialDelayMillis[0]
+            final fun <get-initialDelayMillis>(): kotlin/Long // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.initialDelayMillis.<get-initialDelayMillis>|<get-initialDelayMillis>(){}[0]
+
+        final object Companion { // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.Companion|null[0]
+            final fun newFixedDelaySchedule(kotlin/Long, kotlin/Long): dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.Companion.newFixedDelaySchedule|newFixedDelaySchedule(kotlin.Long;kotlin.Long){}[0]
+            final fun newFixedRateSchedule(kotlin/Long, kotlin/Long): dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler // dev.guavakt.util.concurrent/AbstractScheduledService.Scheduler.Companion.newFixedRateSchedule|newFixedRateSchedule(kotlin.Long;kotlin.Long){}[0]
+        }
+    }
+}
+
+abstract class dev.guavakt.util.concurrent/AbstractService : dev.guavakt.util.concurrent/Service { // dev.guavakt.util.concurrent/AbstractService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/AbstractService.<init>|<init>(){}[0]
+
+    abstract fun doStart() // dev.guavakt.util.concurrent/AbstractService.doStart|doStart(){}[0]
+    abstract fun doStop() // dev.guavakt.util.concurrent/AbstractService.doStop|doStop(){}[0]
+    final fun notifyFailed(kotlin/Throwable) // dev.guavakt.util.concurrent/AbstractService.notifyFailed|notifyFailed(kotlin.Throwable){}[0]
+    final fun notifyStarted() // dev.guavakt.util.concurrent/AbstractService.notifyStarted|notifyStarted(){}[0]
+    final fun notifyStopped() // dev.guavakt.util.concurrent/AbstractService.notifyStopped|notifyStopped(){}[0]
+    open fun addListener(dev.guavakt.util.concurrent/Service.Listener) // dev.guavakt.util.concurrent/AbstractService.addListener|addListener(dev.guavakt.util.concurrent.Service.Listener){}[0]
+    open fun awaitRunning() // dev.guavakt.util.concurrent/AbstractService.awaitRunning|awaitRunning(){}[0]
+    open fun awaitTerminated() // dev.guavakt.util.concurrent/AbstractService.awaitTerminated|awaitTerminated(){}[0]
+    open fun doCancelStart() // dev.guavakt.util.concurrent/AbstractService.doCancelStart|doCancelStart(){}[0]
+    open fun failureCause(): kotlin/Throwable // dev.guavakt.util.concurrent/AbstractService.failureCause|failureCause(){}[0]
+    open fun startAsync(): dev.guavakt.util.concurrent/Service // dev.guavakt.util.concurrent/AbstractService.startAsync|startAsync(){}[0]
+    open fun state(): dev.guavakt.util.concurrent/Service.State // dev.guavakt.util.concurrent/AbstractService.state|state(){}[0]
+    open fun stopAsync(): dev.guavakt.util.concurrent/Service // dev.guavakt.util.concurrent/AbstractService.stopAsync|stopAsync(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/ForwardingCondition { // dev.guavakt.util.concurrent/ForwardingCondition|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ForwardingCondition.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.util.concurrent/ConditionLike // dev.guavakt.util.concurrent/ForwardingCondition.delegate|delegate(){}[0]
+    final fun await() // dev.guavakt.util.concurrent/ForwardingCondition.await|await(){}[0]
+    final fun signal() // dev.guavakt.util.concurrent/ForwardingCondition.signal|signal(){}[0]
+    final fun signalAll() // dev.guavakt.util.concurrent/ForwardingCondition.signalAll|signalAll(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/ForwardingExecutorService : dev.guavakt.util.concurrent/ListeningExecutorService { // dev.guavakt.util.concurrent/ForwardingExecutorService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ForwardingExecutorService.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.util.concurrent/ListeningExecutorService // dev.guavakt.util.concurrent/ForwardingExecutorService.delegate|delegate(){}[0]
+    open fun <#A1: kotlin/Any?> submit(kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/ForwardingExecutorService.submit|submit(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    open fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ForwardingExecutorService.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun isShutdown(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingExecutorService.isShutdown|isShutdown(){}[0]
+    open fun shutdown() // dev.guavakt.util.concurrent/ForwardingExecutorService.shutdown|shutdown(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/ForwardingListeningExecutorService : dev.guavakt.util.concurrent/ListeningExecutorService { // dev.guavakt.util.concurrent/ForwardingListeningExecutorService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ForwardingListeningExecutorService.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.util.concurrent/ListeningExecutorService // dev.guavakt.util.concurrent/ForwardingListeningExecutorService.delegate|delegate(){}[0]
+    open fun <#A1: kotlin/Any?> submit(kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/ForwardingListeningExecutorService.submit|submit(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    open fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ForwardingListeningExecutorService.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun isShutdown(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingListeningExecutorService.isShutdown|isShutdown(){}[0]
+    open fun shutdown() // dev.guavakt.util.concurrent/ForwardingListeningExecutorService.shutdown|shutdown(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/ForwardingLock { // dev.guavakt.util.concurrent/ForwardingLock|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ForwardingLock.<init>|<init>(){}[0]
+
+    abstract fun delegate(): dev.guavakt.util.concurrent/LockLike // dev.guavakt.util.concurrent/ForwardingLock.delegate|delegate(){}[0]
+    final fun isHeldByCurrentThread(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingLock.isHeldByCurrentThread|isHeldByCurrentThread(){}[0]
+    final fun lock() // dev.guavakt.util.concurrent/ForwardingLock.lock|lock(){}[0]
+    final fun tryLock(): kotlin/Boolean // dev.guavakt.util.concurrent/ForwardingLock.tryLock|tryLock(){}[0]
+    final fun unlock() // dev.guavakt.util.concurrent/ForwardingLock.unlock|unlock(){}[0]
+}
+
+abstract class dev.guavakt.util.concurrent/RateLimiter { // dev.guavakt.util.concurrent/RateLimiter|null[0]
+    constructor <init>(dev.guavakt.base/Ticker) // dev.guavakt.util.concurrent/RateLimiter.<init>|<init>(dev.guavakt.base.Ticker){}[0]
+    constructor <init>(dev.guavakt.base/Ticker, kotlin/Double, kotlin.time/Duration? = ...) // dev.guavakt.util.concurrent/RateLimiter.<init>|<init>(dev.guavakt.base.Ticker;kotlin.Double;kotlin.time.Duration?){}[0]
+
+    final fun acquire(): kotlin/Double // dev.guavakt.util.concurrent/RateLimiter.acquire|acquire(){}[0]
+    final fun acquire(kotlin/Int): kotlin/Double // dev.guavakt.util.concurrent/RateLimiter.acquire|acquire(kotlin.Int){}[0]
+    final fun getRate(): kotlin/Double // dev.guavakt.util.concurrent/RateLimiter.getRate|getRate(){}[0]
+    final fun setRate(kotlin/Double) // dev.guavakt.util.concurrent/RateLimiter.setRate|setRate(kotlin.Double){}[0]
+    final fun tryAcquire(): kotlin/Boolean // dev.guavakt.util.concurrent/RateLimiter.tryAcquire|tryAcquire(){}[0]
+    final fun tryAcquire(kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/RateLimiter.tryAcquire|tryAcquire(kotlin.time.Duration){}[0]
+    final fun tryAcquire(kotlin/Int): kotlin/Boolean // dev.guavakt.util.concurrent/RateLimiter.tryAcquire|tryAcquire(kotlin.Int){}[0]
+    final fun tryAcquire(kotlin/Int, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/RateLimiter.tryAcquire|tryAcquire(kotlin.Int;kotlin.time.Duration){}[0]
+    final fun tryAcquire(kotlin/Int, kotlin/Long): kotlin/Boolean // dev.guavakt.util.concurrent/RateLimiter.tryAcquire|tryAcquire(kotlin.Int;kotlin.Long){}[0]
+    open fun toString(): kotlin/String // dev.guavakt.util.concurrent/RateLimiter.toString|toString(){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/RateLimiter.Companion|null[0]
+        final fun create(kotlin/Double): dev.guavakt.util.concurrent/RateLimiter // dev.guavakt.util.concurrent/RateLimiter.Companion.create|create(kotlin.Double){}[0]
+        final fun create(kotlin/Double, dev.guavakt.base/Ticker): dev.guavakt.util.concurrent/RateLimiter // dev.guavakt.util.concurrent/RateLimiter.Companion.create|create(kotlin.Double;dev.guavakt.base.Ticker){}[0]
+        final fun create(kotlin/Double, kotlin.time/Duration): dev.guavakt.util.concurrent/RateLimiter // dev.guavakt.util.concurrent/RateLimiter.Companion.create|create(kotlin.Double;kotlin.time.Duration){}[0]
+        final fun create(kotlin/Double, kotlin.time/Duration, dev.guavakt.base/Ticker): dev.guavakt.util.concurrent/RateLimiter // dev.guavakt.util.concurrent/RateLimiter.Companion.create|create(kotlin.Double;kotlin.time.Duration;dev.guavakt.base.Ticker){}[0]
+    }
+}
+
+final class <#A: kotlin/Any> dev.guavakt.util.concurrent/AtomicLongMap { // dev.guavakt.util.concurrent/AtomicLongMap|null[0]
+    final fun accumulateAndGet(#A, kotlin/Long, kotlin/Function2<kotlin/Long, kotlin/Long, kotlin/Long>): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.accumulateAndGet|accumulateAndGet(1:0;kotlin.Long;kotlin.Function2<kotlin.Long,kotlin.Long,kotlin.Long>){}[0]
+    final fun addAndGet(#A, kotlin/Long): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.addAndGet|addAndGet(1:0;kotlin.Long){}[0]
+    final fun asMap(): kotlin.collections/Map<#A, kotlin/Long> // dev.guavakt.util.concurrent/AtomicLongMap.asMap|asMap(){}[0]
+    final fun clear() // dev.guavakt.util.concurrent/AtomicLongMap.clear|clear(){}[0]
+    final fun containsKey(#A): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicLongMap.containsKey|containsKey(1:0){}[0]
+    final fun decrementAndGet(#A): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.decrementAndGet|decrementAndGet(1:0){}[0]
+    final fun get(#A): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.get|get(1:0){}[0]
+    final fun getAndAccumulate(#A, kotlin/Long, kotlin/Function2<kotlin/Long, kotlin/Long, kotlin/Long>): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.getAndAccumulate|getAndAccumulate(1:0;kotlin.Long;kotlin.Function2<kotlin.Long,kotlin.Long,kotlin.Long>){}[0]
+    final fun getAndAdd(#A, kotlin/Long): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.getAndAdd|getAndAdd(1:0;kotlin.Long){}[0]
+    final fun getAndDecrement(#A): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.getAndDecrement|getAndDecrement(1:0){}[0]
+    final fun getAndIncrement(#A): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.getAndIncrement|getAndIncrement(1:0){}[0]
+    final fun getAndUpdate(#A, kotlin/Function1<kotlin/Long, kotlin/Long>): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.getAndUpdate|getAndUpdate(1:0;kotlin.Function1<kotlin.Long,kotlin.Long>){}[0]
+    final fun incrementAndGet(#A): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.incrementAndGet|incrementAndGet(1:0){}[0]
+    final fun isEmpty(): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicLongMap.isEmpty|isEmpty(){}[0]
+    final fun put(#A, kotlin/Long): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.put|put(1:0;kotlin.Long){}[0]
+    final fun putAll(kotlin.collections/Map<out #A, kotlin/Long>) // dev.guavakt.util.concurrent/AtomicLongMap.putAll|putAll(kotlin.collections.Map<out|1:0,kotlin.Long>){}[0]
+    final fun remove(#A): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.remove|remove(1:0){}[0]
+    final fun removeAllZeros() // dev.guavakt.util.concurrent/AtomicLongMap.removeAllZeros|removeAllZeros(){}[0]
+    final fun removeIfZero(#A): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicLongMap.removeIfZero|removeIfZero(1:0){}[0]
+    final fun size(): kotlin/Int // dev.guavakt.util.concurrent/AtomicLongMap.size|size(){}[0]
+    final fun sum(): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.sum|sum(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/AtomicLongMap.toString|toString(){}[0]
+    final fun updateAndGet(#A, kotlin/Function1<kotlin/Long, kotlin/Long>): kotlin/Long // dev.guavakt.util.concurrent/AtomicLongMap.updateAndGet|updateAndGet(1:0;kotlin.Function1<kotlin.Long,kotlin.Long>){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/AtomicLongMap.Companion|null[0]
+        final fun <#A2: kotlin/Any> create(): dev.guavakt.util.concurrent/AtomicLongMap<#A2> // dev.guavakt.util.concurrent/AtomicLongMap.Companion.create|create(){0§<kotlin.Any>}[0]
+        final fun <#A2: kotlin/Any> create(kotlin.collections/Map<out #A2, kotlin/Long>): dev.guavakt.util.concurrent/AtomicLongMap<#A2> // dev.guavakt.util.concurrent/AtomicLongMap.Companion.create|create(kotlin.collections.Map<out|0:0,kotlin.Long>){0§<kotlin.Any>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/AtomicRef { // dev.guavakt.util.concurrent/AtomicRef|null[0]
+    constructor <init>(#A) // dev.guavakt.util.concurrent/AtomicRef.<init>|<init>(1:0){}[0]
+
+    final fun compareAndSet(#A, #A): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicRef.compareAndSet|compareAndSet(1:0;1:0){}[0]
+    final fun get(): #A // dev.guavakt.util.concurrent/AtomicRef.get|get(){}[0]
+    final fun getAndSet(#A): #A // dev.guavakt.util.concurrent/AtomicRef.getAndSet|getAndSet(1:0){}[0]
+    final fun lazySet(#A) // dev.guavakt.util.concurrent/AtomicRef.lazySet|lazySet(1:0){}[0]
+    final fun set(#A) // dev.guavakt.util.concurrent/AtomicRef.set|set(1:0){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/AtomicRef.toString|toString(){}[0]
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/AtomicRefArray { // dev.guavakt.util.concurrent/AtomicRefArray|null[0]
+    constructor <init>(kotlin/Array<#A>) // dev.guavakt.util.concurrent/AtomicRefArray.<init>|<init>(kotlin.Array<1:0>){}[0]
+    constructor <init>(kotlin/Int) // dev.guavakt.util.concurrent/AtomicRefArray.<init>|<init>(kotlin.Int){}[0]
+
+    final fun compareAndSet(kotlin/Int, #A, #A): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicRefArray.compareAndSet|compareAndSet(kotlin.Int;1:0;1:0){}[0]
+    final fun get(kotlin/Int): #A // dev.guavakt.util.concurrent/AtomicRefArray.get|get(kotlin.Int){}[0]
+    final fun getAndSet(kotlin/Int, #A): #A // dev.guavakt.util.concurrent/AtomicRefArray.getAndSet|getAndSet(kotlin.Int;1:0){}[0]
+    final fun length(): kotlin/Int // dev.guavakt.util.concurrent/AtomicRefArray.length|length(){}[0]
+    final fun set(kotlin/Int, #A) // dev.guavakt.util.concurrent/AtomicRefArray.set|set(kotlin.Int;1:0){}[0]
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/ClosingFuture : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/ClosingFuture|null[0]
+    final fun <#A1: kotlin/AutoCloseable> eventuallyWillClose(#A1): #A1 // dev.guavakt.util.concurrent/ClosingFuture.eventuallyWillClose|eventuallyWillClose(0:0){0§<kotlin.AutoCloseable>}[0]
+    final fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ClosingFuture.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    final fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/ClosingFuture.cancel|cancel(kotlin.Boolean){}[0]
+    final fun finishToFuture(): dev.guavakt.util.concurrent/ListenableFuture<#A> // dev.guavakt.util.concurrent/ClosingFuture.finishToFuture|finishToFuture(){}[0]
+    final fun get(): #A // dev.guavakt.util.concurrent/ClosingFuture.get|get(){}[0]
+    final fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/ClosingFuture.isCancelled|isCancelled(){}[0]
+    final fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/ClosingFuture.isDone|isDone(){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/ClosingFuture.Companion|null[0]
+        final fun <#A2: kotlin/Any?> from(dev.guavakt.util.concurrent/ListenableFuture<#A2>): dev.guavakt.util.concurrent/ClosingFuture<#A2> // dev.guavakt.util.concurrent/ClosingFuture.Companion.from|from(dev.guavakt.util.concurrent.ListenableFuture<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> submit(kotlin/Function0<#A2>, dev.guavakt.util.concurrent/ListeningExecutorService): dev.guavakt.util.concurrent/ClosingFuture<#A2> // dev.guavakt.util.concurrent/ClosingFuture.Companion.submit|submit(kotlin.Function0<0:0>;dev.guavakt.util.concurrent.ListeningExecutorService){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/CombinedFuture : dev.guavakt.util.concurrent/AbstractFuture<kotlin.collections/List<#A>> { // dev.guavakt.util.concurrent/CombinedFuture|null[0]
+    constructor <init>(kotlin.collections/Collection<dev.guavakt.util.concurrent/ListenableFuture<out #A>>) // dev.guavakt.util.concurrent/CombinedFuture.<init>|<init>(kotlin.collections.Collection<dev.guavakt.util.concurrent.ListenableFuture<out|1:0>>){}[0]
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/ListenerCallQueue { // dev.guavakt.util.concurrent/ListenerCallQueue|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ListenerCallQueue.<init>|<init>(){}[0]
+
+    final fun addListener(#A, dev.guavakt.util.concurrent/DirectExecutorLike) // dev.guavakt.util.concurrent/ListenerCallQueue.addListener|addListener(1:0;dev.guavakt.util.concurrent.DirectExecutorLike){}[0]
+    final fun dispatch() // dev.guavakt.util.concurrent/ListenerCallQueue.dispatch|dispatch(){}[0]
+    final fun enqueue(kotlin/Function1<#A, kotlin/Unit>) // dev.guavakt.util.concurrent/ListenerCallQueue.enqueue|enqueue(kotlin.Function1<1:0,kotlin.Unit>){}[0]
+    final fun enqueue(kotlin/String, kotlin/Function1<#A, kotlin/Unit>) // dev.guavakt.util.concurrent/ListenerCallQueue.enqueue|enqueue(kotlin.String;kotlin.Function1<1:0,kotlin.Unit>){}[0]
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/SettableFuture : dev.guavakt.util.concurrent/AbstractFuture<#A> { // dev.guavakt.util.concurrent/SettableFuture|null[0]
+    final fun set(#A): kotlin/Boolean // dev.guavakt.util.concurrent/SettableFuture.set|set(1:0){}[0]
+    final fun setException(kotlin/Throwable): kotlin/Boolean // dev.guavakt.util.concurrent/SettableFuture.setException|setException(kotlin.Throwable){}[0]
+    final fun setFuture(dev.guavakt.util.concurrent/ListenableFuture<out #A>): kotlin/Boolean // dev.guavakt.util.concurrent/SettableFuture.setFuture|setFuture(dev.guavakt.util.concurrent.ListenableFuture<out|1:0>){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/SettableFuture.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(): dev.guavakt.util.concurrent/SettableFuture<#A2> // dev.guavakt.util.concurrent/SettableFuture.Companion.create|create(){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/TimeoutFuture : dev.guavakt.util.concurrent/AbstractFuture<#A> { // dev.guavakt.util.concurrent/TimeoutFuture|null[0]
+    final fun runTimeout() // dev.guavakt.util.concurrent/TimeoutFuture.runTimeout|runTimeout(){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/TimeoutFuture.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(dev.guavakt.util.concurrent/ListenableFuture<#A2>, kotlin/Long): dev.guavakt.util.concurrent/TimeoutFuture<#A2> // dev.guavakt.util.concurrent/TimeoutFuture.Companion.create|create(dev.guavakt.util.concurrent.ListenableFuture<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.util.concurrent/TrustedListenableFutureTask : dev.guavakt.util.concurrent/ListenableFutureTask<#A> { // dev.guavakt.util.concurrent/TrustedListenableFutureTask|null[0]
+    final object Companion { // dev.guavakt.util.concurrent/TrustedListenableFutureTask.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(kotlin/Function0<#A2>): dev.guavakt.util.concurrent/TrustedListenableFutureTask<#A2> // dev.guavakt.util.concurrent/TrustedListenableFutureTask.Companion.create|create(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/AtomicDouble : kotlin/Number { // dev.guavakt.util.concurrent/AtomicDouble|null[0]
+    constructor <init>(kotlin/Double = ...) // dev.guavakt.util.concurrent/AtomicDouble.<init>|<init>(kotlin.Double){}[0]
+
+    final fun accumulateAndGet(kotlin/Double, kotlin/Function2<kotlin/Double, kotlin/Double, kotlin/Double>): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.accumulateAndGet|accumulateAndGet(kotlin.Double;kotlin.Function2<kotlin.Double,kotlin.Double,kotlin.Double>){}[0]
+    final fun addAndGet(kotlin/Double): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.addAndGet|addAndGet(kotlin.Double){}[0]
+    final fun compareAndSet(kotlin/Double, kotlin/Double): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicDouble.compareAndSet|compareAndSet(kotlin.Double;kotlin.Double){}[0]
+    final fun get(): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.get|get(){}[0]
+    final fun getAndAccumulate(kotlin/Double, kotlin/Function2<kotlin/Double, kotlin/Double, kotlin/Double>): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.getAndAccumulate|getAndAccumulate(kotlin.Double;kotlin.Function2<kotlin.Double,kotlin.Double,kotlin.Double>){}[0]
+    final fun getAndAdd(kotlin/Double): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.getAndAdd|getAndAdd(kotlin.Double){}[0]
+    final fun getAndSet(kotlin/Double): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.getAndSet|getAndSet(kotlin.Double){}[0]
+    final fun getAndUpdate(kotlin/Function1<kotlin/Double, kotlin/Double>): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.getAndUpdate|getAndUpdate(kotlin.Function1<kotlin.Double,kotlin.Double>){}[0]
+    final fun lazySet(kotlin/Double) // dev.guavakt.util.concurrent/AtomicDouble.lazySet|lazySet(kotlin.Double){}[0]
+    final fun set(kotlin/Double) // dev.guavakt.util.concurrent/AtomicDouble.set|set(kotlin.Double){}[0]
+    final fun toByte(): kotlin/Byte // dev.guavakt.util.concurrent/AtomicDouble.toByte|toByte(){}[0]
+    final fun toDouble(): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.toDouble|toDouble(){}[0]
+    final fun toFloat(): kotlin/Float // dev.guavakt.util.concurrent/AtomicDouble.toFloat|toFloat(){}[0]
+    final fun toInt(): kotlin/Int // dev.guavakt.util.concurrent/AtomicDouble.toInt|toInt(){}[0]
+    final fun toLong(): kotlin/Long // dev.guavakt.util.concurrent/AtomicDouble.toLong|toLong(){}[0]
+    final fun toShort(): kotlin/Short // dev.guavakt.util.concurrent/AtomicDouble.toShort|toShort(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/AtomicDouble.toString|toString(){}[0]
+    final fun updateAndGet(kotlin/Function1<kotlin/Double, kotlin/Double>): kotlin/Double // dev.guavakt.util.concurrent/AtomicDouble.updateAndGet|updateAndGet(kotlin.Function1<kotlin.Double,kotlin.Double>){}[0]
+    final fun weakCompareAndSet(kotlin/Double, kotlin/Double): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicDouble.weakCompareAndSet|weakCompareAndSet(kotlin.Double;kotlin.Double){}[0]
+}
+
+final class dev.guavakt.util.concurrent/AtomicDoubleArray { // dev.guavakt.util.concurrent/AtomicDoubleArray|null[0]
+    constructor <init>(kotlin/DoubleArray) // dev.guavakt.util.concurrent/AtomicDoubleArray.<init>|<init>(kotlin.DoubleArray){}[0]
+    constructor <init>(kotlin/Int) // dev.guavakt.util.concurrent/AtomicDoubleArray.<init>|<init>(kotlin.Int){}[0]
+
+    final fun addAndGet(kotlin/Int, kotlin/Double): kotlin/Double // dev.guavakt.util.concurrent/AtomicDoubleArray.addAndGet|addAndGet(kotlin.Int;kotlin.Double){}[0]
+    final fun compareAndSet(kotlin/Int, kotlin/Double, kotlin/Double): kotlin/Boolean // dev.guavakt.util.concurrent/AtomicDoubleArray.compareAndSet|compareAndSet(kotlin.Int;kotlin.Double;kotlin.Double){}[0]
+    final fun get(kotlin/Int): kotlin/Double // dev.guavakt.util.concurrent/AtomicDoubleArray.get|get(kotlin.Int){}[0]
+    final fun getAndAdd(kotlin/Int, kotlin/Double): kotlin/Double // dev.guavakt.util.concurrent/AtomicDoubleArray.getAndAdd|getAndAdd(kotlin.Int;kotlin.Double){}[0]
+    final fun getAndSet(kotlin/Int, kotlin/Double): kotlin/Double // dev.guavakt.util.concurrent/AtomicDoubleArray.getAndSet|getAndSet(kotlin.Int;kotlin.Double){}[0]
+    final fun length(): kotlin/Int // dev.guavakt.util.concurrent/AtomicDoubleArray.length|length(){}[0]
+    final fun set(kotlin/Int, kotlin/Double) // dev.guavakt.util.concurrent/AtomicDoubleArray.set|set(kotlin.Int;kotlin.Double){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/AtomicDoubleArray.toString|toString(){}[0]
+}
+
+final class dev.guavakt.util.concurrent/CoroutineMonitor { // dev.guavakt.util.concurrent/CoroutineMonitor|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/CoroutineMonitor.<init>|<init>(){}[0]
+
+    final fun isLocked(): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineMonitor.isLocked|isLocked(){}[0]
+    final fun newGuard(kotlin/Function0<kotlin/Boolean>): dev.guavakt.util.concurrent/CoroutineMonitor.Guard // dev.guavakt.util.concurrent/CoroutineMonitor.newGuard|newGuard(kotlin.Function0<kotlin.Boolean>){}[0]
+    final suspend fun <#A1: kotlin/Any?> withLock(kotlin.coroutines/SuspendFunction1<dev.guavakt.util.concurrent/CoroutineMonitor, #A1>): #A1 // dev.guavakt.util.concurrent/CoroutineMonitor.withLock|withLock(kotlin.coroutines.SuspendFunction1<dev.guavakt.util.concurrent.CoroutineMonitor,0:0>){0§<kotlin.Any?>}[0]
+    final suspend fun <#A1: kotlin/Any?> withLockWhen(dev.guavakt.util.concurrent/CoroutineMonitor.Guard, kotlin.coroutines/SuspendFunction1<dev.guavakt.util.concurrent/CoroutineMonitor, #A1>): #A1 // dev.guavakt.util.concurrent/CoroutineMonitor.withLockWhen|withLockWhen(dev.guavakt.util.concurrent.CoroutineMonitor.Guard;kotlin.coroutines.SuspendFunction1<dev.guavakt.util.concurrent.CoroutineMonitor,0:0>){0§<kotlin.Any?>}[0]
+    final suspend fun await(dev.guavakt.util.concurrent/CoroutineMonitor.Guard) // dev.guavakt.util.concurrent/CoroutineMonitor.await|await(dev.guavakt.util.concurrent.CoroutineMonitor.Guard){}[0]
+    final suspend fun tryWithLockWhen(dev.guavakt.util.concurrent/CoroutineMonitor.Guard, kotlin.time/Duration, kotlin.coroutines/SuspendFunction1<dev.guavakt.util.concurrent/CoroutineMonitor, kotlin/Unit>): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineMonitor.tryWithLockWhen|tryWithLockWhen(dev.guavakt.util.concurrent.CoroutineMonitor.Guard;kotlin.time.Duration;kotlin.coroutines.SuspendFunction1<dev.guavakt.util.concurrent.CoroutineMonitor,kotlin.Unit>){}[0]
+
+    abstract class Guard { // dev.guavakt.util.concurrent/CoroutineMonitor.Guard|null[0]
+        constructor <init>(dev.guavakt.util.concurrent/CoroutineMonitor) // dev.guavakt.util.concurrent/CoroutineMonitor.Guard.<init>|<init>(dev.guavakt.util.concurrent.CoroutineMonitor){}[0]
+
+        final val monitor // dev.guavakt.util.concurrent/CoroutineMonitor.Guard.monitor|{}monitor[0]
+            final fun <get-monitor>(): dev.guavakt.util.concurrent/CoroutineMonitor // dev.guavakt.util.concurrent/CoroutineMonitor.Guard.monitor.<get-monitor>|<get-monitor>(){}[0]
+
+        abstract fun isSatisfied(): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineMonitor.Guard.isSatisfied|isSatisfied(){}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/CoroutineRateLimiter { // dev.guavakt.util.concurrent/CoroutineRateLimiter|null[0]
+    final suspend fun acquire(): kotlin.time/Duration // dev.guavakt.util.concurrent/CoroutineRateLimiter.acquire|acquire(){}[0]
+    final suspend fun acquire(kotlin/Int): kotlin.time/Duration // dev.guavakt.util.concurrent/CoroutineRateLimiter.acquire|acquire(kotlin.Int){}[0]
+    final suspend fun rate(): kotlin/Double // dev.guavakt.util.concurrent/CoroutineRateLimiter.rate|rate(){}[0]
+    final suspend fun setRate(kotlin/Double) // dev.guavakt.util.concurrent/CoroutineRateLimiter.setRate|setRate(kotlin.Double){}[0]
+    final suspend fun stats(): dev.guavakt.util.concurrent/CoroutineRateLimiterStats // dev.guavakt.util.concurrent/CoroutineRateLimiter.stats|stats(){}[0]
+    final suspend fun tryAcquire(): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineRateLimiter.tryAcquire|tryAcquire(){}[0]
+    final suspend fun tryAcquire(kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineRateLimiter.tryAcquire|tryAcquire(kotlin.time.Duration){}[0]
+    final suspend fun tryAcquire(kotlin/Int): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineRateLimiter.tryAcquire|tryAcquire(kotlin.Int){}[0]
+    final suspend fun tryAcquire(kotlin/Int, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineRateLimiter.tryAcquire|tryAcquire(kotlin.Int;kotlin.time.Duration){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/CoroutineRateLimiter.Companion|null[0]
+        final fun create(kotlin/Double): dev.guavakt.util.concurrent/CoroutineRateLimiter // dev.guavakt.util.concurrent/CoroutineRateLimiter.Companion.create|create(kotlin.Double){}[0]
+        final fun create(kotlin/Double, dev.guavakt.base/Ticker): dev.guavakt.util.concurrent/CoroutineRateLimiter // dev.guavakt.util.concurrent/CoroutineRateLimiter.Companion.create|create(kotlin.Double;dev.guavakt.base.Ticker){}[0]
+        final fun create(kotlin/Double, kotlin.time/Duration): dev.guavakt.util.concurrent/CoroutineRateLimiter // dev.guavakt.util.concurrent/CoroutineRateLimiter.Companion.create|create(kotlin.Double;kotlin.time.Duration){}[0]
+        final fun create(kotlin/Double, kotlin.time/Duration, dev.guavakt.base/Ticker): dev.guavakt.util.concurrent/CoroutineRateLimiter // dev.guavakt.util.concurrent/CoroutineRateLimiter.Companion.create|create(kotlin.Double;kotlin.time.Duration;dev.guavakt.base.Ticker){}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/CoroutineRateLimiterStats { // dev.guavakt.util.concurrent/CoroutineRateLimiterStats|null[0]
+    constructor <init>(kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long, kotlin/Long) // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.<init>|<init>(kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long){}[0]
+
+    final val acceptedAcquisitionCount // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.acceptedAcquisitionCount|{}acceptedAcquisitionCount[0]
+        final fun <get-acceptedAcquisitionCount>(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.acceptedAcquisitionCount.<get-acceptedAcquisitionCount>|<get-acceptedAcquisitionCount>(){}[0]
+    final val acquiredPermitCount // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.acquiredPermitCount|{}acquiredPermitCount[0]
+        final fun <get-acquiredPermitCount>(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.acquiredPermitCount.<get-acquiredPermitCount>|<get-acquiredPermitCount>(){}[0]
+    final val cancelledAcquisitionCount // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.cancelledAcquisitionCount|{}cancelledAcquisitionCount[0]
+        final fun <get-cancelledAcquisitionCount>(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.cancelledAcquisitionCount.<get-cancelledAcquisitionCount>|<get-cancelledAcquisitionCount>(){}[0]
+    final val cancelledPermitCount // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.cancelledPermitCount|{}cancelledPermitCount[0]
+        final fun <get-cancelledPermitCount>(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.cancelledPermitCount.<get-cancelledPermitCount>|<get-cancelledPermitCount>(){}[0]
+    final val completedAcquisitionCount // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.completedAcquisitionCount|{}completedAcquisitionCount[0]
+        final fun <get-completedAcquisitionCount>(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.completedAcquisitionCount.<get-completedAcquisitionCount>|<get-completedAcquisitionCount>(){}[0]
+    final val rejectedAcquisitionCount // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.rejectedAcquisitionCount|{}rejectedAcquisitionCount[0]
+        final fun <get-rejectedAcquisitionCount>(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.rejectedAcquisitionCount.<get-rejectedAcquisitionCount>|<get-rejectedAcquisitionCount>(){}[0]
+    final val totalReservedWaitTimeNanos // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.totalReservedWaitTimeNanos|{}totalReservedWaitTimeNanos[0]
+        final fun <get-totalReservedWaitTimeNanos>(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.totalReservedWaitTimeNanos.<get-totalReservedWaitTimeNanos>|<get-totalReservedWaitTimeNanos>(){}[0]
+
+    final fun component1(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.component1|component1(){}[0]
+    final fun component2(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.component2|component2(){}[0]
+    final fun component3(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.component3|component3(){}[0]
+    final fun component4(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.component4|component4(){}[0]
+    final fun component5(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.component5|component5(){}[0]
+    final fun component6(): kotlin/Long // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.component6|component6(){}[0]
+    final fun copy(kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ..., kotlin/Long = ...): dev.guavakt.util.concurrent/CoroutineRateLimiterStats // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.copy|copy(kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long;kotlin.Long){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/CoroutineRateLimiterStats.toString|toString(){}[0]
+}
+
+final class dev.guavakt.util.concurrent/CoroutineTimeLimiter { // dev.guavakt.util.concurrent/CoroutineTimeLimiter|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/CoroutineTimeLimiter.<init>|<init>(){}[0]
+
+    final suspend fun <#A1: kotlin/Any?> callWithTimeout(kotlin.time/Duration, kotlin.coroutines/SuspendFunction0<#A1>): #A1 // dev.guavakt.util.concurrent/CoroutineTimeLimiter.callWithTimeout|callWithTimeout(kotlin.time.Duration;kotlin.coroutines.SuspendFunction0<0:0>){0§<kotlin.Any?>}[0]
+    final suspend fun <#A1: kotlin/Any?> callWithTimeoutOrNull(kotlin.time/Duration, kotlin.coroutines/SuspendFunction0<#A1>): #A1? // dev.guavakt.util.concurrent/CoroutineTimeLimiter.callWithTimeoutOrNull|callWithTimeoutOrNull(kotlin.time.Duration;kotlin.coroutines.SuspendFunction0<0:0>){0§<kotlin.Any?>}[0]
+    final suspend fun runWithTimeout(kotlin.time/Duration, kotlin.coroutines/SuspendFunction0<kotlin/Unit>) // dev.guavakt.util.concurrent/CoroutineTimeLimiter.runWithTimeout|runWithTimeout(kotlin.time.Duration;kotlin.coroutines.SuspendFunction0<kotlin.Unit>){}[0]
+}
+
+final class dev.guavakt.util.concurrent/CycleDetectingLockFactory { // dev.guavakt.util.concurrent/CycleDetectingLockFactory|null[0]
+    final fun newReentrantLock(kotlin/String): dev.guavakt.util.concurrent/CycleDetectingLockFactory.CycleDetectingLock // dev.guavakt.util.concurrent/CycleDetectingLockFactory.newReentrantLock|newReentrantLock(kotlin.String){}[0]
+
+    abstract enum class Policies : dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policy, kotlin/Enum<dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies> { // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies|null[0]
+        enum entry DISABLED // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies.DISABLED|null[0]
+        enum entry THROW // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies.THROW|null[0]
+        enum entry WARN // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies.WARN|null[0]
+
+        final val entries // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies.entries|#static{}entries[0]
+            final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies> // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies.entries.<get-entries>|<get-entries>#static(){}[0]
+
+        final fun valueOf(kotlin/String): dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies.valueOf|valueOf#static(kotlin.String){}[0]
+        final fun values(): kotlin/Array<dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies> // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policies.values|values#static(){}[0]
+    }
+
+    abstract interface CycleDetectingLock { // dev.guavakt.util.concurrent/CycleDetectingLockFactory.CycleDetectingLock|null[0]
+        abstract fun isHeld(): kotlin/Boolean // dev.guavakt.util.concurrent/CycleDetectingLockFactory.CycleDetectingLock.isHeld|isHeld(){}[0]
+        abstract fun lock() // dev.guavakt.util.concurrent/CycleDetectingLockFactory.CycleDetectingLock.lock|lock(){}[0]
+        abstract fun unlock() // dev.guavakt.util.concurrent/CycleDetectingLockFactory.CycleDetectingLock.unlock|unlock(){}[0]
+    }
+
+    abstract interface Policy { // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policy|null[0]
+        abstract fun handlePotentialDeadlock(dev.guavakt.util.concurrent/CycleDetectingLockFactory.PotentialDeadlockException) // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policy.handlePotentialDeadlock|handlePotentialDeadlock(dev.guavakt.util.concurrent.CycleDetectingLockFactory.PotentialDeadlockException){}[0]
+    }
+
+    final class PotentialDeadlockException : kotlin/IllegalStateException { // dev.guavakt.util.concurrent/CycleDetectingLockFactory.PotentialDeadlockException|null[0]
+        constructor <init>(kotlin/String) // dev.guavakt.util.concurrent/CycleDetectingLockFactory.PotentialDeadlockException.<init>|<init>(kotlin.String){}[0]
+    }
+
+    final object Companion { // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Companion|null[0]
+        final fun newInstance(dev.guavakt.util.concurrent/CycleDetectingLockFactory.Policy): dev.guavakt.util.concurrent/CycleDetectingLockFactory // dev.guavakt.util.concurrent/CycleDetectingLockFactory.Companion.newInstance|newInstance(dev.guavakt.util.concurrent.CycleDetectingLockFactory.Policy){}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/DirectExecutorService : dev.guavakt.util.concurrent/AbstractListeningExecutorService { // dev.guavakt.util.concurrent/DirectExecutorService|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/DirectExecutorService.<init>|<init>(){}[0]
+
+    final fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/DirectExecutorService.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+}
+
+final class dev.guavakt.util.concurrent/ExecutionList { // dev.guavakt.util.concurrent/ExecutionList|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ExecutionList.<init>|<init>(){}[0]
+
+    final fun add(kotlin/Function0<kotlin/Unit>, dev.guavakt.util.concurrent/DirectExecutorLike) // dev.guavakt.util.concurrent/ExecutionList.add|add(kotlin.Function0<kotlin.Unit>;dev.guavakt.util.concurrent.DirectExecutorLike){}[0]
+    final fun execute() // dev.guavakt.util.concurrent/ExecutionList.execute|execute(){}[0]
+}
+
+final class dev.guavakt.util.concurrent/ExecutionSequencer { // dev.guavakt.util.concurrent/ExecutionSequencer|null[0]
+    final fun <#A1: kotlin/Any?> submit(kotlin/Function0<#A1>, dev.guavakt.util.concurrent/DirectExecutorLike): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/ExecutionSequencer.submit|submit(kotlin.Function0<0:0>;dev.guavakt.util.concurrent.DirectExecutorLike){0§<kotlin.Any?>}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/ExecutionSequencer.Companion|null[0]
+        final fun create(): dev.guavakt.util.concurrent/ExecutionSequencer // dev.guavakt.util.concurrent/ExecutionSequencer.Companion.create|create(){}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/FakeTimeLimiter : dev.guavakt.util.concurrent/TimeLimiter { // dev.guavakt.util.concurrent/FakeTimeLimiter|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/FakeTimeLimiter.<init>|<init>(){}[0]
+
+    final fun <#A1: kotlin/Any?> callUninterruptiblyWithTimeout(kotlin/Function0<#A1>, kotlin/Long): #A1 // dev.guavakt.util.concurrent/FakeTimeLimiter.callUninterruptiblyWithTimeout|callUninterruptiblyWithTimeout(kotlin.Function0<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> callWithTimeout(kotlin/Function0<#A1>, kotlin/Long): #A1 // dev.guavakt.util.concurrent/FakeTimeLimiter.callWithTimeout|callWithTimeout(kotlin.Function0<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> newProxy(#A1, kotlin/Any, kotlin/Long): #A1 // dev.guavakt.util.concurrent/FakeTimeLimiter.newProxy|newProxy(0:0;kotlin.Any;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun runUninterruptiblyWithTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Long) // dev.guavakt.util.concurrent/FakeTimeLimiter.runUninterruptiblyWithTimeout|runUninterruptiblyWithTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Long){}[0]
+    final fun runWithTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Long) // dev.guavakt.util.concurrent/FakeTimeLimiter.runWithTimeout|runWithTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Long){}[0]
+}
+
+final class dev.guavakt.util.concurrent/IllegalMonitorStateException : kotlin/IllegalStateException { // dev.guavakt.util.concurrent/IllegalMonitorStateException|null[0]
+    constructor <init>(kotlin/String? = ...) // dev.guavakt.util.concurrent/IllegalMonitorStateException.<init>|<init>(kotlin.String?){}[0]
+}
+
+final class dev.guavakt.util.concurrent/KmpThreadConfig { // dev.guavakt.util.concurrent/KmpThreadConfig|null[0]
+    constructor <init>(kotlin/Function0<kotlin/Unit>, kotlin/String?, kotlin/Boolean?, kotlin/Int?, kotlin/Function1<kotlin/Throwable, kotlin/Unit>?) // dev.guavakt.util.concurrent/KmpThreadConfig.<init>|<init>(kotlin.Function0<kotlin.Unit>;kotlin.String?;kotlin.Boolean?;kotlin.Int?;kotlin.Function1<kotlin.Throwable,kotlin.Unit>?){}[0]
+
+    final val daemon // dev.guavakt.util.concurrent/KmpThreadConfig.daemon|{}daemon[0]
+        final fun <get-daemon>(): kotlin/Boolean? // dev.guavakt.util.concurrent/KmpThreadConfig.daemon.<get-daemon>|<get-daemon>(){}[0]
+    final val name // dev.guavakt.util.concurrent/KmpThreadConfig.name|{}name[0]
+        final fun <get-name>(): kotlin/String? // dev.guavakt.util.concurrent/KmpThreadConfig.name.<get-name>|<get-name>(){}[0]
+    final val priority // dev.guavakt.util.concurrent/KmpThreadConfig.priority|{}priority[0]
+        final fun <get-priority>(): kotlin/Int? // dev.guavakt.util.concurrent/KmpThreadConfig.priority.<get-priority>|<get-priority>(){}[0]
+    final val runnable // dev.guavakt.util.concurrent/KmpThreadConfig.runnable|{}runnable[0]
+        final fun <get-runnable>(): kotlin/Function0<kotlin/Unit> // dev.guavakt.util.concurrent/KmpThreadConfig.runnable.<get-runnable>|<get-runnable>(){}[0]
+    final val uncaughtExceptionHandler // dev.guavakt.util.concurrent/KmpThreadConfig.uncaughtExceptionHandler|{}uncaughtExceptionHandler[0]
+        final fun <get-uncaughtExceptionHandler>(): kotlin/Function1<kotlin/Throwable, kotlin/Unit>? // dev.guavakt.util.concurrent/KmpThreadConfig.uncaughtExceptionHandler.<get-uncaughtExceptionHandler>|<get-uncaughtExceptionHandler>(){}[0]
+
+    final fun component1(): kotlin/Function0<kotlin/Unit> // dev.guavakt.util.concurrent/KmpThreadConfig.component1|component1(){}[0]
+    final fun component2(): kotlin/String? // dev.guavakt.util.concurrent/KmpThreadConfig.component2|component2(){}[0]
+    final fun component3(): kotlin/Boolean? // dev.guavakt.util.concurrent/KmpThreadConfig.component3|component3(){}[0]
+    final fun component4(): kotlin/Int? // dev.guavakt.util.concurrent/KmpThreadConfig.component4|component4(){}[0]
+    final fun component5(): kotlin/Function1<kotlin/Throwable, kotlin/Unit>? // dev.guavakt.util.concurrent/KmpThreadConfig.component5|component5(){}[0]
+    final fun copy(kotlin/Function0<kotlin/Unit> = ..., kotlin/String? = ..., kotlin/Boolean? = ..., kotlin/Int? = ..., kotlin/Function1<kotlin/Throwable, kotlin/Unit>? = ...): dev.guavakt.util.concurrent/KmpThreadConfig // dev.guavakt.util.concurrent/KmpThreadConfig.copy|copy(kotlin.Function0<kotlin.Unit>;kotlin.String?;kotlin.Boolean?;kotlin.Int?;kotlin.Function1<kotlin.Throwable,kotlin.Unit>?){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.util.concurrent/KmpThreadConfig.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.util.concurrent/KmpThreadConfig.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/KmpThreadConfig.toString|toString(){}[0]
+}
+
+final class dev.guavakt.util.concurrent/Monitor { // dev.guavakt.util.concurrent/Monitor|null[0]
+    constructor <init>(kotlin/Boolean = ...) // dev.guavakt.util.concurrent/Monitor.<init>|<init>(kotlin.Boolean){}[0]
+
+    final fun enter() // dev.guavakt.util.concurrent/Monitor.enter|enter(){}[0]
+    final fun enter(kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enter|enter(kotlin.time.Duration){}[0]
+    final fun enterIf(dev.guavakt.util.concurrent/Monitor.Guard): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enterIf|enterIf(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun enterIf(dev.guavakt.util.concurrent/Monitor.Guard, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enterIf|enterIf(dev.guavakt.util.concurrent.Monitor.Guard;kotlin.time.Duration){}[0]
+    final fun enterIfInterruptibly(dev.guavakt.util.concurrent/Monitor.Guard): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enterIfInterruptibly|enterIfInterruptibly(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun enterIfInterruptibly(dev.guavakt.util.concurrent/Monitor.Guard, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enterIfInterruptibly|enterIfInterruptibly(dev.guavakt.util.concurrent.Monitor.Guard;kotlin.time.Duration){}[0]
+    final fun enterInterruptibly() // dev.guavakt.util.concurrent/Monitor.enterInterruptibly|enterInterruptibly(){}[0]
+    final fun enterInterruptibly(kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enterInterruptibly|enterInterruptibly(kotlin.time.Duration){}[0]
+    final fun enterWhen(dev.guavakt.util.concurrent/Monitor.Guard) // dev.guavakt.util.concurrent/Monitor.enterWhen|enterWhen(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun enterWhen(dev.guavakt.util.concurrent/Monitor.Guard, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enterWhen|enterWhen(dev.guavakt.util.concurrent.Monitor.Guard;kotlin.time.Duration){}[0]
+    final fun enterWhenUninterruptibly(dev.guavakt.util.concurrent/Monitor.Guard) // dev.guavakt.util.concurrent/Monitor.enterWhenUninterruptibly|enterWhenUninterruptibly(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun enterWhenUninterruptibly(dev.guavakt.util.concurrent/Monitor.Guard, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.enterWhenUninterruptibly|enterWhenUninterruptibly(dev.guavakt.util.concurrent.Monitor.Guard;kotlin.time.Duration){}[0]
+    final fun getOccupiedDepth(): kotlin/Int // dev.guavakt.util.concurrent/Monitor.getOccupiedDepth|getOccupiedDepth(){}[0]
+    final fun getQueueLength(): kotlin/Int // dev.guavakt.util.concurrent/Monitor.getQueueLength|getQueueLength(){}[0]
+    final fun getWaitQueueLength(dev.guavakt.util.concurrent/Monitor.Guard): kotlin/Int // dev.guavakt.util.concurrent/Monitor.getWaitQueueLength|getWaitQueueLength(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun hasQueuedThreads(): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.hasQueuedThreads|hasQueuedThreads(){}[0]
+    final fun hasWaiters(dev.guavakt.util.concurrent/Monitor.Guard): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.hasWaiters|hasWaiters(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun isFair(): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.isFair|isFair(){}[0]
+    final fun isOccupied(): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.isOccupied|isOccupied(){}[0]
+    final fun isOccupiedByCurrentThread(): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.isOccupiedByCurrentThread|isOccupiedByCurrentThread(){}[0]
+    final fun leave() // dev.guavakt.util.concurrent/Monitor.leave|leave(){}[0]
+    final fun newGuard(kotlin/Function0<kotlin/Boolean>): dev.guavakt.util.concurrent/Monitor.Guard // dev.guavakt.util.concurrent/Monitor.newGuard|newGuard(kotlin.Function0<kotlin.Boolean>){}[0]
+    final fun tryEnter(): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.tryEnter|tryEnter(){}[0]
+    final fun tryEnterIf(dev.guavakt.util.concurrent/Monitor.Guard): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.tryEnterIf|tryEnterIf(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun tryEnterWhen(dev.guavakt.util.concurrent/Monitor.Guard): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.tryEnterWhen|tryEnterWhen(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun waitFor(dev.guavakt.util.concurrent/Monitor.Guard) // dev.guavakt.util.concurrent/Monitor.waitFor|waitFor(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun waitFor(dev.guavakt.util.concurrent/Monitor.Guard, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.waitFor|waitFor(dev.guavakt.util.concurrent.Monitor.Guard;kotlin.time.Duration){}[0]
+    final fun waitForUninterruptibly(dev.guavakt.util.concurrent/Monitor.Guard) // dev.guavakt.util.concurrent/Monitor.waitForUninterruptibly|waitForUninterruptibly(dev.guavakt.util.concurrent.Monitor.Guard){}[0]
+    final fun waitForUninterruptibly(dev.guavakt.util.concurrent/Monitor.Guard, kotlin.time/Duration): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.waitForUninterruptibly|waitForUninterruptibly(dev.guavakt.util.concurrent.Monitor.Guard;kotlin.time.Duration){}[0]
+
+    abstract class Guard { // dev.guavakt.util.concurrent/Monitor.Guard|null[0]
+        constructor <init>(dev.guavakt.util.concurrent/Monitor) // dev.guavakt.util.concurrent/Monitor.Guard.<init>|<init>(dev.guavakt.util.concurrent.Monitor){}[0]
+
+        final val monitor // dev.guavakt.util.concurrent/Monitor.Guard.monitor|{}monitor[0]
+            final fun <get-monitor>(): dev.guavakt.util.concurrent/Monitor // dev.guavakt.util.concurrent/Monitor.Guard.monitor.<get-monitor>|<get-monitor>(){}[0]
+
+        final var next // dev.guavakt.util.concurrent/Monitor.Guard.next|{}next[0]
+            final fun <get-next>(): dev.guavakt.util.concurrent/Monitor.Guard? // dev.guavakt.util.concurrent/Monitor.Guard.next.<get-next>|<get-next>(){}[0]
+            final fun <set-next>(dev.guavakt.util.concurrent/Monitor.Guard?) // dev.guavakt.util.concurrent/Monitor.Guard.next.<set-next>|<set-next>(dev.guavakt.util.concurrent.Monitor.Guard?){}[0]
+
+        abstract fun isSatisfied(): kotlin/Boolean // dev.guavakt.util.concurrent/Monitor.Guard.isSatisfied|isSatisfied(){}[0]
+        final fun enter() // dev.guavakt.util.concurrent/Monitor.Guard.enter|enter(){}[0]
+        final fun leave() // dev.guavakt.util.concurrent/Monitor.Guard.leave|leave(){}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/SemaphoreStripe { // dev.guavakt.util.concurrent/SemaphoreStripe|null[0]
+    constructor <init>(kotlin/Int) // dev.guavakt.util.concurrent/SemaphoreStripe.<init>|<init>(kotlin.Int){}[0]
+
+    final fun availablePermits(): kotlin/Int // dev.guavakt.util.concurrent/SemaphoreStripe.availablePermits|availablePermits(){}[0]
+    final fun release() // dev.guavakt.util.concurrent/SemaphoreStripe.release|release(){}[0]
+    final fun tryAcquire(): kotlin/Boolean // dev.guavakt.util.concurrent/SemaphoreStripe.tryAcquire|tryAcquire(){}[0]
+}
+
+final class dev.guavakt.util.concurrent/SequentialExecutor : dev.guavakt.util.concurrent/ListeningExecutorService { // dev.guavakt.util.concurrent/SequentialExecutor|null[0]
+    constructor <init>(dev.guavakt.util.concurrent/ListeningExecutorService) // dev.guavakt.util.concurrent/SequentialExecutor.<init>|<init>(dev.guavakt.util.concurrent.ListeningExecutorService){}[0]
+
+    final fun <#A1: kotlin/Any?> submit(kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/SequentialExecutor.submit|submit(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    final fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/SequentialExecutor.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+}
+
+final class dev.guavakt.util.concurrent/ServiceManager { // dev.guavakt.util.concurrent/ServiceManager|null[0]
+    constructor <init>(kotlin.collections/Iterable<dev.guavakt.util.concurrent/Service>, dev.guavakt.base/Ticker = ...) // dev.guavakt.util.concurrent/ServiceManager.<init>|<init>(kotlin.collections.Iterable<dev.guavakt.util.concurrent.Service>;dev.guavakt.base.Ticker){}[0]
+
+    final fun addListener(dev.guavakt.util.concurrent/ServiceManager.Listener) // dev.guavakt.util.concurrent/ServiceManager.addListener|addListener(dev.guavakt.util.concurrent.ServiceManager.Listener){}[0]
+    final fun awaitHealthy() // dev.guavakt.util.concurrent/ServiceManager.awaitHealthy|awaitHealthy(){}[0]
+    final fun awaitHealthy(kotlin.time/Duration) // dev.guavakt.util.concurrent/ServiceManager.awaitHealthy|awaitHealthy(kotlin.time.Duration){}[0]
+    final fun awaitStopped() // dev.guavakt.util.concurrent/ServiceManager.awaitStopped|awaitStopped(){}[0]
+    final fun awaitStopped(kotlin.time/Duration) // dev.guavakt.util.concurrent/ServiceManager.awaitStopped|awaitStopped(kotlin.time.Duration){}[0]
+    final fun isHealthy(): kotlin/Boolean // dev.guavakt.util.concurrent/ServiceManager.isHealthy|isHealthy(){}[0]
+    final fun servicesByState(): kotlin.collections/Map<dev.guavakt.util.concurrent/Service.State, kotlin.collections/List<dev.guavakt.util.concurrent/Service>> // dev.guavakt.util.concurrent/ServiceManager.servicesByState|servicesByState(){}[0]
+    final fun snapshot(): dev.guavakt.util.concurrent/ServiceManagerSnapshot // dev.guavakt.util.concurrent/ServiceManager.snapshot|snapshot(){}[0]
+    final fun startAsync(): dev.guavakt.util.concurrent/ServiceManager // dev.guavakt.util.concurrent/ServiceManager.startAsync|startAsync(){}[0]
+    final fun startupDurations(): kotlin.collections/Map<dev.guavakt.util.concurrent/Service, kotlin.time/Duration> // dev.guavakt.util.concurrent/ServiceManager.startupDurations|startupDurations(){}[0]
+    final fun startupTimes(): kotlin.collections/Map<dev.guavakt.util.concurrent/Service, kotlin/Long> // dev.guavakt.util.concurrent/ServiceManager.startupTimes|startupTimes(){}[0]
+    final fun stopAsync(): dev.guavakt.util.concurrent/ServiceManager // dev.guavakt.util.concurrent/ServiceManager.stopAsync|stopAsync(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/ServiceManager.toString|toString(){}[0]
+
+    abstract class Listener { // dev.guavakt.util.concurrent/ServiceManager.Listener|null[0]
+        constructor <init>() // dev.guavakt.util.concurrent/ServiceManager.Listener.<init>|<init>(){}[0]
+
+        open fun failure(dev.guavakt.util.concurrent/Service) // dev.guavakt.util.concurrent/ServiceManager.Listener.failure|failure(dev.guavakt.util.concurrent.Service){}[0]
+        open fun healthy() // dev.guavakt.util.concurrent/ServiceManager.Listener.healthy|healthy(){}[0]
+        open fun stopped() // dev.guavakt.util.concurrent/ServiceManager.Listener.stopped|stopped(){}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/ServiceManagerSnapshot { // dev.guavakt.util.concurrent/ServiceManagerSnapshot|null[0]
+    constructor <init>(kotlin.collections/Map<dev.guavakt.util.concurrent/Service.State, kotlin.collections/List<dev.guavakt.util.concurrent/Service>>, kotlin/Boolean, kotlin/Boolean) // dev.guavakt.util.concurrent/ServiceManagerSnapshot.<init>|<init>(kotlin.collections.Map<dev.guavakt.util.concurrent.Service.State,kotlin.collections.List<dev.guavakt.util.concurrent.Service>>;kotlin.Boolean;kotlin.Boolean){}[0]
+
+    final val isHealthy // dev.guavakt.util.concurrent/ServiceManagerSnapshot.isHealthy|{}isHealthy[0]
+        final fun <get-isHealthy>(): kotlin/Boolean // dev.guavakt.util.concurrent/ServiceManagerSnapshot.isHealthy.<get-isHealthy>|<get-isHealthy>(){}[0]
+    final val isStopped // dev.guavakt.util.concurrent/ServiceManagerSnapshot.isStopped|{}isStopped[0]
+        final fun <get-isStopped>(): kotlin/Boolean // dev.guavakt.util.concurrent/ServiceManagerSnapshot.isStopped.<get-isStopped>|<get-isStopped>(){}[0]
+    final val servicesByState // dev.guavakt.util.concurrent/ServiceManagerSnapshot.servicesByState|{}servicesByState[0]
+        final fun <get-servicesByState>(): kotlin.collections/Map<dev.guavakt.util.concurrent/Service.State, kotlin.collections/List<dev.guavakt.util.concurrent/Service>> // dev.guavakt.util.concurrent/ServiceManagerSnapshot.servicesByState.<get-servicesByState>|<get-servicesByState>(){}[0]
+
+    final fun component1(): kotlin.collections/Map<dev.guavakt.util.concurrent/Service.State, kotlin.collections/List<dev.guavakt.util.concurrent/Service>> // dev.guavakt.util.concurrent/ServiceManagerSnapshot.component1|component1(){}[0]
+    final fun component2(): kotlin/Boolean // dev.guavakt.util.concurrent/ServiceManagerSnapshot.component2|component2(){}[0]
+    final fun component3(): kotlin/Boolean // dev.guavakt.util.concurrent/ServiceManagerSnapshot.component3|component3(){}[0]
+    final fun copy(kotlin.collections/Map<dev.guavakt.util.concurrent/Service.State, kotlin.collections/List<dev.guavakt.util.concurrent/Service>> = ..., kotlin/Boolean = ..., kotlin/Boolean = ...): dev.guavakt.util.concurrent/ServiceManagerSnapshot // dev.guavakt.util.concurrent/ServiceManagerSnapshot.copy|copy(kotlin.collections.Map<dev.guavakt.util.concurrent.Service.State,kotlin.collections.List<dev.guavakt.util.concurrent.Service>>;kotlin.Boolean;kotlin.Boolean){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.util.concurrent/ServiceManagerSnapshot.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.util.concurrent/ServiceManagerSnapshot.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.util.concurrent/ServiceManagerSnapshot.toString|toString(){}[0]
+}
+
+final class dev.guavakt.util.concurrent/SimpleTimeLimiter : dev.guavakt.util.concurrent/TimeLimiter { // dev.guavakt.util.concurrent/SimpleTimeLimiter|null[0]
+    final fun <#A1: kotlin/Any?> callUninterruptiblyWithTimeout(kotlin/Function0<#A1>, kotlin/Long): #A1 // dev.guavakt.util.concurrent/SimpleTimeLimiter.callUninterruptiblyWithTimeout|callUninterruptiblyWithTimeout(kotlin.Function0<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> callWithTimeout(kotlin/Function0<#A1>, kotlin/Long): #A1 // dev.guavakt.util.concurrent/SimpleTimeLimiter.callWithTimeout|callWithTimeout(kotlin.Function0<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> newProxy(#A1, kotlin/Any, kotlin/Long): #A1 // dev.guavakt.util.concurrent/SimpleTimeLimiter.newProxy|newProxy(0:0;kotlin.Any;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun runUninterruptiblyWithTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Long) // dev.guavakt.util.concurrent/SimpleTimeLimiter.runUninterruptiblyWithTimeout|runUninterruptiblyWithTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Long){}[0]
+    final fun runWithTimeout(kotlin/Function0<kotlin/Unit>, kotlin/Long) // dev.guavakt.util.concurrent/SimpleTimeLimiter.runWithTimeout|runWithTimeout(kotlin.Function0<kotlin.Unit>;kotlin.Long){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/SimpleTimeLimiter.Companion|null[0]
+        final fun create(dev.guavakt.util.concurrent/DirectExecutorLike): dev.guavakt.util.concurrent/SimpleTimeLimiter // dev.guavakt.util.concurrent/SimpleTimeLimiter.Companion.create|create(dev.guavakt.util.concurrent.DirectExecutorLike){}[0]
+    }
+}
+
+final class dev.guavakt.util.concurrent/ThreadFactoryBuilder { // dev.guavakt.util.concurrent/ThreadFactoryBuilder|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ThreadFactoryBuilder.<init>|<init>(){}[0]
+
+    final fun build(): dev.guavakt.util.concurrent/KmpThreadFactory // dev.guavakt.util.concurrent/ThreadFactoryBuilder.build|build(){}[0]
+    final fun setDaemon(kotlin/Boolean): dev.guavakt.util.concurrent/ThreadFactoryBuilder // dev.guavakt.util.concurrent/ThreadFactoryBuilder.setDaemon|setDaemon(kotlin.Boolean){}[0]
+    final fun setNameFormat(kotlin/String): dev.guavakt.util.concurrent/ThreadFactoryBuilder // dev.guavakt.util.concurrent/ThreadFactoryBuilder.setNameFormat|setNameFormat(kotlin.String){}[0]
+    final fun setPriority(kotlin/Int): dev.guavakt.util.concurrent/ThreadFactoryBuilder // dev.guavakt.util.concurrent/ThreadFactoryBuilder.setPriority|setPriority(kotlin.Int){}[0]
+    final fun setUncaughtExceptionHandler(kotlin/Function1<kotlin/Throwable, kotlin/Unit>): dev.guavakt.util.concurrent/ThreadFactoryBuilder // dev.guavakt.util.concurrent/ThreadFactoryBuilder.setUncaughtExceptionHandler|setUncaughtExceptionHandler(kotlin.Function1<kotlin.Throwable,kotlin.Unit>){}[0]
+}
+
+final class dev.guavakt.util.concurrent/TimeoutException : kotlin/Exception { // dev.guavakt.util.concurrent/TimeoutException|null[0]
+    constructor <init>(kotlin/String) // dev.guavakt.util.concurrent/TimeoutException.<init>|<init>(kotlin.String){}[0]
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.util.concurrent/AbstractTransformFuture : dev.guavakt.util.concurrent/AbstractFuture<#B> { // dev.guavakt.util.concurrent/AbstractTransformFuture|null[0]
+    final object Companion { // dev.guavakt.util.concurrent/AbstractTransformFuture.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> create(dev.guavakt.util.concurrent/ListenableFuture<out #A2>, kotlin/Function1<#A2, #B2>): dev.guavakt.util.concurrent/ListenableFuture<#B2> // dev.guavakt.util.concurrent/AbstractTransformFuture.Companion.create|create(dev.guavakt.util.concurrent.ListenableFuture<out|0:0>;kotlin.Function1<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?, #B: kotlin/Throwable> dev.guavakt.util.concurrent/AbstractCatchingFuture : dev.guavakt.util.concurrent/AbstractFuture<#A> { // dev.guavakt.util.concurrent/AbstractCatchingFuture|null[0]
+    final object Companion { // dev.guavakt.util.concurrent/AbstractCatchingFuture.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Throwable> create(dev.guavakt.util.concurrent/ListenableFuture<out #A2>, kotlin.reflect/KClass<#B2>, kotlin/Function1<#B2, #A2>): dev.guavakt.util.concurrent/ListenableFuture<#A2> // dev.guavakt.util.concurrent/AbstractCatchingFuture.Companion.create|create(dev.guavakt.util.concurrent.ListenableFuture<out|0:0>;kotlin.reflect.KClass<0:1>;kotlin.Function1<0:1,0:0>){0§<kotlin.Any?>;1§<kotlin.Throwable>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.util.concurrent/AggregateFuture : dev.guavakt.util.concurrent/AbstractFuture<kotlin.collections/List<#A>> { // dev.guavakt.util.concurrent/AggregateFuture|null[0]
+    final object Companion { // dev.guavakt.util.concurrent/AggregateFuture.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(kotlin.collections/Collection<dev.guavakt.util.concurrent/ListenableFuture<out #A2>>, kotlin/Boolean): dev.guavakt.util.concurrent/ListenableFuture<kotlin.collections/List<#A2>> // dev.guavakt.util.concurrent/AggregateFuture.Companion.create|create(kotlin.collections.Collection<dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>;kotlin.Boolean){0§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.util.concurrent/CollectionFuture : dev.guavakt.util.concurrent/AbstractFuture<kotlin.collections/List<#A>> { // dev.guavakt.util.concurrent/CollectionFuture|null[0]
+    constructor <init>(kotlin.collections/Collection<dev.guavakt.util.concurrent/ListenableFuture<out #A>>) // dev.guavakt.util.concurrent/CollectionFuture.<init>|<init>(kotlin.collections.Collection<dev.guavakt.util.concurrent.ListenableFuture<out|1:0>>){}[0]
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.util.concurrent/FluentFuture : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/FluentFuture|null[0]
+    constructor <init>(dev.guavakt.util.concurrent/ListenableFuture<#A>) // dev.guavakt.util.concurrent/FluentFuture.<init>|<init>(dev.guavakt.util.concurrent.ListenableFuture<1:0>){}[0]
+
+    final fun <#A1: kotlin/Any?> transform(kotlin/Function1<#A, #A1>): dev.guavakt.util.concurrent/FluentFuture<#A1> // dev.guavakt.util.concurrent/FluentFuture.transform|transform(kotlin.Function1<1:0,0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Throwable> catching(kotlin.reflect/KClass<#A1>, kotlin/Function1<#A1, #A>): dev.guavakt.util.concurrent/FluentFuture<#A> // dev.guavakt.util.concurrent/FluentFuture.catching|catching(kotlin.reflect.KClass<0:0>;kotlin.Function1<0:0,1:0>){0§<kotlin.Throwable>}[0]
+    open fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/FluentFuture.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/FluentFuture.cancel|cancel(kotlin.Boolean){}[0]
+    open fun get(): #A // dev.guavakt.util.concurrent/FluentFuture.get|get(){}[0]
+    open fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/FluentFuture.isCancelled|isCancelled(){}[0]
+    open fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/FluentFuture.isDone|isDone(){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/FluentFuture.Companion|null[0]
+        final fun <#A2: kotlin/Any?> from(dev.guavakt.util.concurrent/ListenableFuture<#A2>): dev.guavakt.util.concurrent/FluentFuture<#A2> // dev.guavakt.util.concurrent/FluentFuture.Companion.from|from(dev.guavakt.util.concurrent.ListenableFuture<0:0>){0§<kotlin.Any?>}[0]
+    }
+}
+
+open class <#A: kotlin/Any?> dev.guavakt.util.concurrent/ListenableFutureTask : dev.guavakt.util.concurrent/ListenableFuture<#A> { // dev.guavakt.util.concurrent/ListenableFutureTask|null[0]
+    constructor <init>(kotlin/Function0<#A>) // dev.guavakt.util.concurrent/ListenableFutureTask.<init>|<init>(kotlin.Function0<1:0>){}[0]
+
+    final fun invoke() // dev.guavakt.util.concurrent/ListenableFutureTask.invoke|invoke(){}[0]
+    final fun run() // dev.guavakt.util.concurrent/ListenableFutureTask.run|run(){}[0]
+    final fun set(#A): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFutureTask.set|set(1:0){}[0]
+    final fun setException(kotlin/Throwable): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFutureTask.setException|setException(kotlin.Throwable){}[0]
+    open fun addListener(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/ListenableFutureTask.addListener|addListener(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun cancel(kotlin/Boolean): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFutureTask.cancel|cancel(kotlin.Boolean){}[0]
+    open fun get(): #A // dev.guavakt.util.concurrent/ListenableFutureTask.get|get(){}[0]
+    open fun isCancelled(): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFutureTask.isCancelled|isCancelled(){}[0]
+    open fun isDone(): kotlin/Boolean // dev.guavakt.util.concurrent/ListenableFutureTask.isDone|isDone(){}[0]
+
+    final object Companion { // dev.guavakt.util.concurrent/ListenableFutureTask.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(kotlin/Function0<#A2>): dev.guavakt.util.concurrent/ListenableFutureTask<#A2> // dev.guavakt.util.concurrent/ListenableFutureTask.Companion.create|create(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> create(kotlin/Function0<kotlin/Unit>, #A2): dev.guavakt.util.concurrent/ListenableFutureTask<#A2> // dev.guavakt.util.concurrent/ListenableFutureTask.Companion.create|create(kotlin.Function0<kotlin.Unit>;0:0){0§<kotlin.Any?>}[0]
+    }
+}
+
+open class dev.guavakt.util.concurrent/CancellationException : kotlin/RuntimeException { // dev.guavakt.util.concurrent/CancellationException|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/CancellationException.<init>|<init>(){}[0]
+    constructor <init>(kotlin/String?) // dev.guavakt.util.concurrent/CancellationException.<init>|<init>(kotlin.String?){}[0]
+    constructor <init>(kotlin/String?, kotlin/Throwable?) // dev.guavakt.util.concurrent/CancellationException.<init>|<init>(kotlin.String?;kotlin.Throwable?){}[0]
+    constructor <init>(kotlin/Throwable?) // dev.guavakt.util.concurrent/CancellationException.<init>|<init>(kotlin.Throwable?){}[0]
+}
+
+open class dev.guavakt.util.concurrent/ExecutionError : kotlin/Error { // dev.guavakt.util.concurrent/ExecutionError|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ExecutionError.<init>|<init>(){}[0]
+    constructor <init>(kotlin/String?) // dev.guavakt.util.concurrent/ExecutionError.<init>|<init>(kotlin.String?){}[0]
+    constructor <init>(kotlin/String?, kotlin/Throwable?) // dev.guavakt.util.concurrent/ExecutionError.<init>|<init>(kotlin.String?;kotlin.Throwable?){}[0]
+    constructor <init>(kotlin/Throwable?) // dev.guavakt.util.concurrent/ExecutionError.<init>|<init>(kotlin.Throwable?){}[0]
+}
+
+open class dev.guavakt.util.concurrent/ExecutionException : kotlin/Exception { // dev.guavakt.util.concurrent/ExecutionException|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ExecutionException.<init>|<init>(){}[0]
+    constructor <init>(kotlin/String?) // dev.guavakt.util.concurrent/ExecutionException.<init>|<init>(kotlin.String?){}[0]
+    constructor <init>(kotlin/String?, kotlin/Throwable?) // dev.guavakt.util.concurrent/ExecutionException.<init>|<init>(kotlin.String?;kotlin.Throwable?){}[0]
+    constructor <init>(kotlin/Throwable?) // dev.guavakt.util.concurrent/ExecutionException.<init>|<init>(kotlin.Throwable?){}[0]
+}
+
+open class dev.guavakt.util.concurrent/InterruptedExceptionLike : kotlin/Exception { // dev.guavakt.util.concurrent/InterruptedExceptionLike|null[0]
+    constructor <init>(kotlin/String? = ...) // dev.guavakt.util.concurrent/InterruptedExceptionLike.<init>|<init>(kotlin.String?){}[0]
+}
+
+open class dev.guavakt.util.concurrent/ServiceManagerBridge : dev.guavakt.util.concurrent/AbstractIdleService { // dev.guavakt.util.concurrent/ServiceManagerBridge|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/ServiceManagerBridge.<init>|<init>(){}[0]
+
+    open fun shutDown() // dev.guavakt.util.concurrent/ServiceManagerBridge.shutDown|shutDown(){}[0]
+    open fun startUp() // dev.guavakt.util.concurrent/ServiceManagerBridge.startUp|startUp(){}[0]
+}
+
+open class dev.guavakt.util.concurrent/UncaughtExceptionHandlers : kotlin/RuntimeException { // dev.guavakt.util.concurrent/UncaughtExceptionHandlers|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/UncaughtExceptionHandlers.<init>|<init>(){}[0]
+    constructor <init>(kotlin/String?) // dev.guavakt.util.concurrent/UncaughtExceptionHandlers.<init>|<init>(kotlin.String?){}[0]
+    constructor <init>(kotlin/String?, kotlin/Throwable?) // dev.guavakt.util.concurrent/UncaughtExceptionHandlers.<init>|<init>(kotlin.String?;kotlin.Throwable?){}[0]
+    constructor <init>(kotlin/Throwable?) // dev.guavakt.util.concurrent/UncaughtExceptionHandlers.<init>|<init>(kotlin.Throwable?){}[0]
+
+    final fun hasMessage(): kotlin/Boolean // dev.guavakt.util.concurrent/UncaughtExceptionHandlers.hasMessage|hasMessage(){}[0]
+}
+
+open class dev.guavakt.util.concurrent/UncheckedExecutionException : kotlin/RuntimeException { // dev.guavakt.util.concurrent/UncheckedExecutionException|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/UncheckedExecutionException.<init>|<init>(){}[0]
+    constructor <init>(kotlin/String?) // dev.guavakt.util.concurrent/UncheckedExecutionException.<init>|<init>(kotlin.String?){}[0]
+    constructor <init>(kotlin/String?, kotlin/Throwable?) // dev.guavakt.util.concurrent/UncheckedExecutionException.<init>|<init>(kotlin.String?;kotlin.Throwable?){}[0]
+    constructor <init>(kotlin/Throwable?) // dev.guavakt.util.concurrent/UncheckedExecutionException.<init>|<init>(kotlin.Throwable?){}[0]
+}
+
+open class dev.guavakt.util.concurrent/UncheckedTimeoutException : kotlin/RuntimeException { // dev.guavakt.util.concurrent/UncheckedTimeoutException|null[0]
+    constructor <init>() // dev.guavakt.util.concurrent/UncheckedTimeoutException.<init>|<init>(){}[0]
+    constructor <init>(kotlin/String?) // dev.guavakt.util.concurrent/UncheckedTimeoutException.<init>|<init>(kotlin.String?){}[0]
+    constructor <init>(kotlin/String?, kotlin/Throwable?) // dev.guavakt.util.concurrent/UncheckedTimeoutException.<init>|<init>(kotlin.String?;kotlin.Throwable?){}[0]
+    constructor <init>(kotlin/Throwable?) // dev.guavakt.util.concurrent/UncheckedTimeoutException.<init>|<init>(kotlin.Throwable?){}[0]
+
+    final fun hasMessage(): kotlin/Boolean // dev.guavakt.util.concurrent/UncheckedTimeoutException.hasMessage|hasMessage(){}[0]
+}
+
+open class dev.guavakt.util.concurrent/WrappingExecutorService : dev.guavakt.util.concurrent/AbstractListeningExecutorService { // dev.guavakt.util.concurrent/WrappingExecutorService|null[0]
+    constructor <init>(dev.guavakt.util.concurrent/ListeningExecutorService = ...) // dev.guavakt.util.concurrent/WrappingExecutorService.<init>|<init>(dev.guavakt.util.concurrent.ListeningExecutorService){}[0]
+
+    open fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/WrappingExecutorService.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun wrapTask(kotlin/Function0<kotlin/Unit>): kotlin/Function0<kotlin/Unit> // dev.guavakt.util.concurrent/WrappingExecutorService.wrapTask|wrapTask(kotlin.Function0<kotlin.Unit>){}[0]
+}
+
+open class dev.guavakt.util.concurrent/WrappingScheduledExecutorService : dev.guavakt.util.concurrent/AbstractListeningExecutorService, dev.guavakt.util.concurrent/ListeningScheduledExecutorService { // dev.guavakt.util.concurrent/WrappingScheduledExecutorService|null[0]
+    constructor <init>(dev.guavakt.util.concurrent/ListeningExecutorService = ...) // dev.guavakt.util.concurrent/WrappingScheduledExecutorService.<init>|<init>(dev.guavakt.util.concurrent.ListeningExecutorService){}[0]
+
+    open fun <#A1: kotlin/Any?> schedule(kotlin.time/Duration, kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableScheduledFuture<#A1> // dev.guavakt.util.concurrent/WrappingScheduledExecutorService.schedule|schedule(kotlin.time.Duration;kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+    open fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/WrappingScheduledExecutorService.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    open fun scheduleAtFixedRate(kotlin.time/Duration, kotlin.time/Duration, kotlin/Function0<kotlin/Unit>): dev.guavakt.util.concurrent/ListenableScheduledFuture<kotlin/Unit> // dev.guavakt.util.concurrent/WrappingScheduledExecutorService.scheduleAtFixedRate|scheduleAtFixedRate(kotlin.time.Duration;kotlin.time.Duration;kotlin.Function0<kotlin.Unit>){}[0]
+    open fun scheduleWithFixedDelay(kotlin.time/Duration, kotlin.time/Duration, kotlin/Function0<kotlin/Unit>): dev.guavakt.util.concurrent/ListenableScheduledFuture<kotlin/Unit> // dev.guavakt.util.concurrent/WrappingScheduledExecutorService.scheduleWithFixedDelay|scheduleWithFixedDelay(kotlin.time.Duration;kotlin.time.Duration;kotlin.Function0<kotlin.Unit>){}[0]
+    open fun shutdown() // dev.guavakt.util.concurrent/WrappingScheduledExecutorService.shutdown|shutdown(){}[0]
+}
+
+final object dev.guavakt.util.concurrent/Atomics { // dev.guavakt.util.concurrent/Atomics|null[0]
+    final fun <#A1: kotlin/Any?> newReference(#A1): dev.guavakt.util.concurrent/AtomicRef<#A1> // dev.guavakt.util.concurrent/Atomics.newReference|newReference(0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> newReference(): dev.guavakt.util.concurrent/AtomicRef<#A1?> // dev.guavakt.util.concurrent/Atomics.newReference|newReference(){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> newReferenceArray(kotlin/Array<#A1>): dev.guavakt.util.concurrent/AtomicRefArray<#A1> // dev.guavakt.util.concurrent/Atomics.newReferenceArray|newReferenceArray(kotlin.Array<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> newReferenceArray(kotlin/Int): dev.guavakt.util.concurrent/AtomicRefArray<#A1?> // dev.guavakt.util.concurrent/Atomics.newReferenceArray|newReferenceArray(kotlin.Int){0§<kotlin.Any?>}[0]
+}
+
+final object dev.guavakt.util.concurrent/Callables { // dev.guavakt.util.concurrent/Callables|null[0]
+    final fun <#A1: kotlin/Any?> asyncReturning(#A1): kotlin/Function0<dev.guavakt.util.concurrent/ListenableFuture<#A1>> // dev.guavakt.util.concurrent/Callables.asyncReturning|asyncReturning(0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> returning(#A1): kotlin/Function0<#A1> // dev.guavakt.util.concurrent/Callables.returning|returning(0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> withInitialValue(#A1): kotlin/Function0<#A1> // dev.guavakt.util.concurrent/Callables.withInitialValue|withInitialValue(0:0){0§<kotlin.Any?>}[0]
+}
+
+final object dev.guavakt.util.concurrent/Futures { // dev.guavakt.util.concurrent/Futures|null[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> transform(dev.guavakt.util.concurrent/ListenableFuture<#A1>, kotlin/Function1<#A1, #B1>): dev.guavakt.util.concurrent/ListenableFuture<#B1> // dev.guavakt.util.concurrent/Futures.transform|transform(dev.guavakt.util.concurrent.ListenableFuture<0:0>;kotlin.Function1<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> transformAsync(dev.guavakt.util.concurrent/ListenableFuture<#A1>, dev.guavakt.util.concurrent/AsyncFunction<#A1, #B1>): dev.guavakt.util.concurrent/ListenableFuture<#B1> // dev.guavakt.util.concurrent/Futures.transformAsync|transformAsync(dev.guavakt.util.concurrent.ListenableFuture<0:0>;dev.guavakt.util.concurrent.AsyncFunction<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> transformAsync(dev.guavakt.util.concurrent/ListenableFuture<#A1>, kotlin/Function1<#A1, dev.guavakt.util.concurrent/ListenableFuture<#B1>>): dev.guavakt.util.concurrent/ListenableFuture<#B1> // dev.guavakt.util.concurrent/Futures.transformAsync|transformAsync(dev.guavakt.util.concurrent.ListenableFuture<0:0>;kotlin.Function1<0:0,dev.guavakt.util.concurrent.ListenableFuture<0:1>>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Throwable> catching(dev.guavakt.util.concurrent/ListenableFuture<out #A1>, kotlin.reflect/KClass<#B1>, kotlin/Function1<#B1, #A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.catching|catching(dev.guavakt.util.concurrent.ListenableFuture<out|0:0>;kotlin.reflect.KClass<0:1>;kotlin.Function1<0:1,0:0>){0§<kotlin.Any?>;1§<kotlin.Throwable>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Throwable> catchingAsync(dev.guavakt.util.concurrent/ListenableFuture<out #A1>, kotlin.reflect/KClass<#B1>, kotlin/Function1<#B1, dev.guavakt.util.concurrent/ListenableFuture<#A1>>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.catchingAsync|catchingAsync(dev.guavakt.util.concurrent.ListenableFuture<out|0:0>;kotlin.reflect.KClass<0:1>;kotlin.Function1<0:1,dev.guavakt.util.concurrent.ListenableFuture<0:0>>){0§<kotlin.Any?>;1§<kotlin.Throwable>}[0]
+    final fun <#A1: kotlin/Any?> addCallback(dev.guavakt.util.concurrent/ListenableFuture<#A1>, dev.guavakt.util.concurrent/FutureCallback<#A1>, dev.guavakt.util.concurrent/ListeningExecutorService = ...) // dev.guavakt.util.concurrent/Futures.addCallback|addCallback(dev.guavakt.util.concurrent.ListenableFuture<0:0>;dev.guavakt.util.concurrent.FutureCallback<0:0>;dev.guavakt.util.concurrent.ListeningExecutorService){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> allAsList(kotlin.collections/Iterable<dev.guavakt.util.concurrent/ListenableFuture<out #A1>>): dev.guavakt.util.concurrent/ListenableFuture<kotlin.collections/List<#A1>> // dev.guavakt.util.concurrent/Futures.allAsList|allAsList(kotlin.collections.Iterable<dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> allAsList(kotlin/Array<out dev.guavakt.util.concurrent/ListenableFuture<out #A1>>...): dev.guavakt.util.concurrent/ListenableFuture<kotlin.collections/List<#A1>> // dev.guavakt.util.concurrent/Futures.allAsList|allAsList(kotlin.Array<out|dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>...){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> getDone(dev.guavakt.util.concurrent/ListenableFuture<#A1>): #A1 // dev.guavakt.util.concurrent/Futures.getDone|getDone(dev.guavakt.util.concurrent.ListenableFuture<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> getUnchecked(dev.guavakt.util.concurrent/ListenableFuture<#A1>): #A1 // dev.guavakt.util.concurrent/Futures.getUnchecked|getUnchecked(dev.guavakt.util.concurrent.ListenableFuture<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> immediateCancelledFuture(): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.immediateCancelledFuture|immediateCancelledFuture(){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> immediateFailedFuture(kotlin/Throwable): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.immediateFailedFuture|immediateFailedFuture(kotlin.Throwable){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> immediateFuture(#A1): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.immediateFuture|immediateFuture(0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> inCompletionOrder(kotlin.collections/Iterable<dev.guavakt.util.concurrent/ListenableFuture<out #A1>>): kotlin.collections/List<dev.guavakt.util.concurrent/ListenableFuture<#A1>> // dev.guavakt.util.concurrent/Futures.inCompletionOrder|inCompletionOrder(kotlin.collections.Iterable<dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> nonCancellationPropagating(dev.guavakt.util.concurrent/ListenableFuture<#A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.nonCancellationPropagating|nonCancellationPropagating(dev.guavakt.util.concurrent.ListenableFuture<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> submitAsync(dev.guavakt.util.concurrent/AsyncCallable<#A1>, dev.guavakt.util.concurrent/ListeningExecutorService): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.submitAsync|submitAsync(dev.guavakt.util.concurrent.AsyncCallable<0:0>;dev.guavakt.util.concurrent.ListeningExecutorService){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> submitAsync(kotlin/Function0<#A1>, dev.guavakt.util.concurrent/ListeningExecutorService): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.submitAsync|submitAsync(kotlin.Function0<0:0>;dev.guavakt.util.concurrent.ListeningExecutorService){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> successfulAsList(kotlin.collections/Iterable<dev.guavakt.util.concurrent/ListenableFuture<out #A1>>): dev.guavakt.util.concurrent/ListenableFuture<kotlin.collections/List<#A1?>> // dev.guavakt.util.concurrent/Futures.successfulAsList|successfulAsList(kotlin.collections.Iterable<dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> successfulAsList(kotlin/Array<out dev.guavakt.util.concurrent/ListenableFuture<out #A1>>...): dev.guavakt.util.concurrent/ListenableFuture<kotlin.collections/List<#A1?>> // dev.guavakt.util.concurrent/Futures.successfulAsList|successfulAsList(kotlin.Array<out|dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>...){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> whenAllComplete(kotlin.collections/Iterable<dev.guavakt.util.concurrent/ListenableFuture<out #A1>>): dev.guavakt.util.concurrent/ListenableFuture<kotlin.collections/List<dev.guavakt.util.concurrent/ListenableFuture<out #A1>>> // dev.guavakt.util.concurrent/Futures.whenAllComplete|whenAllComplete(kotlin.collections.Iterable<dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> whenAllSucceed(kotlin.collections/Iterable<dev.guavakt.util.concurrent/ListenableFuture<out #A1>>): dev.guavakt.util.concurrent/ListenableFuture<kotlin.collections/List<#A1>> // dev.guavakt.util.concurrent/Futures.whenAllSucceed|whenAllSucceed(kotlin.collections.Iterable<dev.guavakt.util.concurrent.ListenableFuture<out|0:0>>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> withTimeout(dev.guavakt.util.concurrent/ListenableFuture<#A1>, kotlin/Long): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/Futures.withTimeout|withTimeout(dev.guavakt.util.concurrent.ListenableFuture<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun submitRunnable(kotlin/Function0<kotlin/Unit>, dev.guavakt.util.concurrent/ListeningExecutorService): dev.guavakt.util.concurrent/ListenableFuture<kotlin/Unit> // dev.guavakt.util.concurrent/Futures.submitRunnable|submitRunnable(kotlin.Function0<kotlin.Unit>;dev.guavakt.util.concurrent.ListeningExecutorService){}[0]
+}
+
+final object dev.guavakt.util.concurrent/FuturesGetChecked { // dev.guavakt.util.concurrent/FuturesGetChecked|null[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Exception> getChecked(dev.guavakt.util.concurrent/ListenableFuture<#A1>, kotlin.reflect/KClass<#B1>): #A1 // dev.guavakt.util.concurrent/FuturesGetChecked.getChecked|getChecked(dev.guavakt.util.concurrent.ListenableFuture<0:0>;kotlin.reflect.KClass<0:1>){0§<kotlin.Any?>;1§<kotlin.Exception>}[0]
+}
+
+final object dev.guavakt.util.concurrent/JdkFutureAdapters { // dev.guavakt.util.concurrent/JdkFutureAdapters|null[0]
+    final fun <#A1: kotlin/Any?> listenInPoolThread(kotlin/Function0<#A1>): dev.guavakt.util.concurrent/ListenableFuture<#A1> // dev.guavakt.util.concurrent/JdkFutureAdapters.listenInPoolThread|listenInPoolThread(kotlin.Function0<0:0>){0§<kotlin.Any?>}[0]
+}
+
+final object dev.guavakt.util.concurrent/MoreExecutors { // dev.guavakt.util.concurrent/MoreExecutors|null[0]
+    final fun directExecutor(): dev.guavakt.util.concurrent/ListeningExecutorService // dev.guavakt.util.concurrent/MoreExecutors.directExecutor|directExecutor(){}[0]
+    final fun listeningDecorator(dev.guavakt.util.concurrent/ListeningExecutorService): dev.guavakt.util.concurrent/ListeningExecutorService // dev.guavakt.util.concurrent/MoreExecutors.listeningDecorator|listeningDecorator(dev.guavakt.util.concurrent.ListeningExecutorService){}[0]
+    final fun newDirectExecutorService(): dev.guavakt.util.concurrent/ListeningExecutorService // dev.guavakt.util.concurrent/MoreExecutors.newDirectExecutorService|newDirectExecutorService(){}[0]
+    final fun newSequentialExecutor(dev.guavakt.util.concurrent/ListeningExecutorService): dev.guavakt.util.concurrent/ListeningExecutorService // dev.guavakt.util.concurrent/MoreExecutors.newSequentialExecutor|newSequentialExecutor(dev.guavakt.util.concurrent.ListeningExecutorService){}[0]
+}
+
+final object dev.guavakt.util.concurrent/Partially { // dev.guavakt.util.concurrent/Partially|null[0]
+    open annotation class GwtIncompatible : kotlin/Annotation { // dev.guavakt.util.concurrent/Partially.GwtIncompatible|null[0]
+        constructor <init>(kotlin/String = ...) // dev.guavakt.util.concurrent/Partially.GwtIncompatible.<init>|<init>(kotlin.String){}[0]
+
+        final val value // dev.guavakt.util.concurrent/Partially.GwtIncompatible.value|{}value[0]
+            final fun <get-value>(): kotlin/String // dev.guavakt.util.concurrent/Partially.GwtIncompatible.value.<get-value>|<get-value>(){}[0]
+    }
+}
+
+final object dev.guavakt.util.concurrent/Runnables { // dev.guavakt.util.concurrent/Runnables|null[0]
+    final val EMPTY_RUNNABLE // dev.guavakt.util.concurrent/Runnables.EMPTY_RUNNABLE|{}EMPTY_RUNNABLE[0]
+        final fun <get-EMPTY_RUNNABLE>(): kotlin/Function0<kotlin/Unit> // dev.guavakt.util.concurrent/Runnables.EMPTY_RUNNABLE.<get-EMPTY_RUNNABLE>|<get-EMPTY_RUNNABLE>(){}[0]
+
+    final fun doNothing(): kotlin/Function0<kotlin/Unit> // dev.guavakt.util.concurrent/Runnables.doNothing|doNothing(){}[0]
+}
+
+final object dev.guavakt.util.concurrent/Uninterruptibles { // dev.guavakt.util.concurrent/Uninterruptibles|null[0]
+    final fun <#A1: kotlin/Any?> getUninterruptibly(dev.guavakt.util.concurrent/ListenableFuture<#A1>): #A1 // dev.guavakt.util.concurrent/Uninterruptibles.getUninterruptibly|getUninterruptibly(dev.guavakt.util.concurrent.ListenableFuture<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> getUninterruptibly(dev.guavakt.util.concurrent/ListenableFuture<#A1>, kotlin/Long): #A1 // dev.guavakt.util.concurrent/Uninterruptibles.getUninterruptibly|getUninterruptibly(dev.guavakt.util.concurrent.ListenableFuture<0:0>;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun awaitUninterruptibly(kotlin/Function0<kotlin/Boolean>): kotlin/Boolean // dev.guavakt.util.concurrent/Uninterruptibles.awaitUninterruptibly|awaitUninterruptibly(kotlin.Function0<kotlin.Boolean>){}[0]
+    final fun joinUninterruptibly(kotlin/Function0<kotlin/Unit>) // dev.guavakt.util.concurrent/Uninterruptibles.joinUninterruptibly|joinUninterruptibly(kotlin.Function0<kotlin.Unit>){}[0]
+    final fun sleepUninterruptibly(kotlin/Long, kotlin/Boolean = ...) // dev.guavakt.util.concurrent/Uninterruptibles.sleepUninterruptibly|sleepUninterruptibly(kotlin.Long;kotlin.Boolean){}[0]
+    final fun tryAcquireUninterruptibly(kotlin/Function0<kotlin/Boolean>): kotlin/Boolean // dev.guavakt.util.concurrent/Uninterruptibles.tryAcquireUninterruptibly|tryAcquireUninterruptibly(kotlin.Function0<kotlin.Boolean>){}[0]
+}
+
+final fun (dev.guavakt.util.concurrent/Service).dev.guavakt.util.concurrent/stateChanges(): kotlinx.coroutines.flow/Flow<dev.guavakt.util.concurrent/Service.State> // dev.guavakt.util.concurrent/stateChanges|stateChanges@dev.guavakt.util.concurrent.Service(){}[0]
+final fun (dev.guavakt.util.concurrent/ServiceManager).dev.guavakt.util.concurrent/stateChanges(): kotlinx.coroutines.flow/Flow<dev.guavakt.util.concurrent/ServiceManagerSnapshot> // dev.guavakt.util.concurrent/stateChanges|stateChanges@dev.guavakt.util.concurrent.ServiceManager(){}[0]
+final fun <#A: kotlin/Any?> (dev.guavakt.util.concurrent/ListenableFuture<#A>).dev.guavakt.util.concurrent/asDeferred(): kotlinx.coroutines/Deferred<#A> // dev.guavakt.util.concurrent/asDeferred|asDeferred@dev.guavakt.util.concurrent.ListenableFuture<0:0>(){0§<kotlin.Any?>}[0]
+final fun <#A: kotlin/Any?> (kotlinx.coroutines/CoroutineScope).dev.guavakt.util.concurrent/future(kotlin.coroutines/CoroutineContext = ..., kotlinx.coroutines/CoroutineStart = ..., kotlin.coroutines/SuspendFunction1<kotlinx.coroutines/CoroutineScope, #A>): dev.guavakt.util.concurrent/ListenableFuture<#A> // dev.guavakt.util.concurrent/future|future@kotlinx.coroutines.CoroutineScope(kotlin.coroutines.CoroutineContext;kotlinx.coroutines.CoroutineStart;kotlin.coroutines.SuspendFunction1<kotlinx.coroutines.CoroutineScope,0:0>){0§<kotlin.Any?>}[0]
+final fun <#A: kotlin/Any?> (kotlinx.coroutines/Deferred<#A>).dev.guavakt.util.concurrent/asListenableFuture(): dev.guavakt.util.concurrent/ListenableFuture<#A> // dev.guavakt.util.concurrent/asListenableFuture|asListenableFuture@kotlinx.coroutines.Deferred<0:0>(){0§<kotlin.Any?>}[0]
+final suspend fun (dev.guavakt.util.concurrent/Service).dev.guavakt.util.concurrent/awaitRunningSuspend(kotlin/Boolean = ...) // dev.guavakt.util.concurrent/awaitRunningSuspend|awaitRunningSuspend@dev.guavakt.util.concurrent.Service(kotlin.Boolean){}[0]
+final suspend fun (dev.guavakt.util.concurrent/Service).dev.guavakt.util.concurrent/awaitTerminatedSuspend(kotlin/Boolean = ...) // dev.guavakt.util.concurrent/awaitTerminatedSuspend|awaitTerminatedSuspend@dev.guavakt.util.concurrent.Service(kotlin.Boolean){}[0]
+final suspend fun (dev.guavakt.util.concurrent/ServiceManager).dev.guavakt.util.concurrent/awaitHealthySuspend(kotlin/Boolean = ...) // dev.guavakt.util.concurrent/awaitHealthySuspend|awaitHealthySuspend@dev.guavakt.util.concurrent.ServiceManager(kotlin.Boolean){}[0]
+final suspend fun (dev.guavakt.util.concurrent/ServiceManager).dev.guavakt.util.concurrent/awaitStoppedSuspend(kotlin/Boolean = ...) // dev.guavakt.util.concurrent/awaitStoppedSuspend|awaitStoppedSuspend@dev.guavakt.util.concurrent.ServiceManager(kotlin.Boolean){}[0]
+final suspend fun <#A: kotlin/Any?> (dev.guavakt.util.concurrent/ListenableFuture<#A>).dev.guavakt.util.concurrent/await(): #A // dev.guavakt.util.concurrent/await|await@dev.guavakt.util.concurrent.ListenableFuture<0:0>(){0§<kotlin.Any?>}[0]

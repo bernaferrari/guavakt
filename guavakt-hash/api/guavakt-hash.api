@@ -1,0 +1,469 @@
+public abstract class dev/guavakt/hash/AbstractByteHasher : dev/guavakt/hash/Hasher {
+	public fun <init> ()V
+	public fun putBoolean (Z)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBoolean (Z)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putByte (B)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putByte (B)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([B)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([B)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([BII)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([BII)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putChar (C)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putChar (C)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putDouble (D)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putDouble (D)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putFloat (F)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putFloat (F)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putInt (I)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putInt (I)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putLong (J)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putLong (J)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putShort (S)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putShort (S)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/PrimitiveSink;
+	protected abstract fun update (B)V
+	protected fun update ([BII)V
+}
+
+public abstract class dev/guavakt/hash/AbstractCompositeHashFunction : dev/guavakt/hash/HashFunction {
+	public fun <init> ([Ldev/guavakt/hash/HashFunction;)V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public abstract class dev/guavakt/hash/AbstractHashFunction : dev/guavakt/hash/HashFunction {
+	public fun <init> ()V
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public abstract class dev/guavakt/hash/AbstractHasher : dev/guavakt/hash/Hasher {
+	public fun <init> ()V
+	public fun putBoolean (Z)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBoolean (Z)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([B)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([B)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([BII)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([BII)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putChar (C)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putChar (C)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putDouble (D)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putDouble (D)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putFloat (F)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putFloat (F)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putInt (I)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putInt (I)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putLong (J)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putLong (J)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putShort (S)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putShort (S)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/PrimitiveSink;
+}
+
+public abstract class dev/guavakt/hash/AbstractNonStreamingHashFunction : dev/guavakt/hash/HashFunction {
+	public fun <init> ()V
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public abstract class dev/guavakt/hash/AbstractStreamingHasher : dev/guavakt/hash/Hasher {
+	public fun <init> (II)V
+	public synthetic fun <init> (IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun hash ()Ldev/guavakt/hash/HashCode;
+	protected abstract fun makeHash ()Ldev/guavakt/hash/HashCode;
+	protected abstract fun process ([BI)V
+	protected abstract fun processRemaining ([BII)V
+	public fun putBoolean (Z)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBoolean (Z)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putByte (B)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putByte (B)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([B)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([B)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([BII)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([BII)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putChar (C)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putChar (C)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putDouble (D)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putDouble (D)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putFloat (F)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putFloat (F)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putInt (I)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putInt (I)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putLong (J)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putLong (J)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putShort (S)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putShort (S)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/PrimitiveSink;
+}
+
+public final class dev/guavakt/hash/Adler32HashFunction : dev/guavakt/hash/HashFunction {
+	public fun <init> ()V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/BloomFilter {
+	public static final field Companion Ldev/guavakt/hash/BloomFilter$Companion;
+	public synthetic fun <init> ([JILdev/guavakt/hash/Funnel;Ldev/guavakt/hash/BloomFilter$Strategy;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun apply (Ljava/lang/Object;)Z
+	public final fun approximateElementCount ()J
+	public final fun copy ()Ldev/guavakt/hash/BloomFilter;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun expectedFpp ()D
+	public fun hashCode ()I
+	public final fun invoke (Ljava/lang/Object;)Z
+	public final fun isCompatible (Ldev/guavakt/hash/BloomFilter;)Z
+	public final fun mightContain (Ljava/lang/Object;)Z
+	public final fun put (Ljava/lang/Object;)Z
+	public final fun putAll (Ldev/guavakt/hash/BloomFilter;)V
+	public final fun serializedSize ()J
+	public final fun test (Ljava/lang/Object;)Z
+	public final fun toByteArray ()[B
+}
+
+public final class dev/guavakt/hash/BloomFilter$Companion {
+	public final fun create (Ldev/guavakt/hash/Funnel;ID)Ldev/guavakt/hash/BloomFilter;
+	public final fun create (Ldev/guavakt/hash/Funnel;JD)Ldev/guavakt/hash/BloomFilter;
+	public static synthetic fun create$default (Ldev/guavakt/hash/BloomFilter$Companion;Ldev/guavakt/hash/Funnel;IDILjava/lang/Object;)Ldev/guavakt/hash/BloomFilter;
+	public static synthetic fun create$default (Ldev/guavakt/hash/BloomFilter$Companion;Ldev/guavakt/hash/Funnel;JDILjava/lang/Object;)Ldev/guavakt/hash/BloomFilter;
+	public final fun readFrom ([BLdev/guavakt/hash/Funnel;)Ldev/guavakt/hash/BloomFilter;
+}
+
+public final class dev/guavakt/hash/ChecksumHashFunction : dev/guavakt/hash/HashFunction {
+	public fun <init> ()V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/Crc32cHashFunction : dev/guavakt/hash/HashFunction {
+	public fun <init> ()V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/FarmHashFingerprint64 : dev/guavakt/hash/HashFunction {
+	public fun <init> ()V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public abstract interface class dev/guavakt/hash/Funnel {
+	public abstract fun funnel (Ljava/lang/Object;Ldev/guavakt/hash/PrimitiveSink;)V
+}
+
+public final class dev/guavakt/hash/Funnels {
+	public static final field INSTANCE Ldev/guavakt/hash/Funnels;
+	public final fun byteArrayFunnel ()Ldev/guavakt/hash/Funnel;
+	public final fun integerFunnel ()Ldev/guavakt/hash/Funnel;
+	public final fun longFunnel ()Ldev/guavakt/hash/Funnel;
+	public final fun sequentialFunnel (Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/Funnel;
+	public final fun stringFunnel ()Ldev/guavakt/hash/Funnel;
+	public final fun unencodedCharsFunnel ()Ldev/guavakt/hash/Funnel;
+}
+
+public final class dev/guavakt/hash/HashCode {
+	public static final field Companion Ldev/guavakt/hash/HashCode$Companion;
+	public synthetic fun <init> ([BLkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun asBytes ()[B
+	public final fun asInt ()I
+	public final fun asLong ()J
+	public final fun bits ()I
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public final fun padToLong ()J
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/hash/HashCode$Companion {
+	public final fun fromBytes ([B)Ldev/guavakt/hash/HashCode;
+	public final fun fromInt (I)Ldev/guavakt/hash/HashCode;
+	public final fun fromLong (J)Ldev/guavakt/hash/HashCode;
+}
+
+public abstract interface class dev/guavakt/hash/HashFunction {
+	public abstract fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public abstract fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public abstract fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public abstract fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public abstract fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public static synthetic fun hashString$default (Ldev/guavakt/hash/HashFunction;Ljava/lang/CharSequence;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/hash/HashCode;
+	public abstract fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public abstract fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/HashFunction$DefaultImpls {
+	public static fun hashBytes (Ldev/guavakt/hash/HashFunction;[B)Ldev/guavakt/hash/HashCode;
+	public static fun hashObject (Ldev/guavakt/hash/HashFunction;Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public static synthetic fun hashString$default (Ldev/guavakt/hash/HashFunction;Ljava/lang/CharSequence;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/hash/HashCode;
+}
+
+public abstract interface class dev/guavakt/hash/Hasher : dev/guavakt/hash/PrimitiveSink {
+	public abstract fun hash ()Ldev/guavakt/hash/HashCode;
+	public fun putBoolean (Z)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBoolean (Z)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putByte (B)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putByte (B)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([B)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([B)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putBytes ([BII)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putBytes ([BII)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putChar (C)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putChar (C)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putDouble (D)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putDouble (D)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putFloat (F)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putFloat (F)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putInt (I)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putInt (I)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putLong (J)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putLong (J)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putShort (S)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putShort (S)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/Hasher;
+	public synthetic fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/PrimitiveSink;
+}
+
+public final class dev/guavakt/hash/Hasher$DefaultImpls {
+	public static fun putBoolean (Ldev/guavakt/hash/Hasher;Z)Ldev/guavakt/hash/Hasher;
+	public static fun putBytes (Ldev/guavakt/hash/Hasher;[B)Ldev/guavakt/hash/Hasher;
+	public static fun putChar (Ldev/guavakt/hash/Hasher;C)Ldev/guavakt/hash/Hasher;
+	public static fun putDouble (Ldev/guavakt/hash/Hasher;D)Ldev/guavakt/hash/Hasher;
+	public static fun putFloat (Ldev/guavakt/hash/Hasher;F)Ldev/guavakt/hash/Hasher;
+	public static fun putShort (Ldev/guavakt/hash/Hasher;S)Ldev/guavakt/hash/Hasher;
+	public static fun putString (Ldev/guavakt/hash/Hasher;Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/Hashing {
+	public static final field INSTANCE Ldev/guavakt/hash/Hashing;
+	public final fun adler32 ()Ldev/guavakt/hash/HashFunction;
+	public final fun combineOrdered (Ljava/lang/Iterable;)Ldev/guavakt/hash/HashCode;
+	public final fun combineUnordered (Ljava/lang/Iterable;)Ldev/guavakt/hash/HashCode;
+	public final fun concatenating (Ldev/guavakt/hash/HashFunction;Ldev/guavakt/hash/HashFunction;[Ldev/guavakt/hash/HashFunction;)Ldev/guavakt/hash/HashFunction;
+	public final fun concatenating (Ljava/lang/Iterable;)Ldev/guavakt/hash/HashFunction;
+	public final fun consistentHash (JI)I
+	public final fun consistentHash (Ldev/guavakt/hash/HashCode;I)I
+	public final fun crc32 ()Ldev/guavakt/hash/HashFunction;
+	public final fun crc32c ()Ldev/guavakt/hash/HashFunction;
+	public final fun farmHashFingerprint64 ()Ldev/guavakt/hash/HashFunction;
+	public final fun fingerprint2011 ()Ldev/guavakt/hash/HashFunction;
+	public final fun goodFastHash (I)Ldev/guavakt/hash/HashFunction;
+	public final fun hmacMd5 ([B)Ldev/guavakt/hash/HashFunction;
+	public final fun hmacSha1 ([B)Ldev/guavakt/hash/HashFunction;
+	public final fun hmacSha256 ([B)Ldev/guavakt/hash/HashFunction;
+	public final fun hmacSha512 ([B)Ldev/guavakt/hash/HashFunction;
+	public final fun md5 ()Ldev/guavakt/hash/HashFunction;
+	public final fun murmur3_128 ()Ldev/guavakt/hash/HashFunction;
+	public final fun murmur3_128 (I)Ldev/guavakt/hash/HashFunction;
+	public final fun murmur3_32 ()Ldev/guavakt/hash/HashFunction;
+	public final fun murmur3_32 (I)Ldev/guavakt/hash/HashFunction;
+	public final fun murmur3_32_fixed ()Ldev/guavakt/hash/HashFunction;
+	public final fun murmur3_32_fixed (I)Ldev/guavakt/hash/HashFunction;
+	public final fun sha1 ()Ldev/guavakt/hash/HashFunction;
+	public final fun sha256 ()Ldev/guavakt/hash/HashFunction;
+	public final fun sha384 ()Ldev/guavakt/hash/HashFunction;
+	public final fun sha512 ()Ldev/guavakt/hash/HashFunction;
+	public final fun sipHash24 ()Ldev/guavakt/hash/HashFunction;
+	public final fun sipHash24 (JJ)Ldev/guavakt/hash/HashFunction;
+}
+
+public final class dev/guavakt/hash/HashingInputStream : java/lang/AutoCloseable {
+	public fun <init> (Ldev/guavakt/hash/Hasher;Lkotlin/jvm/functions/Function1;)V
+	public fun close ()V
+	public final fun hash ()Ldev/guavakt/hash/HashCode;
+	public final fun read ([B)I
+}
+
+public final class dev/guavakt/hash/HashingOkioKt {
+	public static final fun hashing (Lokio/Sink;Ldev/guavakt/hash/HashFunction;)Ldev/guavakt/hash/HashingSink;
+	public static final fun hashing (Lokio/Source;Ldev/guavakt/hash/HashFunction;)Ldev/guavakt/hash/HashingSource;
+}
+
+public final class dev/guavakt/hash/HashingOutputStream : java/lang/AutoCloseable {
+	public fun <init> (Ldev/guavakt/hash/Hasher;Lkotlin/jvm/functions/Function3;)V
+	public fun close ()V
+	public final fun hash ()Ldev/guavakt/hash/HashCode;
+	public final fun write (I)V
+	public final fun write ([BII)V
+}
+
+public final class dev/guavakt/hash/HashingSink : okio/Sink {
+	public fun <init> (Lokio/Sink;Ldev/guavakt/hash/HashFunction;)V
+	public fun close ()V
+	public fun flush ()V
+	public final fun hash ()Ldev/guavakt/hash/HashCode;
+	public fun timeout ()Lokio/Timeout;
+	public fun write (Lokio/Buffer;J)V
+}
+
+public final class dev/guavakt/hash/HashingSource : okio/Source {
+	public fun <init> (Lokio/Source;Ldev/guavakt/hash/HashFunction;)V
+	public fun close ()V
+	public final fun hash ()Ldev/guavakt/hash/HashCode;
+	public fun read (Lokio/Buffer;J)J
+	public fun timeout ()Lokio/Timeout;
+}
+
+public abstract interface annotation class dev/guavakt/hash/IgnoreJRERequirement : java/lang/annotation/Annotation {
+}
+
+public final class dev/guavakt/hash/MacHashFunction : dev/guavakt/hash/AbstractNonStreamingHashFunction {
+	public fun <init> ([BLjava/lang/String;)V
+	public synthetic fun <init> ([BLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun bits ()I
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/MessageDigestHashFunction : dev/guavakt/hash/AbstractNonStreamingHashFunction {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun algorithm ()Ljava/lang/String;
+	public fun bits ()I
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/Murmur3_128HashFunction : dev/guavakt/hash/HashFunction {
+	public static final field Companion Ldev/guavakt/hash/Murmur3_128HashFunction$Companion;
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/Murmur3_128HashFunction$Companion {
+}
+
+public final class dev/guavakt/hash/Murmur3_32HashFunction : dev/guavakt/hash/HashFunction {
+	public static final field Companion Ldev/guavakt/hash/Murmur3_32HashFunction$Companion;
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/Murmur3_32HashFunction$Companion {
+}
+
+public abstract interface annotation class dev/guavakt/hash/ParametricNullness : java/lang/annotation/Annotation {
+}
+
+public abstract interface class dev/guavakt/hash/PrimitiveSink {
+	public fun putBoolean (Z)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putByte (B)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putBytes ([B)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putBytes ([BII)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putChar (C)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putDouble (D)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putFloat (F)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putInt (I)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putLong (J)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putShort (S)Ldev/guavakt/hash/PrimitiveSink;
+	public fun putString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/PrimitiveSink;
+	public static synthetic fun putString$default (Ldev/guavakt/hash/PrimitiveSink;Ljava/lang/CharSequence;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/hash/PrimitiveSink;
+	public abstract fun putUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/PrimitiveSink;
+}
+
+public final class dev/guavakt/hash/PrimitiveSink$DefaultImpls {
+	public static fun putBoolean (Ldev/guavakt/hash/PrimitiveSink;Z)Ldev/guavakt/hash/PrimitiveSink;
+	public static fun putBytes (Ldev/guavakt/hash/PrimitiveSink;[BII)Ldev/guavakt/hash/PrimitiveSink;
+	public static fun putChar (Ldev/guavakt/hash/PrimitiveSink;C)Ldev/guavakt/hash/PrimitiveSink;
+	public static fun putDouble (Ldev/guavakt/hash/PrimitiveSink;D)Ldev/guavakt/hash/PrimitiveSink;
+	public static fun putFloat (Ldev/guavakt/hash/PrimitiveSink;F)Ldev/guavakt/hash/PrimitiveSink;
+	public static fun putShort (Ldev/guavakt/hash/PrimitiveSink;S)Ldev/guavakt/hash/PrimitiveSink;
+	public static fun putString (Ldev/guavakt/hash/PrimitiveSink;Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/PrimitiveSink;
+	public static synthetic fun putString$default (Ldev/guavakt/hash/PrimitiveSink;Ljava/lang/CharSequence;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/hash/PrimitiveSink;
+}
+
+public final class dev/guavakt/hash/SipHashFunction : dev/guavakt/hash/HashFunction {
+	public static final field Companion Ldev/guavakt/hash/SipHashFunction$Companion;
+	public fun <init> ()V
+	public fun <init> (JJ)V
+	public synthetic fun <init> (JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun bits ()I
+	public fun hashBytes ([B)Ldev/guavakt/hash/HashCode;
+	public fun hashBytes ([BII)Ldev/guavakt/hash/HashCode;
+	public fun hashInt (I)Ldev/guavakt/hash/HashCode;
+	public fun hashLong (J)Ldev/guavakt/hash/HashCode;
+	public fun hashObject (Ljava/lang/Object;Ldev/guavakt/hash/Funnel;)Ldev/guavakt/hash/HashCode;
+	public fun hashString (Ljava/lang/CharSequence;Ljava/lang/String;)Ldev/guavakt/hash/HashCode;
+	public fun hashUnencodedChars (Ljava/lang/CharSequence;)Ldev/guavakt/hash/HashCode;
+	public fun newHasher ()Ldev/guavakt/hash/Hasher;
+}
+
+public final class dev/guavakt/hash/SipHashFunction$Companion {
+}
+

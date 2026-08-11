@@ -1,0 +1,95 @@
+public abstract class dev/guavakt/escape/ArrayBasedCharEscaper : dev/guavakt/escape/CharEscaper {
+	protected fun <init> (Ldev/guavakt/escape/ArrayBasedEscaperMap;CC)V
+	protected fun <init> (Ljava/util/Map;CC)V
+	protected final fun escape (C)[C
+	public final fun escape (Ljava/lang/String;)Ljava/lang/String;
+	protected abstract fun escapeUnsafe (C)[C
+}
+
+public final class dev/guavakt/escape/ArrayBasedEscaperMap {
+	public static final field Companion Ldev/guavakt/escape/ArrayBasedEscaperMap$Companion;
+	public synthetic fun <init> ([[CLkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class dev/guavakt/escape/ArrayBasedEscaperMap$Companion {
+	public final fun create (Ljava/util/Map;)Ldev/guavakt/escape/ArrayBasedEscaperMap;
+}
+
+public abstract class dev/guavakt/escape/ArrayBasedUnicodeEscaper : dev/guavakt/escape/UnicodeEscaper {
+	public static final field MIN_HIGH_SURROGATE I
+	protected fun <init> (Ldev/guavakt/escape/ArrayBasedEscaperMap;IILjava/lang/String;)V
+	protected fun <init> (Ljava/util/Map;IILjava/lang/String;)V
+	protected final fun escape (I)[C
+	public final fun escape (Ljava/lang/String;)Ljava/lang/String;
+	protected abstract fun escapeUnsafe (I)[C
+	protected final fun nextEscapeIndex (Ljava/lang/CharSequence;II)I
+}
+
+public abstract class dev/guavakt/escape/CharEscaper : dev/guavakt/escape/Escaper {
+	public fun <init> ()V
+	protected abstract fun escape (C)[C
+	public fun escape (Ljava/lang/String;)Ljava/lang/String;
+	protected final fun escapeSlow (Ljava/lang/String;I)Ljava/lang/String;
+}
+
+public final class dev/guavakt/escape/CharEscaperBuilder {
+	public fun <init> ()V
+	public final fun addEscape (CLjava/lang/String;)Ldev/guavakt/escape/CharEscaperBuilder;
+	public final fun addEscapes ([CLjava/lang/String;)Ldev/guavakt/escape/CharEscaperBuilder;
+	public final fun toArray ()[Ljava/lang/String;
+	public final fun toEscaper ()Ldev/guavakt/escape/CharEscaper;
+}
+
+public abstract class dev/guavakt/escape/Escaper {
+	public fun <init> ()V
+	public abstract fun escape (Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class dev/guavakt/escape/Escapers {
+	public static final field INSTANCE Ldev/guavakt/escape/Escapers;
+	public final fun builder ()Ldev/guavakt/escape/Escapers$Builder;
+	public final fun computeReplacement (Ldev/guavakt/escape/CharEscaper;C)Ljava/lang/String;
+	public final fun computeReplacement (Ldev/guavakt/escape/UnicodeEscaper;I)Ljava/lang/String;
+	public final fun nullEscaper ()Ldev/guavakt/escape/Escaper;
+}
+
+public final class dev/guavakt/escape/Escapers$Builder {
+	public fun <init> ()V
+	public final fun addEscape (CLjava/lang/String;)Ldev/guavakt/escape/Escapers$Builder;
+	public final fun build ()Ldev/guavakt/escape/Escaper;
+	public final fun setSafeRange (CC)Ldev/guavakt/escape/Escapers$Builder;
+	public final fun setUnsafeReplacement (Ljava/lang/String;)Ldev/guavakt/escape/Escapers$Builder;
+}
+
+public abstract interface annotation class dev/guavakt/escape/IgnoreJRERequirement : java/lang/annotation/Annotation {
+}
+
+public abstract interface annotation class dev/guavakt/escape/ParametricNullness : java/lang/annotation/Annotation {
+}
+
+public abstract class dev/guavakt/escape/UnicodeEscaper : dev/guavakt/escape/Escaper {
+	public static final field MIN_SUPPLEMENTARY_CODE_POINT I
+	public fun <init> ()V
+	protected abstract fun escape (I)[C
+	public fun escape (Ljava/lang/String;)Ljava/lang/String;
+	protected final fun escapeSlow (Ljava/lang/String;I)Ljava/lang/String;
+	protected fun nextEscapeIndex (Ljava/lang/CharSequence;II)I
+}
+
+public final class dev/guavakt/html/HtmlEscapers {
+	public static final field INSTANCE Ldev/guavakt/html/HtmlEscapers;
+	public final fun htmlEscaper ()Ldev/guavakt/escape/Escaper;
+}
+
+public abstract interface annotation class dev/guavakt/html/ParametricNullness : java/lang/annotation/Annotation {
+}
+
+public abstract interface annotation class dev/guavakt/xml/ParametricNullness : java/lang/annotation/Annotation {
+}
+
+public final class dev/guavakt/xml/XmlEscapers {
+	public static final field INSTANCE Ldev/guavakt/xml/XmlEscapers;
+	public final fun xmlAttributeEscaper ()Ldev/guavakt/escape/Escaper;
+	public final fun xmlContentEscaper ()Ldev/guavakt/escape/Escaper;
+}
+

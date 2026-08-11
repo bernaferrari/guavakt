@@ -1,0 +1,499 @@
+public final class dev/guavakt/io/AppendableWriter : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ljava/lang/Appendable;)V
+	public final fun append (Ljava/lang/CharSequence;)Ldev/guavakt/io/AppendableWriter;
+	public fun close ()V
+	public final fun write (I)V
+	public final fun write (Ljava/lang/String;)V
+	public final fun write ([CII)V
+}
+
+public abstract interface class dev/guavakt/io/AutoCloseable {
+	public abstract fun close ()V
+}
+
+public abstract class dev/guavakt/io/BaseEncoding {
+	public static final field Companion Ldev/guavakt/io/BaseEncoding$Companion;
+	public fun <init> ()V
+	public abstract fun decode (Ljava/lang/CharSequence;)[B
+	public abstract fun encode ([B)Ljava/lang/String;
+	public abstract fun encode ([BII)Ljava/lang/String;
+	public final fun omitPadding ()Ldev/guavakt/io/BaseEncoding;
+	public final fun withPadChar (C)Ldev/guavakt/io/BaseEncoding;
+}
+
+public final class dev/guavakt/io/BaseEncoding$Companion {
+	public final fun base16 ()Ldev/guavakt/io/BaseEncoding;
+	public final fun base64 ()Ldev/guavakt/io/BaseEncoding;
+	public final fun base64Url ()Ldev/guavakt/io/BaseEncoding;
+}
+
+public abstract interface class dev/guavakt/io/ByteArrayDataInput {
+	public abstract fun available ()I
+	public abstract fun readBoolean ()Z
+	public abstract fun readByte ()B
+	public abstract fun readChar ()C
+	public abstract fun readDouble ()D
+	public abstract fun readFloat ()F
+	public abstract fun readFully ([B)V
+	public abstract fun readFully ([BII)V
+	public abstract fun readInt ()I
+	public abstract fun readLine ()Ljava/lang/String;
+	public abstract fun readLong ()J
+	public abstract fun readShort ()S
+	public abstract fun readUTF ()Ljava/lang/String;
+	public abstract fun readUnsignedByte ()I
+	public abstract fun readUnsignedShort ()I
+	public abstract fun skipBytes (I)I
+}
+
+public abstract interface class dev/guavakt/io/ByteArrayDataOutput {
+	public abstract fun size ()I
+	public abstract fun toByteArray ()[B
+	public abstract fun write (I)V
+	public abstract fun write ([B)V
+	public abstract fun write ([BII)V
+	public abstract fun writeBoolean (Z)V
+	public abstract fun writeByte (I)V
+	public abstract fun writeBytes (Ljava/lang/String;)V
+	public abstract fun writeChar (I)V
+	public abstract fun writeChars (Ljava/lang/String;)V
+	public abstract fun writeDouble (D)V
+	public abstract fun writeFloat (F)V
+	public abstract fun writeInt (I)V
+	public abstract fun writeLong (J)V
+	public abstract fun writeShort (I)V
+	public abstract fun writeUTF (Ljava/lang/String;)V
+}
+
+public final class dev/guavakt/io/ByteArrayInputLike : dev/guavakt/io/AutoCloseable {
+	public fun <init> ([B)V
+	public fun close ()V
+	public final fun read ()I
+	public final fun read ([B)I
+	public final fun read ([BII)I
+}
+
+public class dev/guavakt/io/ByteArrayOutputLike : dev/guavakt/io/AutoCloseable {
+	public fun <init> ()V
+	public fun close ()V
+	public final fun toByteArray ()[B
+	public final fun write (I)V
+	public final fun write ([BII)V
+}
+
+public abstract interface class dev/guavakt/io/ByteProcessor {
+	public abstract fun getResult ()Ljava/lang/Object;
+	public abstract fun processBytes ([BII)Z
+}
+
+public abstract class dev/guavakt/io/ByteSink : dev/guavakt/io/ByteSinkLike {
+	public fun <init> ()V
+	public final fun asCharSink ()Ldev/guavakt/io/CharSink;
+	public fun openBufferedSink ()Lokio/BufferedSink;
+	public abstract fun openSink ()Lokio/Sink;
+	public final fun openStream ()Ldev/guavakt/io/ByteArrayOutputLike;
+	public final fun write ([B)V
+	public final fun writeFrom (Lokio/Source;)J
+}
+
+public abstract interface class dev/guavakt/io/ByteSinkLike {
+	public abstract fun openStream ()Ldev/guavakt/io/ByteArrayOutputLike;
+}
+
+public abstract class dev/guavakt/io/ByteSource {
+	public static final field Companion Ldev/guavakt/io/ByteSource$Companion;
+	public fun <init> ()V
+	public final fun contentEquals (Ldev/guavakt/io/ByteSource;)Z
+	public final fun copyTo (Ldev/guavakt/io/ByteSink;)J
+	public final fun copyTo (Ldev/guavakt/io/ByteSinkLike;)J
+	public final fun copyTo (Lokio/Sink;)J
+	public final fun isEmpty ()Z
+	public fun openBufferedSource ()Lokio/BufferedSource;
+	public fun openSource ()Lokio/Source;
+	public abstract fun openStream ()Ldev/guavakt/io/ByteArrayInputLike;
+	public final fun read ()[B
+	public fun read (Ldev/guavakt/io/ByteProcessor;)Ljava/lang/Object;
+	public fun size ()J
+	public fun sizeIfKnown ()Ljava/lang/Long;
+	public final fun slice (JJ)Ldev/guavakt/io/ByteSource;
+}
+
+public final class dev/guavakt/io/ByteSource$Companion {
+	public final fun concat (Ljava/lang/Iterable;)Ldev/guavakt/io/ByteSource;
+	public final fun concat ([Ldev/guavakt/io/ByteSource;)Ldev/guavakt/io/ByteSource;
+	public final fun empty ()Ldev/guavakt/io/ByteSource;
+	public final fun fromSource (Ljava/lang/Long;Lkotlin/jvm/functions/Function0;)Ldev/guavakt/io/ByteSource;
+	public static synthetic fun fromSource$default (Ldev/guavakt/io/ByteSource$Companion;Ljava/lang/Long;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Ldev/guavakt/io/ByteSource;
+	public final fun wrap ([B)Ldev/guavakt/io/ByteSource;
+}
+
+public final class dev/guavakt/io/ByteStreams {
+	public static final field INSTANCE Ldev/guavakt/io/ByteStreams;
+	public final fun copy ([BLjava/util/List;)J
+	public final fun copy ([B[BI)I
+	public static synthetic fun copy$default (Ldev/guavakt/io/ByteStreams;[B[BIILjava/lang/Object;)I
+	public final fun exhaust ([B)J
+	public final fun limit ([BJ)[B
+	public final fun newDataInput ([B)Ldev/guavakt/io/ByteArrayDataInput;
+	public final fun newDataInput ([BI)Ldev/guavakt/io/ByteArrayDataInput;
+	public final fun newDataOutput ()Ldev/guavakt/io/ByteArrayDataOutput;
+	public final fun newDataOutput (I)Ldev/guavakt/io/ByteArrayDataOutput;
+	public final fun nullOutputStream ()Lkotlin/jvm/functions/Function1;
+	public final fun read ([BII)[B
+	public final fun readBytes ([BLdev/guavakt/io/ByteProcessor;)Ljava/lang/Object;
+	public final fun toByteArray ([B)[B
+}
+
+public final class dev/guavakt/io/ByteStreams$ByteArrayDataInput : dev/guavakt/io/ByteArrayDataInput {
+	public fun <init> ([BI)V
+	public synthetic fun <init> ([BIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun available ()I
+	public fun readBoolean ()Z
+	public fun readByte ()B
+	public fun readChar ()C
+	public fun readDouble ()D
+	public fun readFloat ()F
+	public fun readFully ([B)V
+	public fun readFully ([BII)V
+	public fun readInt ()I
+	public fun readLine ()Ljava/lang/String;
+	public fun readLong ()J
+	public fun readShort ()S
+	public fun readUTF ()Ljava/lang/String;
+	public fun readUnsignedByte ()I
+	public fun readUnsignedShort ()I
+	public fun skipBytes (I)I
+}
+
+public final class dev/guavakt/io/ByteStreams$ByteArrayDataOutput : dev/guavakt/io/ByteArrayDataOutput {
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun size ()I
+	public fun toByteArray ()[B
+	public fun write (I)V
+	public fun write ([B)V
+	public fun write ([BII)V
+	public fun writeBoolean (Z)V
+	public fun writeByte (I)V
+	public fun writeBytes (Ljava/lang/String;)V
+	public fun writeChar (I)V
+	public fun writeChars (Ljava/lang/String;)V
+	public fun writeDouble (D)V
+	public fun writeFloat (F)V
+	public fun writeInt (I)V
+	public fun writeLong (J)V
+	public fun writeShort (I)V
+	public fun writeUTF (Ljava/lang/String;)V
+}
+
+public final class dev/guavakt/io/ByteStreamsJvmKt {
+	public static final fun copy (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;Ljava/io/OutputStream;)J
+	public static final fun exhaust (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;)J
+	public static final fun limit (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;J)Ljava/io/InputStream;
+	public static final fun nullOutputStream (Ldev/guavakt/io/ByteStreams;)Ljava/io/OutputStream;
+	public static final fun toByteArray (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;)[B
+}
+
+public class dev/guavakt/io/CharReaderLike : dev/guavakt/io/AutoCloseable {
+	public static final field Companion Ldev/guavakt/io/CharReaderLike$Companion;
+	public fun <init> (Ljava/lang/String;)V
+	public fun close ()V
+	public fun read ()I
+	public fun read ([C)I
+}
+
+public final class dev/guavakt/io/CharReaderLike$Companion {
+	public final fun fromUtf8 (Lokio/BufferedSource;)Ldev/guavakt/io/CharReaderLike;
+}
+
+public final class dev/guavakt/io/CharSequenceReader : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ljava/lang/CharSequence;)V
+	public fun close ()V
+	public final fun mark (I)V
+	public final fun markSupported ()Z
+	public final fun read ()I
+	public final fun read ([C)I
+	public final fun read ([CII)I
+	public final fun ready ()Z
+	public final fun reset ()V
+	public final fun skip (J)J
+}
+
+public abstract class dev/guavakt/io/CharSink {
+	public static final field Companion Ldev/guavakt/io/CharSink$Companion;
+	public fun <init> ()V
+	public abstract fun openBufferedSink ()Lokio/BufferedSink;
+	public final fun write (Ljava/lang/CharSequence;)V
+	public final fun writeFrom (Ldev/guavakt/io/CharSource;)J
+	public final fun writeLines (Ljava/lang/Iterable;Ljava/lang/String;)V
+	public static synthetic fun writeLines$default (Ldev/guavakt/io/CharSink;Ljava/lang/Iterable;Ljava/lang/String;ILjava/lang/Object;)V
+}
+
+public final class dev/guavakt/io/CharSink$Companion {
+}
+
+public abstract class dev/guavakt/io/CharSource {
+	public static final field Companion Ldev/guavakt/io/CharSource$Companion;
+	public fun <init> ()V
+	public final fun asByteSource (Ljava/lang/String;)Ldev/guavakt/io/ByteSource;
+	public static synthetic fun asByteSource$default (Ldev/guavakt/io/CharSource;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/io/ByteSource;
+	public final fun copyTo (Ldev/guavakt/io/CharSink;)J
+	public final fun copyTo (Ljava/lang/Appendable;)J
+	public final fun isEmpty ()Z
+	public final fun length ()J
+	public fun lengthIfKnown ()Ljava/lang/Long;
+	public fun openReader ()Ldev/guavakt/io/CharReaderLike;
+	public abstract fun openStream ()Ldev/guavakt/io/CharReaderLike;
+	public final fun read ()Ljava/lang/String;
+	public final fun readFirstLine ()Ljava/lang/String;
+	public final fun readLines ()Ljava/util/List;
+	public final fun readLines (Ldev/guavakt/io/LineProcessor;)Ljava/lang/Object;
+}
+
+public final class dev/guavakt/io/CharSource$Companion {
+	public final fun concat (Ljava/lang/Iterable;)Ldev/guavakt/io/CharSource;
+	public final fun concat ([Ldev/guavakt/io/CharSource;)Ldev/guavakt/io/CharSource;
+	public final fun empty ()Ldev/guavakt/io/CharSource;
+	public final fun fromReader (Lkotlin/jvm/functions/Function0;)Ldev/guavakt/io/CharSource;
+	public final fun wrap (Ljava/lang/CharSequence;)Ldev/guavakt/io/CharSource;
+}
+
+public final class dev/guavakt/io/CharStreams {
+	public static final field INSTANCE Ldev/guavakt/io/CharStreams;
+	public final fun asWriter (Ljava/lang/Appendable;)Ljava/lang/Appendable;
+	public final fun copy (Ljava/lang/CharSequence;Ljava/lang/Appendable;)J
+	public final fun copy (Ljava/lang/CharSequence;Ljava/lang/StringBuilder;)J
+	public final fun nullWriter ()Ljava/lang/Appendable;
+	public final fun readLines (Ljava/lang/CharSequence;)Ljava/util/List;
+	public final fun readLines (Ljava/lang/CharSequence;Ldev/guavakt/io/LineProcessor;)Ljava/lang/Object;
+	public final fun skipFully (Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
+	public final fun toString (Ljava/lang/CharSequence;)Ljava/lang/String;
+}
+
+public final class dev/guavakt/io/CharStreamsJvmKt {
+	public static final fun asWriter (Ldev/guavakt/io/CharStreams;Ljava/lang/Appendable;)Ljava/io/Writer;
+	public static final fun copy (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;Ljava/lang/Appendable;)J
+	public static final fun copy (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;Ljava/lang/StringBuilder;)J
+	public static final fun readLines (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;)Ljava/util/List;
+	public static final fun toString (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;)Ljava/lang/String;
+}
+
+public final class dev/guavakt/io/Closeables {
+	public static final field INSTANCE Ldev/guavakt/io/Closeables;
+	public final fun close (Ldev/guavakt/io/AutoCloseable;Z)V
+	public final fun closeQuietly (Ldev/guavakt/io/AutoCloseable;)V
+}
+
+public final class dev/guavakt/io/Closer {
+	public static final field Companion Ldev/guavakt/io/Closer$Companion;
+	public final fun close ()V
+	public final fun register (Ldev/guavakt/io/AutoCloseable;)Ldev/guavakt/io/AutoCloseable;
+	public final fun rethrow (Ljava/lang/Exception;)Ljava/lang/RuntimeException;
+	public final fun rethrow (Ljava/lang/Exception;Ljava/lang/Object;)Ljava/lang/Void;
+}
+
+public final class dev/guavakt/io/Closer$Companion {
+	public final fun create ()Ldev/guavakt/io/Closer;
+}
+
+public final class dev/guavakt/io/CountingInputStream : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ldev/guavakt/io/ByteArrayInputLike;)V
+	public fun close ()V
+	public final fun getCount ()J
+	public final fun read ()I
+	public final fun read ([B)I
+	public final fun skip (J)J
+}
+
+public final class dev/guavakt/io/CountingOutputStream : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ldev/guavakt/io/ByteArrayOutputLike;)V
+	public fun close ()V
+	public final fun getCount ()J
+	public final fun write (I)V
+	public final fun write ([BII)V
+}
+
+public final class dev/guavakt/io/FileBackedOutputStream {
+	public fun <init> (ILokio/FileSystem;Lokio/Path;Z)V
+	public synthetic fun <init> (ILokio/FileSystem;Lokio/Path;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun <init> (IZ)V
+	public synthetic fun <init> (IZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun asByteSource ()Ldev/guavakt/io/ByteSource;
+	public final fun close ()V
+	public final fun flush ()V
+	public final fun getCount ()I
+	public final fun reset ()V
+	public final fun spilledPathOrNull ()Lokio/Path;
+	public final fun write (I)V
+	public final fun write ([B)V
+	public final fun write ([BII)V
+}
+
+public final class dev/guavakt/io/FileWriteMode : java/lang/Enum {
+	public static final field INSTANCE Ldev/guavakt/io/FileWriteMode;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/io/FileWriteMode;
+	public static fun values ()[Ldev/guavakt/io/FileWriteMode;
+	public final fun wireName ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/io/Files {
+	public static final field INSTANCE Ldev/guavakt/io/Files;
+	public final fun asByteSink (Ljava/lang/String;)Ldev/guavakt/io/ByteSink;
+	public final fun asByteSink (Lokio/FileSystem;Lokio/Path;Z)Ldev/guavakt/io/ByteSink;
+	public static synthetic fun asByteSink$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Ldev/guavakt/io/ByteSink;
+	public final fun asByteSource (Ljava/lang/String;)Ldev/guavakt/io/ByteSource;
+	public final fun asByteSource (Lokio/FileSystem;Lokio/Path;)Ldev/guavakt/io/ByteSource;
+	public final fun asCharSink (Ljava/lang/String;)Ldev/guavakt/io/CharSink;
+	public final fun asCharSink (Lokio/FileSystem;Lokio/Path;Z)Ldev/guavakt/io/CharSink;
+	public static synthetic fun asCharSink$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Ldev/guavakt/io/CharSink;
+	public final fun asCharSource (Ljava/lang/String;Ljava/lang/String;)Ldev/guavakt/io/CharSource;
+	public final fun asCharSource (Lokio/FileSystem;Lokio/Path;)Ldev/guavakt/io/CharSource;
+	public static synthetic fun asCharSource$default (Ldev/guavakt/io/Files;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/io/CharSource;
+	public final fun createTempDir (Ljava/lang/String;)Ljava/lang/String;
+	public static synthetic fun createTempDir$default (Ldev/guavakt/io/Files;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+	public final fun getFileExtension (Ljava/lang/String;)Ljava/lang/String;
+	public final fun getNameWithoutExtension (Ljava/lang/String;)Ljava/lang/String;
+	public final fun readAllBytes (Ljava/lang/String;)[B
+	public final fun readAllBytes (Lokio/FileSystem;Lokio/Path;)[B
+	public final fun simplifyPath (Ljava/lang/String;)Ljava/lang/String;
+	public final fun toByteArray ([B)[B
+	public final fun write (Ljava/lang/String;[B)V
+	public final fun write (Lokio/FileSystem;Lokio/Path;[BZ)V
+	public final fun write ([BLjava/util/List;)V
+	public static synthetic fun write$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;[BZILjava/lang/Object;)V
+}
+
+public final class dev/guavakt/io/Flushables {
+	public static final field INSTANCE Ldev/guavakt/io/Flushables;
+	public final fun flush (Ldev/guavakt/io/Flushables$Flushable;Z)V
+	public final fun flushQuietly (Ldev/guavakt/io/Flushables$Flushable;)V
+}
+
+public abstract interface class dev/guavakt/io/Flushables$Flushable {
+	public abstract fun flush ()V
+}
+
+public abstract interface annotation class dev/guavakt/io/IgnoreJRERequirement : java/lang/annotation/Annotation {
+}
+
+public class dev/guavakt/io/InsecureRecursiveDeleteException : java/lang/RuntimeException {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public fun <init> (Ljava/lang/Throwable;)V
+	public final fun hasMessage ()Z
+}
+
+public abstract interface class dev/guavakt/io/LineProcessor {
+	public abstract fun getResult ()Ljava/lang/Object;
+	public abstract fun processLine (Ljava/lang/String;)Z
+}
+
+public final class dev/guavakt/io/LineReader {
+	public fun <init> (Ldev/guavakt/io/CharReaderLike;)V
+	public final fun readLine ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/io/LittleEndianDataInputStream : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ldev/guavakt/io/ByteArrayInputLike;)V
+	public fun close ()V
+	public final fun readByte ()B
+	public final fun readDouble ()D
+	public final fun readFloat ()F
+	public final fun readInt ()I
+	public final fun readLong ()J
+	public final fun readShort ()S
+	public final fun readUnsignedByte ()I
+}
+
+public final class dev/guavakt/io/LittleEndianDataOutputStream : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ldev/guavakt/io/ByteArrayOutputLike;)V
+	public fun close ()V
+	public final fun write (I)V
+	public final fun writeByte (I)V
+	public final fun writeDouble (D)V
+	public final fun writeFloat (F)V
+	public final fun writeInt (I)V
+	public final fun writeLong (J)V
+	public final fun writeShort (I)V
+}
+
+public final class dev/guavakt/io/MoreFiles {
+	public static final field INSTANCE Ldev/guavakt/io/MoreFiles;
+	public final fun createParentDirectories (Ljava/lang/String;)Ljava/lang/String;
+	public final fun createParentDirectories (Lokio/FileSystem;Lokio/Path;)Lokio/Path;
+	public final fun fileTraverser ()Ldev/guavakt/io/MoreFiles$FileTraverser;
+	public final fun getFileExtension (Ljava/lang/String;)Ljava/lang/String;
+	public final fun getNameWithoutExtension (Ljava/lang/String;)Ljava/lang/String;
+	public final fun isDirectory (Ljava/lang/String;)Z
+	public final fun isDirectory (Lokio/FileSystem;Lokio/Path;)Z
+}
+
+public final class dev/guavakt/io/MoreFiles$FileTraverser {
+	public static final field INSTANCE Ldev/guavakt/io/MoreFiles$FileTraverser;
+	public final fun breadthFirst (Ljava/lang/String;)Ljava/util/List;
+	public final fun breadthFirst (Lokio/FileSystem;Lokio/Path;)Ljava/util/List;
+	public final fun depthFirstPreOrder (Ljava/lang/String;)Ljava/util/List;
+	public final fun depthFirstPreOrder (Lokio/FileSystem;Lokio/Path;)Ljava/util/List;
+}
+
+public final class dev/guavakt/io/MultiInputStream : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ljava/util/Iterator;)V
+	public fun close ()V
+	public final fun read ()I
+	public final fun read ([B)I
+}
+
+public final class dev/guavakt/io/MultiReader : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ljava/util/Iterator;)V
+	public fun close ()V
+	public final fun read ([C)I
+}
+
+public abstract interface annotation class dev/guavakt/io/ParametricNullness : java/lang/annotation/Annotation {
+}
+
+public final class dev/guavakt/io/PatternFilenameFilter {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun accept (Ljava/lang/String;)Z
+	public final fun accept (Ljava/lang/String;Ljava/lang/String;)Z
+}
+
+public final class dev/guavakt/io/PlatformFilesKt {
+	public static final fun platformCreateParentDirectories (Ljava/lang/String;)Ljava/lang/String;
+	public static final fun platformCreateTempDir (Ljava/lang/String;)Ljava/lang/String;
+	public static final fun platformIsDirectory (Ljava/lang/String;)Z
+	public static final fun platformReadAllBytes (Ljava/lang/String;)[B
+	public static final fun platformSink (Ljava/lang/String;)Lokio/Sink;
+	public static final fun platformSource (Ljava/lang/String;)Lokio/Source;
+	public static final fun platformTraverse (Ljava/lang/String;Z)Ljava/util/List;
+	public static final fun platformWriteBytes (Ljava/lang/String;[B)V
+}
+
+public final class dev/guavakt/io/ReaderInputStream : dev/guavakt/io/AutoCloseable {
+	public fun <init> (Ldev/guavakt/io/CharReaderLike;)V
+	public fun close ()V
+	public final fun read ([B)I
+	public final fun read ([BII)I
+}
+
+public final class dev/guavakt/io/RecursiveDeleteOption : java/lang/Enum {
+	public static final field INSTANCE Ldev/guavakt/io/RecursiveDeleteOption;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/io/RecursiveDeleteOption;
+	public static fun values ()[Ldev/guavakt/io/RecursiveDeleteOption;
+	public final fun wireName ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/io/Resources {
+	public static final field INSTANCE Ldev/guavakt/io/Resources;
+	public final fun getResource (Ljava/lang/String;)Ldev/guavakt/io/ByteSource;
+	public final fun readLines (Ljava/lang/String;)Ljava/util/List;
+	public final fun register (Ljava/lang/String;[B)V
+	public final fun toByteArray (Ljava/lang/String;)[B
+	public final fun toString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	public static synthetic fun toString$default (Ldev/guavakt/io/Resources;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+}
+

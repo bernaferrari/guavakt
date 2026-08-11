@@ -1,0 +1,12 @@
+package dev.guavakt.annotations
+
+@MustBeDocumented
+@Retention(AnnotationRetention.BINARY)
+@Target(
+    AnnotationTarget.CLASS,
+    AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY,
+    AnnotationTarget.FIELD,
+    AnnotationTarget.CONSTRUCTOR,
+)
+annotation class VisibleForTesting

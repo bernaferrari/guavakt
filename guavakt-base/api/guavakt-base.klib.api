@@ -1,0 +1,574 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-base>
+open annotation class dev.guavakt.base/ParametricNullness : kotlin/Annotation { // dev.guavakt.base/ParametricNullness|null[0]
+    constructor <init>() // dev.guavakt.base/ParametricNullness.<init>|<init>(){}[0]
+}
+
+final enum class dev.guavakt.base.internal/Strength : kotlin/Enum<dev.guavakt.base.internal/Strength> { // dev.guavakt.base.internal/Strength|null[0]
+    enum entry SOFT // dev.guavakt.base.internal/Strength.SOFT|null[0]
+    enum entry STRONG // dev.guavakt.base.internal/Strength.STRONG|null[0]
+    enum entry WEAK // dev.guavakt.base.internal/Strength.WEAK|null[0]
+
+    final val entries // dev.guavakt.base.internal/Strength.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.base.internal/Strength> // dev.guavakt.base.internal/Strength.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): dev.guavakt.base.internal/Strength // dev.guavakt.base.internal/Strength.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<dev.guavakt.base.internal/Strength> // dev.guavakt.base.internal/Strength.values|values#static(){}[0]
+}
+
+final enum class dev.guavakt.base/CaseFormat : kotlin/Enum<dev.guavakt.base/CaseFormat> { // dev.guavakt.base/CaseFormat|null[0]
+    enum entry LOWER_CAMEL // dev.guavakt.base/CaseFormat.LOWER_CAMEL|null[0]
+    enum entry LOWER_HYPHEN // dev.guavakt.base/CaseFormat.LOWER_HYPHEN|null[0]
+    enum entry LOWER_UNDERSCORE // dev.guavakt.base/CaseFormat.LOWER_UNDERSCORE|null[0]
+    enum entry UPPER_CAMEL // dev.guavakt.base/CaseFormat.UPPER_CAMEL|null[0]
+    enum entry UPPER_UNDERSCORE // dev.guavakt.base/CaseFormat.UPPER_UNDERSCORE|null[0]
+
+    final val entries // dev.guavakt.base/CaseFormat.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.base/CaseFormat> // dev.guavakt.base/CaseFormat.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun converterTo(dev.guavakt.base/CaseFormat): dev.guavakt.base/Converter<kotlin/String, kotlin/String> // dev.guavakt.base/CaseFormat.converterTo|converterTo(dev.guavakt.base.CaseFormat){}[0]
+    final fun to(dev.guavakt.base/CaseFormat, kotlin/String): kotlin/String // dev.guavakt.base/CaseFormat.to|to(dev.guavakt.base.CaseFormat;kotlin.String){}[0]
+    final fun valueOf(kotlin/String): dev.guavakt.base/CaseFormat // dev.guavakt.base/CaseFormat.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<dev.guavakt.base/CaseFormat> // dev.guavakt.base/CaseFormat.values|values#static(){}[0]
+}
+
+final enum class dev.guavakt.base/StandardSystemProperty : kotlin/Enum<dev.guavakt.base/StandardSystemProperty> { // dev.guavakt.base/StandardSystemProperty|null[0]
+    enum entry INSTANCE // dev.guavakt.base/StandardSystemProperty.INSTANCE|null[0]
+
+    final val entries // dev.guavakt.base/StandardSystemProperty.entries|#static{}entries[0]
+        final fun <get-entries>(): kotlin.enums/EnumEntries<dev.guavakt.base/StandardSystemProperty> // dev.guavakt.base/StandardSystemProperty.entries.<get-entries>|<get-entries>#static(){}[0]
+
+    final fun valueOf(kotlin/String): dev.guavakt.base/StandardSystemProperty // dev.guavakt.base/StandardSystemProperty.valueOf|valueOf#static(kotlin.String){}[0]
+    final fun values(): kotlin/Array<dev.guavakt.base/StandardSystemProperty> // dev.guavakt.base/StandardSystemProperty.values|values#static(){}[0]
+    final fun wireName(): kotlin/String // dev.guavakt.base/StandardSystemProperty.wireName|wireName(){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.base/Function { // dev.guavakt.base/Function|null[0]
+    abstract fun apply(#A): #B // dev.guavakt.base/Function.apply|apply(1:0){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?> dev.guavakt.base/Predicate { // dev.guavakt.base/Predicate|null[0]
+    abstract fun apply(#A): kotlin/Boolean // dev.guavakt.base/Predicate.apply|apply(1:0){}[0]
+}
+
+abstract fun interface <#A: out kotlin/Any?> dev.guavakt.base/Supplier { // dev.guavakt.base/Supplier|null[0]
+    abstract fun get(): #A // dev.guavakt.base/Supplier.get|get(){}[0]
+}
+
+abstract interface dev.guavakt.base/FinalizableReference { // dev.guavakt.base/FinalizableReference|null[0]
+    abstract fun finalizeReferent() // dev.guavakt.base/FinalizableReference.finalizeReferent|finalizeReferent(){}[0]
+}
+
+abstract interface dev.guavakt.base/PatternCompiler { // dev.guavakt.base/PatternCompiler|null[0]
+    abstract fun compile(kotlin/String): dev.guavakt.base/CommonPattern // dev.guavakt.base/PatternCompiler.compile|compile(kotlin.String){}[0]
+    abstract fun isPcreLike(): kotlin/Boolean // dev.guavakt.base/PatternCompiler.isPcreLike|isPcreLike(){}[0]
+}
+
+abstract class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.base/Converter : dev.guavakt.base/Function<#A, #B> { // dev.guavakt.base/Converter|null[0]
+    constructor <init>() // dev.guavakt.base/Converter.<init>|<init>(){}[0]
+
+    abstract fun doBackward(#B): #A // dev.guavakt.base/Converter.doBackward|doBackward(1:1){}[0]
+    abstract fun doForward(#A): #B // dev.guavakt.base/Converter.doForward|doForward(1:0){}[0]
+    final fun convert(#A): #B // dev.guavakt.base/Converter.convert|convert(1:0){}[0]
+    final fun convertAll(kotlin.collections/Iterable<#A>): kotlin.collections/Iterable<#B> // dev.guavakt.base/Converter.convertAll|convertAll(kotlin.collections.Iterable<1:0>){}[0]
+    open fun <#A1: kotlin/Any?> andThen(dev.guavakt.base/Converter<#B, #A1>): dev.guavakt.base/Converter<#A, #A1> // dev.guavakt.base/Converter.andThen|andThen(dev.guavakt.base.Converter<1:1,0:0>){0§<kotlin.Any?>}[0]
+    open fun apply(#A): #B // dev.guavakt.base/Converter.apply|apply(1:0){}[0]
+    open fun reverse(): dev.guavakt.base/Converter<#B, #A> // dev.guavakt.base/Converter.reverse|reverse(){}[0]
+
+    final object Companion { // dev.guavakt.base/Converter.Companion|null[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> from(dev.guavakt.base/Function<in #A2, out #B2>, dev.guavakt.base/Function<in #B2, out #A2>): dev.guavakt.base/Converter<#A2, #B2> // dev.guavakt.base/Converter.Companion.from|from(dev.guavakt.base.Function<in|0:0,out|0:1>;dev.guavakt.base.Function<in|0:1,out|0:0>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?, #B2: kotlin/Any?> from(kotlin/Function1<#A2, #B2>, kotlin/Function1<#B2, #A2>): dev.guavakt.base/Converter<#A2, #B2> // dev.guavakt.base/Converter.Companion.from|from(kotlin.Function1<0:0,0:1>;kotlin.Function1<0:1,0:0>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> identity(): dev.guavakt.base/Converter<#A2, #A2> // dev.guavakt.base/Converter.Companion.identity|identity(){0§<kotlin.Any?>}[0]
+    }
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.base/AbstractIterator : kotlin.collections/MutableIterator<#A> { // dev.guavakt.base/AbstractIterator|null[0]
+    constructor <init>() // dev.guavakt.base/AbstractIterator.<init>|<init>(){}[0]
+
+    abstract fun computeNext(): #A? // dev.guavakt.base/AbstractIterator.computeNext|computeNext(){}[0]
+    final fun endOfData(): #A? // dev.guavakt.base/AbstractIterator.endOfData|endOfData(){}[0]
+    open fun hasNext(): kotlin/Boolean // dev.guavakt.base/AbstractIterator.hasNext|hasNext(){}[0]
+    open fun next(): #A // dev.guavakt.base/AbstractIterator.next|next(){}[0]
+    open fun remove(): kotlin/Nothing // dev.guavakt.base/AbstractIterator.remove|remove(){}[0]
+}
+
+abstract class <#A: kotlin/Any?> dev.guavakt.base/Equivalence { // dev.guavakt.base/Equivalence|null[0]
+    constructor <init>() // dev.guavakt.base/Equivalence.<init>|<init>(){}[0]
+
+    abstract fun doEquivalent(#A, #A): kotlin/Boolean // dev.guavakt.base/Equivalence.doEquivalent|doEquivalent(1:0;1:0){}[0]
+    abstract fun doHash(#A): kotlin/Int // dev.guavakt.base/Equivalence.doHash|doHash(1:0){}[0]
+    final fun <#A1: kotlin/Any?> onResultOf(dev.guavakt.base/Function<in #A1, out #A?>): dev.guavakt.base/Equivalence<#A1> // dev.guavakt.base/Equivalence.onResultOf|onResultOf(dev.guavakt.base.Function<in|0:0,out|1:0?>){0§<kotlin.Any?>}[0]
+    final fun equivalent(#A?, #A?): kotlin/Boolean // dev.guavakt.base/Equivalence.equivalent|equivalent(1:0?;1:0?){}[0]
+    final fun equivalentTo(#A?): kotlin/Function1<#A?, kotlin/Boolean> // dev.guavakt.base/Equivalence.equivalentTo|equivalentTo(1:0?){}[0]
+    final fun hash(#A?): kotlin/Int // dev.guavakt.base/Equivalence.hash|hash(1:0?){}[0]
+    final fun pairwise(): dev.guavakt.base/Equivalence<kotlin.collections/Iterable<#A>> // dev.guavakt.base/Equivalence.pairwise|pairwise(){}[0]
+    final fun wrap(#A?): dev.guavakt.base/Equivalence.Wrapper<#A> // dev.guavakt.base/Equivalence.wrap|wrap(1:0?){}[0]
+
+    final class <#A1: kotlin/Any?> Wrapper { // dev.guavakt.base/Equivalence.Wrapper|null[0]
+        final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.base/Equivalence.Wrapper.equals|equals(kotlin.Any?){}[0]
+        final fun get(): #A1? // dev.guavakt.base/Equivalence.Wrapper.get|get(){}[0]
+        final fun hashCode(): kotlin/Int // dev.guavakt.base/Equivalence.Wrapper.hashCode|hashCode(){}[0]
+        final fun toString(): kotlin/String // dev.guavakt.base/Equivalence.Wrapper.toString|toString(){}[0]
+    }
+
+    final object Companion { // dev.guavakt.base/Equivalence.Companion|null[0]
+        final fun <#A2: kotlin/Any?> equals(): dev.guavakt.base/Equivalence<#A2> // dev.guavakt.base/Equivalence.Companion.equals|equals(){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> identity(): dev.guavakt.base/Equivalence<#A2> // dev.guavakt.base/Equivalence.Companion.identity|identity(){0§<kotlin.Any?>}[0]
+    }
+}
+
+abstract class dev.guavakt.base/CharMatcher { // dev.guavakt.base/CharMatcher|null[0]
+    constructor <init>() // dev.guavakt.base/CharMatcher.<init>|<init>(){}[0]
+
+    abstract fun matches(kotlin/Char): kotlin/Boolean // dev.guavakt.base/CharMatcher.matches|matches(kotlin.Char){}[0]
+    open fun and(dev.guavakt.base/CharMatcher): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.and|and(dev.guavakt.base.CharMatcher){}[0]
+    open fun countIn(kotlin/CharSequence): kotlin/Int // dev.guavakt.base/CharMatcher.countIn|countIn(kotlin.CharSequence){}[0]
+    open fun indexIn(kotlin/CharSequence): kotlin/Int // dev.guavakt.base/CharMatcher.indexIn|indexIn(kotlin.CharSequence){}[0]
+    open fun indexIn(kotlin/CharSequence, kotlin/Int): kotlin/Int // dev.guavakt.base/CharMatcher.indexIn|indexIn(kotlin.CharSequence;kotlin.Int){}[0]
+    open fun lastIndexIn(kotlin/CharSequence): kotlin/Int // dev.guavakt.base/CharMatcher.lastIndexIn|lastIndexIn(kotlin.CharSequence){}[0]
+    open fun matchesAllOf(kotlin/CharSequence): kotlin/Boolean // dev.guavakt.base/CharMatcher.matchesAllOf|matchesAllOf(kotlin.CharSequence){}[0]
+    open fun matchesAnyOf(kotlin/CharSequence): kotlin/Boolean // dev.guavakt.base/CharMatcher.matchesAnyOf|matchesAnyOf(kotlin.CharSequence){}[0]
+    open fun matchesNoneOf(kotlin/CharSequence): kotlin/Boolean // dev.guavakt.base/CharMatcher.matchesNoneOf|matchesNoneOf(kotlin.CharSequence){}[0]
+    open fun negate(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.negate|negate(){}[0]
+    open fun or(dev.guavakt.base/CharMatcher): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.or|or(dev.guavakt.base.CharMatcher){}[0]
+    open fun removeFrom(kotlin/CharSequence): kotlin/String // dev.guavakt.base/CharMatcher.removeFrom|removeFrom(kotlin.CharSequence){}[0]
+    open fun replaceFrom(kotlin/CharSequence, kotlin/Char): kotlin/String // dev.guavakt.base/CharMatcher.replaceFrom|replaceFrom(kotlin.CharSequence;kotlin.Char){}[0]
+    open fun retainFrom(kotlin/CharSequence): kotlin/String // dev.guavakt.base/CharMatcher.retainFrom|retainFrom(kotlin.CharSequence){}[0]
+    open fun trimFrom(kotlin/CharSequence): kotlin/String // dev.guavakt.base/CharMatcher.trimFrom|trimFrom(kotlin.CharSequence){}[0]
+
+    final object Companion { // dev.guavakt.base/CharMatcher.Companion|null[0]
+        final fun any(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.any|any(){}[0]
+        final fun anyOf(kotlin/CharSequence): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.anyOf|anyOf(kotlin.CharSequence){}[0]
+        final fun ascii(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.ascii|ascii(){}[0]
+        final fun breakingWhitespace(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.breakingWhitespace|breakingWhitespace(){}[0]
+        final fun digit(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.digit|digit(){}[0]
+        final fun inRange(kotlin/Char, kotlin/Char): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.inRange|inRange(kotlin.Char;kotlin.Char){}[0]
+        final fun is(kotlin/Char): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.is|is(kotlin.Char){}[0]
+        final fun isNot(kotlin/Char): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.isNot|isNot(kotlin.Char){}[0]
+        final fun javaDigit(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.javaDigit|javaDigit(){}[0]
+        final fun javaIsoControl(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.javaIsoControl|javaIsoControl(){}[0]
+        final fun javaLetter(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.javaLetter|javaLetter(){}[0]
+        final fun javaLetterOrDigit(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.javaLetterOrDigit|javaLetterOrDigit(){}[0]
+        final fun javaLowerCase(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.javaLowerCase|javaLowerCase(){}[0]
+        final fun javaUpperCase(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.javaUpperCase|javaUpperCase(){}[0]
+        final fun none(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.none|none(){}[0]
+        final fun noneOf(kotlin/CharSequence): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.noneOf|noneOf(kotlin.CharSequence){}[0]
+        final fun whitespace(): dev.guavakt.base/CharMatcher // dev.guavakt.base/CharMatcher.Companion.whitespace|whitespace(){}[0]
+    }
+}
+
+abstract class dev.guavakt.base/CommonMatcher { // dev.guavakt.base/CommonMatcher|null[0]
+    constructor <init>() // dev.guavakt.base/CommonMatcher.<init>|<init>(){}[0]
+
+    abstract fun end(): kotlin/Int // dev.guavakt.base/CommonMatcher.end|end(){}[0]
+    abstract fun find(): kotlin/Boolean // dev.guavakt.base/CommonMatcher.find|find(){}[0]
+    abstract fun find(kotlin/Int): kotlin/Boolean // dev.guavakt.base/CommonMatcher.find|find(kotlin.Int){}[0]
+    abstract fun matches(): kotlin/Boolean // dev.guavakt.base/CommonMatcher.matches|matches(){}[0]
+    abstract fun replaceAll(kotlin/String): kotlin/String // dev.guavakt.base/CommonMatcher.replaceAll|replaceAll(kotlin.String){}[0]
+    abstract fun start(): kotlin/Int // dev.guavakt.base/CommonMatcher.start|start(){}[0]
+}
+
+abstract class dev.guavakt.base/CommonPattern { // dev.guavakt.base/CommonPattern|null[0]
+    constructor <init>() // dev.guavakt.base/CommonPattern.<init>|<init>(){}[0]
+
+    abstract fun flags(): kotlin/Int // dev.guavakt.base/CommonPattern.flags|flags(){}[0]
+    abstract fun matcher(kotlin/CharSequence): dev.guavakt.base/CommonMatcher // dev.guavakt.base/CommonPattern.matcher|matcher(kotlin.CharSequence){}[0]
+    abstract fun pattern(): kotlin/String // dev.guavakt.base/CommonPattern.pattern|pattern(){}[0]
+
+    final object Companion { // dev.guavakt.base/CommonPattern.Companion|null[0]
+        final fun compile(kotlin/String): dev.guavakt.base/CommonPattern // dev.guavakt.base/CommonPattern.Companion.compile|compile(kotlin.String){}[0]
+        final fun isPcreLike(): kotlin/Boolean // dev.guavakt.base/CommonPattern.Companion.isPcreLike|isPcreLike(){}[0]
+    }
+}
+
+abstract class dev.guavakt.base/Ticker { // dev.guavakt.base/Ticker|null[0]
+    constructor <init>() // dev.guavakt.base/Ticker.<init>|<init>(){}[0]
+
+    abstract fun read(): kotlin/Long // dev.guavakt.base/Ticker.read|read(){}[0]
+
+    final object Companion { // dev.guavakt.base/Ticker.Companion|null[0]
+        final fun systemTicker(): dev.guavakt.base/Ticker // dev.guavakt.base/Ticker.Companion.systemTicker|systemTicker(){}[0]
+    }
+}
+
+final class <#A: kotlin/Any> dev.guavakt.base.internal/PlatformSoftRef { // dev.guavakt.base.internal/PlatformSoftRef|null[0]
+    constructor <init>(#A) // dev.guavakt.base.internal/PlatformSoftRef.<init>|<init>(1:0){}[0]
+
+    final fun clear() // dev.guavakt.base.internal/PlatformSoftRef.clear|clear(){}[0]
+    final fun get(): #A? // dev.guavakt.base.internal/PlatformSoftRef.get|get(){}[0]
+}
+
+final class <#A: kotlin/Any> dev.guavakt.base.internal/PlatformWeakRef { // dev.guavakt.base.internal/PlatformWeakRef|null[0]
+    constructor <init>(#A) // dev.guavakt.base.internal/PlatformWeakRef.<init>|<init>(1:0){}[0]
+
+    final fun clear() // dev.guavakt.base.internal/PlatformWeakRef.clear|clear(){}[0]
+    final fun get(): #A? // dev.guavakt.base.internal/PlatformWeakRef.get|get(){}[0]
+}
+
+final class <#A: kotlin/Any?, #B: kotlin/Any?> dev.guavakt.base/FunctionalEquivalence : dev.guavakt.base/Equivalence<#A> { // dev.guavakt.base/FunctionalEquivalence|null[0]
+    constructor <init>(dev.guavakt.base/Function<in #A, out #B?>, dev.guavakt.base/Equivalence<#B>) // dev.guavakt.base/FunctionalEquivalence.<init>|<init>(dev.guavakt.base.Function<in|1:0,out|1:1?>;dev.guavakt.base.Equivalence<1:1>){}[0]
+
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.base/FunctionalEquivalence.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.base/FunctionalEquivalence.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.base/FunctionalEquivalence.toString|toString(){}[0]
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.base/PairwiseEquivalence : dev.guavakt.base/Equivalence<kotlin.collections/Iterable<#A>> { // dev.guavakt.base/PairwiseEquivalence|null[0]
+    constructor <init>(dev.guavakt.base/Equivalence<in #A>) // dev.guavakt.base/PairwiseEquivalence.<init>|<init>(dev.guavakt.base.Equivalence<in|1:0>){}[0]
+
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.base/PairwiseEquivalence.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.base/PairwiseEquivalence.hashCode|hashCode(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.base/PairwiseEquivalence.toString|toString(){}[0]
+}
+
+final class dev.guavakt.base/FinalizableReferenceQueue { // dev.guavakt.base/FinalizableReferenceQueue|null[0]
+    constructor <init>() // dev.guavakt.base/FinalizableReferenceQueue.<init>|<init>(){}[0]
+
+    final fun cleanUp() // dev.guavakt.base/FinalizableReferenceQueue.cleanUp|cleanUp(){}[0]
+    final fun cleanupCount(): kotlin/Int // dev.guavakt.base/FinalizableReferenceQueue.cleanupCount|cleanupCount(){}[0]
+    final fun close() // dev.guavakt.base/FinalizableReferenceQueue.close|close(){}[0]
+    final fun isClosed(): kotlin/Boolean // dev.guavakt.base/FinalizableReferenceQueue.isClosed|isClosed(){}[0]
+}
+
+final class dev.guavakt.base/JdkPattern : dev.guavakt.base/CommonPattern { // dev.guavakt.base/JdkPattern|null[0]
+    constructor <init>(kotlin.text/Regex) // dev.guavakt.base/JdkPattern.<init>|<init>(kotlin.text.Regex){}[0]
+
+    final fun flags(): kotlin/Int // dev.guavakt.base/JdkPattern.flags|flags(){}[0]
+    final fun matcher(kotlin/CharSequence): dev.guavakt.base/CommonMatcher // dev.guavakt.base/JdkPattern.matcher|matcher(kotlin.CharSequence){}[0]
+    final fun pattern(): kotlin/String // dev.guavakt.base/JdkPattern.pattern|pattern(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.base/JdkPattern.toString|toString(){}[0]
+}
+
+final class dev.guavakt.base/Joiner { // dev.guavakt.base/Joiner|null[0]
+    final fun appendTo(kotlin.text/Appendable, kotlin.collections/Iterator<*>): kotlin.text/Appendable // dev.guavakt.base/Joiner.appendTo|appendTo(kotlin.text.Appendable;kotlin.collections.Iterator<*>){}[0]
+    final fun appendTo(kotlin.text/StringBuilder, kotlin.collections/Iterator<*>): kotlin.text/StringBuilder // dev.guavakt.base/Joiner.appendTo|appendTo(kotlin.text.StringBuilder;kotlin.collections.Iterator<*>){}[0]
+    final fun join(kotlin.collections/Iterable<*>): kotlin/String // dev.guavakt.base/Joiner.join|join(kotlin.collections.Iterable<*>){}[0]
+    final fun join(kotlin.collections/Iterator<*>): kotlin/String // dev.guavakt.base/Joiner.join|join(kotlin.collections.Iterator<*>){}[0]
+    final fun join(kotlin/Any?, kotlin/Any?, kotlin/Array<out kotlin/Any?>...): kotlin/String // dev.guavakt.base/Joiner.join|join(kotlin.Any?;kotlin.Any?;kotlin.Array<out|kotlin.Any?>...){}[0]
+    final fun join(kotlin/Array<out kotlin/Any?>): kotlin/String // dev.guavakt.base/Joiner.join|join(kotlin.Array<out|kotlin.Any?>){}[0]
+    final fun skipNulls(): dev.guavakt.base/Joiner // dev.guavakt.base/Joiner.skipNulls|skipNulls(){}[0]
+    final fun useForNull(kotlin/String): dev.guavakt.base/Joiner // dev.guavakt.base/Joiner.useForNull|useForNull(kotlin.String){}[0]
+    final fun withKeyValueSeparator(kotlin/String): dev.guavakt.base/Joiner.MapJoiner // dev.guavakt.base/Joiner.withKeyValueSeparator|withKeyValueSeparator(kotlin.String){}[0]
+
+    final class MapJoiner { // dev.guavakt.base/Joiner.MapJoiner|null[0]
+        final fun join(kotlin.collections/Iterable<kotlin.collections/Map.Entry<*, *>>): kotlin/String // dev.guavakt.base/Joiner.MapJoiner.join|join(kotlin.collections.Iterable<kotlin.collections.Map.Entry<*,*>>){}[0]
+        final fun join(kotlin.collections/Map<*, *>): kotlin/String // dev.guavakt.base/Joiner.MapJoiner.join|join(kotlin.collections.Map<*,*>){}[0]
+    }
+
+    final object Companion { // dev.guavakt.base/Joiner.Companion|null[0]
+        final fun on(kotlin/Char): dev.guavakt.base/Joiner // dev.guavakt.base/Joiner.Companion.on|on(kotlin.Char){}[0]
+        final fun on(kotlin/String): dev.guavakt.base/Joiner // dev.guavakt.base/Joiner.Companion.on|on(kotlin.String){}[0]
+    }
+}
+
+final class dev.guavakt.base/MapSplitter { // dev.guavakt.base/MapSplitter|null[0]
+    final fun split(kotlin/CharSequence): kotlin.collections/Map<kotlin/String, kotlin/String> // dev.guavakt.base/MapSplitter.split|split(kotlin.CharSequence){}[0]
+}
+
+final class dev.guavakt.base/Splitter { // dev.guavakt.base/Splitter|null[0]
+    final fun limit(kotlin/Int): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.limit|limit(kotlin.Int){}[0]
+    final fun omitEmptyStrings(): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.omitEmptyStrings|omitEmptyStrings(){}[0]
+    final fun split(kotlin/CharSequence): kotlin.collections/Iterable<kotlin/String> // dev.guavakt.base/Splitter.split|split(kotlin.CharSequence){}[0]
+    final fun splitToList(kotlin/CharSequence): kotlin.collections/List<kotlin/String> // dev.guavakt.base/Splitter.splitToList|splitToList(kotlin.CharSequence){}[0]
+    final fun trimResults(): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.trimResults|trimResults(){}[0]
+    final fun withKeyValueSeparator(dev.guavakt.base/Splitter): dev.guavakt.base/MapSplitter // dev.guavakt.base/Splitter.withKeyValueSeparator|withKeyValueSeparator(dev.guavakt.base.Splitter){}[0]
+    final fun withKeyValueSeparator(kotlin/Char): dev.guavakt.base/MapSplitter // dev.guavakt.base/Splitter.withKeyValueSeparator|withKeyValueSeparator(kotlin.Char){}[0]
+    final fun withKeyValueSeparator(kotlin/String): dev.guavakt.base/MapSplitter // dev.guavakt.base/Splitter.withKeyValueSeparator|withKeyValueSeparator(kotlin.String){}[0]
+
+    final object Companion { // dev.guavakt.base/Splitter.Companion|null[0]
+        final fun fixedLength(kotlin/Int): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.Companion.fixedLength|fixedLength(kotlin.Int){}[0]
+        final fun on(dev.guavakt.base/CharMatcher): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.Companion.on|on(dev.guavakt.base.CharMatcher){}[0]
+        final fun on(kotlin/Char): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.Companion.on|on(kotlin.Char){}[0]
+        final fun on(kotlin/String): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.Companion.on|on(kotlin.String){}[0]
+        final fun onPattern(kotlin/String): dev.guavakt.base/Splitter // dev.guavakt.base/Splitter.Companion.onPattern|onPattern(kotlin.String){}[0]
+    }
+}
+
+final class dev.guavakt.base/Stopwatch { // dev.guavakt.base/Stopwatch|null[0]
+    final fun elapsed(): kotlin.time/Duration // dev.guavakt.base/Stopwatch.elapsed|elapsed(){}[0]
+    final fun elapsed(kotlin.time/DurationUnit): kotlin/Long // dev.guavakt.base/Stopwatch.elapsed|elapsed(kotlin.time.DurationUnit){}[0]
+    final fun isRunning(): kotlin/Boolean // dev.guavakt.base/Stopwatch.isRunning|isRunning(){}[0]
+    final fun reset(): dev.guavakt.base/Stopwatch // dev.guavakt.base/Stopwatch.reset|reset(){}[0]
+    final fun start(): dev.guavakt.base/Stopwatch // dev.guavakt.base/Stopwatch.start|start(){}[0]
+    final fun stop(): dev.guavakt.base/Stopwatch // dev.guavakt.base/Stopwatch.stop|stop(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.base/Stopwatch.toString|toString(){}[0]
+
+    final object Companion { // dev.guavakt.base/Stopwatch.Companion|null[0]
+        final fun createStarted(): dev.guavakt.base/Stopwatch // dev.guavakt.base/Stopwatch.Companion.createStarted|createStarted(){}[0]
+        final fun createStarted(dev.guavakt.base/Ticker): dev.guavakt.base/Stopwatch // dev.guavakt.base/Stopwatch.Companion.createStarted|createStarted(dev.guavakt.base.Ticker){}[0]
+        final fun createUnstarted(): dev.guavakt.base/Stopwatch // dev.guavakt.base/Stopwatch.Companion.createUnstarted|createUnstarted(){}[0]
+        final fun createUnstarted(dev.guavakt.base/Ticker): dev.guavakt.base/Stopwatch // dev.guavakt.base/Stopwatch.Companion.createUnstarted|createUnstarted(dev.guavakt.base.Ticker){}[0]
+    }
+}
+
+final class dev.guavakt.base/VerifyException : kotlin/RuntimeException { // dev.guavakt.base/VerifyException|null[0]
+    constructor <init>() // dev.guavakt.base/VerifyException.<init>|<init>(){}[0]
+    constructor <init>(kotlin/String?) // dev.guavakt.base/VerifyException.<init>|<init>(kotlin.String?){}[0]
+    constructor <init>(kotlin/String?, kotlin/Throwable?) // dev.guavakt.base/VerifyException.<init>|<init>(kotlin.String?;kotlin.Throwable?){}[0]
+    constructor <init>(kotlin/Throwable?) // dev.guavakt.base/VerifyException.<init>|<init>(kotlin.Throwable?){}[0]
+}
+
+open class <#A: kotlin/Any> dev.guavakt.base/FinalizablePhantomReference : dev.guavakt.base/FinalizableReference { // dev.guavakt.base/FinalizablePhantomReference|null[0]
+    constructor <init>(#A, dev.guavakt.base/FinalizableReferenceQueue) // dev.guavakt.base/FinalizablePhantomReference.<init>|<init>(1:0;dev.guavakt.base.FinalizableReferenceQueue){}[0]
+
+    open fun clear() // dev.guavakt.base/FinalizablePhantomReference.clear|clear(){}[0]
+    open fun finalizeReferent() // dev.guavakt.base/FinalizablePhantomReference.finalizeReferent|finalizeReferent(){}[0]
+    open fun get(): #A? // dev.guavakt.base/FinalizablePhantomReference.get|get(){}[0]
+}
+
+open class <#A: kotlin/Any> dev.guavakt.base/FinalizableSoftReference : dev.guavakt.base/FinalizableReference { // dev.guavakt.base/FinalizableSoftReference|null[0]
+    constructor <init>(#A, dev.guavakt.base/FinalizableReferenceQueue) // dev.guavakt.base/FinalizableSoftReference.<init>|<init>(1:0;dev.guavakt.base.FinalizableReferenceQueue){}[0]
+
+    open fun clear() // dev.guavakt.base/FinalizableSoftReference.clear|clear(){}[0]
+    open fun finalizeReferent() // dev.guavakt.base/FinalizableSoftReference.finalizeReferent|finalizeReferent(){}[0]
+    open fun get(): #A? // dev.guavakt.base/FinalizableSoftReference.get|get(){}[0]
+}
+
+open class <#A: kotlin/Any> dev.guavakt.base/FinalizableWeakReference : dev.guavakt.base/FinalizableReference { // dev.guavakt.base/FinalizableWeakReference|null[0]
+    constructor <init>(#A, dev.guavakt.base/FinalizableReferenceQueue) // dev.guavakt.base/FinalizableWeakReference.<init>|<init>(1:0;dev.guavakt.base.FinalizableReferenceQueue){}[0]
+
+    open fun clear() // dev.guavakt.base/FinalizableWeakReference.clear|clear(){}[0]
+    open fun finalizeReferent() // dev.guavakt.base/FinalizableWeakReference.finalizeReferent|finalizeReferent(){}[0]
+    open fun get(): #A? // dev.guavakt.base/FinalizableWeakReference.get|get(){}[0]
+}
+
+sealed class <#A: kotlin/Any> dev.guavakt.base/Optional { // dev.guavakt.base/Optional|null[0]
+    abstract fun <#A1: kotlin/Any> transform(dev.guavakt.base/Function<in #A, #A1>): dev.guavakt.base/Optional<#A1> // dev.guavakt.base/Optional.transform|transform(dev.guavakt.base.Function<in|1:0,0:0>){0§<kotlin.Any>}[0]
+    abstract fun asSet(): kotlin.collections/Set<#A> // dev.guavakt.base/Optional.asSet|asSet(){}[0]
+    abstract fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.base/Optional.equals|equals(kotlin.Any?){}[0]
+    abstract fun get(): #A // dev.guavakt.base/Optional.get|get(){}[0]
+    abstract fun hashCode(): kotlin/Int // dev.guavakt.base/Optional.hashCode|hashCode(){}[0]
+    abstract fun isAbsent(): kotlin/Boolean // dev.guavakt.base/Optional.isAbsent|isAbsent(){}[0]
+    abstract fun isPresent(): kotlin/Boolean // dev.guavakt.base/Optional.isPresent|isPresent(){}[0]
+    abstract fun or(#A): #A // dev.guavakt.base/Optional.or|or(1:0){}[0]
+    abstract fun or(dev.guavakt.base/Optional<out #A>): dev.guavakt.base/Optional<#A> // dev.guavakt.base/Optional.or|or(dev.guavakt.base.Optional<out|1:0>){}[0]
+    abstract fun or(dev.guavakt.base/Supplier<#A>): #A // dev.guavakt.base/Optional.or|or(dev.guavakt.base.Supplier<1:0>){}[0]
+    abstract fun orNull(): #A? // dev.guavakt.base/Optional.orNull|orNull(){}[0]
+    abstract fun toString(): kotlin/String // dev.guavakt.base/Optional.toString|toString(){}[0]
+
+    final object Companion { // dev.guavakt.base/Optional.Companion|null[0]
+        final fun <#A2: kotlin/Any> absent(): dev.guavakt.base/Optional<#A2> // dev.guavakt.base/Optional.Companion.absent|absent(){0§<kotlin.Any>}[0]
+        final fun <#A2: kotlin/Any> fromNullable(#A2?): dev.guavakt.base/Optional<#A2> // dev.guavakt.base/Optional.Companion.fromNullable|fromNullable(0:0?){0§<kotlin.Any>}[0]
+        final fun <#A2: kotlin/Any> of(#A2): dev.guavakt.base/Optional<#A2> // dev.guavakt.base/Optional.Companion.of|of(0:0){0§<kotlin.Any>}[0]
+        final fun <#A2: kotlin/Any> presentInstances(kotlin.collections/Iterable<dev.guavakt.base/Optional<out #A2>>): kotlin.collections/Iterable<#A2> // dev.guavakt.base/Optional.Companion.presentInstances|presentInstances(kotlin.collections.Iterable<dev.guavakt.base.Optional<out|0:0>>){0§<kotlin.Any>}[0]
+    }
+}
+
+final object dev.guavakt.base.internal/Finalizer { // dev.guavakt.base.internal/Finalizer|null[0]
+    final fun isRunning(): kotlin/Boolean // dev.guavakt.base.internal/Finalizer.isRunning|isRunning(){}[0]
+    final fun startFinalizer(kotlin/Any, kotlin/Any, kotlin/Any?): kotlin/Any? // dev.guavakt.base.internal/Finalizer.startFinalizer|startFinalizer(kotlin.Any;kotlin.Any;kotlin.Any?){}[0]
+}
+
+final object dev.guavakt.base/Ascii { // dev.guavakt.base/Ascii|null[0]
+    final const val MAX // dev.guavakt.base/Ascii.MAX|{}MAX[0]
+        final fun <get-MAX>(): kotlin/Char // dev.guavakt.base/Ascii.MAX.<get-MAX>|<get-MAX>(){}[0]
+    final const val MIN // dev.guavakt.base/Ascii.MIN|{}MIN[0]
+        final fun <get-MIN>(): kotlin/Char // dev.guavakt.base/Ascii.MIN.<get-MIN>|<get-MIN>(){}[0]
+
+    final fun equalsIgnoreCase(kotlin/CharSequence, kotlin/CharSequence): kotlin/Boolean // dev.guavakt.base/Ascii.equalsIgnoreCase|equalsIgnoreCase(kotlin.CharSequence;kotlin.CharSequence){}[0]
+    final fun isLowerCase(kotlin/Char): kotlin/Boolean // dev.guavakt.base/Ascii.isLowerCase|isLowerCase(kotlin.Char){}[0]
+    final fun isUpperCase(kotlin/Char): kotlin/Boolean // dev.guavakt.base/Ascii.isUpperCase|isUpperCase(kotlin.Char){}[0]
+    final fun toLowerCase(kotlin/Char): kotlin/Char // dev.guavakt.base/Ascii.toLowerCase|toLowerCase(kotlin.Char){}[0]
+    final fun toLowerCase(kotlin/CharSequence): kotlin/String // dev.guavakt.base/Ascii.toLowerCase|toLowerCase(kotlin.CharSequence){}[0]
+    final fun toUpperCase(kotlin/Char): kotlin/Char // dev.guavakt.base/Ascii.toUpperCase|toUpperCase(kotlin.Char){}[0]
+    final fun toUpperCase(kotlin/CharSequence): kotlin/String // dev.guavakt.base/Ascii.toUpperCase|toUpperCase(kotlin.CharSequence){}[0]
+    final fun truncate(kotlin/CharSequence, kotlin/Int, kotlin/String): kotlin/String // dev.guavakt.base/Ascii.truncate|truncate(kotlin.CharSequence;kotlin.Int;kotlin.String){}[0]
+}
+
+final object dev.guavakt.base/Charsets { // dev.guavakt.base/Charsets|null[0]
+    final const val ISO_8859_1_NAME // dev.guavakt.base/Charsets.ISO_8859_1_NAME|{}ISO_8859_1_NAME[0]
+        final fun <get-ISO_8859_1_NAME>(): kotlin/String // dev.guavakt.base/Charsets.ISO_8859_1_NAME.<get-ISO_8859_1_NAME>|<get-ISO_8859_1_NAME>(){}[0]
+    final const val US_ASCII_NAME // dev.guavakt.base/Charsets.US_ASCII_NAME|{}US_ASCII_NAME[0]
+        final fun <get-US_ASCII_NAME>(): kotlin/String // dev.guavakt.base/Charsets.US_ASCII_NAME.<get-US_ASCII_NAME>|<get-US_ASCII_NAME>(){}[0]
+    final const val UTF_16BE_NAME // dev.guavakt.base/Charsets.UTF_16BE_NAME|{}UTF_16BE_NAME[0]
+        final fun <get-UTF_16BE_NAME>(): kotlin/String // dev.guavakt.base/Charsets.UTF_16BE_NAME.<get-UTF_16BE_NAME>|<get-UTF_16BE_NAME>(){}[0]
+    final const val UTF_16LE_NAME // dev.guavakt.base/Charsets.UTF_16LE_NAME|{}UTF_16LE_NAME[0]
+        final fun <get-UTF_16LE_NAME>(): kotlin/String // dev.guavakt.base/Charsets.UTF_16LE_NAME.<get-UTF_16LE_NAME>|<get-UTF_16LE_NAME>(){}[0]
+    final const val UTF_16_NAME // dev.guavakt.base/Charsets.UTF_16_NAME|{}UTF_16_NAME[0]
+        final fun <get-UTF_16_NAME>(): kotlin/String // dev.guavakt.base/Charsets.UTF_16_NAME.<get-UTF_16_NAME>|<get-UTF_16_NAME>(){}[0]
+    final const val UTF_8_NAME // dev.guavakt.base/Charsets.UTF_8_NAME|{}UTF_8_NAME[0]
+        final fun <get-UTF_8_NAME>(): kotlin/String // dev.guavakt.base/Charsets.UTF_8_NAME.<get-UTF_8_NAME>|<get-UTF_8_NAME>(){}[0]
+
+    final val ISO_8859_1 // dev.guavakt.base/Charsets.ISO_8859_1|{}ISO_8859_1[0]
+        final fun <get-ISO_8859_1>(): kotlin/String // dev.guavakt.base/Charsets.ISO_8859_1.<get-ISO_8859_1>|<get-ISO_8859_1>(){}[0]
+    final val US_ASCII // dev.guavakt.base/Charsets.US_ASCII|{}US_ASCII[0]
+        final fun <get-US_ASCII>(): kotlin/String // dev.guavakt.base/Charsets.US_ASCII.<get-US_ASCII>|<get-US_ASCII>(){}[0]
+    final val UTF_16 // dev.guavakt.base/Charsets.UTF_16|{}UTF_16[0]
+        final fun <get-UTF_16>(): kotlin/String // dev.guavakt.base/Charsets.UTF_16.<get-UTF_16>|<get-UTF_16>(){}[0]
+    final val UTF_16BE // dev.guavakt.base/Charsets.UTF_16BE|{}UTF_16BE[0]
+        final fun <get-UTF_16BE>(): kotlin/String // dev.guavakt.base/Charsets.UTF_16BE.<get-UTF_16BE>|<get-UTF_16BE>(){}[0]
+    final val UTF_16LE // dev.guavakt.base/Charsets.UTF_16LE|{}UTF_16LE[0]
+        final fun <get-UTF_16LE>(): kotlin/String // dev.guavakt.base/Charsets.UTF_16LE.<get-UTF_16LE>|<get-UTF_16LE>(){}[0]
+    final val UTF_8 // dev.guavakt.base/Charsets.UTF_8|{}UTF_8[0]
+        final fun <get-UTF_8>(): kotlin/String // dev.guavakt.base/Charsets.UTF_8.<get-UTF_8>|<get-UTF_8>(){}[0]
+
+    final fun isUtf8Name(kotlin/String): kotlin/Boolean // dev.guavakt.base/Charsets.isUtf8Name|isUtf8Name(kotlin.String){}[0]
+}
+
+final object dev.guavakt.base/Defaults { // dev.guavakt.base/Defaults|null[0]
+    final fun defaultValue(kotlin/String): kotlin/Any? // dev.guavakt.base/Defaults.defaultValue|defaultValue(kotlin.String){}[0]
+    final fun defaultValueForBoolean(): kotlin/Boolean // dev.guavakt.base/Defaults.defaultValueForBoolean|defaultValueForBoolean(){}[0]
+    final fun defaultValueForByte(): kotlin/Byte // dev.guavakt.base/Defaults.defaultValueForByte|defaultValueForByte(){}[0]
+    final fun defaultValueForChar(): kotlin/Char // dev.guavakt.base/Defaults.defaultValueForChar|defaultValueForChar(){}[0]
+    final fun defaultValueForDouble(): kotlin/Double // dev.guavakt.base/Defaults.defaultValueForDouble|defaultValueForDouble(){}[0]
+    final fun defaultValueForFloat(): kotlin/Float // dev.guavakt.base/Defaults.defaultValueForFloat|defaultValueForFloat(){}[0]
+    final fun defaultValueForInt(): kotlin/Int // dev.guavakt.base/Defaults.defaultValueForInt|defaultValueForInt(){}[0]
+    final fun defaultValueForLong(): kotlin/Long // dev.guavakt.base/Defaults.defaultValueForLong|defaultValueForLong(){}[0]
+    final fun defaultValueForShort(): kotlin/Short // dev.guavakt.base/Defaults.defaultValueForShort|defaultValueForShort(){}[0]
+}
+
+final object dev.guavakt.base/Enums { // dev.guavakt.base/Enums|null[0]
+    final fun <#A1: kotlin/Enum<#A1>> getIfPresent(kotlin/Any, kotlin/String): dev.guavakt.base/Optional<#A1> // dev.guavakt.base/Enums.getIfPresent|getIfPresent(kotlin.Any;kotlin.String){0§<kotlin.Enum<0:0>>}[0]
+    final fun stringConverter(kotlin/Any): dev.guavakt.base/Converter<kotlin/String, kotlin/Any> // dev.guavakt.base/Enums.stringConverter|stringConverter(kotlin.Any){}[0]
+}
+
+final object dev.guavakt.base/Functions { // dev.guavakt.base/Functions|null[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?, #C1: kotlin/Any?> compose(dev.guavakt.base/Function<#B1, #C1>, dev.guavakt.base/Function<#A1, #B1>): dev.guavakt.base/Function<#A1, #C1> // dev.guavakt.base/Functions.compose|compose(dev.guavakt.base.Function<0:1,0:2>;dev.guavakt.base.Function<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>;2§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> forMap(kotlin.collections/Map<#A1, #B1>): dev.guavakt.base/Function<#A1, #B1> // dev.guavakt.base/Functions.forMap|forMap(kotlin.collections.Map<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> forMap(kotlin.collections/Map<#A1, #B1>, #B1): dev.guavakt.base/Function<#A1, #B1> // dev.guavakt.base/Functions.forMap|forMap(kotlin.collections.Map<0:0,0:1>;0:1){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> constant(#A1): dev.guavakt.base/Function<kotlin/Any?, #A1> // dev.guavakt.base/Functions.constant|constant(0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> forPredicate(dev.guavakt.base/Predicate<#A1>): dev.guavakt.base/Function<#A1, kotlin/Boolean> // dev.guavakt.base/Functions.forPredicate|forPredicate(dev.guavakt.base.Predicate<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> forSupplier(dev.guavakt.base/Supplier<#A1>): dev.guavakt.base/Function<kotlin/Any?, #A1> // dev.guavakt.base/Functions.forSupplier|forSupplier(dev.guavakt.base.Supplier<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> identity(): dev.guavakt.base/Function<#A1, #A1> // dev.guavakt.base/Functions.identity|identity(){0§<kotlin.Any?>}[0]
+    final fun toStringFunction(): dev.guavakt.base/Function<kotlin/Any?, kotlin/String> // dev.guavakt.base/Functions.toStringFunction|toStringFunction(){}[0]
+}
+
+final object dev.guavakt.base/MoreObjects { // dev.guavakt.base/MoreObjects|null[0]
+    final fun <#A1: kotlin/Any?> firstNonNull(#A1?, #A1): #A1 // dev.guavakt.base/MoreObjects.firstNonNull|firstNonNull(0:0?;0:0){0§<kotlin.Any?>}[0]
+    final fun toStringHelper(kotlin/Any): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.toStringHelper|toStringHelper(kotlin.Any){}[0]
+    final fun toStringHelper(kotlin/String): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.toStringHelper|toStringHelper(kotlin.String){}[0]
+
+    final class ToStringHelper { // dev.guavakt.base/MoreObjects.ToStringHelper|null[0]
+        final fun add(kotlin/String, kotlin/Any?): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.add|add(kotlin.String;kotlin.Any?){}[0]
+        final fun add(kotlin/String, kotlin/Boolean): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.add|add(kotlin.String;kotlin.Boolean){}[0]
+        final fun add(kotlin/String, kotlin/Char): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.add|add(kotlin.String;kotlin.Char){}[0]
+        final fun add(kotlin/String, kotlin/Double): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.add|add(kotlin.String;kotlin.Double){}[0]
+        final fun add(kotlin/String, kotlin/Float): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.add|add(kotlin.String;kotlin.Float){}[0]
+        final fun add(kotlin/String, kotlin/Int): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.add|add(kotlin.String;kotlin.Int){}[0]
+        final fun add(kotlin/String, kotlin/Long): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.add|add(kotlin.String;kotlin.Long){}[0]
+        final fun addValue(kotlin/Any?): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.addValue|addValue(kotlin.Any?){}[0]
+        final fun addValue(kotlin/Boolean): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.addValue|addValue(kotlin.Boolean){}[0]
+        final fun addValue(kotlin/Char): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.addValue|addValue(kotlin.Char){}[0]
+        final fun addValue(kotlin/Double): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.addValue|addValue(kotlin.Double){}[0]
+        final fun addValue(kotlin/Float): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.addValue|addValue(kotlin.Float){}[0]
+        final fun addValue(kotlin/Int): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.addValue|addValue(kotlin.Int){}[0]
+        final fun addValue(kotlin/Long): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.addValue|addValue(kotlin.Long){}[0]
+        final fun omitNullValues(): dev.guavakt.base/MoreObjects.ToStringHelper // dev.guavakt.base/MoreObjects.ToStringHelper.omitNullValues|omitNullValues(){}[0]
+        final fun toString(): kotlin/String // dev.guavakt.base/MoreObjects.ToStringHelper.toString|toString(){}[0]
+    }
+}
+
+final object dev.guavakt.base/Objects { // dev.guavakt.base/Objects|null[0]
+    final fun equal(kotlin/Any?, kotlin/Any?): kotlin/Boolean // dev.guavakt.base/Objects.equal|equal(kotlin.Any?;kotlin.Any?){}[0]
+    final fun hashCode(kotlin/Array<out kotlin/Any?>...): kotlin/Int // dev.guavakt.base/Objects.hashCode|hashCode(kotlin.Array<out|kotlin.Any?>...){}[0]
+}
+
+final object dev.guavakt.base/Preconditions { // dev.guavakt.base/Preconditions|null[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/Any?): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.Any?){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Any?): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Any?){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Any?, kotlin/Any?): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Any?;kotlin.Any?){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Any?, kotlin/Any?, kotlin/Any?): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Any?;kotlin.Any?;kotlin.Any?){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Any?, kotlin/Any?, kotlin/Any?, kotlin/Any?): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Any?;kotlin.Any?;kotlin.Any?;kotlin.Any?){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Array<out kotlin/Any?>...): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Array<out|kotlin.Any?>...){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Char): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Char){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Int): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Int){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/String, kotlin/Long): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.String;kotlin.Long){0§<kotlin.Any?>}[0]
+    final fun checkArgument(kotlin/Boolean) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/Any?) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.Any?){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Any?) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Any?){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Any?, kotlin/Any?) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Any?;kotlin.Any?){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Any?, kotlin/Any?, kotlin/Any?) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Any?;kotlin.Any?;kotlin.Any?){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Any?, kotlin/Any?, kotlin/Any?, kotlin/Any?) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Any?;kotlin.Any?;kotlin.Any?;kotlin.Any?){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Array<out kotlin/Any?>...) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Array<out|kotlin.Any?>...){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Char) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Char){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Char, kotlin/Char) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Char;kotlin.Char){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Int) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Int){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Int, kotlin/Int) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Int;kotlin.Int){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Long) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Long){}[0]
+    final fun checkArgument(kotlin/Boolean, kotlin/String, kotlin/Long, kotlin/Long) // dev.guavakt.base/Preconditions.checkArgument|checkArgument(kotlin.Boolean;kotlin.String;kotlin.Long;kotlin.Long){}[0]
+    final fun checkElementIndex(kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.base/Preconditions.checkElementIndex|checkElementIndex(kotlin.Int;kotlin.Int){}[0]
+    final fun checkElementIndex(kotlin/Int, kotlin/Int, kotlin/String): kotlin/Int // dev.guavakt.base/Preconditions.checkElementIndex|checkElementIndex(kotlin.Int;kotlin.Int;kotlin.String){}[0]
+    final fun checkPositionIndex(kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.base/Preconditions.checkPositionIndex|checkPositionIndex(kotlin.Int;kotlin.Int){}[0]
+    final fun checkPositionIndex(kotlin/Int, kotlin/Int, kotlin/String): kotlin/Int // dev.guavakt.base/Preconditions.checkPositionIndex|checkPositionIndex(kotlin.Int;kotlin.Int;kotlin.String){}[0]
+    final fun checkPositionIndexes(kotlin/Int, kotlin/Int, kotlin/Int) // dev.guavakt.base/Preconditions.checkPositionIndexes|checkPositionIndexes(kotlin.Int;kotlin.Int;kotlin.Int){}[0]
+    final fun checkState(kotlin/Boolean) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/Any?) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.Any?){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Any?) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Any?){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Any?, kotlin/Any?) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Any?;kotlin.Any?){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Any?, kotlin/Any?, kotlin/Any?) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Any?;kotlin.Any?;kotlin.Any?){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Any?, kotlin/Any?, kotlin/Any?, kotlin/Any?) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Any?;kotlin.Any?;kotlin.Any?;kotlin.Any?){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Array<out kotlin/Any?>...) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Array<out|kotlin.Any?>...){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Char) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Char){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Int) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Int){}[0]
+    final fun checkState(kotlin/Boolean, kotlin/String, kotlin/Long) // dev.guavakt.base/Preconditions.checkState|checkState(kotlin.Boolean;kotlin.String;kotlin.Long){}[0]
+    final inline fun <#A1: kotlin/Any?> checkNotNull(#A1?, kotlin/Function0<kotlin/Any?>): #A1 // dev.guavakt.base/Preconditions.checkNotNull|checkNotNull(0:0?;kotlin.Function0<kotlin.Any?>){0§<kotlin.Any?>}[0]
+}
+
+final object dev.guavakt.base/Predicates { // dev.guavakt.base/Predicates|null[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> compose(dev.guavakt.base/Predicate<#B1>, dev.guavakt.base/Function<#A1, #B1>): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.compose|compose(dev.guavakt.base.Predicate<0:1>;dev.guavakt.base.Function<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> alwaysFalse(): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.alwaysFalse|alwaysFalse(){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> alwaysTrue(): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.alwaysTrue|alwaysTrue(){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> and(dev.guavakt.base/Predicate<#A1>, dev.guavakt.base/Predicate<#A1>): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.and|and(dev.guavakt.base.Predicate<0:0>;dev.guavakt.base.Predicate<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> equalTo(#A1): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.equalTo|equalTo(0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> in(kotlin.collections/Collection<#A1>): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.in|in(kotlin.collections.Collection<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> isNull(): dev.guavakt.base/Predicate<#A1?> // dev.guavakt.base/Predicates.isNull|isNull(){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> not(dev.guavakt.base/Predicate<#A1>): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.not|not(dev.guavakt.base.Predicate<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> notNull(): dev.guavakt.base/Predicate<#A1?> // dev.guavakt.base/Predicates.notNull|notNull(){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> or(dev.guavakt.base/Predicate<#A1>, dev.guavakt.base/Predicate<#A1>): dev.guavakt.base/Predicate<#A1> // dev.guavakt.base/Predicates.or|or(dev.guavakt.base.Predicate<0:0>;dev.guavakt.base.Predicate<0:0>){0§<kotlin.Any?>}[0]
+}
+
+final object dev.guavakt.base/Strings { // dev.guavakt.base/Strings|null[0]
+    final fun commonPrefix(kotlin/CharSequence, kotlin/CharSequence): kotlin/String // dev.guavakt.base/Strings.commonPrefix|commonPrefix(kotlin.CharSequence;kotlin.CharSequence){}[0]
+    final fun commonSuffix(kotlin/CharSequence, kotlin/CharSequence): kotlin/String // dev.guavakt.base/Strings.commonSuffix|commonSuffix(kotlin.CharSequence;kotlin.CharSequence){}[0]
+    final fun emptyToNull(kotlin/String?): kotlin/String? // dev.guavakt.base/Strings.emptyToNull|emptyToNull(kotlin.String?){}[0]
+    final fun isNullOrEmpty(kotlin/String?): kotlin/Boolean // dev.guavakt.base/Strings.isNullOrEmpty|isNullOrEmpty(kotlin.String?){}[0]
+    final fun lenientFormat(kotlin/String, kotlin/Array<out kotlin/Any?>...): kotlin/String // dev.guavakt.base/Strings.lenientFormat|lenientFormat(kotlin.String;kotlin.Array<out|kotlin.Any?>...){}[0]
+    final fun nullToEmpty(kotlin/String?): kotlin/String // dev.guavakt.base/Strings.nullToEmpty|nullToEmpty(kotlin.String?){}[0]
+    final fun padEnd(kotlin/String, kotlin/Int, kotlin/Char): kotlin/String // dev.guavakt.base/Strings.padEnd|padEnd(kotlin.String;kotlin.Int;kotlin.Char){}[0]
+    final fun padStart(kotlin/String, kotlin/Int, kotlin/Char): kotlin/String // dev.guavakt.base/Strings.padStart|padStart(kotlin.String;kotlin.Int;kotlin.Char){}[0]
+    final fun repeat(kotlin/String, kotlin/Int): kotlin/String // dev.guavakt.base/Strings.repeat|repeat(kotlin.String;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.base/Suppliers { // dev.guavakt.base/Suppliers|null[0]
+    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> compose(kotlin/Function1<#A1, #B1>, dev.guavakt.base/Supplier<#A1>): dev.guavakt.base/Supplier<#B1> // dev.guavakt.base/Suppliers.compose|compose(kotlin.Function1<0:0,0:1>;dev.guavakt.base.Supplier<0:0>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> memoize(dev.guavakt.base/Supplier<#A1>): dev.guavakt.base/Supplier<#A1> // dev.guavakt.base/Suppliers.memoize|memoize(dev.guavakt.base.Supplier<0:0>){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> memoizeWithExpiration(dev.guavakt.base/Supplier<#A1>, kotlin/Long, dev.guavakt.base/Ticker = ...): dev.guavakt.base/Supplier<#A1> // dev.guavakt.base/Suppliers.memoizeWithExpiration|memoizeWithExpiration(dev.guavakt.base.Supplier<0:0>;kotlin.Long;dev.guavakt.base.Ticker){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> ofInstance(#A1): dev.guavakt.base/Supplier<#A1> // dev.guavakt.base/Suppliers.ofInstance|ofInstance(0:0){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> supplierFunction(): kotlin/Function1<dev.guavakt.base/Supplier<#A1>, #A1> // dev.guavakt.base/Suppliers.supplierFunction|supplierFunction(){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> synchronizedSupplier(dev.guavakt.base/Supplier<#A1>): dev.guavakt.base/Supplier<#A1> // dev.guavakt.base/Suppliers.synchronizedSupplier|synchronizedSupplier(dev.guavakt.base.Supplier<0:0>){0§<kotlin.Any?>}[0]
+}
+
+final object dev.guavakt.base/Throwables { // dev.guavakt.base/Throwables|null[0]
+    final fun <#A1: kotlin/Exception> propagateIfPossible(kotlin/Throwable?, kotlin.reflect/KClass<#A1>) // dev.guavakt.base/Throwables.propagateIfPossible|propagateIfPossible(kotlin.Throwable?;kotlin.reflect.KClass<0:0>){0§<kotlin.Exception>}[0]
+    final fun <#A1: kotlin/Throwable> throwIfInstanceOf(kotlin/Throwable, kotlin.reflect/KClass<#A1>) // dev.guavakt.base/Throwables.throwIfInstanceOf|throwIfInstanceOf(kotlin.Throwable;kotlin.reflect.KClass<0:0>){0§<kotlin.Throwable>}[0]
+    final fun getCausalChain(kotlin/Throwable): kotlin.collections/List<kotlin/Throwable> // dev.guavakt.base/Throwables.getCausalChain|getCausalChain(kotlin.Throwable){}[0]
+    final fun getRootCause(kotlin/Throwable): kotlin/Throwable // dev.guavakt.base/Throwables.getRootCause|getRootCause(kotlin.Throwable){}[0]
+    final fun getStackTraceAsString(kotlin/Throwable): kotlin/String // dev.guavakt.base/Throwables.getStackTraceAsString|getStackTraceAsString(kotlin.Throwable){}[0]
+    final fun propagateIfPossible(kotlin/Throwable?) // dev.guavakt.base/Throwables.propagateIfPossible|propagateIfPossible(kotlin.Throwable?){}[0]
+    final fun throwIfUnchecked(kotlin/Throwable) // dev.guavakt.base/Throwables.throwIfUnchecked|throwIfUnchecked(kotlin.Throwable){}[0]
+    final inline fun <#A1: reified kotlin/Throwable> propagateIfInstanceOf(kotlin/Throwable?) // dev.guavakt.base/Throwables.propagateIfInstanceOf|propagateIfInstanceOf(kotlin.Throwable?){0§<kotlin.Throwable>}[0]
+}
+
+final object dev.guavakt.base/Utf8 { // dev.guavakt.base/Utf8|null[0]
+    final fun encodedLength(kotlin/CharSequence): kotlin/Int // dev.guavakt.base/Utf8.encodedLength|encodedLength(kotlin.CharSequence){}[0]
+    final fun isWellFormed(kotlin/ByteArray): kotlin/Boolean // dev.guavakt.base/Utf8.isWellFormed|isWellFormed(kotlin.ByteArray){}[0]
+    final fun isWellFormed(kotlin/ByteArray, kotlin/Int, kotlin/Int): kotlin/Boolean // dev.guavakt.base/Utf8.isWellFormed|isWellFormed(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.base/Verify { // dev.guavakt.base/Verify|null[0]
+    final fun <#A1: kotlin/Any?> verifyNotNull(#A1?): #A1 // dev.guavakt.base/Verify.verifyNotNull|verifyNotNull(0:0?){0§<kotlin.Any?>}[0]
+    final fun <#A1: kotlin/Any?> verifyNotNull(#A1?, kotlin/String, kotlin/Array<out kotlin/Any?>...): #A1 // dev.guavakt.base/Verify.verifyNotNull|verifyNotNull(0:0?;kotlin.String;kotlin.Array<out|kotlin.Any?>...){0§<kotlin.Any?>}[0]
+    final fun verify(kotlin/Boolean) // dev.guavakt.base/Verify.verify|verify(kotlin.Boolean){}[0]
+    final fun verify(kotlin/Boolean, kotlin/String, kotlin/Array<out kotlin/Any?>...) // dev.guavakt.base/Verify.verify|verify(kotlin.Boolean;kotlin.String;kotlin.Array<out|kotlin.Any?>...){}[0]
+}
+
+final fun dev.guavakt.base.internal/platformIdentityHashCode(kotlin/Any): kotlin/Int // dev.guavakt.base.internal/platformIdentityHashCode|platformIdentityHashCode(kotlin.Any){}[0]
+final fun dev.guavakt.base.internal/platformSupportsWeakReferences(): kotlin/Boolean // dev.guavakt.base.internal/platformSupportsWeakReferences|platformSupportsWeakReferences(){}[0]
+final fun dev.guavakt.base.internal/pollClearedWeakOrSoftReferences(): kotlin/Int // dev.guavakt.base.internal/pollClearedWeakOrSoftReferences|pollClearedWeakOrSoftReferences(){}[0]

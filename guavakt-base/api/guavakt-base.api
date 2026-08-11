@@ -1,0 +1,554 @@
+public abstract class dev/guavakt/base/AbstractIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMutableIterator {
+	public fun <init> ()V
+	protected abstract fun computeNext ()Ljava/lang/Object;
+	protected final fun endOfData ()Ljava/lang/Object;
+	public fun hasNext ()Z
+	public fun next ()Ljava/lang/Object;
+	public fun remove ()Ljava/lang/Void;
+	public synthetic fun remove ()V
+}
+
+public final class dev/guavakt/base/Ascii {
+	public static final field INSTANCE Ldev/guavakt/base/Ascii;
+	public static final field MAX C
+	public static final field MIN C
+	public final fun equalsIgnoreCase (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+	public final fun isLowerCase (C)Z
+	public final fun isUpperCase (C)Z
+	public final fun toLowerCase (C)C
+	public final fun toLowerCase (Ljava/lang/CharSequence;)Ljava/lang/String;
+	public final fun toUpperCase (C)C
+	public final fun toUpperCase (Ljava/lang/CharSequence;)Ljava/lang/String;
+	public final fun truncate (Ljava/lang/CharSequence;ILjava/lang/String;)Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/CaseFormat : java/lang/Enum {
+	public static final field LOWER_CAMEL Ldev/guavakt/base/CaseFormat;
+	public static final field LOWER_HYPHEN Ldev/guavakt/base/CaseFormat;
+	public static final field LOWER_UNDERSCORE Ldev/guavakt/base/CaseFormat;
+	public static final field UPPER_CAMEL Ldev/guavakt/base/CaseFormat;
+	public static final field UPPER_UNDERSCORE Ldev/guavakt/base/CaseFormat;
+	public final fun converterTo (Ldev/guavakt/base/CaseFormat;)Ldev/guavakt/base/Converter;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun to (Ldev/guavakt/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/base/CaseFormat;
+	public static fun values ()[Ldev/guavakt/base/CaseFormat;
+}
+
+public abstract class dev/guavakt/base/CharMatcher {
+	public static final field Companion Ldev/guavakt/base/CharMatcher$Companion;
+	public fun <init> ()V
+	public fun and (Ldev/guavakt/base/CharMatcher;)Ldev/guavakt/base/CharMatcher;
+	public fun countIn (Ljava/lang/CharSequence;)I
+	public fun indexIn (Ljava/lang/CharSequence;)I
+	public fun indexIn (Ljava/lang/CharSequence;I)I
+	public fun lastIndexIn (Ljava/lang/CharSequence;)I
+	public abstract fun matches (C)Z
+	public fun matchesAllOf (Ljava/lang/CharSequence;)Z
+	public fun matchesAnyOf (Ljava/lang/CharSequence;)Z
+	public fun matchesNoneOf (Ljava/lang/CharSequence;)Z
+	public fun negate ()Ldev/guavakt/base/CharMatcher;
+	public fun or (Ldev/guavakt/base/CharMatcher;)Ldev/guavakt/base/CharMatcher;
+	public fun removeFrom (Ljava/lang/CharSequence;)Ljava/lang/String;
+	public fun replaceFrom (Ljava/lang/CharSequence;C)Ljava/lang/String;
+	public fun retainFrom (Ljava/lang/CharSequence;)Ljava/lang/String;
+	public fun trimFrom (Ljava/lang/CharSequence;)Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/CharMatcher$Companion {
+	public final fun any ()Ldev/guavakt/base/CharMatcher;
+	public final fun anyOf (Ljava/lang/CharSequence;)Ldev/guavakt/base/CharMatcher;
+	public final fun ascii ()Ldev/guavakt/base/CharMatcher;
+	public final fun breakingWhitespace ()Ldev/guavakt/base/CharMatcher;
+	public final fun digit ()Ldev/guavakt/base/CharMatcher;
+	public final fun inRange (CC)Ldev/guavakt/base/CharMatcher;
+	public final fun is (C)Ldev/guavakt/base/CharMatcher;
+	public final fun isNot (C)Ldev/guavakt/base/CharMatcher;
+	public final fun javaDigit ()Ldev/guavakt/base/CharMatcher;
+	public final fun javaIsoControl ()Ldev/guavakt/base/CharMatcher;
+	public final fun javaLetter ()Ldev/guavakt/base/CharMatcher;
+	public final fun javaLetterOrDigit ()Ldev/guavakt/base/CharMatcher;
+	public final fun javaLowerCase ()Ldev/guavakt/base/CharMatcher;
+	public final fun javaUpperCase ()Ldev/guavakt/base/CharMatcher;
+	public final fun none ()Ldev/guavakt/base/CharMatcher;
+	public final fun noneOf (Ljava/lang/CharSequence;)Ldev/guavakt/base/CharMatcher;
+	public final fun whitespace ()Ldev/guavakt/base/CharMatcher;
+}
+
+public final class dev/guavakt/base/Charsets {
+	public static final field INSTANCE Ldev/guavakt/base/Charsets;
+	public static final field ISO_8859_1_NAME Ljava/lang/String;
+	public static final field US_ASCII_NAME Ljava/lang/String;
+	public static final field UTF_16BE_NAME Ljava/lang/String;
+	public static final field UTF_16LE_NAME Ljava/lang/String;
+	public static final field UTF_16_NAME Ljava/lang/String;
+	public static final field UTF_8_NAME Ljava/lang/String;
+	public final fun getISO_8859_1 ()Ljava/lang/String;
+	public final fun getUS_ASCII ()Ljava/lang/String;
+	public final fun getUTF_16 ()Ljava/lang/String;
+	public final fun getUTF_16BE ()Ljava/lang/String;
+	public final fun getUTF_16LE ()Ljava/lang/String;
+	public final fun getUTF_8 ()Ljava/lang/String;
+	public final fun isUtf8Name (Ljava/lang/String;)Z
+}
+
+public abstract class dev/guavakt/base/CommonMatcher {
+	public fun <init> ()V
+	public abstract fun end ()I
+	public abstract fun find ()Z
+	public abstract fun find (I)Z
+	public abstract fun matches ()Z
+	public abstract fun replaceAll (Ljava/lang/String;)Ljava/lang/String;
+	public abstract fun start ()I
+}
+
+public abstract class dev/guavakt/base/CommonPattern {
+	public static final field Companion Ldev/guavakt/base/CommonPattern$Companion;
+	public fun <init> ()V
+	public abstract fun flags ()I
+	public abstract fun matcher (Ljava/lang/CharSequence;)Ldev/guavakt/base/CommonMatcher;
+	public abstract fun pattern ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/CommonPattern$Companion {
+	public final fun compile (Ljava/lang/String;)Ldev/guavakt/base/CommonPattern;
+	public final fun isPcreLike ()Z
+}
+
+public abstract class dev/guavakt/base/Converter : dev/guavakt/base/Function {
+	public static final field Companion Ldev/guavakt/base/Converter$Companion;
+	public fun <init> ()V
+	public fun andThen (Ldev/guavakt/base/Converter;)Ldev/guavakt/base/Converter;
+	public fun apply (Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun convert (Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun convertAll (Ljava/lang/Iterable;)Ljava/lang/Iterable;
+	protected abstract fun doBackward (Ljava/lang/Object;)Ljava/lang/Object;
+	protected abstract fun doForward (Ljava/lang/Object;)Ljava/lang/Object;
+	public fun reverse ()Ldev/guavakt/base/Converter;
+}
+
+public final class dev/guavakt/base/Converter$Companion {
+	public final fun from (Ldev/guavakt/base/Function;Ldev/guavakt/base/Function;)Ldev/guavakt/base/Converter;
+	public final fun from (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ldev/guavakt/base/Converter;
+	public final fun identity ()Ldev/guavakt/base/Converter;
+}
+
+public final class dev/guavakt/base/Defaults {
+	public static final field INSTANCE Ldev/guavakt/base/Defaults;
+	public final fun defaultValue (Ljava/lang/String;)Ljava/lang/Object;
+	public final fun defaultValueForBoolean ()Z
+	public final fun defaultValueForByte ()B
+	public final fun defaultValueForChar ()C
+	public final fun defaultValueForDouble ()D
+	public final fun defaultValueForFloat ()F
+	public final fun defaultValueForInt ()I
+	public final fun defaultValueForLong ()J
+	public final fun defaultValueForShort ()S
+}
+
+public final class dev/guavakt/base/Enums {
+	public static final field INSTANCE Ldev/guavakt/base/Enums;
+	public final fun getIfPresent (Ljava/lang/Object;Ljava/lang/String;)Ldev/guavakt/base/Optional;
+	public final fun stringConverter (Ljava/lang/Object;)Ldev/guavakt/base/Converter;
+}
+
+public abstract class dev/guavakt/base/Equivalence {
+	public static final field Companion Ldev/guavakt/base/Equivalence$Companion;
+	public fun <init> ()V
+	protected abstract fun doEquivalent (Ljava/lang/Object;Ljava/lang/Object;)Z
+	protected abstract fun doHash (Ljava/lang/Object;)I
+	public final fun equivalent (Ljava/lang/Object;Ljava/lang/Object;)Z
+	public final fun equivalentTo (Ljava/lang/Object;)Lkotlin/jvm/functions/Function1;
+	public final fun hash (Ljava/lang/Object;)I
+	public final fun onResultOf (Ldev/guavakt/base/Function;)Ldev/guavakt/base/Equivalence;
+	public final fun pairwise ()Ldev/guavakt/base/Equivalence;
+	public final fun wrap (Ljava/lang/Object;)Ldev/guavakt/base/Equivalence$Wrapper;
+}
+
+public final class dev/guavakt/base/Equivalence$Companion {
+	public final fun equals ()Ldev/guavakt/base/Equivalence;
+	public final fun identity ()Ldev/guavakt/base/Equivalence;
+}
+
+public final class dev/guavakt/base/Equivalence$Wrapper {
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun get ()Ljava/lang/Object;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public class dev/guavakt/base/FinalizablePhantomReference : dev/guavakt/base/FinalizableReference {
+	public fun <init> (Ljava/lang/Object;Ldev/guavakt/base/FinalizableReferenceQueue;)V
+	public fun clear ()V
+	public fun finalizeReferent ()V
+	public fun get ()Ljava/lang/Object;
+}
+
+public abstract interface class dev/guavakt/base/FinalizableReference {
+	public abstract fun finalizeReferent ()V
+}
+
+public final class dev/guavakt/base/FinalizableReferenceQueue {
+	public fun <init> ()V
+	public final fun cleanUp ()V
+	public final fun cleanupCount ()I
+	public final fun close ()V
+	public final fun isClosed ()Z
+}
+
+public class dev/guavakt/base/FinalizableSoftReference : dev/guavakt/base/FinalizableReference {
+	public fun <init> (Ljava/lang/Object;Ldev/guavakt/base/FinalizableReferenceQueue;)V
+	public fun clear ()V
+	public fun finalizeReferent ()V
+	public fun get ()Ljava/lang/Object;
+}
+
+public class dev/guavakt/base/FinalizableWeakReference : dev/guavakt/base/FinalizableReference {
+	public fun <init> (Ljava/lang/Object;Ldev/guavakt/base/FinalizableReferenceQueue;)V
+	public fun clear ()V
+	public fun finalizeReferent ()V
+	public fun get ()Ljava/lang/Object;
+}
+
+public abstract interface class dev/guavakt/base/Function {
+	public abstract fun apply (Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class dev/guavakt/base/FunctionalEquivalence : dev/guavakt/base/Equivalence {
+	public fun <init> (Ldev/guavakt/base/Function;Ldev/guavakt/base/Equivalence;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/Functions {
+	public static final field INSTANCE Ldev/guavakt/base/Functions;
+	public final fun compose (Ldev/guavakt/base/Function;Ldev/guavakt/base/Function;)Ldev/guavakt/base/Function;
+	public final fun constant (Ljava/lang/Object;)Ldev/guavakt/base/Function;
+	public final fun forMap (Ljava/util/Map;)Ldev/guavakt/base/Function;
+	public final fun forMap (Ljava/util/Map;Ljava/lang/Object;)Ldev/guavakt/base/Function;
+	public final fun forPredicate (Ldev/guavakt/base/Predicate;)Ldev/guavakt/base/Function;
+	public final fun forSupplier (Ldev/guavakt/base/Supplier;)Ldev/guavakt/base/Function;
+	public final fun identity ()Ldev/guavakt/base/Function;
+	public final fun toStringFunction ()Ldev/guavakt/base/Function;
+}
+
+public final class dev/guavakt/base/JdkPattern : dev/guavakt/base/CommonPattern {
+	public fun <init> (Lkotlin/text/Regex;)V
+	public fun flags ()I
+	public fun matcher (Ljava/lang/CharSequence;)Ldev/guavakt/base/CommonMatcher;
+	public fun pattern ()Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/Joiner {
+	public static final field Companion Ldev/guavakt/base/Joiner$Companion;
+	public final fun appendTo (Ljava/lang/Appendable;Ljava/util/Iterator;)Ljava/lang/Appendable;
+	public final fun appendTo (Ljava/lang/StringBuilder;Ljava/util/Iterator;)Ljava/lang/StringBuilder;
+	public final fun join (Ljava/lang/Iterable;)Ljava/lang/String;
+	public final fun join (Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+	public final fun join (Ljava/util/Iterator;)Ljava/lang/String;
+	public final fun join ([Ljava/lang/Object;)Ljava/lang/String;
+	public final fun skipNulls ()Ldev/guavakt/base/Joiner;
+	public final fun useForNull (Ljava/lang/String;)Ldev/guavakt/base/Joiner;
+	public final fun withKeyValueSeparator (Ljava/lang/String;)Ldev/guavakt/base/Joiner$MapJoiner;
+}
+
+public final class dev/guavakt/base/Joiner$Companion {
+	public final fun on (C)Ldev/guavakt/base/Joiner;
+	public final fun on (Ljava/lang/String;)Ldev/guavakt/base/Joiner;
+}
+
+public final class dev/guavakt/base/Joiner$MapJoiner {
+	public final fun join (Ljava/lang/Iterable;)Ljava/lang/String;
+	public final fun join (Ljava/util/Map;)Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/MapSplitter {
+	public final fun split (Ljava/lang/CharSequence;)Ljava/util/Map;
+}
+
+public final class dev/guavakt/base/MoreObjects {
+	public static final field INSTANCE Ldev/guavakt/base/MoreObjects;
+	public final fun firstNonNull (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun toStringHelper (Ljava/lang/Object;)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun toStringHelper (Ljava/lang/String;)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+}
+
+public final class dev/guavakt/base/MoreObjects$ToStringHelper {
+	public final fun add (Ljava/lang/String;C)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun add (Ljava/lang/String;D)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun add (Ljava/lang/String;F)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun add (Ljava/lang/String;I)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun add (Ljava/lang/String;J)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun add (Ljava/lang/String;Ljava/lang/Object;)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun add (Ljava/lang/String;Z)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun addValue (C)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun addValue (D)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun addValue (F)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun addValue (I)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun addValue (J)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun addValue (Ljava/lang/Object;)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun addValue (Z)Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public final fun omitNullValues ()Ldev/guavakt/base/MoreObjects$ToStringHelper;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/Objects {
+	public static final field INSTANCE Ldev/guavakt/base/Objects;
+	public final fun equal (Ljava/lang/Object;Ljava/lang/Object;)Z
+	public final fun hashCode ([Ljava/lang/Object;)I
+}
+
+public abstract class dev/guavakt/base/Optional {
+	public static final field Companion Ldev/guavakt/base/Optional$Companion;
+	public abstract fun asSet ()Ljava/util/Set;
+	public abstract fun equals (Ljava/lang/Object;)Z
+	public abstract fun get ()Ljava/lang/Object;
+	public abstract fun hashCode ()I
+	public abstract fun isAbsent ()Z
+	public abstract fun isPresent ()Z
+	public abstract fun or (Ldev/guavakt/base/Optional;)Ldev/guavakt/base/Optional;
+	public abstract fun or (Ldev/guavakt/base/Supplier;)Ljava/lang/Object;
+	public abstract fun or (Ljava/lang/Object;)Ljava/lang/Object;
+	public abstract fun orNull ()Ljava/lang/Object;
+	public abstract fun toString ()Ljava/lang/String;
+	public abstract fun transform (Ldev/guavakt/base/Function;)Ldev/guavakt/base/Optional;
+}
+
+public final class dev/guavakt/base/Optional$Companion {
+	public final fun absent ()Ldev/guavakt/base/Optional;
+	public final fun fromNullable (Ljava/lang/Object;)Ldev/guavakt/base/Optional;
+	public final fun of (Ljava/lang/Object;)Ldev/guavakt/base/Optional;
+	public final fun presentInstances (Ljava/lang/Iterable;)Ljava/lang/Iterable;
+}
+
+public final class dev/guavakt/base/PairwiseEquivalence : dev/guavakt/base/Equivalence {
+	public fun <init> (Ldev/guavakt/base/Equivalence;)V
+	public synthetic fun doEquivalent (Ljava/lang/Object;Ljava/lang/Object;)Z
+	public synthetic fun doHash (Ljava/lang/Object;)I
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface annotation class dev/guavakt/base/ParametricNullness : java/lang/annotation/Annotation {
+}
+
+public abstract interface class dev/guavakt/base/PatternCompiler {
+	public abstract fun compile (Ljava/lang/String;)Ldev/guavakt/base/CommonPattern;
+	public abstract fun isPcreLike ()Z
+}
+
+public final class dev/guavakt/base/Preconditions {
+	public static final field INSTANCE Ldev/guavakt/base/Preconditions;
+	public final fun checkArgument (Z)V
+	public final fun checkArgument (ZLjava/lang/Object;)V
+	public final fun checkArgument (ZLjava/lang/String;C)V
+	public final fun checkArgument (ZLjava/lang/String;CC)V
+	public final fun checkArgument (ZLjava/lang/String;I)V
+	public final fun checkArgument (ZLjava/lang/String;II)V
+	public final fun checkArgument (ZLjava/lang/String;J)V
+	public final fun checkArgument (ZLjava/lang/String;JJ)V
+	public final fun checkArgument (ZLjava/lang/String;Ljava/lang/Object;)V
+	public final fun checkArgument (ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun checkArgument (ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun checkArgument (ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun checkArgument (ZLjava/lang/String;[Ljava/lang/Object;)V
+	public final fun checkElementIndex (II)I
+	public final fun checkElementIndex (IILjava/lang/String;)I
+	public final fun checkNotNull (Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;C)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;I)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;J)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun checkNotNull (Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+	public final fun checkPositionIndex (II)I
+	public final fun checkPositionIndex (IILjava/lang/String;)I
+	public final fun checkPositionIndexes (III)V
+	public final fun checkState (Z)V
+	public final fun checkState (ZLjava/lang/Object;)V
+	public final fun checkState (ZLjava/lang/String;C)V
+	public final fun checkState (ZLjava/lang/String;I)V
+	public final fun checkState (ZLjava/lang/String;J)V
+	public final fun checkState (ZLjava/lang/String;Ljava/lang/Object;)V
+	public final fun checkState (ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun checkState (ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun checkState (ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+	public final fun checkState (ZLjava/lang/String;[Ljava/lang/Object;)V
+}
+
+public abstract interface class dev/guavakt/base/Predicate {
+	public abstract fun apply (Ljava/lang/Object;)Z
+}
+
+public final class dev/guavakt/base/Predicates {
+	public static final field INSTANCE Ldev/guavakt/base/Predicates;
+	public final fun alwaysFalse ()Ldev/guavakt/base/Predicate;
+	public final fun alwaysTrue ()Ldev/guavakt/base/Predicate;
+	public final fun and (Ldev/guavakt/base/Predicate;Ldev/guavakt/base/Predicate;)Ldev/guavakt/base/Predicate;
+	public final fun compose (Ldev/guavakt/base/Predicate;Ldev/guavakt/base/Function;)Ldev/guavakt/base/Predicate;
+	public final fun equalTo (Ljava/lang/Object;)Ldev/guavakt/base/Predicate;
+	public final fun in (Ljava/util/Collection;)Ldev/guavakt/base/Predicate;
+	public final fun isNull ()Ldev/guavakt/base/Predicate;
+	public final fun not (Ldev/guavakt/base/Predicate;)Ldev/guavakt/base/Predicate;
+	public final fun notNull ()Ldev/guavakt/base/Predicate;
+	public final fun or (Ldev/guavakt/base/Predicate;Ldev/guavakt/base/Predicate;)Ldev/guavakt/base/Predicate;
+}
+
+public final class dev/guavakt/base/Splitter {
+	public static final field Companion Ldev/guavakt/base/Splitter$Companion;
+	public final fun limit (I)Ldev/guavakt/base/Splitter;
+	public final fun omitEmptyStrings ()Ldev/guavakt/base/Splitter;
+	public final fun split (Ljava/lang/CharSequence;)Ljava/lang/Iterable;
+	public final fun splitToList (Ljava/lang/CharSequence;)Ljava/util/List;
+	public final fun trimResults ()Ldev/guavakt/base/Splitter;
+	public final fun withKeyValueSeparator (C)Ldev/guavakt/base/MapSplitter;
+	public final fun withKeyValueSeparator (Ldev/guavakt/base/Splitter;)Ldev/guavakt/base/MapSplitter;
+	public final fun withKeyValueSeparator (Ljava/lang/String;)Ldev/guavakt/base/MapSplitter;
+}
+
+public final class dev/guavakt/base/Splitter$Companion {
+	public final fun fixedLength (I)Ldev/guavakt/base/Splitter;
+	public final fun on (C)Ldev/guavakt/base/Splitter;
+	public final fun on (Ldev/guavakt/base/CharMatcher;)Ldev/guavakt/base/Splitter;
+	public final fun on (Ljava/lang/String;)Ldev/guavakt/base/Splitter;
+	public final fun onPattern (Ljava/lang/String;)Ldev/guavakt/base/Splitter;
+}
+
+public final class dev/guavakt/base/StandardSystemProperty : java/lang/Enum {
+	public static final field INSTANCE Ldev/guavakt/base/StandardSystemProperty;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/base/StandardSystemProperty;
+	public static fun values ()[Ldev/guavakt/base/StandardSystemProperty;
+	public final fun wireName ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/Stopwatch {
+	public static final field Companion Ldev/guavakt/base/Stopwatch$Companion;
+	public synthetic fun <init> (Ldev/guavakt/base/Ticker;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun elapsed (Lkotlin/time/DurationUnit;)J
+	public final fun elapsed-UwyO8pc ()J
+	public final fun isRunning ()Z
+	public final fun reset ()Ldev/guavakt/base/Stopwatch;
+	public final fun start ()Ldev/guavakt/base/Stopwatch;
+	public final fun stop ()Ldev/guavakt/base/Stopwatch;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/guavakt/base/Stopwatch$Companion {
+	public final fun createStarted ()Ldev/guavakt/base/Stopwatch;
+	public final fun createStarted (Ldev/guavakt/base/Ticker;)Ldev/guavakt/base/Stopwatch;
+	public final fun createUnstarted ()Ldev/guavakt/base/Stopwatch;
+	public final fun createUnstarted (Ldev/guavakt/base/Ticker;)Ldev/guavakt/base/Stopwatch;
+}
+
+public final class dev/guavakt/base/Strings {
+	public static final field INSTANCE Ldev/guavakt/base/Strings;
+	public final fun commonPrefix (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+	public final fun commonSuffix (Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+	public final fun emptyToNull (Ljava/lang/String;)Ljava/lang/String;
+	public final fun isNullOrEmpty (Ljava/lang/String;)Z
+	public final fun lenientFormat (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+	public final fun nullToEmpty (Ljava/lang/String;)Ljava/lang/String;
+	public final fun padEnd (Ljava/lang/String;IC)Ljava/lang/String;
+	public final fun padStart (Ljava/lang/String;IC)Ljava/lang/String;
+	public final fun repeat (Ljava/lang/String;I)Ljava/lang/String;
+}
+
+public abstract interface class dev/guavakt/base/Supplier {
+	public abstract fun get ()Ljava/lang/Object;
+}
+
+public final class dev/guavakt/base/Suppliers {
+	public static final field INSTANCE Ldev/guavakt/base/Suppliers;
+	public final fun compose (Lkotlin/jvm/functions/Function1;Ldev/guavakt/base/Supplier;)Ldev/guavakt/base/Supplier;
+	public final fun memoize (Ldev/guavakt/base/Supplier;)Ldev/guavakt/base/Supplier;
+	public final fun memoizeWithExpiration (Ldev/guavakt/base/Supplier;JLdev/guavakt/base/Ticker;)Ldev/guavakt/base/Supplier;
+	public static synthetic fun memoizeWithExpiration$default (Ldev/guavakt/base/Suppliers;Ldev/guavakt/base/Supplier;JLdev/guavakt/base/Ticker;ILjava/lang/Object;)Ldev/guavakt/base/Supplier;
+	public final fun ofInstance (Ljava/lang/Object;)Ldev/guavakt/base/Supplier;
+	public final fun supplierFunction ()Lkotlin/jvm/functions/Function1;
+	public final fun synchronizedSupplier (Ldev/guavakt/base/Supplier;)Ldev/guavakt/base/Supplier;
+}
+
+public final class dev/guavakt/base/Throwables {
+	public static final field INSTANCE Ldev/guavakt/base/Throwables;
+	public final fun getCausalChain (Ljava/lang/Throwable;)Ljava/util/List;
+	public final fun getRootCause (Ljava/lang/Throwable;)Ljava/lang/Throwable;
+	public final fun getStackTraceAsString (Ljava/lang/Throwable;)Ljava/lang/String;
+	public final fun propagateIfPossible (Ljava/lang/Throwable;)V
+	public final fun propagateIfPossible (Ljava/lang/Throwable;Lkotlin/reflect/KClass;)V
+	public final fun throwIfInstanceOf (Ljava/lang/Throwable;Lkotlin/reflect/KClass;)V
+	public final fun throwIfUnchecked (Ljava/lang/Throwable;)V
+}
+
+public abstract class dev/guavakt/base/Ticker {
+	public static final field Companion Ldev/guavakt/base/Ticker$Companion;
+	public fun <init> ()V
+	public abstract fun read ()J
+}
+
+public final class dev/guavakt/base/Ticker$Companion {
+	public final fun systemTicker ()Ldev/guavakt/base/Ticker;
+}
+
+public final class dev/guavakt/base/Utf8 {
+	public static final field INSTANCE Ldev/guavakt/base/Utf8;
+	public final fun encodedLength (Ljava/lang/CharSequence;)I
+	public final fun isWellFormed ([B)Z
+	public final fun isWellFormed ([BII)Z
+}
+
+public final class dev/guavakt/base/Verify {
+	public static final field INSTANCE Ldev/guavakt/base/Verify;
+	public final fun verify (Z)V
+	public final fun verify (ZLjava/lang/String;[Ljava/lang/Object;)V
+	public final fun verifyNotNull (Ljava/lang/Object;)Ljava/lang/Object;
+	public final fun verifyNotNull (Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class dev/guavakt/base/VerifyException : java/lang/RuntimeException {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+	public fun <init> (Ljava/lang/Throwable;)V
+}
+
+public final class dev/guavakt/base/internal/Finalizer {
+	public static final field INSTANCE Ldev/guavakt/base/internal/Finalizer;
+	public final fun isRunning ()Z
+	public final fun startFinalizer (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class dev/guavakt/base/internal/PlatformReferencesKt {
+	public static final fun platformIdentityHashCode (Ljava/lang/Object;)I
+	public static final fun platformSupportsWeakReferences ()Z
+	public static final fun pollClearedWeakOrSoftReferences ()I
+}
+
+public final class dev/guavakt/base/internal/PlatformSoftRef {
+	public fun <init> (Ljava/lang/Object;)V
+	public final fun clear ()V
+	public final fun get ()Ljava/lang/Object;
+}
+
+public final class dev/guavakt/base/internal/PlatformWeakRef {
+	public fun <init> (Ljava/lang/Object;)V
+	public final fun clear ()V
+	public final fun get ()Ljava/lang/Object;
+}
+
+public final class dev/guavakt/base/internal/Strength : java/lang/Enum {
+	public static final field SOFT Ldev/guavakt/base/internal/Strength;
+	public static final field STRONG Ldev/guavakt/base/internal/Strength;
+	public static final field WEAK Ldev/guavakt/base/internal/Strength;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/base/internal/Strength;
+	public static fun values ()[Ldev/guavakt/base/internal/Strength;
+}
+

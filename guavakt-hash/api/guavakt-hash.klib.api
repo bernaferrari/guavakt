@@ -1,0 +1,356 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-hash>
+open annotation class dev.guavakt.hash/IgnoreJRERequirement : kotlin/Annotation { // dev.guavakt.hash/IgnoreJRERequirement|null[0]
+    constructor <init>() // dev.guavakt.hash/IgnoreJRERequirement.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.hash/ParametricNullness : kotlin/Annotation { // dev.guavakt.hash/ParametricNullness|null[0]
+    constructor <init>() // dev.guavakt.hash/ParametricNullness.<init>|<init>(){}[0]
+}
+
+abstract fun interface <#A: kotlin/Any?> dev.guavakt.hash/Funnel { // dev.guavakt.hash/Funnel|null[0]
+    abstract fun funnel(#A, dev.guavakt.hash/PrimitiveSink) // dev.guavakt.hash/Funnel.funnel|funnel(1:0;dev.guavakt.hash.PrimitiveSink){}[0]
+}
+
+abstract interface dev.guavakt.hash/HashFunction { // dev.guavakt.hash/HashFunction|null[0]
+    abstract fun bits(): kotlin/Int // dev.guavakt.hash/HashFunction.bits|bits(){}[0]
+    abstract fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    abstract fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    abstract fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    abstract fun hashString(kotlin/CharSequence, kotlin/String = ...): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    abstract fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    abstract fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/HashFunction.newHasher|newHasher(){}[0]
+    open fun <#A1: kotlin/Any?> hashObject(#A1, dev.guavakt.hash/Funnel<in #A1>): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashFunction.hashObject|hashObject(0:0;dev.guavakt.hash.Funnel<in|0:0>){0§<kotlin.Any?>}[0]
+    open fun hashBytes(kotlin/ByteArray): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashFunction.hashBytes|hashBytes(kotlin.ByteArray){}[0]
+}
+
+abstract interface dev.guavakt.hash/Hasher : dev.guavakt.hash/PrimitiveSink { // dev.guavakt.hash/Hasher|null[0]
+    abstract fun hash(): dev.guavakt.hash/HashCode // dev.guavakt.hash/Hasher.hash|hash(){}[0]
+    abstract fun putByte(kotlin/Byte): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putByte|putByte(kotlin.Byte){}[0]
+    abstract fun putBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putBytes|putBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    abstract fun putInt(kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putInt|putInt(kotlin.Int){}[0]
+    abstract fun putLong(kotlin/Long): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putLong|putLong(kotlin.Long){}[0]
+    abstract fun putUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putUnencodedChars|putUnencodedChars(kotlin.CharSequence){}[0]
+    open fun putBoolean(kotlin/Boolean): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putBoolean|putBoolean(kotlin.Boolean){}[0]
+    open fun putBytes(kotlin/ByteArray): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putBytes|putBytes(kotlin.ByteArray){}[0]
+    open fun putChar(kotlin/Char): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putChar|putChar(kotlin.Char){}[0]
+    open fun putDouble(kotlin/Double): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putDouble|putDouble(kotlin.Double){}[0]
+    open fun putFloat(kotlin/Float): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putFloat|putFloat(kotlin.Float){}[0]
+    open fun putShort(kotlin/Short): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putShort|putShort(kotlin.Short){}[0]
+    open fun putString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/Hasher // dev.guavakt.hash/Hasher.putString|putString(kotlin.CharSequence;kotlin.String){}[0]
+}
+
+abstract interface dev.guavakt.hash/PrimitiveSink { // dev.guavakt.hash/PrimitiveSink|null[0]
+    abstract fun putByte(kotlin/Byte): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putByte|putByte(kotlin.Byte){}[0]
+    abstract fun putBytes(kotlin/ByteArray): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putBytes|putBytes(kotlin.ByteArray){}[0]
+    abstract fun putInt(kotlin/Int): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putInt|putInt(kotlin.Int){}[0]
+    abstract fun putLong(kotlin/Long): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putLong|putLong(kotlin.Long){}[0]
+    abstract fun putUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putUnencodedChars|putUnencodedChars(kotlin.CharSequence){}[0]
+    open fun putBoolean(kotlin/Boolean): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putBoolean|putBoolean(kotlin.Boolean){}[0]
+    open fun putBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putBytes|putBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    open fun putChar(kotlin/Char): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putChar|putChar(kotlin.Char){}[0]
+    open fun putDouble(kotlin/Double): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putDouble|putDouble(kotlin.Double){}[0]
+    open fun putFloat(kotlin/Float): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putFloat|putFloat(kotlin.Float){}[0]
+    open fun putShort(kotlin/Short): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putShort|putShort(kotlin.Short){}[0]
+    open fun putString(kotlin/CharSequence, kotlin/String = ...): dev.guavakt.hash/PrimitiveSink // dev.guavakt.hash/PrimitiveSink.putString|putString(kotlin.CharSequence;kotlin.String){}[0]
+}
+
+abstract class dev.guavakt.hash/AbstractByteHasher : dev.guavakt.hash/Hasher { // dev.guavakt.hash/AbstractByteHasher|null[0]
+    constructor <init>() // dev.guavakt.hash/AbstractByteHasher.<init>|<init>(){}[0]
+
+    abstract fun update(kotlin/Byte) // dev.guavakt.hash/AbstractByteHasher.update|update(kotlin.Byte){}[0]
+    open fun putByte(kotlin/Byte): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractByteHasher.putByte|putByte(kotlin.Byte){}[0]
+    open fun putBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractByteHasher.putBytes|putBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    open fun putInt(kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractByteHasher.putInt|putInt(kotlin.Int){}[0]
+    open fun putLong(kotlin/Long): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractByteHasher.putLong|putLong(kotlin.Long){}[0]
+    open fun putUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractByteHasher.putUnencodedChars|putUnencodedChars(kotlin.CharSequence){}[0]
+    open fun update(kotlin/ByteArray, kotlin/Int, kotlin/Int) // dev.guavakt.hash/AbstractByteHasher.update|update(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+}
+
+abstract class dev.guavakt.hash/AbstractCompositeHashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/AbstractCompositeHashFunction|null[0]
+    constructor <init>(kotlin/Array<out dev.guavakt.hash/HashFunction>...) // dev.guavakt.hash/AbstractCompositeHashFunction.<init>|<init>(kotlin.Array<out|dev.guavakt.hash.HashFunction>...){}[0]
+
+    open fun bits(): kotlin/Int // dev.guavakt.hash/AbstractCompositeHashFunction.bits|bits(){}[0]
+    open fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractCompositeHashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    open fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractCompositeHashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    open fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractCompositeHashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    open fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractCompositeHashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    open fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractCompositeHashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    open fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractCompositeHashFunction.newHasher|newHasher(){}[0]
+}
+
+abstract class dev.guavakt.hash/AbstractHashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/AbstractHashFunction|null[0]
+    constructor <init>() // dev.guavakt.hash/AbstractHashFunction.<init>|<init>(){}[0]
+
+    open fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractHashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    open fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractHashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    open fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractHashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    open fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractHashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    open fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractHashFunction.newHasher|newHasher(){}[0]
+}
+
+abstract class dev.guavakt.hash/AbstractHasher : dev.guavakt.hash/Hasher { // dev.guavakt.hash/AbstractHasher|null[0]
+    constructor <init>() // dev.guavakt.hash/AbstractHasher.<init>|<init>(){}[0]
+
+    open fun putBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractHasher.putBytes|putBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    open fun putInt(kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractHasher.putInt|putInt(kotlin.Int){}[0]
+    open fun putLong(kotlin/Long): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractHasher.putLong|putLong(kotlin.Long){}[0]
+    open fun putUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractHasher.putUnencodedChars|putUnencodedChars(kotlin.CharSequence){}[0]
+}
+
+abstract class dev.guavakt.hash/AbstractNonStreamingHashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/AbstractNonStreamingHashFunction|null[0]
+    constructor <init>() // dev.guavakt.hash/AbstractNonStreamingHashFunction.<init>|<init>(){}[0]
+
+    open fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractNonStreamingHashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    open fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractNonStreamingHashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    open fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractNonStreamingHashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    open fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractNonStreamingHashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    open fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractNonStreamingHashFunction.newHasher|newHasher(){}[0]
+}
+
+abstract class dev.guavakt.hash/AbstractStreamingHasher : dev.guavakt.hash/Hasher { // dev.guavakt.hash/AbstractStreamingHasher|null[0]
+    constructor <init>(kotlin/Int, kotlin/Int = ...) // dev.guavakt.hash/AbstractStreamingHasher.<init>|<init>(kotlin.Int;kotlin.Int){}[0]
+
+    abstract fun makeHash(): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractStreamingHasher.makeHash|makeHash(){}[0]
+    abstract fun process(kotlin/ByteArray, kotlin/Int) // dev.guavakt.hash/AbstractStreamingHasher.process|process(kotlin.ByteArray;kotlin.Int){}[0]
+    abstract fun processRemaining(kotlin/ByteArray, kotlin/Int, kotlin/Int) // dev.guavakt.hash/AbstractStreamingHasher.processRemaining|processRemaining(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    open fun hash(): dev.guavakt.hash/HashCode // dev.guavakt.hash/AbstractStreamingHasher.hash|hash(){}[0]
+    open fun putByte(kotlin/Byte): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractStreamingHasher.putByte|putByte(kotlin.Byte){}[0]
+    open fun putBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractStreamingHasher.putBytes|putBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    open fun putInt(kotlin/Int): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractStreamingHasher.putInt|putInt(kotlin.Int){}[0]
+    open fun putLong(kotlin/Long): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractStreamingHasher.putLong|putLong(kotlin.Long){}[0]
+    open fun putUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/Hasher // dev.guavakt.hash/AbstractStreamingHasher.putUnencodedChars|putUnencodedChars(kotlin.CharSequence){}[0]
+}
+
+final class <#A: kotlin/Any?> dev.guavakt.hash/BloomFilter { // dev.guavakt.hash/BloomFilter|null[0]
+    final fun apply(#A): kotlin/Boolean // dev.guavakt.hash/BloomFilter.apply|apply(1:0){}[0]
+    final fun approximateElementCount(): kotlin/Long // dev.guavakt.hash/BloomFilter.approximateElementCount|approximateElementCount(){}[0]
+    final fun copy(): dev.guavakt.hash/BloomFilter<#A> // dev.guavakt.hash/BloomFilter.copy|copy(){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.hash/BloomFilter.equals|equals(kotlin.Any?){}[0]
+    final fun expectedFpp(): kotlin/Double // dev.guavakt.hash/BloomFilter.expectedFpp|expectedFpp(){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.hash/BloomFilter.hashCode|hashCode(){}[0]
+    final fun invoke(#A): kotlin/Boolean // dev.guavakt.hash/BloomFilter.invoke|invoke(1:0){}[0]
+    final fun isCompatible(dev.guavakt.hash/BloomFilter<#A>): kotlin/Boolean // dev.guavakt.hash/BloomFilter.isCompatible|isCompatible(dev.guavakt.hash.BloomFilter<1:0>){}[0]
+    final fun mightContain(#A): kotlin/Boolean // dev.guavakt.hash/BloomFilter.mightContain|mightContain(1:0){}[0]
+    final fun put(#A): kotlin/Boolean // dev.guavakt.hash/BloomFilter.put|put(1:0){}[0]
+    final fun putAll(dev.guavakt.hash/BloomFilter<#A>) // dev.guavakt.hash/BloomFilter.putAll|putAll(dev.guavakt.hash.BloomFilter<1:0>){}[0]
+    final fun serializedSize(): kotlin/Long // dev.guavakt.hash/BloomFilter.serializedSize|serializedSize(){}[0]
+    final fun test(#A): kotlin/Boolean // dev.guavakt.hash/BloomFilter.test|test(1:0){}[0]
+    final fun toByteArray(): kotlin/ByteArray // dev.guavakt.hash/BloomFilter.toByteArray|toByteArray(){}[0]
+
+    final object Companion { // dev.guavakt.hash/BloomFilter.Companion|null[0]
+        final fun <#A2: kotlin/Any?> create(dev.guavakt.hash/Funnel<in #A2>, kotlin/Int, kotlin/Double = ...): dev.guavakt.hash/BloomFilter<#A2> // dev.guavakt.hash/BloomFilter.Companion.create|create(dev.guavakt.hash.Funnel<in|0:0>;kotlin.Int;kotlin.Double){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> create(dev.guavakt.hash/Funnel<in #A2>, kotlin/Long, kotlin/Double = ...): dev.guavakt.hash/BloomFilter<#A2> // dev.guavakt.hash/BloomFilter.Companion.create|create(dev.guavakt.hash.Funnel<in|0:0>;kotlin.Long;kotlin.Double){0§<kotlin.Any?>}[0]
+        final fun <#A2: kotlin/Any?> readFrom(kotlin/ByteArray, dev.guavakt.hash/Funnel<in #A2>): dev.guavakt.hash/BloomFilter<#A2> // dev.guavakt.hash/BloomFilter.Companion.readFrom|readFrom(kotlin.ByteArray;dev.guavakt.hash.Funnel<in|0:0>){0§<kotlin.Any?>}[0]
+    }
+}
+
+final class dev.guavakt.hash/Adler32HashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/Adler32HashFunction|null[0]
+    constructor <init>() // dev.guavakt.hash/Adler32HashFunction.<init>|<init>(){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/Adler32HashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Adler32HashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Adler32HashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    final fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/Adler32HashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    final fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/Adler32HashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    final fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/Adler32HashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/Adler32HashFunction.newHasher|newHasher(){}[0]
+}
+
+final class dev.guavakt.hash/ChecksumHashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/ChecksumHashFunction|null[0]
+    constructor <init>() // dev.guavakt.hash/ChecksumHashFunction.<init>|<init>(){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/ChecksumHashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/ChecksumHashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/ChecksumHashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    final fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/ChecksumHashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    final fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/ChecksumHashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    final fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/ChecksumHashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/ChecksumHashFunction.newHasher|newHasher(){}[0]
+}
+
+final class dev.guavakt.hash/Crc32cHashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/Crc32cHashFunction|null[0]
+    constructor <init>() // dev.guavakt.hash/Crc32cHashFunction.<init>|<init>(){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/Crc32cHashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Crc32cHashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Crc32cHashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    final fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/Crc32cHashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    final fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/Crc32cHashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    final fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/Crc32cHashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/Crc32cHashFunction.newHasher|newHasher(){}[0]
+}
+
+final class dev.guavakt.hash/FarmHashFingerprint64 : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/FarmHashFingerprint64|null[0]
+    constructor <init>() // dev.guavakt.hash/FarmHashFingerprint64.<init>|<init>(){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/FarmHashFingerprint64.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/FarmHashFingerprint64.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/FarmHashFingerprint64.hashInt|hashInt(kotlin.Int){}[0]
+    final fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/FarmHashFingerprint64.hashLong|hashLong(kotlin.Long){}[0]
+    final fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/FarmHashFingerprint64.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    final fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/FarmHashFingerprint64.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/FarmHashFingerprint64.newHasher|newHasher(){}[0]
+}
+
+final class dev.guavakt.hash/HashCode { // dev.guavakt.hash/HashCode|null[0]
+    final fun asBytes(): kotlin/ByteArray // dev.guavakt.hash/HashCode.asBytes|asBytes(){}[0]
+    final fun asInt(): kotlin/Int // dev.guavakt.hash/HashCode.asInt|asInt(){}[0]
+    final fun asLong(): kotlin/Long // dev.guavakt.hash/HashCode.asLong|asLong(){}[0]
+    final fun bits(): kotlin/Int // dev.guavakt.hash/HashCode.bits|bits(){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.hash/HashCode.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.hash/HashCode.hashCode|hashCode(){}[0]
+    final fun padToLong(): kotlin/Long // dev.guavakt.hash/HashCode.padToLong|padToLong(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.hash/HashCode.toString|toString(){}[0]
+
+    final object Companion { // dev.guavakt.hash/HashCode.Companion|null[0]
+        final fun fromBytes(kotlin/ByteArray): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashCode.Companion.fromBytes|fromBytes(kotlin.ByteArray){}[0]
+        final fun fromInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashCode.Companion.fromInt|fromInt(kotlin.Int){}[0]
+        final fun fromLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashCode.Companion.fromLong|fromLong(kotlin.Long){}[0]
+    }
+}
+
+final class dev.guavakt.hash/HashingInputStream : kotlin/AutoCloseable { // dev.guavakt.hash/HashingInputStream|null[0]
+    constructor <init>(dev.guavakt.hash/Hasher, kotlin/Function1<kotlin/ByteArray, kotlin/Int>) // dev.guavakt.hash/HashingInputStream.<init>|<init>(dev.guavakt.hash.Hasher;kotlin.Function1<kotlin.ByteArray,kotlin.Int>){}[0]
+
+    final fun close() // dev.guavakt.hash/HashingInputStream.close|close(){}[0]
+    final fun hash(): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashingInputStream.hash|hash(){}[0]
+    final fun read(kotlin/ByteArray): kotlin/Int // dev.guavakt.hash/HashingInputStream.read|read(kotlin.ByteArray){}[0]
+}
+
+final class dev.guavakt.hash/HashingOutputStream : kotlin/AutoCloseable { // dev.guavakt.hash/HashingOutputStream|null[0]
+    constructor <init>(dev.guavakt.hash/Hasher, kotlin/Function3<kotlin/ByteArray, kotlin/Int, kotlin/Int, kotlin/Unit>) // dev.guavakt.hash/HashingOutputStream.<init>|<init>(dev.guavakt.hash.Hasher;kotlin.Function3<kotlin.ByteArray,kotlin.Int,kotlin.Int,kotlin.Unit>){}[0]
+
+    final fun close() // dev.guavakt.hash/HashingOutputStream.close|close(){}[0]
+    final fun hash(): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashingOutputStream.hash|hash(){}[0]
+    final fun write(kotlin/ByteArray, kotlin/Int, kotlin/Int) // dev.guavakt.hash/HashingOutputStream.write|write(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun write(kotlin/Int) // dev.guavakt.hash/HashingOutputStream.write|write(kotlin.Int){}[0]
+}
+
+final class dev.guavakt.hash/HashingSink : okio/Sink { // dev.guavakt.hash/HashingSink|null[0]
+    constructor <init>(okio/Sink, dev.guavakt.hash/HashFunction) // dev.guavakt.hash/HashingSink.<init>|<init>(okio.Sink;dev.guavakt.hash.HashFunction){}[0]
+
+    final fun close() // dev.guavakt.hash/HashingSink.close|close(){}[0]
+    final fun flush() // dev.guavakt.hash/HashingSink.flush|flush(){}[0]
+    final fun hash(): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashingSink.hash|hash(){}[0]
+    final fun timeout(): okio/Timeout // dev.guavakt.hash/HashingSink.timeout|timeout(){}[0]
+    final fun write(okio/Buffer, kotlin/Long) // dev.guavakt.hash/HashingSink.write|write(okio.Buffer;kotlin.Long){}[0]
+}
+
+final class dev.guavakt.hash/HashingSource : okio/Source { // dev.guavakt.hash/HashingSource|null[0]
+    constructor <init>(okio/Source, dev.guavakt.hash/HashFunction) // dev.guavakt.hash/HashingSource.<init>|<init>(okio.Source;dev.guavakt.hash.HashFunction){}[0]
+
+    final fun close() // dev.guavakt.hash/HashingSource.close|close(){}[0]
+    final fun hash(): dev.guavakt.hash/HashCode // dev.guavakt.hash/HashingSource.hash|hash(){}[0]
+    final fun read(okio/Buffer, kotlin/Long): kotlin/Long // dev.guavakt.hash/HashingSource.read|read(okio.Buffer;kotlin.Long){}[0]
+    final fun timeout(): okio/Timeout // dev.guavakt.hash/HashingSource.timeout|timeout(){}[0]
+}
+
+final class dev.guavakt.hash/MacHashFunction : dev.guavakt.hash/AbstractNonStreamingHashFunction { // dev.guavakt.hash/MacHashFunction|null[0]
+    constructor <init>(kotlin/ByteArray, kotlin/String = ...) // dev.guavakt.hash/MacHashFunction.<init>|<init>(kotlin.ByteArray;kotlin.String){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/MacHashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/MacHashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/MacHashFunction.newHasher|newHasher(){}[0]
+}
+
+final class dev.guavakt.hash/MessageDigestHashFunction : dev.guavakt.hash/AbstractNonStreamingHashFunction { // dev.guavakt.hash/MessageDigestHashFunction|null[0]
+    constructor <init>(kotlin/String) // dev.guavakt.hash/MessageDigestHashFunction.<init>|<init>(kotlin.String){}[0]
+
+    final fun algorithm(): kotlin/String // dev.guavakt.hash/MessageDigestHashFunction.algorithm|algorithm(){}[0]
+    final fun bits(): kotlin/Int // dev.guavakt.hash/MessageDigestHashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/MessageDigestHashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/MessageDigestHashFunction.newHasher|newHasher(){}[0]
+}
+
+final class dev.guavakt.hash/Murmur3_128HashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/Murmur3_128HashFunction|null[0]
+    constructor <init>(kotlin/Int = ...) // dev.guavakt.hash/Murmur3_128HashFunction.<init>|<init>(kotlin.Int){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/Murmur3_128HashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_128HashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_128HashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    final fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_128HashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    final fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_128HashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    final fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_128HashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/Murmur3_128HashFunction.newHasher|newHasher(){}[0]
+
+    final object Companion // dev.guavakt.hash/Murmur3_128HashFunction.Companion|null[0]
+}
+
+final class dev.guavakt.hash/Murmur3_32HashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/Murmur3_32HashFunction|null[0]
+    constructor <init>(kotlin/Int = ...) // dev.guavakt.hash/Murmur3_32HashFunction.<init>|<init>(kotlin.Int){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/Murmur3_32HashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_32HashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_32HashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    final fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_32HashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    final fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_32HashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    final fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/Murmur3_32HashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/Murmur3_32HashFunction.newHasher|newHasher(){}[0]
+
+    final object Companion // dev.guavakt.hash/Murmur3_32HashFunction.Companion|null[0]
+}
+
+final class dev.guavakt.hash/SipHashFunction : dev.guavakt.hash/HashFunction { // dev.guavakt.hash/SipHashFunction|null[0]
+    constructor <init>(kotlin/Long = ..., kotlin/Long = ...) // dev.guavakt.hash/SipHashFunction.<init>|<init>(kotlin.Long;kotlin.Long){}[0]
+
+    final fun bits(): kotlin/Int // dev.guavakt.hash/SipHashFunction.bits|bits(){}[0]
+    final fun hashBytes(kotlin/ByteArray, kotlin/Int, kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/SipHashFunction.hashBytes|hashBytes(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun hashInt(kotlin/Int): dev.guavakt.hash/HashCode // dev.guavakt.hash/SipHashFunction.hashInt|hashInt(kotlin.Int){}[0]
+    final fun hashLong(kotlin/Long): dev.guavakt.hash/HashCode // dev.guavakt.hash/SipHashFunction.hashLong|hashLong(kotlin.Long){}[0]
+    final fun hashString(kotlin/CharSequence, kotlin/String): dev.guavakt.hash/HashCode // dev.guavakt.hash/SipHashFunction.hashString|hashString(kotlin.CharSequence;kotlin.String){}[0]
+    final fun hashUnencodedChars(kotlin/CharSequence): dev.guavakt.hash/HashCode // dev.guavakt.hash/SipHashFunction.hashUnencodedChars|hashUnencodedChars(kotlin.CharSequence){}[0]
+    final fun newHasher(): dev.guavakt.hash/Hasher // dev.guavakt.hash/SipHashFunction.newHasher|newHasher(){}[0]
+
+    final object Companion // dev.guavakt.hash/SipHashFunction.Companion|null[0]
+}
+
+final object dev.guavakt.hash/Funnels { // dev.guavakt.hash/Funnels|null[0]
+    final fun <#A1: kotlin/Any?> sequentialFunnel(dev.guavakt.hash/Funnel<#A1>): dev.guavakt.hash/Funnel<kotlin.collections/Iterable<#A1>> // dev.guavakt.hash/Funnels.sequentialFunnel|sequentialFunnel(dev.guavakt.hash.Funnel<0:0>){0§<kotlin.Any?>}[0]
+    final fun byteArrayFunnel(): dev.guavakt.hash/Funnel<kotlin/ByteArray> // dev.guavakt.hash/Funnels.byteArrayFunnel|byteArrayFunnel(){}[0]
+    final fun integerFunnel(): dev.guavakt.hash/Funnel<kotlin/Int> // dev.guavakt.hash/Funnels.integerFunnel|integerFunnel(){}[0]
+    final fun longFunnel(): dev.guavakt.hash/Funnel<kotlin/Long> // dev.guavakt.hash/Funnels.longFunnel|longFunnel(){}[0]
+    final fun stringFunnel(): dev.guavakt.hash/Funnel<kotlin/CharSequence> // dev.guavakt.hash/Funnels.stringFunnel|stringFunnel(){}[0]
+    final fun unencodedCharsFunnel(): dev.guavakt.hash/Funnel<kotlin/CharSequence> // dev.guavakt.hash/Funnels.unencodedCharsFunnel|unencodedCharsFunnel(){}[0]
+}
+
+final object dev.guavakt.hash/Hashing { // dev.guavakt.hash/Hashing|null[0]
+    final fun adler32(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.adler32|adler32(){}[0]
+    final fun combineOrdered(kotlin.collections/Iterable<dev.guavakt.hash/HashCode>): dev.guavakt.hash/HashCode // dev.guavakt.hash/Hashing.combineOrdered|combineOrdered(kotlin.collections.Iterable<dev.guavakt.hash.HashCode>){}[0]
+    final fun combineUnordered(kotlin.collections/Iterable<dev.guavakt.hash/HashCode>): dev.guavakt.hash/HashCode // dev.guavakt.hash/Hashing.combineUnordered|combineUnordered(kotlin.collections.Iterable<dev.guavakt.hash.HashCode>){}[0]
+    final fun concatenating(dev.guavakt.hash/HashFunction, dev.guavakt.hash/HashFunction, kotlin/Array<out dev.guavakt.hash/HashFunction>...): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.concatenating|concatenating(dev.guavakt.hash.HashFunction;dev.guavakt.hash.HashFunction;kotlin.Array<out|dev.guavakt.hash.HashFunction>...){}[0]
+    final fun concatenating(kotlin.collections/Iterable<dev.guavakt.hash/HashFunction>): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.concatenating|concatenating(kotlin.collections.Iterable<dev.guavakt.hash.HashFunction>){}[0]
+    final fun consistentHash(dev.guavakt.hash/HashCode, kotlin/Int): kotlin/Int // dev.guavakt.hash/Hashing.consistentHash|consistentHash(dev.guavakt.hash.HashCode;kotlin.Int){}[0]
+    final fun consistentHash(kotlin/Long, kotlin/Int): kotlin/Int // dev.guavakt.hash/Hashing.consistentHash|consistentHash(kotlin.Long;kotlin.Int){}[0]
+    final fun crc32(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.crc32|crc32(){}[0]
+    final fun crc32c(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.crc32c|crc32c(){}[0]
+    final fun farmHashFingerprint64(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.farmHashFingerprint64|farmHashFingerprint64(){}[0]
+    final fun fingerprint2011(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.fingerprint2011|fingerprint2011(){}[0]
+    final fun goodFastHash(kotlin/Int): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.goodFastHash|goodFastHash(kotlin.Int){}[0]
+    final fun hmacMd5(kotlin/ByteArray): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.hmacMd5|hmacMd5(kotlin.ByteArray){}[0]
+    final fun hmacSha1(kotlin/ByteArray): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.hmacSha1|hmacSha1(kotlin.ByteArray){}[0]
+    final fun hmacSha256(kotlin/ByteArray): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.hmacSha256|hmacSha256(kotlin.ByteArray){}[0]
+    final fun hmacSha512(kotlin/ByteArray): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.hmacSha512|hmacSha512(kotlin.ByteArray){}[0]
+    final fun md5(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.md5|md5(){}[0]
+    final fun murmur3_128(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.murmur3_128|murmur3_128(){}[0]
+    final fun murmur3_128(kotlin/Int): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.murmur3_128|murmur3_128(kotlin.Int){}[0]
+    final fun murmur3_32(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.murmur3_32|murmur3_32(){}[0]
+    final fun murmur3_32(kotlin/Int): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.murmur3_32|murmur3_32(kotlin.Int){}[0]
+    final fun murmur3_32_fixed(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.murmur3_32_fixed|murmur3_32_fixed(){}[0]
+    final fun murmur3_32_fixed(kotlin/Int): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.murmur3_32_fixed|murmur3_32_fixed(kotlin.Int){}[0]
+    final fun sha1(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.sha1|sha1(){}[0]
+    final fun sha256(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.sha256|sha256(){}[0]
+    final fun sha384(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.sha384|sha384(){}[0]
+    final fun sha512(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.sha512|sha512(){}[0]
+    final fun sipHash24(): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.sipHash24|sipHash24(){}[0]
+    final fun sipHash24(kotlin/Long, kotlin/Long): dev.guavakt.hash/HashFunction // dev.guavakt.hash/Hashing.sipHash24|sipHash24(kotlin.Long;kotlin.Long){}[0]
+}
+
+final fun (okio/Sink).dev.guavakt.hash/hashing(dev.guavakt.hash/HashFunction): dev.guavakt.hash/HashingSink // dev.guavakt.hash/hashing|hashing@okio.Sink(dev.guavakt.hash.HashFunction){}[0]
+final fun (okio/Source).dev.guavakt.hash/hashing(dev.guavakt.hash/HashFunction): dev.guavakt.hash/HashingSource // dev.guavakt.hash/hashing|hashing@okio.Source(dev.guavakt.hash.HashFunction){}[0]

@@ -1,0 +1,75 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-eventbus>
+open annotation class dev.guavakt.eventbus/AllowConcurrentEvents : kotlin/Annotation { // dev.guavakt.eventbus/AllowConcurrentEvents|null[0]
+    constructor <init>() // dev.guavakt.eventbus/AllowConcurrentEvents.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.eventbus/IgnoreJRERequirement : kotlin/Annotation { // dev.guavakt.eventbus/IgnoreJRERequirement|null[0]
+    constructor <init>() // dev.guavakt.eventbus/IgnoreJRERequirement.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.eventbus/ParametricNullness : kotlin/Annotation { // dev.guavakt.eventbus/ParametricNullness|null[0]
+    constructor <init>() // dev.guavakt.eventbus/ParametricNullness.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.eventbus/Subscribe : kotlin/Annotation { // dev.guavakt.eventbus/Subscribe|null[0]
+    constructor <init>() // dev.guavakt.eventbus/Subscribe.<init>|<init>(){}[0]
+}
+
+abstract fun interface dev.guavakt.eventbus/SubscriberExceptionHandler { // dev.guavakt.eventbus/SubscriberExceptionHandler|null[0]
+    abstract fun handleException(kotlin/Throwable, dev.guavakt.eventbus/SubscriberExceptionContext) // dev.guavakt.eventbus/SubscriberExceptionHandler.handleException|handleException(kotlin.Throwable;dev.guavakt.eventbus.SubscriberExceptionContext){}[0]
+}
+
+final class dev.guavakt.eventbus/AsyncEventBus { // dev.guavakt.eventbus/AsyncEventBus|null[0]
+    constructor <init>(dev.guavakt.eventbus/AsyncEventBus.ExecutorLike) // dev.guavakt.eventbus/AsyncEventBus.<init>|<init>(dev.guavakt.eventbus.AsyncEventBus.ExecutorLike){}[0]
+    constructor <init>(dev.guavakt.eventbus/AsyncEventBus.ExecutorLike, dev.guavakt.eventbus/SubscriberExceptionHandler) // dev.guavakt.eventbus/AsyncEventBus.<init>|<init>(dev.guavakt.eventbus.AsyncEventBus.ExecutorLike;dev.guavakt.eventbus.SubscriberExceptionHandler){}[0]
+    constructor <init>(kotlin/String, dev.guavakt.eventbus/AsyncEventBus.ExecutorLike, dev.guavakt.eventbus/SubscriberExceptionHandler = ...) // dev.guavakt.eventbus/AsyncEventBus.<init>|<init>(kotlin.String;dev.guavakt.eventbus.AsyncEventBus.ExecutorLike;dev.guavakt.eventbus.SubscriberExceptionHandler){}[0]
+
+    final fun <#A1: kotlin/Any> registerHandler(kotlin/Any, kotlin.reflect/KClass<#A1>, kotlin/Function1<#A1, kotlin/Unit>) // dev.guavakt.eventbus/AsyncEventBus.registerHandler|registerHandler(kotlin.Any;kotlin.reflect.KClass<0:0>;kotlin.Function1<0:0,kotlin.Unit>){0§<kotlin.Any>}[0]
+    final fun identifier(): kotlin/String // dev.guavakt.eventbus/AsyncEventBus.identifier|identifier(){}[0]
+    final fun post(kotlin/Any) // dev.guavakt.eventbus/AsyncEventBus.post|post(kotlin.Any){}[0]
+    final fun register(kotlin/Any, kotlin.collections/Map<kotlin.reflect/KClass<*>, kotlin/Function1<kotlin/Any, kotlin/Unit>>) // dev.guavakt.eventbus/AsyncEventBus.register|register(kotlin.Any;kotlin.collections.Map<kotlin.reflect.KClass<*>,kotlin.Function1<kotlin.Any,kotlin.Unit>>){}[0]
+    final fun unregister(kotlin/Any) // dev.guavakt.eventbus/AsyncEventBus.unregister|unregister(kotlin.Any){}[0]
+
+    abstract fun interface ExecutorLike { // dev.guavakt.eventbus/AsyncEventBus.ExecutorLike|null[0]
+        abstract fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.eventbus/AsyncEventBus.ExecutorLike.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
+    }
+}
+
+final class dev.guavakt.eventbus/DeadEvent { // dev.guavakt.eventbus/DeadEvent|null[0]
+    constructor <init>(kotlin/Any, kotlin/Any) // dev.guavakt.eventbus/DeadEvent.<init>|<init>(kotlin.Any;kotlin.Any){}[0]
+
+    final val event // dev.guavakt.eventbus/DeadEvent.event|{}event[0]
+        final fun <get-event>(): kotlin/Any // dev.guavakt.eventbus/DeadEvent.event.<get-event>|<get-event>(){}[0]
+    final val source // dev.guavakt.eventbus/DeadEvent.source|{}source[0]
+        final fun <get-source>(): kotlin/Any // dev.guavakt.eventbus/DeadEvent.source.<get-source>|<get-source>(){}[0]
+}
+
+final class dev.guavakt.eventbus/EventBus { // dev.guavakt.eventbus/EventBus|null[0]
+    constructor <init>(dev.guavakt.eventbus/SubscriberExceptionHandler) // dev.guavakt.eventbus/EventBus.<init>|<init>(dev.guavakt.eventbus.SubscriberExceptionHandler){}[0]
+    constructor <init>(kotlin/String = ..., dev.guavakt.eventbus/SubscriberExceptionHandler = ...) // dev.guavakt.eventbus/EventBus.<init>|<init>(kotlin.String;dev.guavakt.eventbus.SubscriberExceptionHandler){}[0]
+
+    final fun identifier(): kotlin/String // dev.guavakt.eventbus/EventBus.identifier|identifier(){}[0]
+    final fun post(kotlin/Any) // dev.guavakt.eventbus/EventBus.post|post(kotlin.Any){}[0]
+    final fun register(kotlin/Any, kotlin.collections/Map<kotlin.reflect/KClass<*>, kotlin/Function1<kotlin/Any, kotlin/Unit>>) // dev.guavakt.eventbus/EventBus.register|register(kotlin.Any;kotlin.collections.Map<kotlin.reflect.KClass<*>,kotlin.Function1<kotlin.Any,kotlin.Unit>>){}[0]
+    final fun registerHandlerInternal(kotlin/Any, kotlin.reflect/KClass<*>, kotlin/Any, kotlin/Function1<kotlin/Any, kotlin/Unit>) // dev.guavakt.eventbus/EventBus.registerHandlerInternal|registerHandlerInternal(kotlin.Any;kotlin.reflect.KClass<*>;kotlin.Any;kotlin.Function1<kotlin.Any,kotlin.Unit>){}[0]
+    final fun unregister(kotlin/Any) // dev.guavakt.eventbus/EventBus.unregister|unregister(kotlin.Any){}[0]
+    final inline fun <#A1: reified kotlin/Any> registerHandler(kotlin/Any, noinline kotlin/Function1<#A1, kotlin/Unit>) // dev.guavakt.eventbus/EventBus.registerHandler|registerHandler(kotlin.Any;kotlin.Function1<0:0,kotlin.Unit>){0§<kotlin.Any>}[0]
+}
+
+final class dev.guavakt.eventbus/SubscriberExceptionContext { // dev.guavakt.eventbus/SubscriberExceptionContext|null[0]
+    final val event // dev.guavakt.eventbus/SubscriberExceptionContext.event|{}event[0]
+        final fun <get-event>(): kotlin/Any // dev.guavakt.eventbus/SubscriberExceptionContext.event.<get-event>|<get-event>(){}[0]
+    final val eventBus // dev.guavakt.eventbus/SubscriberExceptionContext.eventBus|{}eventBus[0]
+        final fun <get-eventBus>(): dev.guavakt.eventbus/EventBus // dev.guavakt.eventbus/SubscriberExceptionContext.eventBus.<get-eventBus>|<get-eventBus>(){}[0]
+    final val subscriber // dev.guavakt.eventbus/SubscriberExceptionContext.subscriber|{}subscriber[0]
+        final fun <get-subscriber>(): kotlin/Any // dev.guavakt.eventbus/SubscriberExceptionContext.subscriber.<get-subscriber>|<get-subscriber>(){}[0]
+    final val subscriberMethod // dev.guavakt.eventbus/SubscriberExceptionContext.subscriberMethod|{}subscriberMethod[0]
+        final fun <get-subscriberMethod>(): kotlin/String // dev.guavakt.eventbus/SubscriberExceptionContext.subscriberMethod.<get-subscriberMethod>|<get-subscriberMethod>(){}[0]
+}

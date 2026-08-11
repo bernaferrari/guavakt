@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  jvm-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: JVM tests (incl. required Guava oracle parity)
+        run: ./gradlew jvmTest :guavakt-parity:test --no-daemon
+      - name: Hollow inventory gate
+        run: python3 scripts/hollow_inventory.py
+      - name: Depth inventory gate
+        run: python3 scripts/depth_inventory.py
+      - name: Test count gate
+        run: python3 scripts/count_tests.py
+      - name: Immutable contract smoke
+        run: python3 scripts/immutable_audit.py
+
+  js-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: JS Node tests (all KMP modules)
+        run: ./gradlew jsNodeTest --no-daemon
+
+  wasm-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Wasm Node tests (all KMP modules)
+        run: ./gradlew wasmJsNodeTest --no-daemon
+
+  linux-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Linux x64 tests (all KMP modules)
+        run: ./gradlew linuxX64Test --no-daemon
+
+  api-and-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Saved public API compatibility
+        run: ./gradlew apiCheck --no-daemon
+      - name: Aggregated Dokka documentation
+        run: ./gradlew dokkaGenerate --no-daemon
+
+  publication-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Build local Maven publications without release credentials
+        run: ./gradlew publishToMavenLocal --no-daemon

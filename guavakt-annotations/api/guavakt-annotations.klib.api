@@ -1,0 +1,35 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-annotations>
+open annotation class dev.guavakt.annotations/Beta : kotlin/Annotation { // dev.guavakt.annotations/Beta|null[0]
+    constructor <init>() // dev.guavakt.annotations/Beta.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.annotations/GwtCompatible : kotlin/Annotation { // dev.guavakt.annotations/GwtCompatible|null[0]
+    constructor <init>(kotlin/Boolean = ..., kotlin/Boolean = ...) // dev.guavakt.annotations/GwtCompatible.<init>|<init>(kotlin.Boolean;kotlin.Boolean){}[0]
+
+    final val emulated // dev.guavakt.annotations/GwtCompatible.emulated|{}emulated[0]
+        final fun <get-emulated>(): kotlin/Boolean // dev.guavakt.annotations/GwtCompatible.emulated.<get-emulated>|<get-emulated>(){}[0]
+    final val serializable // dev.guavakt.annotations/GwtCompatible.serializable|{}serializable[0]
+        final fun <get-serializable>(): kotlin/Boolean // dev.guavakt.annotations/GwtCompatible.serializable.<get-serializable>|<get-serializable>(){}[0]
+}
+
+open annotation class dev.guavakt.annotations/GwtIncompatible : kotlin/Annotation { // dev.guavakt.annotations/GwtIncompatible|null[0]
+    constructor <init>(kotlin/String = ...) // dev.guavakt.annotations/GwtIncompatible.<init>|<init>(kotlin.String){}[0]
+
+    final val value // dev.guavakt.annotations/GwtIncompatible.value|{}value[0]
+        final fun <get-value>(): kotlin/String // dev.guavakt.annotations/GwtIncompatible.value.<get-value>|<get-value>(){}[0]
+}
+
+open annotation class dev.guavakt.annotations/J2ktIncompatible : kotlin/Annotation { // dev.guavakt.annotations/J2ktIncompatible|null[0]
+    constructor <init>() // dev.guavakt.annotations/J2ktIncompatible.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.annotations/VisibleForTesting : kotlin/Annotation { // dev.guavakt.annotations/VisibleForTesting|null[0]
+    constructor <init>() // dev.guavakt.annotations/VisibleForTesting.<init>|<init>(){}[0]
+}

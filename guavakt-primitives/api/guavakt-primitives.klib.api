@@ -1,0 +1,382 @@
+// Klib ABI Dump
+// Targets: [iosArm64, iosSimulatorArm64, iosX64, js, linuxX64, macosArm64, macosX64, mingwX64, wasmJs]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <dev.guavakt:guavakt-primitives>
+open annotation class dev.guavakt.primitives/IgnoreJRERequirement : kotlin/Annotation { // dev.guavakt.primitives/IgnoreJRERequirement|null[0]
+    constructor <init>() // dev.guavakt.primitives/IgnoreJRERequirement.<init>|<init>(){}[0]
+}
+
+open annotation class dev.guavakt.primitives/ParametricNullness : kotlin/Annotation { // dev.guavakt.primitives/ParametricNullness|null[0]
+    constructor <init>() // dev.guavakt.primitives/ParametricNullness.<init>|<init>(){}[0]
+}
+
+final class dev.guavakt.primitives/ImmutableDoubleArray { // dev.guavakt.primitives/ImmutableDoubleArray|null[0]
+    final fun asList(): kotlin.collections/List<kotlin/Double> // dev.guavakt.primitives/ImmutableDoubleArray.asList|asList(){}[0]
+    final fun contains(kotlin/Double): kotlin/Boolean // dev.guavakt.primitives/ImmutableDoubleArray.contains|contains(kotlin.Double){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.primitives/ImmutableDoubleArray.equals|equals(kotlin.Any?){}[0]
+    final fun get(kotlin/Int): kotlin/Double // dev.guavakt.primitives/ImmutableDoubleArray.get|get(kotlin.Int){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.primitives/ImmutableDoubleArray.hashCode|hashCode(){}[0]
+    final fun indexOf(kotlin/Double): kotlin/Int // dev.guavakt.primitives/ImmutableDoubleArray.indexOf|indexOf(kotlin.Double){}[0]
+    final fun isEmpty(): kotlin/Boolean // dev.guavakt.primitives/ImmutableDoubleArray.isEmpty|isEmpty(){}[0]
+    final fun lastIndexOf(kotlin/Double): kotlin/Int // dev.guavakt.primitives/ImmutableDoubleArray.lastIndexOf|lastIndexOf(kotlin.Double){}[0]
+    final fun length(): kotlin/Int // dev.guavakt.primitives/ImmutableDoubleArray.length|length(){}[0]
+    final fun toArray(): kotlin/DoubleArray // dev.guavakt.primitives/ImmutableDoubleArray.toArray|toArray(){}[0]
+
+    final class Builder { // dev.guavakt.primitives/ImmutableDoubleArray.Builder|null[0]
+        constructor <init>(kotlin/Int = ...) // dev.guavakt.primitives/ImmutableDoubleArray.Builder.<init>|<init>(kotlin.Int){}[0]
+
+        final fun add(kotlin/Double): dev.guavakt.primitives/ImmutableDoubleArray.Builder // dev.guavakt.primitives/ImmutableDoubleArray.Builder.add|add(kotlin.Double){}[0]
+        final fun addAll(kotlin.collections/Iterable<kotlin/Double>): dev.guavakt.primitives/ImmutableDoubleArray.Builder // dev.guavakt.primitives/ImmutableDoubleArray.Builder.addAll|addAll(kotlin.collections.Iterable<kotlin.Double>){}[0]
+        final fun addAll(kotlin/DoubleArray): dev.guavakt.primitives/ImmutableDoubleArray.Builder // dev.guavakt.primitives/ImmutableDoubleArray.Builder.addAll|addAll(kotlin.DoubleArray){}[0]
+        final fun build(): dev.guavakt.primitives/ImmutableDoubleArray // dev.guavakt.primitives/ImmutableDoubleArray.Builder.build|build(){}[0]
+    }
+
+    final object Companion { // dev.guavakt.primitives/ImmutableDoubleArray.Companion|null[0]
+        final fun builder(): dev.guavakt.primitives/ImmutableDoubleArray.Builder // dev.guavakt.primitives/ImmutableDoubleArray.Companion.builder|builder(){}[0]
+        final fun builder(kotlin/Int): dev.guavakt.primitives/ImmutableDoubleArray.Builder // dev.guavakt.primitives/ImmutableDoubleArray.Companion.builder|builder(kotlin.Int){}[0]
+        final fun copyOf(kotlin.collections/Collection<kotlin/Double>): dev.guavakt.primitives/ImmutableDoubleArray // dev.guavakt.primitives/ImmutableDoubleArray.Companion.copyOf|copyOf(kotlin.collections.Collection<kotlin.Double>){}[0]
+        final fun copyOf(kotlin/DoubleArray): dev.guavakt.primitives/ImmutableDoubleArray // dev.guavakt.primitives/ImmutableDoubleArray.Companion.copyOf|copyOf(kotlin.DoubleArray){}[0]
+        final fun of(): dev.guavakt.primitives/ImmutableDoubleArray // dev.guavakt.primitives/ImmutableDoubleArray.Companion.of|of(){}[0]
+        final fun of(kotlin/Double): dev.guavakt.primitives/ImmutableDoubleArray // dev.guavakt.primitives/ImmutableDoubleArray.Companion.of|of(kotlin.Double){}[0]
+        final fun of(kotlin/Double, kotlin/Double): dev.guavakt.primitives/ImmutableDoubleArray // dev.guavakt.primitives/ImmutableDoubleArray.Companion.of|of(kotlin.Double;kotlin.Double){}[0]
+    }
+}
+
+final class dev.guavakt.primitives/ImmutableIntArray { // dev.guavakt.primitives/ImmutableIntArray|null[0]
+    final fun asList(): kotlin.collections/List<kotlin/Int> // dev.guavakt.primitives/ImmutableIntArray.asList|asList(){}[0]
+    final fun contains(kotlin/Int): kotlin/Boolean // dev.guavakt.primitives/ImmutableIntArray.contains|contains(kotlin.Int){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.primitives/ImmutableIntArray.equals|equals(kotlin.Any?){}[0]
+    final fun get(kotlin/Int): kotlin/Int // dev.guavakt.primitives/ImmutableIntArray.get|get(kotlin.Int){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.primitives/ImmutableIntArray.hashCode|hashCode(){}[0]
+    final fun indexOf(kotlin/Int): kotlin/Int // dev.guavakt.primitives/ImmutableIntArray.indexOf|indexOf(kotlin.Int){}[0]
+    final fun isEmpty(): kotlin/Boolean // dev.guavakt.primitives/ImmutableIntArray.isEmpty|isEmpty(){}[0]
+    final fun lastIndexOf(kotlin/Int): kotlin/Int // dev.guavakt.primitives/ImmutableIntArray.lastIndexOf|lastIndexOf(kotlin.Int){}[0]
+    final fun length(): kotlin/Int // dev.guavakt.primitives/ImmutableIntArray.length|length(){}[0]
+    final fun toArray(): kotlin/IntArray // dev.guavakt.primitives/ImmutableIntArray.toArray|toArray(){}[0]
+
+    final class Builder { // dev.guavakt.primitives/ImmutableIntArray.Builder|null[0]
+        constructor <init>(kotlin/Int = ...) // dev.guavakt.primitives/ImmutableIntArray.Builder.<init>|<init>(kotlin.Int){}[0]
+
+        final fun add(kotlin/Int): dev.guavakt.primitives/ImmutableIntArray.Builder // dev.guavakt.primitives/ImmutableIntArray.Builder.add|add(kotlin.Int){}[0]
+        final fun addAll(kotlin.collections/Iterable<kotlin/Int>): dev.guavakt.primitives/ImmutableIntArray.Builder // dev.guavakt.primitives/ImmutableIntArray.Builder.addAll|addAll(kotlin.collections.Iterable<kotlin.Int>){}[0]
+        final fun addAll(kotlin/IntArray): dev.guavakt.primitives/ImmutableIntArray.Builder // dev.guavakt.primitives/ImmutableIntArray.Builder.addAll|addAll(kotlin.IntArray){}[0]
+        final fun build(): dev.guavakt.primitives/ImmutableIntArray // dev.guavakt.primitives/ImmutableIntArray.Builder.build|build(){}[0]
+    }
+
+    final object Companion { // dev.guavakt.primitives/ImmutableIntArray.Companion|null[0]
+        final fun builder(): dev.guavakt.primitives/ImmutableIntArray.Builder // dev.guavakt.primitives/ImmutableIntArray.Companion.builder|builder(){}[0]
+        final fun builder(kotlin/Int): dev.guavakt.primitives/ImmutableIntArray.Builder // dev.guavakt.primitives/ImmutableIntArray.Companion.builder|builder(kotlin.Int){}[0]
+        final fun copyOf(kotlin.collections/Collection<kotlin/Int>): dev.guavakt.primitives/ImmutableIntArray // dev.guavakt.primitives/ImmutableIntArray.Companion.copyOf|copyOf(kotlin.collections.Collection<kotlin.Int>){}[0]
+        final fun copyOf(kotlin/IntArray): dev.guavakt.primitives/ImmutableIntArray // dev.guavakt.primitives/ImmutableIntArray.Companion.copyOf|copyOf(kotlin.IntArray){}[0]
+        final fun of(): dev.guavakt.primitives/ImmutableIntArray // dev.guavakt.primitives/ImmutableIntArray.Companion.of|of(){}[0]
+        final fun of(kotlin/Int): dev.guavakt.primitives/ImmutableIntArray // dev.guavakt.primitives/ImmutableIntArray.Companion.of|of(kotlin.Int){}[0]
+        final fun of(kotlin/Int, kotlin/Int): dev.guavakt.primitives/ImmutableIntArray // dev.guavakt.primitives/ImmutableIntArray.Companion.of|of(kotlin.Int;kotlin.Int){}[0]
+    }
+}
+
+final class dev.guavakt.primitives/ImmutableLongArray { // dev.guavakt.primitives/ImmutableLongArray|null[0]
+    final fun asList(): kotlin.collections/List<kotlin/Long> // dev.guavakt.primitives/ImmutableLongArray.asList|asList(){}[0]
+    final fun contains(kotlin/Long): kotlin/Boolean // dev.guavakt.primitives/ImmutableLongArray.contains|contains(kotlin.Long){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.primitives/ImmutableLongArray.equals|equals(kotlin.Any?){}[0]
+    final fun get(kotlin/Int): kotlin/Long // dev.guavakt.primitives/ImmutableLongArray.get|get(kotlin.Int){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.primitives/ImmutableLongArray.hashCode|hashCode(){}[0]
+    final fun indexOf(kotlin/Long): kotlin/Int // dev.guavakt.primitives/ImmutableLongArray.indexOf|indexOf(kotlin.Long){}[0]
+    final fun isEmpty(): kotlin/Boolean // dev.guavakt.primitives/ImmutableLongArray.isEmpty|isEmpty(){}[0]
+    final fun lastIndexOf(kotlin/Long): kotlin/Int // dev.guavakt.primitives/ImmutableLongArray.lastIndexOf|lastIndexOf(kotlin.Long){}[0]
+    final fun length(): kotlin/Int // dev.guavakt.primitives/ImmutableLongArray.length|length(){}[0]
+    final fun toArray(): kotlin/LongArray // dev.guavakt.primitives/ImmutableLongArray.toArray|toArray(){}[0]
+
+    final class Builder { // dev.guavakt.primitives/ImmutableLongArray.Builder|null[0]
+        constructor <init>(kotlin/Int = ...) // dev.guavakt.primitives/ImmutableLongArray.Builder.<init>|<init>(kotlin.Int){}[0]
+
+        final fun add(kotlin/Long): dev.guavakt.primitives/ImmutableLongArray.Builder // dev.guavakt.primitives/ImmutableLongArray.Builder.add|add(kotlin.Long){}[0]
+        final fun addAll(kotlin.collections/Iterable<kotlin/Long>): dev.guavakt.primitives/ImmutableLongArray.Builder // dev.guavakt.primitives/ImmutableLongArray.Builder.addAll|addAll(kotlin.collections.Iterable<kotlin.Long>){}[0]
+        final fun addAll(kotlin/LongArray): dev.guavakt.primitives/ImmutableLongArray.Builder // dev.guavakt.primitives/ImmutableLongArray.Builder.addAll|addAll(kotlin.LongArray){}[0]
+        final fun build(): dev.guavakt.primitives/ImmutableLongArray // dev.guavakt.primitives/ImmutableLongArray.Builder.build|build(){}[0]
+    }
+
+    final object Companion { // dev.guavakt.primitives/ImmutableLongArray.Companion|null[0]
+        final fun builder(): dev.guavakt.primitives/ImmutableLongArray.Builder // dev.guavakt.primitives/ImmutableLongArray.Companion.builder|builder(){}[0]
+        final fun builder(kotlin/Int): dev.guavakt.primitives/ImmutableLongArray.Builder // dev.guavakt.primitives/ImmutableLongArray.Companion.builder|builder(kotlin.Int){}[0]
+        final fun copyOf(kotlin.collections/Collection<kotlin/Long>): dev.guavakt.primitives/ImmutableLongArray // dev.guavakt.primitives/ImmutableLongArray.Companion.copyOf|copyOf(kotlin.collections.Collection<kotlin.Long>){}[0]
+        final fun copyOf(kotlin/LongArray): dev.guavakt.primitives/ImmutableLongArray // dev.guavakt.primitives/ImmutableLongArray.Companion.copyOf|copyOf(kotlin.LongArray){}[0]
+        final fun of(): dev.guavakt.primitives/ImmutableLongArray // dev.guavakt.primitives/ImmutableLongArray.Companion.of|of(){}[0]
+        final fun of(kotlin/Long): dev.guavakt.primitives/ImmutableLongArray // dev.guavakt.primitives/ImmutableLongArray.Companion.of|of(kotlin.Long){}[0]
+        final fun of(kotlin/Long, kotlin/Long): dev.guavakt.primitives/ImmutableLongArray // dev.guavakt.primitives/ImmutableLongArray.Companion.of|of(kotlin.Long;kotlin.Long){}[0]
+    }
+}
+
+final class dev.guavakt.primitives/UnsignedInteger : kotlin/Comparable<dev.guavakt.primitives/UnsignedInteger> { // dev.guavakt.primitives/UnsignedInteger|null[0]
+    final fun compareTo(dev.guavakt.primitives/UnsignedInteger): kotlin/Int // dev.guavakt.primitives/UnsignedInteger.compareTo|compareTo(dev.guavakt.primitives.UnsignedInteger){}[0]
+    final fun dividedBy(dev.guavakt.primitives/UnsignedInteger): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.dividedBy|dividedBy(dev.guavakt.primitives.UnsignedInteger){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.primitives/UnsignedInteger.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.primitives/UnsignedInteger.hashCode|hashCode(){}[0]
+    final fun minus(dev.guavakt.primitives/UnsignedInteger): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.minus|minus(dev.guavakt.primitives.UnsignedInteger){}[0]
+    final fun mod(dev.guavakt.primitives/UnsignedInteger): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.mod|mod(dev.guavakt.primitives.UnsignedInteger){}[0]
+    final fun plus(dev.guavakt.primitives/UnsignedInteger): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.plus|plus(dev.guavakt.primitives.UnsignedInteger){}[0]
+    final fun times(dev.guavakt.primitives/UnsignedInteger): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.times|times(dev.guavakt.primitives.UnsignedInteger){}[0]
+    final fun toDouble(): kotlin/Double // dev.guavakt.primitives/UnsignedInteger.toDouble|toDouble(){}[0]
+    final fun toFloat(): kotlin/Float // dev.guavakt.primitives/UnsignedInteger.toFloat|toFloat(){}[0]
+    final fun toInt(): kotlin/Int // dev.guavakt.primitives/UnsignedInteger.toInt|toInt(){}[0]
+    final fun toLong(): kotlin/Long // dev.guavakt.primitives/UnsignedInteger.toLong|toLong(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.primitives/UnsignedInteger.toString|toString(){}[0]
+
+    final object Companion { // dev.guavakt.primitives/UnsignedInteger.Companion|null[0]
+        final val MAX_VALUE // dev.guavakt.primitives/UnsignedInteger.Companion.MAX_VALUE|{}MAX_VALUE[0]
+            final fun <get-MAX_VALUE>(): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.Companion.MAX_VALUE.<get-MAX_VALUE>|<get-MAX_VALUE>(){}[0]
+        final val ONE // dev.guavakt.primitives/UnsignedInteger.Companion.ONE|{}ONE[0]
+            final fun <get-ONE>(): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.Companion.ONE.<get-ONE>|<get-ONE>(){}[0]
+        final val ZERO // dev.guavakt.primitives/UnsignedInteger.Companion.ZERO|{}ZERO[0]
+            final fun <get-ZERO>(): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.Companion.ZERO.<get-ZERO>|<get-ZERO>(){}[0]
+
+        final fun fromIntBits(kotlin/Int): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.Companion.fromIntBits|fromIntBits(kotlin.Int){}[0]
+        final fun valueOf(kotlin/Long): dev.guavakt.primitives/UnsignedInteger // dev.guavakt.primitives/UnsignedInteger.Companion.valueOf|valueOf(kotlin.Long){}[0]
+    }
+}
+
+final class dev.guavakt.primitives/UnsignedLong : kotlin/Comparable<dev.guavakt.primitives/UnsignedLong> { // dev.guavakt.primitives/UnsignedLong|null[0]
+    final fun compareTo(dev.guavakt.primitives/UnsignedLong): kotlin/Int // dev.guavakt.primitives/UnsignedLong.compareTo|compareTo(dev.guavakt.primitives.UnsignedLong){}[0]
+    final fun dividedBy(dev.guavakt.primitives/UnsignedLong): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.dividedBy|dividedBy(dev.guavakt.primitives.UnsignedLong){}[0]
+    final fun equals(kotlin/Any?): kotlin/Boolean // dev.guavakt.primitives/UnsignedLong.equals|equals(kotlin.Any?){}[0]
+    final fun hashCode(): kotlin/Int // dev.guavakt.primitives/UnsignedLong.hashCode|hashCode(){}[0]
+    final fun minus(dev.guavakt.primitives/UnsignedLong): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.minus|minus(dev.guavakt.primitives.UnsignedLong){}[0]
+    final fun mod(dev.guavakt.primitives/UnsignedLong): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.mod|mod(dev.guavakt.primitives.UnsignedLong){}[0]
+    final fun plus(dev.guavakt.primitives/UnsignedLong): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.plus|plus(dev.guavakt.primitives.UnsignedLong){}[0]
+    final fun times(dev.guavakt.primitives/UnsignedLong): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.times|times(dev.guavakt.primitives.UnsignedLong){}[0]
+    final fun toBigEndianBytes(): kotlin/ByteArray // dev.guavakt.primitives/UnsignedLong.toBigEndianBytes|toBigEndianBytes(){}[0]
+    final fun toDouble(): kotlin/Double // dev.guavakt.primitives/UnsignedLong.toDouble|toDouble(){}[0]
+    final fun toLong(): kotlin/Long // dev.guavakt.primitives/UnsignedLong.toLong|toLong(){}[0]
+    final fun toString(): kotlin/String // dev.guavakt.primitives/UnsignedLong.toString|toString(){}[0]
+    final fun toString(kotlin/Int): kotlin/String // dev.guavakt.primitives/UnsignedLong.toString|toString(kotlin.Int){}[0]
+
+    final object Companion { // dev.guavakt.primitives/UnsignedLong.Companion|null[0]
+        final val MAX_VALUE // dev.guavakt.primitives/UnsignedLong.Companion.MAX_VALUE|{}MAX_VALUE[0]
+            final fun <get-MAX_VALUE>(): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.Companion.MAX_VALUE.<get-MAX_VALUE>|<get-MAX_VALUE>(){}[0]
+        final val ONE // dev.guavakt.primitives/UnsignedLong.Companion.ONE|{}ONE[0]
+            final fun <get-ONE>(): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.Companion.ONE.<get-ONE>|<get-ONE>(){}[0]
+        final val ZERO // dev.guavakt.primitives/UnsignedLong.Companion.ZERO|{}ZERO[0]
+            final fun <get-ZERO>(): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.Companion.ZERO.<get-ZERO>|<get-ZERO>(){}[0]
+
+        final fun fromLongBits(kotlin/Long): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.Companion.fromLongBits|fromLongBits(kotlin.Long){}[0]
+        final fun valueOf(kotlin/Long): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.Companion.valueOf|valueOf(kotlin.Long){}[0]
+        final fun valueOf(kotlin/String): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.Companion.valueOf|valueOf(kotlin.String){}[0]
+        final fun valueOf(kotlin/String, kotlin/Int): dev.guavakt.primitives/UnsignedLong // dev.guavakt.primitives/UnsignedLong.Companion.valueOf|valueOf(kotlin.String;kotlin.Int){}[0]
+    }
+}
+
+final object dev.guavakt.primitives/Booleans { // dev.guavakt.primitives/Booleans|null[0]
+    final fun compare(kotlin/Boolean, kotlin/Boolean): kotlin/Int // dev.guavakt.primitives/Booleans.compare|compare(kotlin.Boolean;kotlin.Boolean){}[0]
+    final fun concat(kotlin/Array<out kotlin/BooleanArray>...): kotlin/BooleanArray // dev.guavakt.primitives/Booleans.concat|concat(kotlin.Array<out|kotlin.BooleanArray>...){}[0]
+    final fun contains(kotlin/BooleanArray, kotlin/Boolean): kotlin/Boolean // dev.guavakt.primitives/Booleans.contains|contains(kotlin.BooleanArray;kotlin.Boolean){}[0]
+    final fun falseFirst(): kotlin/Comparator<kotlin/Boolean> // dev.guavakt.primitives/Booleans.falseFirst|falseFirst(){}[0]
+    final fun indexOf(kotlin/BooleanArray, kotlin/Boolean): kotlin/Int // dev.guavakt.primitives/Booleans.indexOf|indexOf(kotlin.BooleanArray;kotlin.Boolean){}[0]
+    final fun join(kotlin/String, kotlin/BooleanArray...): kotlin/String // dev.guavakt.primitives/Booleans.join|join(kotlin.String;kotlin.BooleanArray...){}[0]
+    final fun lastIndexOf(kotlin/BooleanArray, kotlin/Boolean): kotlin/Int // dev.guavakt.primitives/Booleans.lastIndexOf|lastIndexOf(kotlin.BooleanArray;kotlin.Boolean){}[0]
+    final fun trueFirst(): kotlin/Comparator<kotlin/Boolean> // dev.guavakt.primitives/Booleans.trueFirst|trueFirst(){}[0]
+}
+
+final object dev.guavakt.primitives/Bytes { // dev.guavakt.primitives/Bytes|null[0]
+    final const val BYTES // dev.guavakt.primitives/Bytes.BYTES|{}BYTES[0]
+        final fun <get-BYTES>(): kotlin/Int // dev.guavakt.primitives/Bytes.BYTES.<get-BYTES>|<get-BYTES>(){}[0]
+
+    final fun asList(kotlin/ByteArray...): kotlin.collections/List<kotlin/Byte> // dev.guavakt.primitives/Bytes.asList|asList(kotlin.ByteArray...){}[0]
+    final fun concat(kotlin/Array<out kotlin/ByteArray>...): kotlin/ByteArray // dev.guavakt.primitives/Bytes.concat|concat(kotlin.Array<out|kotlin.ByteArray>...){}[0]
+    final fun contains(kotlin/ByteArray, kotlin/Byte): kotlin/Boolean // dev.guavakt.primitives/Bytes.contains|contains(kotlin.ByteArray;kotlin.Byte){}[0]
+    final fun hashCode(kotlin/Byte): kotlin/Int // dev.guavakt.primitives/Bytes.hashCode|hashCode(kotlin.Byte){}[0]
+    final fun indexOf(kotlin/ByteArray, kotlin/Byte): kotlin/Int // dev.guavakt.primitives/Bytes.indexOf|indexOf(kotlin.ByteArray;kotlin.Byte){}[0]
+    final fun lastIndexOf(kotlin/ByteArray, kotlin/Byte): kotlin/Int // dev.guavakt.primitives/Bytes.lastIndexOf|lastIndexOf(kotlin.ByteArray;kotlin.Byte){}[0]
+    final fun reverse(kotlin/ByteArray) // dev.guavakt.primitives/Bytes.reverse|reverse(kotlin.ByteArray){}[0]
+    final fun reverse(kotlin/ByteArray, kotlin/Int, kotlin/Int) // dev.guavakt.primitives/Bytes.reverse|reverse(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.primitives/Chars { // dev.guavakt.primitives/Chars|null[0]
+    final const val BYTES // dev.guavakt.primitives/Chars.BYTES|{}BYTES[0]
+        final fun <get-BYTES>(): kotlin/Int // dev.guavakt.primitives/Chars.BYTES.<get-BYTES>|<get-BYTES>(){}[0]
+
+    final fun checkedCast(kotlin/Long): kotlin/Char // dev.guavakt.primitives/Chars.checkedCast|checkedCast(kotlin.Long){}[0]
+    final fun compare(kotlin/Char, kotlin/Char): kotlin/Int // dev.guavakt.primitives/Chars.compare|compare(kotlin.Char;kotlin.Char){}[0]
+    final fun concat(kotlin/Array<out kotlin/CharArray>...): kotlin/CharArray // dev.guavakt.primitives/Chars.concat|concat(kotlin.Array<out|kotlin.CharArray>...){}[0]
+    final fun contains(kotlin/CharArray, kotlin/Char): kotlin/Boolean // dev.guavakt.primitives/Chars.contains|contains(kotlin.CharArray;kotlin.Char){}[0]
+    final fun hashCode(kotlin/Char): kotlin/Int // dev.guavakt.primitives/Chars.hashCode|hashCode(kotlin.Char){}[0]
+    final fun indexOf(kotlin/CharArray, kotlin/Char): kotlin/Int // dev.guavakt.primitives/Chars.indexOf|indexOf(kotlin.CharArray;kotlin.Char){}[0]
+    final fun max(kotlin/CharArray): kotlin/Char // dev.guavakt.primitives/Chars.max|max(kotlin.CharArray){}[0]
+    final fun min(kotlin/CharArray): kotlin/Char // dev.guavakt.primitives/Chars.min|min(kotlin.CharArray){}[0]
+    final fun saturatedCast(kotlin/Long): kotlin/Char // dev.guavakt.primitives/Chars.saturatedCast|saturatedCast(kotlin.Long){}[0]
+}
+
+final object dev.guavakt.primitives/Doubles { // dev.guavakt.primitives/Doubles|null[0]
+    final const val BYTES // dev.guavakt.primitives/Doubles.BYTES|{}BYTES[0]
+        final fun <get-BYTES>(): kotlin/Int // dev.guavakt.primitives/Doubles.BYTES.<get-BYTES>|<get-BYTES>(){}[0]
+
+    final fun compare(kotlin/Double, kotlin/Double): kotlin/Int // dev.guavakt.primitives/Doubles.compare|compare(kotlin.Double;kotlin.Double){}[0]
+    final fun constrainToRange(kotlin/Double, kotlin/Double, kotlin/Double): kotlin/Double // dev.guavakt.primitives/Doubles.constrainToRange|constrainToRange(kotlin.Double;kotlin.Double;kotlin.Double){}[0]
+    final fun contains(kotlin/DoubleArray, kotlin/Double): kotlin/Boolean // dev.guavakt.primitives/Doubles.contains|contains(kotlin.DoubleArray;kotlin.Double){}[0]
+    final fun hashCode(kotlin/Double): kotlin/Int // dev.guavakt.primitives/Doubles.hashCode|hashCode(kotlin.Double){}[0]
+    final fun indexOf(kotlin/DoubleArray, kotlin/Double): kotlin/Int // dev.guavakt.primitives/Doubles.indexOf|indexOf(kotlin.DoubleArray;kotlin.Double){}[0]
+    final fun isFinite(kotlin/Double): kotlin/Boolean // dev.guavakt.primitives/Doubles.isFinite|isFinite(kotlin.Double){}[0]
+    final fun join(kotlin/String, kotlin/DoubleArray...): kotlin/String // dev.guavakt.primitives/Doubles.join|join(kotlin.String;kotlin.DoubleArray...){}[0]
+    final fun max(kotlin/DoubleArray): kotlin/Double // dev.guavakt.primitives/Doubles.max|max(kotlin.DoubleArray){}[0]
+    final fun min(kotlin/DoubleArray): kotlin/Double // dev.guavakt.primitives/Doubles.min|min(kotlin.DoubleArray){}[0]
+    final fun tryParse(kotlin/String): kotlin/Double? // dev.guavakt.primitives/Doubles.tryParse|tryParse(kotlin.String){}[0]
+}
+
+final object dev.guavakt.primitives/Floats { // dev.guavakt.primitives/Floats|null[0]
+    final const val BYTES // dev.guavakt.primitives/Floats.BYTES|{}BYTES[0]
+        final fun <get-BYTES>(): kotlin/Int // dev.guavakt.primitives/Floats.BYTES.<get-BYTES>|<get-BYTES>(){}[0]
+
+    final fun compare(kotlin/Float, kotlin/Float): kotlin/Int // dev.guavakt.primitives/Floats.compare|compare(kotlin.Float;kotlin.Float){}[0]
+    final fun contains(kotlin/FloatArray, kotlin/Float): kotlin/Boolean // dev.guavakt.primitives/Floats.contains|contains(kotlin.FloatArray;kotlin.Float){}[0]
+    final fun hashCode(kotlin/Float): kotlin/Int // dev.guavakt.primitives/Floats.hashCode|hashCode(kotlin.Float){}[0]
+    final fun indexOf(kotlin/FloatArray, kotlin/Float): kotlin/Int // dev.guavakt.primitives/Floats.indexOf|indexOf(kotlin.FloatArray;kotlin.Float){}[0]
+    final fun isFinite(kotlin/Float): kotlin/Boolean // dev.guavakt.primitives/Floats.isFinite|isFinite(kotlin.Float){}[0]
+    final fun max(kotlin/FloatArray): kotlin/Float // dev.guavakt.primitives/Floats.max|max(kotlin.FloatArray){}[0]
+    final fun min(kotlin/FloatArray): kotlin/Float // dev.guavakt.primitives/Floats.min|min(kotlin.FloatArray){}[0]
+    final fun tryParse(kotlin/String): kotlin/Float? // dev.guavakt.primitives/Floats.tryParse|tryParse(kotlin.String){}[0]
+}
+
+final object dev.guavakt.primitives/Ints { // dev.guavakt.primitives/Ints|null[0]
+    final const val BYTES // dev.guavakt.primitives/Ints.BYTES|{}BYTES[0]
+        final fun <get-BYTES>(): kotlin/Int // dev.guavakt.primitives/Ints.BYTES.<get-BYTES>|<get-BYTES>(){}[0]
+    final const val MAX_POWER_OF_TWO // dev.guavakt.primitives/Ints.MAX_POWER_OF_TWO|{}MAX_POWER_OF_TWO[0]
+        final fun <get-MAX_POWER_OF_TWO>(): kotlin/Int // dev.guavakt.primitives/Ints.MAX_POWER_OF_TWO.<get-MAX_POWER_OF_TWO>|<get-MAX_POWER_OF_TWO>(){}[0]
+
+    final fun asList(kotlin/IntArray...): kotlin.collections/List<kotlin/Int> // dev.guavakt.primitives/Ints.asList|asList(kotlin.IntArray...){}[0]
+    final fun checkedCast(kotlin/Long): kotlin/Int // dev.guavakt.primitives/Ints.checkedCast|checkedCast(kotlin.Long){}[0]
+    final fun compare(kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.primitives/Ints.compare|compare(kotlin.Int;kotlin.Int){}[0]
+    final fun concat(kotlin/Array<out kotlin/IntArray>...): kotlin/IntArray // dev.guavakt.primitives/Ints.concat|concat(kotlin.Array<out|kotlin.IntArray>...){}[0]
+    final fun constrainToRange(kotlin/Int, kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.primitives/Ints.constrainToRange|constrainToRange(kotlin.Int;kotlin.Int;kotlin.Int){}[0]
+    final fun contains(kotlin/IntArray, kotlin/Int): kotlin/Boolean // dev.guavakt.primitives/Ints.contains|contains(kotlin.IntArray;kotlin.Int){}[0]
+    final fun hashCode(kotlin/Int): kotlin/Int // dev.guavakt.primitives/Ints.hashCode|hashCode(kotlin.Int){}[0]
+    final fun indexOf(kotlin/IntArray, kotlin/Int): kotlin/Int // dev.guavakt.primitives/Ints.indexOf|indexOf(kotlin.IntArray;kotlin.Int){}[0]
+    final fun join(kotlin/String, kotlin/IntArray...): kotlin/String // dev.guavakt.primitives/Ints.join|join(kotlin.String;kotlin.IntArray...){}[0]
+    final fun lastIndexOf(kotlin/IntArray, kotlin/Int): kotlin/Int // dev.guavakt.primitives/Ints.lastIndexOf|lastIndexOf(kotlin.IntArray;kotlin.Int){}[0]
+    final fun max(kotlin/IntArray): kotlin/Int // dev.guavakt.primitives/Ints.max|max(kotlin.IntArray){}[0]
+    final fun min(kotlin/IntArray): kotlin/Int // dev.guavakt.primitives/Ints.min|min(kotlin.IntArray){}[0]
+    final fun saturatedCast(kotlin/Long): kotlin/Int // dev.guavakt.primitives/Ints.saturatedCast|saturatedCast(kotlin.Long){}[0]
+    final fun toArray(kotlin.collections/Collection<kotlin/Int>): kotlin/IntArray // dev.guavakt.primitives/Ints.toArray|toArray(kotlin.collections.Collection<kotlin.Int>){}[0]
+    final fun tryParse(kotlin/String): kotlin/Int? // dev.guavakt.primitives/Ints.tryParse|tryParse(kotlin.String){}[0]
+    final fun tryParse(kotlin/String, kotlin/Int): kotlin/Int? // dev.guavakt.primitives/Ints.tryParse|tryParse(kotlin.String;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.primitives/Longs { // dev.guavakt.primitives/Longs|null[0]
+    final const val BYTES // dev.guavakt.primitives/Longs.BYTES|{}BYTES[0]
+        final fun <get-BYTES>(): kotlin/Int // dev.guavakt.primitives/Longs.BYTES.<get-BYTES>|<get-BYTES>(){}[0]
+    final const val MAX_POWER_OF_TWO // dev.guavakt.primitives/Longs.MAX_POWER_OF_TWO|{}MAX_POWER_OF_TWO[0]
+        final fun <get-MAX_POWER_OF_TWO>(): kotlin/Long // dev.guavakt.primitives/Longs.MAX_POWER_OF_TWO.<get-MAX_POWER_OF_TWO>|<get-MAX_POWER_OF_TWO>(){}[0]
+
+    final fun compare(kotlin/Long, kotlin/Long): kotlin/Int // dev.guavakt.primitives/Longs.compare|compare(kotlin.Long;kotlin.Long){}[0]
+    final fun concat(kotlin/Array<out kotlin/LongArray>...): kotlin/LongArray // dev.guavakt.primitives/Longs.concat|concat(kotlin.Array<out|kotlin.LongArray>...){}[0]
+    final fun constrainToRange(kotlin/Long, kotlin/Long, kotlin/Long): kotlin/Long // dev.guavakt.primitives/Longs.constrainToRange|constrainToRange(kotlin.Long;kotlin.Long;kotlin.Long){}[0]
+    final fun contains(kotlin/LongArray, kotlin/Long): kotlin/Boolean // dev.guavakt.primitives/Longs.contains|contains(kotlin.LongArray;kotlin.Long){}[0]
+    final fun hashCode(kotlin/Long): kotlin/Int // dev.guavakt.primitives/Longs.hashCode|hashCode(kotlin.Long){}[0]
+    final fun indexOf(kotlin/LongArray, kotlin/Long): kotlin/Int // dev.guavakt.primitives/Longs.indexOf|indexOf(kotlin.LongArray;kotlin.Long){}[0]
+    final fun join(kotlin/String, kotlin/LongArray...): kotlin/String // dev.guavakt.primitives/Longs.join|join(kotlin.String;kotlin.LongArray...){}[0]
+    final fun lastIndexOf(kotlin/LongArray, kotlin/Long): kotlin/Int // dev.guavakt.primitives/Longs.lastIndexOf|lastIndexOf(kotlin.LongArray;kotlin.Long){}[0]
+    final fun max(kotlin/LongArray): kotlin/Long // dev.guavakt.primitives/Longs.max|max(kotlin.LongArray){}[0]
+    final fun min(kotlin/LongArray): kotlin/Long // dev.guavakt.primitives/Longs.min|min(kotlin.LongArray){}[0]
+    final fun reverse(kotlin/LongArray) // dev.guavakt.primitives/Longs.reverse|reverse(kotlin.LongArray){}[0]
+    final fun reverse(kotlin/LongArray, kotlin/Int, kotlin/Int) // dev.guavakt.primitives/Longs.reverse|reverse(kotlin.LongArray;kotlin.Int;kotlin.Int){}[0]
+    final fun tryParse(kotlin/String): kotlin/Long? // dev.guavakt.primitives/Longs.tryParse|tryParse(kotlin.String){}[0]
+    final fun tryParse(kotlin/String, kotlin/Int): kotlin/Long? // dev.guavakt.primitives/Longs.tryParse|tryParse(kotlin.String;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.primitives/Primitives { // dev.guavakt.primitives/Primitives|null[0]
+    final fun <#A1: kotlin/Any> unwrap(kotlin.reflect/KClass<#A1>): kotlin.reflect/KClass<#A1> // dev.guavakt.primitives/Primitives.unwrap|unwrap(kotlin.reflect.KClass<0:0>){0§<kotlin.Any>}[0]
+    final fun <#A1: kotlin/Any> wrap(kotlin.reflect/KClass<#A1>): kotlin.reflect/KClass<#A1> // dev.guavakt.primitives/Primitives.wrap|wrap(kotlin.reflect.KClass<0:0>){0§<kotlin.Any>}[0]
+    final fun allPrimitiveTypes(): kotlin.collections/Set<kotlin.reflect/KClass<*>> // dev.guavakt.primitives/Primitives.allPrimitiveTypes|allPrimitiveTypes(){}[0]
+    final fun allWrapperTypes(): kotlin.collections/Set<kotlin.reflect/KClass<*>> // dev.guavakt.primitives/Primitives.allWrapperTypes|allWrapperTypes(){}[0]
+    final fun isWrapperType(kotlin.reflect/KClass<*>): kotlin/Boolean // dev.guavakt.primitives/Primitives.isWrapperType|isWrapperType(kotlin.reflect.KClass<*>){}[0]
+}
+
+final object dev.guavakt.primitives/Shorts { // dev.guavakt.primitives/Shorts|null[0]
+    final const val BYTES // dev.guavakt.primitives/Shorts.BYTES|{}BYTES[0]
+        final fun <get-BYTES>(): kotlin/Int // dev.guavakt.primitives/Shorts.BYTES.<get-BYTES>|<get-BYTES>(){}[0]
+    final const val MAX_POWER_OF_TWO // dev.guavakt.primitives/Shorts.MAX_POWER_OF_TWO|{}MAX_POWER_OF_TWO[0]
+        final fun <get-MAX_POWER_OF_TWO>(): kotlin/Short // dev.guavakt.primitives/Shorts.MAX_POWER_OF_TWO.<get-MAX_POWER_OF_TWO>|<get-MAX_POWER_OF_TWO>(){}[0]
+
+    final fun checkedCast(kotlin/Long): kotlin/Short // dev.guavakt.primitives/Shorts.checkedCast|checkedCast(kotlin.Long){}[0]
+    final fun compare(kotlin/Short, kotlin/Short): kotlin/Int // dev.guavakt.primitives/Shorts.compare|compare(kotlin.Short;kotlin.Short){}[0]
+    final fun concat(kotlin/Array<out kotlin/ShortArray>...): kotlin/ShortArray // dev.guavakt.primitives/Shorts.concat|concat(kotlin.Array<out|kotlin.ShortArray>...){}[0]
+    final fun contains(kotlin/ShortArray, kotlin/Short): kotlin/Boolean // dev.guavakt.primitives/Shorts.contains|contains(kotlin.ShortArray;kotlin.Short){}[0]
+    final fun hashCode(kotlin/Short): kotlin/Int // dev.guavakt.primitives/Shorts.hashCode|hashCode(kotlin.Short){}[0]
+    final fun indexOf(kotlin/ShortArray, kotlin/Short): kotlin/Int // dev.guavakt.primitives/Shorts.indexOf|indexOf(kotlin.ShortArray;kotlin.Short){}[0]
+    final fun max(kotlin/ShortArray): kotlin/Short // dev.guavakt.primitives/Shorts.max|max(kotlin.ShortArray){}[0]
+    final fun min(kotlin/ShortArray): kotlin/Short // dev.guavakt.primitives/Shorts.min|min(kotlin.ShortArray){}[0]
+    final fun saturatedCast(kotlin/Long): kotlin/Short // dev.guavakt.primitives/Shorts.saturatedCast|saturatedCast(kotlin.Long){}[0]
+}
+
+final object dev.guavakt.primitives/SignedBytes { // dev.guavakt.primitives/SignedBytes|null[0]
+    final const val MAX_POWER_OF_TWO // dev.guavakt.primitives/SignedBytes.MAX_POWER_OF_TWO|{}MAX_POWER_OF_TWO[0]
+        final fun <get-MAX_POWER_OF_TWO>(): kotlin/Byte // dev.guavakt.primitives/SignedBytes.MAX_POWER_OF_TWO.<get-MAX_POWER_OF_TWO>|<get-MAX_POWER_OF_TWO>(){}[0]
+
+    final fun checkedCast(kotlin/Long): kotlin/Byte // dev.guavakt.primitives/SignedBytes.checkedCast|checkedCast(kotlin.Long){}[0]
+    final fun compare(kotlin/Byte, kotlin/Byte): kotlin/Int // dev.guavakt.primitives/SignedBytes.compare|compare(kotlin.Byte;kotlin.Byte){}[0]
+    final fun join(kotlin/String, kotlin/ByteArray...): kotlin/String // dev.guavakt.primitives/SignedBytes.join|join(kotlin.String;kotlin.ByteArray...){}[0]
+    final fun lexicographicalComparator(): kotlin/Comparator<kotlin/ByteArray> // dev.guavakt.primitives/SignedBytes.lexicographicalComparator|lexicographicalComparator(){}[0]
+    final fun max(kotlin/ByteArray...): kotlin/Byte // dev.guavakt.primitives/SignedBytes.max|max(kotlin.ByteArray...){}[0]
+    final fun min(kotlin/ByteArray...): kotlin/Byte // dev.guavakt.primitives/SignedBytes.min|min(kotlin.ByteArray...){}[0]
+    final fun saturatedCast(kotlin/Long): kotlin/Byte // dev.guavakt.primitives/SignedBytes.saturatedCast|saturatedCast(kotlin.Long){}[0]
+    final fun sortDescending(kotlin/ByteArray) // dev.guavakt.primitives/SignedBytes.sortDescending|sortDescending(kotlin.ByteArray){}[0]
+    final fun sortDescending(kotlin/ByteArray, kotlin/Int, kotlin/Int) // dev.guavakt.primitives/SignedBytes.sortDescending|sortDescending(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.primitives/UnsignedBytes { // dev.guavakt.primitives/UnsignedBytes|null[0]
+    final const val MAX_POWER_OF_TWO // dev.guavakt.primitives/UnsignedBytes.MAX_POWER_OF_TWO|{}MAX_POWER_OF_TWO[0]
+        final fun <get-MAX_POWER_OF_TWO>(): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.MAX_POWER_OF_TWO.<get-MAX_POWER_OF_TWO>|<get-MAX_POWER_OF_TWO>(){}[0]
+    final const val MAX_VALUE // dev.guavakt.primitives/UnsignedBytes.MAX_VALUE|{}MAX_VALUE[0]
+        final fun <get-MAX_VALUE>(): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.MAX_VALUE.<get-MAX_VALUE>|<get-MAX_VALUE>(){}[0]
+
+    final fun checkedCast(kotlin/Long): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.checkedCast|checkedCast(kotlin.Long){}[0]
+    final fun compare(kotlin/Byte, kotlin/Byte): kotlin/Int // dev.guavakt.primitives/UnsignedBytes.compare|compare(kotlin.Byte;kotlin.Byte){}[0]
+    final fun join(kotlin/String, kotlin/ByteArray...): kotlin/String // dev.guavakt.primitives/UnsignedBytes.join|join(kotlin.String;kotlin.ByteArray...){}[0]
+    final fun lexicographicalComparator(): kotlin/Comparator<kotlin/ByteArray> // dev.guavakt.primitives/UnsignedBytes.lexicographicalComparator|lexicographicalComparator(){}[0]
+    final fun max(kotlin/ByteArray...): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.max|max(kotlin.ByteArray...){}[0]
+    final fun min(kotlin/ByteArray...): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.min|min(kotlin.ByteArray...){}[0]
+    final fun parseUnsignedByte(kotlin/String): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.parseUnsignedByte|parseUnsignedByte(kotlin.String){}[0]
+    final fun parseUnsignedByte(kotlin/String, kotlin/Int): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.parseUnsignedByte|parseUnsignedByte(kotlin.String;kotlin.Int){}[0]
+    final fun saturatedCast(kotlin/Long): kotlin/Byte // dev.guavakt.primitives/UnsignedBytes.saturatedCast|saturatedCast(kotlin.Long){}[0]
+    final fun sort(kotlin/ByteArray) // dev.guavakt.primitives/UnsignedBytes.sort|sort(kotlin.ByteArray){}[0]
+    final fun sort(kotlin/ByteArray, kotlin/Int, kotlin/Int) // dev.guavakt.primitives/UnsignedBytes.sort|sort(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun sortDescending(kotlin/ByteArray) // dev.guavakt.primitives/UnsignedBytes.sortDescending|sortDescending(kotlin.ByteArray){}[0]
+    final fun sortDescending(kotlin/ByteArray, kotlin/Int, kotlin/Int) // dev.guavakt.primitives/UnsignedBytes.sortDescending|sortDescending(kotlin.ByteArray;kotlin.Int;kotlin.Int){}[0]
+    final fun toInt(kotlin/Byte): kotlin/Int // dev.guavakt.primitives/UnsignedBytes.toInt|toInt(kotlin.Byte){}[0]
+    final fun toString(kotlin/Byte): kotlin/String // dev.guavakt.primitives/UnsignedBytes.toString|toString(kotlin.Byte){}[0]
+    final fun toString(kotlin/Byte, kotlin/Int): kotlin/String // dev.guavakt.primitives/UnsignedBytes.toString|toString(kotlin.Byte;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.primitives/UnsignedInts { // dev.guavakt.primitives/UnsignedInts|null[0]
+    final fun compare(kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.primitives/UnsignedInts.compare|compare(kotlin.Int;kotlin.Int){}[0]
+    final fun divide(kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.primitives/UnsignedInts.divide|divide(kotlin.Int;kotlin.Int){}[0]
+    final fun parseUnsignedInt(kotlin/String): kotlin/Int // dev.guavakt.primitives/UnsignedInts.parseUnsignedInt|parseUnsignedInt(kotlin.String){}[0]
+    final fun parseUnsignedInt(kotlin/String, kotlin/Int): kotlin/Int // dev.guavakt.primitives/UnsignedInts.parseUnsignedInt|parseUnsignedInt(kotlin.String;kotlin.Int){}[0]
+    final fun remainder(kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.primitives/UnsignedInts.remainder|remainder(kotlin.Int;kotlin.Int){}[0]
+    final fun toLong(kotlin/Int): kotlin/Long // dev.guavakt.primitives/UnsignedInts.toLong|toLong(kotlin.Int){}[0]
+    final fun toString(kotlin/Int): kotlin/String // dev.guavakt.primitives/UnsignedInts.toString|toString(kotlin.Int){}[0]
+    final fun toString(kotlin/Int, kotlin/Int): kotlin/String // dev.guavakt.primitives/UnsignedInts.toString|toString(kotlin.Int;kotlin.Int){}[0]
+}
+
+final object dev.guavakt.primitives/UnsignedLongs { // dev.guavakt.primitives/UnsignedLongs|null[0]
+    final const val MAX_VALUE // dev.guavakt.primitives/UnsignedLongs.MAX_VALUE|{}MAX_VALUE[0]
+        final fun <get-MAX_VALUE>(): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.MAX_VALUE.<get-MAX_VALUE>|<get-MAX_VALUE>(){}[0]
+
+    final fun compare(kotlin/Long, kotlin/Long): kotlin/Int // dev.guavakt.primitives/UnsignedLongs.compare|compare(kotlin.Long;kotlin.Long){}[0]
+    final fun decode(kotlin/String): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.decode|decode(kotlin.String){}[0]
+    final fun divide(kotlin/Long, kotlin/Long): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.divide|divide(kotlin.Long;kotlin.Long){}[0]
+    final fun join(kotlin/String, kotlin/LongArray...): kotlin/String // dev.guavakt.primitives/UnsignedLongs.join|join(kotlin.String;kotlin.LongArray...){}[0]
+    final fun lexicographicalComparator(): kotlin/Comparator<kotlin/LongArray> // dev.guavakt.primitives/UnsignedLongs.lexicographicalComparator|lexicographicalComparator(){}[0]
+    final fun max(kotlin/LongArray...): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.max|max(kotlin.LongArray...){}[0]
+    final fun min(kotlin/LongArray...): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.min|min(kotlin.LongArray...){}[0]
+    final fun parseUnsignedLong(kotlin/String): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.parseUnsignedLong|parseUnsignedLong(kotlin.String){}[0]
+    final fun parseUnsignedLong(kotlin/String, kotlin/Int): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.parseUnsignedLong|parseUnsignedLong(kotlin.String;kotlin.Int){}[0]
+    final fun remainder(kotlin/Long, kotlin/Long): kotlin/Long // dev.guavakt.primitives/UnsignedLongs.remainder|remainder(kotlin.Long;kotlin.Long){}[0]
+    final fun sort(kotlin/LongArray) // dev.guavakt.primitives/UnsignedLongs.sort|sort(kotlin.LongArray){}[0]
+    final fun sort(kotlin/LongArray, kotlin/Int, kotlin/Int) // dev.guavakt.primitives/UnsignedLongs.sort|sort(kotlin.LongArray;kotlin.Int;kotlin.Int){}[0]
+    final fun sortDescending(kotlin/LongArray) // dev.guavakt.primitives/UnsignedLongs.sortDescending|sortDescending(kotlin.LongArray){}[0]
+    final fun sortDescending(kotlin/LongArray, kotlin/Int, kotlin/Int) // dev.guavakt.primitives/UnsignedLongs.sortDescending|sortDescending(kotlin.LongArray;kotlin.Int;kotlin.Int){}[0]
+    final fun toString(kotlin/Long): kotlin/String // dev.guavakt.primitives/UnsignedLongs.toString|toString(kotlin.Long){}[0]
+    final fun toString(kotlin/Long, kotlin/Int): kotlin/String // dev.guavakt.primitives/UnsignedLongs.toString|toString(kotlin.Long;kotlin.Int){}[0]
+}
