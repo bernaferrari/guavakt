@@ -7,6 +7,8 @@ not: multimaps, multisets, ranges, graphs, caches, hashing, public-suffix and ne
 Okio-native I/O, and coroutine-friendly coordination. It is written for `commonMain` first and
 keeps JVM-only facilities visibly JVM-only.
 
+![GuavaKt — Kotlin-first Multiplatform](assets/guavakt-social.png)
+
 > **Early alpha.** GuavaKt is an independent project, not an official Google product. It is not a
 > binary-compatible or drop-in replacement for `com.google.guava:guava`; its packages are
 > `dev.guavakt.*`. Every public surface has an explicit compatibility tier in
