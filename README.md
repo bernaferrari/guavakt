@@ -34,21 +34,12 @@ has a familiar name.
 For ordinary `List`, `Set`, `Map`, `map`/`filter`, nullable values, and asynchronous work, prefer
 the Kotlin standard library, `T?`, and `kotlinx.coroutines`. GuavaKt does not try to replace them.
 
-## Start here
+## Availability
 
-The project is currently published as a local snapshot only:
-
-```bash
-./gradlew publishToMavenLocal
-```
-
-```kotlin
-dependencies {
-    implementation("dev.guavakt:guavakt:0.1.0-SNAPSHOT")
-    // Prefer the smallest module in production, for example:
-    // implementation("dev.guavakt:guavakt-collect:0.1.0-SNAPSHOT")
-}
-```
+GuavaKt is an early alpha and release artifacts are not available yet. Evaluate it from source for
+now; a tagged public release will document the supported dependency coordinates. The `guavakt`
+umbrella module is useful for exploration, while applications should eventually select only the
+modules they use.
 
 ### A real multimap
 
@@ -59,7 +50,7 @@ val tags = ArrayListMultimap.create<String, String>()
 tags.put("kotlin", "multiplatform")
 tags.put("kotlin", "coroutines")
 
-check(tags["kotlin"] == listOf("multiplatform", "coroutines"))
+val kotlinTags = tags["kotlin"] // [multiplatform, coroutines]
 ```
 
 ### A cache that belongs to a coroutine scope
@@ -93,8 +84,8 @@ val total = BigInteger.parse("123456789012345678901234567890")
 val price = BigDecimal.parse("19.995")
 val rounded = price.multiply(BigDecimal.parse("1.21"), MathContext.DECIMAL64)
 
-check(total.bitLength() > 64)
-check(rounded.toPlainString() == "24.19395")
+val bits = total.bitLength() // 97
+val display = rounded.toPlainString() // "24.19395"
 ```
 
 `BigInteger` covers arithmetic, radix and signed-byte conversion, two's-complement bit operations,
@@ -139,12 +130,9 @@ Read the [Kotlin-first guide](docs/kotlin-first.md) for the boundary and migrati
 ## Confidence and verification
 
 The reference toolchain is JDK 17, Kotlin 2.4.10, and the checksum-pinned Gradle 9.6.0 wrapper.
-Kotlin's published Gradle compatibility matrix currently certifies Kotlin 2.4.10 through Gradle
-9.5, so this project deliberately verifies its 9.6.0 combination through its full local gates.
 
 ```bash
-./gradlew apiCheck jvmTest :guavakt-parity:test dokkaGenerate publishToMavenLocal \
-  --no-daemon -Pkotlin.incremental=false
+./gradlew apiCheck jvmTest :guavakt-parity:test dokkaGenerate --no-daemon
 python3 scripts/hollow_inventory.py
 python3 scripts/depth_inventory.py
 python3 scripts/count_tests.py
