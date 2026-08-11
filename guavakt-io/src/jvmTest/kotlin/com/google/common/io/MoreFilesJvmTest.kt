@@ -1,7 +1,6 @@
 package dev.guavakt.io
 
 import java.nio.file.Files
-import java.nio.file.Path
 import kotlin.io.path.writeText
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -13,11 +12,11 @@ class MoreFilesJvmTest {
         try {
             val child = Files.createDirectory(root.resolve("child"))
             child.resolve("file.txt").writeText("value")
-            val breadth = MoreFiles.fileTraverser().breadthFirst(root.toString()).map { java.nio.file.Path.of(it) }
-            val depth = MoreFiles.fileTraverser().depthFirstPreOrder(root.toString()).map { java.nio.file.Path.of(it) }
+            val breadth = MoreFiles.fileTraverser().breadthFirst(root)
+            val depth = MoreFiles.fileTraverser().depthFirstPreOrder(root)
             assertEquals(setOf(root, child, child.resolve("file.txt")), breadth.toSet())
             assertEquals(breadth.toSet(), depth.toSet())
-            assertTrue(MoreFiles.isDirectory(child.toString()))
+            assertTrue(MoreFiles.isDirectory(child))
         } finally {
             Files.walk(root).sorted(Comparator.reverseOrder()).forEach(Files::deleteIfExists)
         }
@@ -27,8 +26,8 @@ class MoreFilesJvmTest {
         val root = Files.createTempDirectory("guavakt-more-files-parent")
         try {
             val target = root.resolve("one/two/file.txt")
-            val created = MoreFiles.createParentDirectories(target.toString())
-            assertTrue(Files.isDirectory(Path.of(created)))
+            val created = MoreFiles.createParentDirectories(target)
+            assertTrue(Files.isDirectory(created.parent))
             assertTrue(Files.isDirectory(root.resolve("one/two")))
         } finally {
             Files.walk(root).sorted(Comparator.reverseOrder()).forEach(Files::deleteIfExists)

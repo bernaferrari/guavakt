@@ -1,11 +1,11 @@
 # Releasing GuavaKt
 
-The Gradle build can create signed Kotlin Multiplatform publications for the Maven Central Portal. Publishing is intentionally not automatic.
+The Gradle build can create signed Kotlin Multiplatform publications for the Maven Central Portal. Publishing is intentionally not automatic. The public source repository is [bernaferrari/guavakt](https://github.com/bernaferrari/guavakt); publication metadata must name that repository before the first upload.
 
 ## One-time owner setup
 
-1. Create a public source repository and replace the temporary `https://github.com/guavakt/guavakt` POM/SCM URLs in `build.gradle.kts`.
-2. Verify ownership of the `dev.guavakt` namespace in the Maven Central Portal.
+1. Replace the temporary `https://github.com/guavakt/guavakt` POM/SCM URLs in `build.gradle.kts` with `https://github.com/bernaferrari/guavakt`.
+2. Verify ownership of the `dev.guavakt` namespace in the Maven Central Portal before publishing under that coordinate.
 3. Generate a Central user token and an OpenPGP signing key.
 4. Store credentials only in the release environment as Gradle properties or environment-backed Gradle properties; never commit secrets.
 

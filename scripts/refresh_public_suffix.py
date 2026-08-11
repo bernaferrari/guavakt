@@ -263,7 +263,7 @@ def render_patterns(rules: set[Rule], upstream: dict[str, object]) -> str:
         f"// COMMIT: {upstream['commit']}\n"
         f"// SHA256: {upstream['sha256']}\n\n"
         "package dev.guavakt.thirdparty.publicsuffix\n\n"
-        "/** Compact, generated public-suffix trie. See PUBLIC_SUFFIX.md for refresh discipline. */\n"
+        "/** Compact, generated public-suffix trie. See docs/public-suffix.md for refresh discipline. */\n"
         "object PublicSuffixPatterns {\n"
     )
     return (
@@ -318,7 +318,7 @@ def main() -> int:
     extra = runtime_rules - official_rules
     print_status(runtime, upstream, missing, extra)
     if args.command == "check" and (missing or extra):
-        print("Run the reviewed generate command documented in PUBLIC_SUFFIX.md.", file=sys.stderr)
+        print("Run the reviewed generate command documented in docs/public-suffix.md.", file=sys.stderr)
         return 1
     return 0
 

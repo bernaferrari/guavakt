@@ -14,11 +14,12 @@
 | Coroutines / structured concurrency | Prefer for async. GuavaKt concurrent is Guava-shaped + KMP cooperative/JVM bridges — not a coroutines replacement. |
 | `Monitor` guard waits | Prefer `CoroutineMonitor.withLockWhen` in common code. Guava-shaped reentrant blocking waits are a JVM migration tier. |
 | `BlockingQueue` / `BlockingDeque` | Prefer coroutine `Channel` in common code. Forwarding blocking decorators exist only on JVM and delegate to real JDK queues. |
+| File storage | Pass an Okio `FileSystem` and `Path` in common code. JVM-only `java.nio.file.Path` extensions exist for migration; never use a common string path API that fails at runtime elsewhere. |
 | Java `Method`, `Constructor`, `Proxy`, or `TypeVariable` | Keep these in JVM source sets. Common code uses `KClass`/reified APIs and must not imply full Java generic-reflection identity. |
 
 ## What we *do* port (Kotlin has no full equivalent)
 
-These are GuavaKt’s real product and fidelity priorities, implemented in portable Kotlin (or `expect`/`actual` only when required). Coverage is substantial but still alpha; see `PARITY.md` before assuming an edge-case contract.
+These are GuavaKt’s real product and fidelity priorities, implemented in portable Kotlin (or `expect`/`actual` only when required). Coverage is substantial but still alpha; consult the [compatibility matrix](compatibility.md) before assuming an edge-case contract.
 
 - **Multimap / Multiset / Table / BiMap** (incl. live views, LinkedListMultimap entry order); use a nullable value type such as `ArrayTable<R, C, V?>` when fixed-grid empty cells are meaningful
 - **ClassToInstanceMap / TypeToInstanceMap** when a runtime-typed heterogeneous map is genuinely needed (`KClass`-based in common code)
@@ -81,6 +82,10 @@ var pending = 0
 val hasPending = monitor.newGuard { pending > 0 }
 monitor.withLock { pending++ }
 monitor.withLockWhen(hasPending) { pending-- }
+
+// Make the storage boundary explicit and portable
+Files.write(fileSystem, path, payload)
+val bytes = Files.readAllBytes(fileSystem, path)
 ```
 
 ## Non-goals

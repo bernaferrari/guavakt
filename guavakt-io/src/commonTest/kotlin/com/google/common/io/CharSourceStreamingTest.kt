@@ -5,19 +5,10 @@ import okio.Sink
 import okio.Timeout
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class CharSourceStreamingTest {
-    @Test
-    fun legacyPathCharSourcesRejectUnsupportedCharsetsBeforeOpeningAPlatformFile() {
-        Files.asCharSource("unused", "UTF8")
-        assertFailsWith<IllegalArgumentException> {
-            Files.asCharSource("unused", "UTF-16LE")
-        }
-    }
-
     @Test
     fun lineReadersHonorCrLfCrAndLfBoundaries() {
         val source = CharSource.wrap("first\rsecond\r\nthird\nfourth")

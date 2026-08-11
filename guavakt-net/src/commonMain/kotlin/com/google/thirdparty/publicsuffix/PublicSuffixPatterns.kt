@@ -2,7 +2,7 @@ package dev.guavakt.thirdparty.publicsuffix
 
 /**
  * Guava-derived compact PSL trie. It is a checked-in snapshot, not a runtime network dependency;
- * use `scripts/refresh_public_suffix.py` and `PUBLIC_SUFFIX.md` for the reviewed refresh process.
+ * use `scripts/refresh_public_suffix.py` and `docs/public-suffix.md` for the reviewed refresh process.
  */
 object PublicSuffixPatterns {
     val STRING_POOL: List<String> = listOf(

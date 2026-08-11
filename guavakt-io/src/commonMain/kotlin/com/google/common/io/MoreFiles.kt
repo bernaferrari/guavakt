@@ -4,8 +4,10 @@ import okio.FileSystem
 import okio.Path
 
 /**
- * Guava MoreFiles — NIO Path utilities.
- * KMP: path-string oriented helpers (no java.nio.file.Path).
+ * Kotlin-first filesystem helpers backed by an explicitly supplied Okio [FileSystem].
+ *
+ * The name helpers are pure string utilities. Storage operations deliberately require an Okio
+ * [FileSystem] and [Path] in common code; JVM `java.nio.file.Path` conveniences live in jvmMain.
  */
 object MoreFiles {
     fun getFileExtension(path: String): String {
@@ -23,10 +25,7 @@ object MoreFiles {
     fun fileTraverser(): FileTraverser = FileTraverser
 
     object FileTraverser {
-        /** JVM filesystem traversal; unsupported targets throw instead of returning fake data. */
-        fun breadthFirst(root: String): List<String> = platformTraverse(root, breadthFirst = true)
-        fun depthFirstPreOrder(root: String): List<String> = platformTraverse(root, breadthFirst = false)
-
+        /** Breadth-first traversal through the supplied filesystem. */
         fun breadthFirst(fileSystem: FileSystem, root: Path): List<Path> {
             val result = ArrayList<Path>()
             val queue = ArrayDeque<Path>()
@@ -41,6 +40,7 @@ object MoreFiles {
             return result
         }
 
+        /** Depth-first pre-order traversal through the supplied filesystem. */
         fun depthFirstPreOrder(fileSystem: FileSystem, root: Path): List<Path> {
             val result = ArrayList<Path>()
             fun visit(path: Path) {
@@ -54,15 +54,11 @@ object MoreFiles {
         }
     }
 
-    /** Creates every missing parent directory on JVM; unsupported on targets without filesystem access. */
-    fun createParentDirectories(path: String): String = platformCreateParentDirectories(path)
-
+    /** Creates every missing parent directory through the supplied filesystem. */
     fun createParentDirectories(fileSystem: FileSystem, path: Path): Path {
         path.parent?.let(fileSystem::createDirectories)
         return path
     }
-
-    fun isDirectory(path: String): Boolean = platformIsDirectory(path)
 
     fun isDirectory(fileSystem: FileSystem, path: Path): Boolean =
         fileSystem.metadataOrNull(path)?.isDirectory == true

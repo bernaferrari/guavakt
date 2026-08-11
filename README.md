@@ -12,7 +12,7 @@ keeps JVM-only facilities visibly JVM-only.
 > **Early alpha.** GuavaKt is an independent project, not an official Google product. It is not a
 > binary-compatible or drop-in replacement for `com.google.guava:guava`; its packages are
 > `dev.guavakt.*`. Every public surface has an explicit compatibility tier in
-> [PARITY.md](./PARITY.md).
+> [compatibility matrix](docs/compatibility.md).
 
 ## Why use it?
 
@@ -117,7 +117,7 @@ and exact `Double` construction. These are common immutable value types—not `j
 | Math | Primitive math, statistics, quantiles, `BigInteger`, `BigDecimal`, and `BigDecimalMath.roundToDouble` |
 
 The project directly compares high-value behavior and failures with pinned Guava 33.6 on the JVM;
-the exhaustive detail and deliberate KMP differences are in [PARITY.md](./PARITY.md). The short
+the exhaustive detail and deliberate KMP differences are in the [compatibility matrix](docs/compatibility.md). The short
 version is: core capabilities are substantial, while Java serialization, Java generic-reflection
 identity, and binary linkage to Guava are intentionally not promised.
 
@@ -134,7 +134,7 @@ identity, and binary linkage to Guava are intentionally not promised.
 - **Honest platform tiers.** Weak references, classpath scanning, dynamic proxies, real blocking,
   and system filesystems are documented per target instead of silently emulated.
 
-Read [KOTLIN_FIRST.md](./KOTLIN_FIRST.md) for the boundary and migration guidance.
+Read the [Kotlin-first guide](docs/kotlin-first.md) for the boundary and migration guidance.
 
 ## Confidence and verification
 
@@ -160,18 +160,17 @@ arbitrary-precision fuzzing. Increase its replay budget when changing numeric or
 ```
 
 Reproducible JMH workloads cover cache hot/miss/eviction paths, graph construction/reachability/
-mutation, and hash one-shot/streaming paths. See [BENCHMARKS.md](./BENCHMARKS.md).
+mutation, and hash one-shot/streaming paths. See [benchmark guidance](docs/benchmarks.md).
 
-## Project map
+## Documentation
 
-- [PARITY.md](./PARITY.md) — exact compatibility tiers, direct-oracle evidence, and limits
-- [KOTLIN_FIRST.md](./KOTLIN_FIRST.md) — what to use from Kotlin instead of a Guava shim
-- [DESIGN.md](./DESIGN.md) — module dependency graph and platform policy
-- [ROADMAP.md](./ROADMAP.md) — demand-led priorities and remaining work
-- [FUZZING.md](./FUZZING.md) — prolonged reproducible numeric/range parity runs
-- [PUBLIC_SUFFIX.md](./PUBLIC_SUFFIX.md) — offline Public Suffix List refresh discipline
-- [BENCHMARKS.md](./BENCHMARKS.md) — JMH commands and interpretation
-- [RELEASING.md](./RELEASING.md) — Maven Central release-owner prerequisites
+The [documentation index](docs/README.md) separates reader guidance from maintainer references.
+The most useful starting points are:
+
+- [Compatibility matrix](docs/compatibility.md) — evidence tiers and deliberate KMP differences
+- [Kotlin-first guide](docs/kotlin-first.md) — when Kotlin or coroutines are the better API
+- [Architecture](docs/architecture.md) — module DAG and platform policy
+- [Roadmap](docs/roadmap.md) — current priorities and definition of done
 
 ## What GuavaKt does not claim
 
@@ -180,7 +179,7 @@ It does not promise source or binary compatibility with Guava, Java serializatio
 allocation and serialization behavior. The portable numeric values intentionally exclude Java
 constructors and `Random`/serialization interop, while preserving the operations a KMP caller can
 meaningfully use. If a behavior depends on JVM garbage collection, a `ClassLoader`, a Java proxy,
-or a blocking thread, check the relevant row in [PARITY.md](./PARITY.md) before relying on it.
+or a blocking thread, check the relevant row in the [compatibility matrix](docs/compatibility.md) before relying on it.
 
 Maven Central publication is configured but not yet performed: the release owner must provide the
 verified `dev.guavakt` namespace, Central token, signing key, and public source URL.

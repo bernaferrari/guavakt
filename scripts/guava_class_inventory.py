@@ -2,7 +2,7 @@
 """Compare GuavaKt's top-level types with public Guava source types.
 
 This is a surface inventory, not parity evidence. Behavioral compatibility still
-requires typed differential tests as described in PARITY.md.
+requires typed differential tests as described in docs/compatibility.md.
 """
 
 from __future__ import annotations

@@ -14,7 +14,7 @@ GuavaKt is a Kotlin-first Multiplatform implementation of selected Guava-shaped 
 
 Kotlin stdlib owns ordinary List/Set/Map factories, read-only collection interfaces, nullable values, and collection transformations. `kotlinx.coroutines` remains the primary asynchronous model. GuavaKt invests in concepts without a comparable common Kotlin facility: Multimap, Multiset, BiMap, Table, Range, Graph, Cache, hashing, public-suffix utilities, escapers, and selected Futures-shaped composition APIs.
 
-Compatibility means tested behavioral familiarity, not identical overload breadth, Java serialization, implementation classes, exception text in every path, or private data layout. The detailed evidence levels are in [PARITY.md](./PARITY.md).
+Compatibility means tested behavioral familiarity, not identical overload breadth, Java serialization, implementation classes, exception text in every path, or private data layout. The detailed evidence levels are in the [compatibility matrix](compatibility.md).
 
 ## Dependency DAG
 
@@ -83,7 +83,7 @@ Production code belongs in `commonMain` unless it requires a real platform facil
 
 - clocks and timers;
 - weak/soft reference support and GC queues;
-- filesystem access;
+- filesystem adapters that cannot be expressed through injected Okio storage;
 - blocking locks/conditions and thread identity;
 - JVM proxy/reflection facilities.
 
@@ -96,8 +96,8 @@ When a target cannot implement a semantic safely, the API reports the limitation
 | Future/Service blocking wait | supported for migration | explicitly unsupported; common suspending `await`, conversion, and service lifecycle `Flow` are supported instead |
 | Guarded synchronization | reentrant blocking `Monitor` plus common `CoroutineMonitor` | `CoroutineMonitor` uses `Mutex` and state-change wakeups; blocking `Monitor` retains only immediate/reentrant behavior and reports unsatisfied waits honestly |
 | Weak/soft references | GC-backed | strong holder with capability flag |
-| Injected filesystem | Okio `FileSystem` | Okio `FileSystem`; fake/in-memory implementations are portable |
-| Default system filesystem | JVM NIO bridge / Okio system | depends on Okio target and runtime; browser code must inject an implementation |
+| Common filesystem storage | injected Okio `FileSystem` + `Path` | injected Okio `FileSystem` + `Path`; fake/in-memory implementations are portable |
+| JDK filesystem convenience | `java.nio.file.Path` extensions in `jvmMain`; no string-path bridge | absent; callers choose a target-appropriate injected filesystem |
 | Dynamic proxy/ClassLoader | partial JVM bridge | explicitly limited or unsupported |
 
 ## Contract policy
@@ -110,6 +110,6 @@ When a target cannot implement a semantic safely, the API reports the limitation
 
 ## Quality and release gates
 
-The required JVM/oracle and static checks are documented in `AGENTS.md`. CI additionally runs JS Node, Wasm Node, and Linux x64 test task sets; checks saved JVM/KLib API descriptions; generates aggregated Dokka; and builds local Maven publications.
+The required JVM/oracle and static checks are documented in [`AGENTS.md`](../AGENTS.md). CI additionally runs JS Node, Wasm Node, and Linux x64 test task sets; checks saved JVM/KLib API descriptions; generates aggregated Dokka; and builds local Maven publications.
 
-The build is wired for signed Maven Central Portal publication, but a real public SCM URL, verified namespace, owner credentials, and signing key are external release prerequisites. See [RELEASING.md](./RELEASING.md).
+The build is wired for signed Maven Central Portal publication, but correct public SCM metadata, a verified namespace, owner credentials, and a signing key are external release prerequisites. See [release guidance](releasing.md).
