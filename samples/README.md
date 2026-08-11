@@ -1,10 +1,6 @@
 # GuavaKt samples
 
-Build and publish the snapshot locally before running these snippets:
-
-```bash
-./gradlew publishToMavenLocal
-```
+These snippets describe the public `0.1.0` API.
 
 ## A live Multimap view
 

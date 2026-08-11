@@ -2,9 +2,9 @@
 
 | Field | Value |
 |---|---|
-| Maturity | Alpha |
+| Maturity | 0.1.0 |
 | Group | `dev.guavakt` |
-| Version | `0.1.0-SNAPSHOT` |
+| Version | `0.1.0` |
 | Targets | JVM, JS IR, Wasm JS, iOS, macOS, Linux x64, Mingw x64 |
 | License | Apache-2.0 with Guava attribution |
 
@@ -98,4 +98,6 @@ When a target cannot implement a semantic safely, the API reports the limitation
 
 The required JVM/oracle and static checks are documented in [`AGENTS.md`](../AGENTS.md). CI additionally runs JS Node, Wasm Node, and Linux x64 test task sets; checks saved JVM/KLib API descriptions; generates aggregated Dokka; and builds local Maven publications.
 
-The build is wired for signed Maven Central Portal publication, but correct public SCM metadata, a verified namespace, owner credentials, and a signing key are external release prerequisites. See [release guidance](releasing.md).
+The build is wired for signed Maven Central Portal publication. Upload still requires a verified
+namespace, owner credentials, and a signing key; see [release guidance](releasing.md). The support
+contract is in [stability policy](stability.md).

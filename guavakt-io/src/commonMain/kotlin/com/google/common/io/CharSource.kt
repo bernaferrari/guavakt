@@ -127,7 +127,7 @@ abstract class CharSource {
     /**
      * Returns a streaming UTF-8 view of this source.
      *
-     * Common Kotlin does not expose Java's arbitrary [java.nio.charset.Charset] surface, so this
+     * Common Kotlin does not expose Java's arbitrary `java.nio.charset.Charset` surface, so this
      * adapter intentionally supports UTF-8 only. It preserves surrogate pairs across source reads
      * and closes the underlying reader when the returned Okio source is closed.
      */

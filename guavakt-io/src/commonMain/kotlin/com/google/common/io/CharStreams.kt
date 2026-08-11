@@ -4,8 +4,8 @@ package dev.guavakt.io
  * Guava CharStreams — character utilities.
  *
  * Common: [CharSequence] / [Appendable] APIs.
- * JVM: extension overloads on [CharStreams] for `java.io.Reader` / `Writer`
- * (see `CharStreamsJvm.kt` in jvmMain).
+ *
+ * Streaming I/O is intentionally represented by Okio-backed [CharSource] and [CharSink].
  */
 object CharStreams {
     fun toString(chars: CharSequence): String = chars.toString()

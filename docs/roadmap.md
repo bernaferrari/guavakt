@@ -45,8 +45,8 @@ the project has users, reports from real applications override generic popularit
    run it.
 4. Maintain coroutine primitives with virtual-time and cancellation tests. Expand rate-limiter and
    monitor coverage only when it protects a real KMP use case.
-5. Publish clear coordinates, generated API docs, samples, release policy, and compatibility
-   guarantees before calling the library stable.
+5. Keep generated API docs, samples, release policy, and compatibility guarantees clear as the
+   public API evolves.
 
 ### P1 — preserve the hard algorithms
 
@@ -69,10 +69,10 @@ the project has users, reports from real applications override generic popularit
 
 ## What success looks like
 
-The project is ready to leave alpha when the following are true:
+Every release must meet the following standard:
 
 1. Core capabilities have a stable, documented API and an explicit support policy.
-2. The JVM oracle, common tests, JS, Wasm, and supported Native CI targets are green.
+2. The JVM oracle, JS, and Wasm tests are green, and declared Native targets compile successfully.
 3. The structural and immutable audits are green with no compatibility shells that fake unavailable
    platform behavior.
 4. Maven coordinates, SCM metadata, signing, reproducible publications, and API documentation are

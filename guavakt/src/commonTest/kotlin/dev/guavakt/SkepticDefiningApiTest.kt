@@ -61,7 +61,7 @@ class SkepticDefiningApiTest {
             override fun getAllPresent(keys: Iterable<String>): Map<String, Int> =
                 keys.mapNotNull { k -> m[k]?.let { k to it } }.toMap()
             override fun put(key: String, value: Int) { m[key] = value }
-            override fun putAll(map: Map<out String, Int>) { m.putAll(map) }
+            override fun putAll(m: Map<out String, Int>) { this.m.putAll(m) }
             override fun invalidate(key: String) { m.remove(key) }
             override fun invalidateAll(keys: Iterable<String>) { keys.forEach { m.remove(it) } }
             override fun invalidateAll() { m.clear() }

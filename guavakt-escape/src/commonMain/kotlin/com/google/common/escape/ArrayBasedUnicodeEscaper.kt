@@ -7,7 +7,7 @@ import kotlin.math.min
  *
  * Explicit UTF-16 character replacements take priority over the safe range. Supplementary
  * characters are decoded as complete Unicode code points before [escapeUnsafe] is consulted.
- * Malformed surrogate input throws [IllegalArgumentException]. The [unsafeReplacement] constructor
+ * Malformed surrogate input throws [IllegalArgumentException]. The `unsafeReplacement` constructor
  * parameter is retained for Guava-shaped source migration; as in Guava, subclasses define the
  * actual fallback in [escapeUnsafe].
  */

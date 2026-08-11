@@ -19,7 +19,7 @@ native to Kotlin. This is a focused library, not a full Java API port.
 
 ## What we *do* port (Kotlin has no full equivalent)
 
-These are GuavaKt’s real product and fidelity priorities, implemented in portable Kotlin (or `expect`/`actual` only when required). Coverage is substantial but still alpha; consult the [compatibility matrix](compatibility.md) before assuming an edge-case contract.
+These are GuavaKt’s real product and fidelity priorities, implemented in portable Kotlin (or `expect`/`actual` only when required). Consult the [compatibility matrix](compatibility.md) for supported contracts and intentional differences.
 
 - **Multimap / Multiset / Table / BiMap** (incl. live views, LinkedListMultimap entry order); use a nullable value type such as `ArrayTable<R, C, V?>` when fixed-grid empty cells are meaningful
 - **ClassToInstanceMap** when a runtime-typed heterogeneous map is genuinely needed (`KClass`-based in common code)

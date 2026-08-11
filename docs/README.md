@@ -10,6 +10,7 @@ repository, engineering rules, and change workflow for contributors and automate
 - [Kotlin-first guide](kotlin-first.md) — when to prefer Kotlin, Okio, or coroutines over a Guava-shaped API.
 - [Architecture](architecture.md) — module dependency graph and platform policy.
 - [Roadmap](roadmap.md) — current priority order and the definition of done for a capability.
+- [Stability policy](stability.md) — public API contract, versioning, and platform support tiers.
 
 ## Maintainer references
 
@@ -17,3 +18,4 @@ repository, engineering rules, and change workflow for contributors and automate
 - [Benchmarks](benchmarks.md) — JMH workloads and comparison rules.
 - [Public Suffix List refresh](public-suffix.md) — offline data-refresh discipline.
 - [Releasing](releasing.md) — Central Portal prerequisites and release checks.
+- [Security policy](../SECURITY.md) — private vulnerability reporting and support window.

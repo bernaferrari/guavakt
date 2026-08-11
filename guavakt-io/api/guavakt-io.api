@@ -187,14 +187,6 @@ public final class dev/guavakt/io/ByteStreams$ByteArrayDataOutput : dev/guavakt/
 	public fun writeUTF (Ljava/lang/String;)V
 }
 
-public final class dev/guavakt/io/ByteStreamsJvmKt {
-	public static final fun copy (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;Ljava/io/OutputStream;)J
-	public static final fun exhaust (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;)J
-	public static final fun limit (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;J)Ljava/io/InputStream;
-	public static final fun nullOutputStream (Ldev/guavakt/io/ByteStreams;)Ljava/io/OutputStream;
-	public static final fun toByteArray (Ldev/guavakt/io/ByteStreams;Ljava/io/InputStream;)[B
-}
-
 public class dev/guavakt/io/CharReaderLike : dev/guavakt/io/AutoCloseable {
 	public static final field Companion Ldev/guavakt/io/CharReaderLike$Companion;
 	public fun <init> (Ljava/lang/String;)V
@@ -269,14 +261,6 @@ public final class dev/guavakt/io/CharStreams {
 	public final fun readLines (Ljava/lang/CharSequence;Ldev/guavakt/io/LineProcessor;)Ljava/lang/Object;
 	public final fun skipFully (Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 	public final fun toString (Ljava/lang/CharSequence;)Ljava/lang/String;
-}
-
-public final class dev/guavakt/io/CharStreamsJvmKt {
-	public static final fun asWriter (Ldev/guavakt/io/CharStreams;Ljava/lang/Appendable;)Ljava/io/Writer;
-	public static final fun copy (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;Ljava/lang/Appendable;)J
-	public static final fun copy (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;Ljava/lang/StringBuilder;)J
-	public static final fun readLines (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;)Ljava/util/List;
-	public static final fun toString (Ldev/guavakt/io/CharStreams;Ljava/io/Reader;)Ljava/lang/String;
 }
 
 public final class dev/guavakt/io/Closeables {

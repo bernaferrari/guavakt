@@ -40,7 +40,7 @@ class ConsumerSmokeTest {
         val cache = CacheBuilder.newBuilder<String, Int>().build(dev.guavakt.cache.CacheLoader { 99 })
         assertEquals(99, cache.get("z"))
         assertEquals(80, HostAndPort.fromString("h:80").getPort())
-        assertEquals(GuavaKt.VERSION, "0.1.0-SNAPSHOT")
+        assertEquals(GuavaKt.VERSION, "0.1.0")
         // touch Escapers so escape module is exercised from umbrella
         assertEquals("x", Escapers.nullEscaper().escape("x"))
     }

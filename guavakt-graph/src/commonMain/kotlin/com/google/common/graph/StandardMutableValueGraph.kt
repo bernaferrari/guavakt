@@ -172,7 +172,7 @@ open class StandardMutableValueGraph<N, V>(
      * Projects a stable edge through the node alias used for this lookup. Guava's sorted node
      * map resolves comparator-equivalent aliases to one connection object, but that connection's
      * adjacency keys remain ordinary-equality values. Consequently `incidentEdges(alias)` uses
-     * [alias] in the returned endpoint pair while preserving the raw other endpoint.
+     * `alias` in the returned endpoint pair while preserving the raw other endpoint.
      */
     private fun stableIncidentEdge(
         node: N,

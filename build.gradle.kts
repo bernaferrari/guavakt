@@ -9,7 +9,7 @@ plugins {
 
 allprojects {
     group = "dev.guavakt"
-    version = "0.1.0-SNAPSHOT"
+    version = "0.1.0"
 
     repositories {
         mavenCentral()
@@ -26,7 +26,7 @@ subprojects {
                 mavenLocal()
                 maven {
                     name = "GitHubPackages"
-                    url = uri("https://maven.pkg.github.com/guavakt/guavakt")
+                    url = uri("https://maven.pkg.github.com/bernaferrari/guavakt")
                     credentials {
                         username = findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
                         password = findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
@@ -39,8 +39,8 @@ subprojects {
             extensions.findByType(PublishingExtension::class.java)?.publications?.withType(MavenPublication::class.java)?.configureEach {
                 pom {
                     name.set(project.name)
-                    description.set("Kotlin-first Multiplatform implementation of Guava-shaped APIs — ${project.name}")
-                    url.set("https://github.com/guavakt/guavakt")
+                    description.set("Kotlin-first Kotlin Multiplatform primitives — ${project.name}")
+                    url.set("https://github.com/bernaferrari/guavakt")
                     licenses {
                         license {
                             name.set("The Apache License, Version 2.0")
@@ -49,14 +49,14 @@ subprojects {
                     }
                     developers {
                         developer {
-                            id.set("guavakt")
-                            name.set("GuavaKt contributors")
+                            id.set("bernaferrari")
+                            name.set("Bernardo Ferrari")
                         }
                     }
                     scm {
-                        url.set("https://github.com/guavakt/guavakt")
-                        connection.set("scm:git:https://github.com/guavakt/guavakt.git")
-                        developerConnection.set("scm:git:ssh://git@github.com/guavakt/guavakt.git")
+                        url.set("https://github.com/bernaferrari/guavakt")
+                        connection.set("scm:git:https://github.com/bernaferrari/guavakt.git")
+                        developerConnection.set("scm:git:ssh://git@github.com/bernaferrari/guavakt.git")
                     }
                 }
             }

@@ -3,8 +3,9 @@ package dev.guavakt.io
 /**
  * Guava ByteStreams — byte utilities.
  *
- * Common: [ByteArray] APIs + small data in/out helpers.
- * JVM: extension overloads for `InputStream` / `OutputStream` (see `ByteStreamsJvm.kt`).
+ * Common: [ByteArray] APIs plus small data in/out helpers.
+ *
+ * Streaming I/O uses Okio [ByteSource] and [ByteSink], rather than JVM stream overloads.
  */
 object ByteStreams {
     fun toByteArray(bytes: ByteArray): ByteArray = bytes.copyOf()
