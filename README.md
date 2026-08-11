@@ -38,18 +38,21 @@ Choose the module for the capability you need:
 | `guavakt-io` | Okio-native sources, sinks, paths, and filesystem adapters |
 | `guavakt` | The umbrella module |
 
-## What it is for
+## Use GuavaKt for the missing pieces
 
 | Need | Use |
 |---|---|
 | One key with many values, counted values, a two-way map, or a table | `Multimap`, `Multiset`, `BiMap`, `Table` |
-| Intervals, disjoint ranges, range-to-value lookup, or huge discrete domains | `Range`, `RangeSet`, `RangeMap`, `ContiguousSet`, `DiscreteDomain.bigIntegers()` |
+| Intervals with explicit bounds, disjoint ranges, range-to-value lookup, or huge discrete domains | `Range`, `RangeSet`, `RangeMap`, `ContiguousSet`, `DiscreteDomain.bigIntegers()` |
 | Directed or undirected relationships | `Graph`, `ValueGraph`, `Network`, `Traverser` |
 | Portable hashes or probabilistic membership | `Hashing`, `Hasher`, `Funnel`, `BloomFilter` |
 | IP literals, ports, and registrable domains | `InetAddresses`, `HostAndPort`, `InternetDomainName` |
 | A bounded, expiring cache with scoped asynchronous loading | `CacheBuilder.buildCoroutine(scope)` |
 | A cancellable rate limit or guarded shared state | `CoroutineRateLimiter`, `CoroutineMonitor` |
 | Exact values beyond primitive limits | `BigInteger`, `BigDecimal`, math helpers |
+
+`Range` complements Kotlin ranges rather than replacing them: use `0..10` for an ordinary loop or
+membership check; use GuavaKt when boundaries, range algebra, or range collections matter.
 
 ## A taste
 
@@ -84,14 +87,15 @@ val user = users.get(id) // suspends; same-key misses share one load
 The supplied scope owns cache loads and refreshes. Cancelling one caller stops only its wait;
 cancelling the owner scope stops the shared work.
 
-## Kotlin first
+## Keep Kotlin and focused libraries for everything else
 
-Use Kotlin and focused libraries when they already provide the right abstraction:
-
-- Kotlin `List`, `Set`, `Map`, sequences, nullable types, `require`, and `check`
-- `kotlinx.coroutines`, `Flow`, `Channel`, `Mutex`, and structured concurrency
-- Okio `FileSystem`, `Path`, `Source`, `Sink`, and `ByteString`
-- Caffeine on the JVM when maximum local-cache throughput matters
+| Use | Instead of |
+|---|---|
+| Kotlin `List`, `Set`, `Map`, sequences, nullable types, `require`, and `check` | Guava-style collection factories, `Optional`, and ordinary helpers |
+| Kotlin `ClosedRange`, `IntRange`, and `until` | `Range` when a simple interval or loop is enough |
+| `kotlinx.coroutines`, `Flow`, `Channel`, `Mutex`, and structured concurrency | Futures, executors, services, blocking queues, or a general-purpose event bus |
+| Okio `FileSystem`, `Path`, `Source`, `Sink`, and `ByteString` | A `java.io` or `java.nio.file` façade |
+| Caffeine on the JVM | GuavaKt cache when peak local-cache throughput is the only goal |
 
 GuavaKt deliberately does not include Java reflection or proxies, `ListenableFuture`, executors,
 services, EventBus, blocking queues, or a `java.io`/`java.nio.file` facade.
