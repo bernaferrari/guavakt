@@ -277,16 +277,6 @@ public abstract interface class dev/guavakt/cache/RemovalListener {
 	public abstract fun onRemoval (Ldev/guavakt/cache/RemovalNotification;)V
 }
 
-public final class dev/guavakt/cache/RemovalListeners {
-	public static final field INSTANCE Ldev/guavakt/cache/RemovalListeners;
-	public final fun asynchronous (Ldev/guavakt/cache/RemovalListener;Ldev/guavakt/cache/RemovalListeners$ExecutorLike;)Ldev/guavakt/cache/RemovalListener;
-	public final fun asynchronous (Lkotlin/jvm/functions/Function1;Ldev/guavakt/cache/RemovalListeners$ExecutorLike;)Lkotlin/jvm/functions/Function1;
-}
-
-public abstract interface class dev/guavakt/cache/RemovalListeners$ExecutorLike {
-	public abstract fun execute (Lkotlin/jvm/functions/Function0;)V
-}
-
 public final class dev/guavakt/cache/RemovalNotification {
 	public static final field Companion Ldev/guavakt/cache/RemovalNotification$Companion;
 	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/Object;Ldev/guavakt/cache/RemovalCause;Lkotlin/jvm/internal/DefaultConstructorMarker;)V

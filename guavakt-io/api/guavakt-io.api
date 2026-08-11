@@ -340,26 +340,17 @@ public final class dev/guavakt/io/FileWriteMode : java/lang/Enum {
 
 public final class dev/guavakt/io/Files {
 	public static final field INSTANCE Ldev/guavakt/io/Files;
-	public final fun asByteSink (Ljava/lang/String;)Ldev/guavakt/io/ByteSink;
 	public final fun asByteSink (Lokio/FileSystem;Lokio/Path;Z)Ldev/guavakt/io/ByteSink;
 	public static synthetic fun asByteSink$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Ldev/guavakt/io/ByteSink;
-	public final fun asByteSource (Ljava/lang/String;)Ldev/guavakt/io/ByteSource;
 	public final fun asByteSource (Lokio/FileSystem;Lokio/Path;)Ldev/guavakt/io/ByteSource;
-	public final fun asCharSink (Ljava/lang/String;)Ldev/guavakt/io/CharSink;
 	public final fun asCharSink (Lokio/FileSystem;Lokio/Path;Z)Ldev/guavakt/io/CharSink;
 	public static synthetic fun asCharSink$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Ldev/guavakt/io/CharSink;
-	public final fun asCharSource (Ljava/lang/String;Ljava/lang/String;)Ldev/guavakt/io/CharSource;
 	public final fun asCharSource (Lokio/FileSystem;Lokio/Path;)Ldev/guavakt/io/CharSource;
-	public static synthetic fun asCharSource$default (Ldev/guavakt/io/Files;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/io/CharSource;
-	public final fun createTempDir (Ljava/lang/String;)Ljava/lang/String;
-	public static synthetic fun createTempDir$default (Ldev/guavakt/io/Files;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 	public final fun getFileExtension (Ljava/lang/String;)Ljava/lang/String;
 	public final fun getNameWithoutExtension (Ljava/lang/String;)Ljava/lang/String;
-	public final fun readAllBytes (Ljava/lang/String;)[B
 	public final fun readAllBytes (Lokio/FileSystem;Lokio/Path;)[B
 	public final fun simplifyPath (Ljava/lang/String;)Ljava/lang/String;
 	public final fun toByteArray ([B)[B
-	public final fun write (Ljava/lang/String;[B)V
 	public final fun write (Lokio/FileSystem;Lokio/Path;[BZ)V
 	public final fun write ([BLjava/util/List;)V
 	public static synthetic fun write$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;[BZILjava/lang/Object;)V
@@ -422,20 +413,16 @@ public final class dev/guavakt/io/LittleEndianDataOutputStream : dev/guavakt/io/
 
 public final class dev/guavakt/io/MoreFiles {
 	public static final field INSTANCE Ldev/guavakt/io/MoreFiles;
-	public final fun createParentDirectories (Ljava/lang/String;)Ljava/lang/String;
 	public final fun createParentDirectories (Lokio/FileSystem;Lokio/Path;)Lokio/Path;
 	public final fun fileTraverser ()Ldev/guavakt/io/MoreFiles$FileTraverser;
 	public final fun getFileExtension (Ljava/lang/String;)Ljava/lang/String;
 	public final fun getNameWithoutExtension (Ljava/lang/String;)Ljava/lang/String;
-	public final fun isDirectory (Ljava/lang/String;)Z
 	public final fun isDirectory (Lokio/FileSystem;Lokio/Path;)Z
 }
 
 public final class dev/guavakt/io/MoreFiles$FileTraverser {
 	public static final field INSTANCE Ldev/guavakt/io/MoreFiles$FileTraverser;
-	public final fun breadthFirst (Ljava/lang/String;)Ljava/util/List;
 	public final fun breadthFirst (Lokio/FileSystem;Lokio/Path;)Ljava/util/List;
-	public final fun depthFirstPreOrder (Ljava/lang/String;)Ljava/util/List;
 	public final fun depthFirstPreOrder (Lokio/FileSystem;Lokio/Path;)Ljava/util/List;
 }
 
@@ -459,17 +446,6 @@ public final class dev/guavakt/io/PatternFilenameFilter {
 	public fun <init> (Ljava/lang/String;)V
 	public final fun accept (Ljava/lang/String;)Z
 	public final fun accept (Ljava/lang/String;Ljava/lang/String;)Z
-}
-
-public final class dev/guavakt/io/PlatformFilesKt {
-	public static final fun platformCreateParentDirectories (Ljava/lang/String;)Ljava/lang/String;
-	public static final fun platformCreateTempDir (Ljava/lang/String;)Ljava/lang/String;
-	public static final fun platformIsDirectory (Ljava/lang/String;)Z
-	public static final fun platformReadAllBytes (Ljava/lang/String;)[B
-	public static final fun platformSink (Ljava/lang/String;)Lokio/Sink;
-	public static final fun platformSource (Ljava/lang/String;)Lokio/Source;
-	public static final fun platformTraverse (Ljava/lang/String;Z)Ljava/util/List;
-	public static final fun platformWriteBytes (Ljava/lang/String;[B)V
 }
 
 public final class dev/guavakt/io/ReaderInputStream : dev/guavakt/io/AutoCloseable {

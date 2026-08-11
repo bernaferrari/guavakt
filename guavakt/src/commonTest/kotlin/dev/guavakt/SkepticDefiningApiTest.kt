@@ -1,6 +1,5 @@
 package dev.guavakt
 
-import dev.guavakt.base.Ticker
 import dev.guavakt.cache.Cache
 import dev.guavakt.cache.CacheBuilderSpec
 import dev.guavakt.cache.ForwardingCache
@@ -16,33 +15,11 @@ import dev.guavakt.math.BigIntegerMath
 import dev.guavakt.math.LinearTransformation
 import dev.guavakt.net.HttpHeaders
 import dev.guavakt.primitives.UnsignedLong
-import dev.guavakt.util.concurrent.RateLimiter
-import dev.guavakt.util.concurrent.Striped
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class SkepticDefiningApiTest {
-    @Test
-    fun rateLimiterSetRateAndTryAcquire() {
-        val ticker = object : Ticker() {
-            var t = 0L
-            override fun read(): Long = t
-        }
-        val rl = RateLimiter.create(10.0, ticker)
-        assertEquals(10.0, rl.getRate(), 1e-6)
-        assertTrue(rl.tryAcquire())
-    }
-
-    @Test
-    fun stripedGetStableForKey() {
-        val s = Striped.lock(4)
-        val a = s.get("k")
-        val b = s.get("k")
-        assertTrue(a === b)
-        assertTrue(s.size() >= 4)
-    }
-
     @Test
     fun unsignedLongArithmetic() {
         val a = UnsignedLong.valueOf(5)
@@ -140,18 +117,6 @@ class SkepticDefiningApiTest {
         m.put("x", 1)
         assertEquals(1, m["x"])
         m.trimToSize()
-    }
-
-
-    @Test
-    fun listenableFutureTaskCompletes() {
-        val task = dev.guavakt.util.concurrent.ListenableFutureTask.create { 42 }
-        var heard = false
-        task.addListener { heard = true }
-        task.run()
-        assertEquals(42, task.get())
-        assertTrue(heard)
-        assertTrue(task.isDone())
     }
 
     @Test

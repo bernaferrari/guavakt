@@ -133,8 +133,14 @@ class BigDecimal private constructor(
     /** Integer quotient with Java's preferred non-negative quotient scale. */
     fun divideToIntegralValue(other: BigDecimal): BigDecimal {
         if (other.unscaledValue.isZero) throw ArithmeticException("division by zero")
-        val resultScale = maxOf(0L, scale.toLong() - other.scale).toIntExactScale()
-        return divide(other, resultScale, RoundingMode.DOWN)
+        val preferredScale = maxOf(0L, scale.toLong() - other.scale).toIntExactScale()
+        val exponent = other.scale.toLong() - scale
+        val quotient = if (exponent >= 0L) {
+            (unscaledValue * BigInteger.TEN.pow(exponent.toIntExact())) / other.unscaledValue
+        } else {
+            unscaledValue / (other.unscaledValue * BigInteger.TEN.pow((-exponent).toIntExact()))
+        }
+        return of(quotient * BigInteger.TEN.pow(preferredScale), preferredScale)
     }
 
     fun divideToIntegralValue(other: BigDecimal, context: MathContext): BigDecimal =
@@ -203,7 +209,10 @@ class BigDecimal private constructor(
                 }
             }
         }
-        return of(rounded, workingScale).round(context)
+        val result = of(rounded, workingScale).round(context)
+        // Working guard digits must not leak into the representation. Java retains trailing zeroes
+        // only down to sqrt's preferred scale (half of the source scale).
+        return result.stripTrailingZerosToMinimumScale(scale / 2)
     }
 
     /** Changes decimal scale exactly or rounds the discarded fraction according to [mode]. */
@@ -219,11 +228,13 @@ class BigDecimal private constructor(
 
     /** Moves the decimal point without introducing an exponent-specific representation. */
     fun movePointLeft(n: Int): BigDecimal {
+        if (n == 0) return this
         val shifted = scaleByPowerOfTen(-n.toLong())
         return if (shifted.scale < 0) shifted.setScale(0) else shifted
     }
 
     fun movePointRight(n: Int): BigDecimal {
+        if (n == 0) return this
         val shifted = scaleByPowerOfTen(n.toLong())
         return if (shifted.scale < 0) shifted.setScale(0) else shifted
     }
@@ -256,6 +267,17 @@ class BigDecimal private constructor(
             resultScale = checkedScale(resultScale.toLong() - 1)
         }
         return of(value, resultScale)
+    }
+
+    private fun stripTrailingZerosToMinimumScale(minimumScale: Int): BigDecimal {
+        if (unscaledValue.isZero) return this
+        var value = unscaledValue
+        var resultScale = scale
+        while (resultScale > minimumScale && (value % BigInteger.TEN).isZero) {
+            value /= BigInteger.TEN
+            resultScale--
+        }
+        return if (value == unscaledValue) this else of(value, resultScale)
     }
 
     fun precision(): Int = if (unscaledValue.isZero) 1 else unscaledValue.abs().toString().length
@@ -419,7 +441,11 @@ class BigDecimal private constructor(
                 of(BigInteger.of(significand).shiftLeft(binaryExponent), 0)
             } else {
                 val decimalScale = -binaryExponent
+                // A binary significand can carry powers of two.  Once converted to a
+                // `5^scale` numerator they become decimal trailing zeroes; Java's
+                // `BigDecimal(double)` removes those representation-only zeroes.
                 of(BigInteger.of(significand) * BigInteger.of(5).pow(decimalScale), decimalScale)
+                    .stripTrailingZeros()
             }
         }
 

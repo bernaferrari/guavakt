@@ -13,7 +13,7 @@ Public APIs use `dev.guavakt.*` so GuavaKt and Guava can coexist on the JVM.
 Use Kotlin's standard library for ordinary `List`, `Set`, `Map`, transformations, and nullability.
 Use `kotlinx.coroutines` for new asynchronous code. GuavaKt earns its place where Kotlin has no
 common equivalent: multimaps, ranges, graphs, caches, hashing, public-suffix utilities, and
-Guava-shaped migration APIs.
+coroutine-aware coordination.
 
 Read these documents in order when orienting yourself:
 
@@ -34,7 +34,7 @@ artifact is `dev.guavakt:guavakt` and `guavakt-parity` is the JVM oracle/differe
 | Foundations | `annotations`, `base`, `primitives`, `math`, `escape` | Shared values, utilities, arithmetic, and escaping |
 | Data structures | `collect`, `graph` | Multimaps, multisets, tables, ranges, immutable views, and graphs |
 | Runtime utilities | `hash`, `cache`, `io`, `net` | Digests, Bloom filters, caches, Okio I/O, networking, and PSL data |
-| Coordination and reflection | `eventbus`, `concurrent`, `reflect` | Event delivery, coroutine-first synchronization, services, and honest reflection tiers |
+| Coordination | `concurrent` | Coroutine-native rate limiting and guarded synchronization |
 | Verification | `parity` | Direct Guava/JDK differential and long-running oracle tests |
 
 Physical source paths follow Guava's package layout for ease of comparison, while Kotlin package
@@ -47,10 +47,7 @@ Put algorithms and normal data-structure behavior in `src/commonMain` by default
 almost all production code lives. `jvmMain` is deliberately small and reserved for a facility that
 cannot exist honestly on every target:
 
-- GC-backed weak, soft, and phantom references;
-- Java stream bridges kept in `jvmMain` for migration only;
-- blocking locks, conditions, queues, and schedulers used for JVM migration APIs;
-- Java reflection, dynamic proxies, and classpath scanning.
+- GC-backed weak, soft, and phantom references.
 
 An `expect`/`actual` split is not a convenience mechanism. Before adding one, ask whether an
 injected Okio `FileSystem`, a coroutine API, a Kotlin value type, or an explicit unsupported result
@@ -62,15 +59,16 @@ reuse a JDK class or make a JVM test easier.
 1. **Kotlin-first.** Prefer stdlib collections and `T?`; keep Guava names when the underlying
    concept is genuinely useful, such as `Range`, `Multimap`, `Graph`, `Cache`, or `Hashing`.
 2. **Coroutines first.** New asynchronous APIs use suspension, `Flow`, `Duration`, and explicit
-   scope ownership. Futures and blocking waits are migration surfaces, not the primary model.
+   scope ownership. Do not add Guava-style futures, executors, services, blocking waits, or
+   reflection/proxy compatibility layers.
 3. **Immutable means immutable.** `Immutable*` values are snapshots. They must expose read-only
    Kotlin interfaces or reject every mutation route, including iterators, entries, inverse views,
    and subviews. Never use `AbstractMutable*` with a live `put` implementation.
 4. **Live views keep bookkeeping correct.** Mutating a supported view such as `keys`, `values`,
    `entries`, `asMap`, a sublist, or an inverse must update the parent correctly.
-5. **Platform limits are visible.** Document differences involving GC, filesystems, reflection,
-   dynamic proxies, timers, or blocking in KDoc and in the compatibility matrix. Do not emulate a
-   capability dishonestly with a busy loop or a mutable stand-in.
+5. **Platform limits are visible.** Document differences involving GC, filesystems, and timers in
+   KDoc and in the compatibility matrix. Do not emulate a capability dishonestly with a busy loop
+   or a mutable stand-in.
 6. **Compatibility is behavioral evidence.** Class names, source counts, and “looks like Guava” are
    not parity. A claim needs typed direct-oracle tests or a documented Kotlin-shaped contract.
 
@@ -126,6 +124,7 @@ Put lasting reference material in `docs/` and sample-specific documentation next
 
 - Claim binary compatibility with `com.google.guava:guava` or publish `com.google.common.*`.
 - Replace `kotlinx.coroutines` with Guava-style futures as the primary asynchronous API.
+- Add Java reflection, dynamic-proxy, EventBus, executor, service, or blocking-queue APIs.
 - Add hollow templates, bag types, or `TODO: implement` to production source.
 - Hide JVM dependencies in common APIs or silently grant an early permit, fake a blocking timeout,
   or pretend a weak reference works on every target.

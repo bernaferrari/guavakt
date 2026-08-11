@@ -32,12 +32,6 @@ object Maps {
      */
     fun <K, V> newIdentityHashMap(): MutableMap<K, V> = IdentityHashMapKmp()
 
-    /**
-     * Concurrent map stand-in for KMP: synchronized [LinkedHashMap]. Not a segmented CHM;
-     * adequate for low-contention portable code. Prefer platform concurrent maps on JVM-only code.
-     */
-    fun <K, V> newConcurrentMap(): MutableMap<K, V> = SynchronizedMap(LinkedHashMap())
-
     fun <K, V> immutableEntry(key: K, value: V): Map.Entry<K, V> {
         val k = key
         val v = value
@@ -120,8 +114,6 @@ object Maps {
         right: Map<out K, *>,
         comparator: Comparator<in K>,
     ): SortedMapDifference<K, V> = SortedMapDifferenceImpl.compute(left, right, comparator)
-
-    fun <K, V> synchronizedMap(map: MutableMap<K, V>): MutableMap<K, V> = SynchronizedMap(map)
 
     fun <K, V> unmodifiableMap(map: Map<out K, V>): Map<K, V> = map.toMap()
 

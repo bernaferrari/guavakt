@@ -146,12 +146,6 @@ public final class dev/guavakt/base/Defaults {
 	public final fun defaultValueForShort ()S
 }
 
-public final class dev/guavakt/base/Enums {
-	public static final field INSTANCE Ldev/guavakt/base/Enums;
-	public final fun getIfPresent (Ljava/lang/Object;Ljava/lang/String;)Ldev/guavakt/base/Optional;
-	public final fun stringConverter (Ljava/lang/Object;)Ldev/guavakt/base/Converter;
-}
-
 public abstract class dev/guavakt/base/Equivalence {
 	public static final field Companion Ldev/guavakt/base/Equivalence$Companion;
 	public fun <init> ()V

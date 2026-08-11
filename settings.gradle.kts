@@ -30,9 +30,7 @@ include(
     ":guavakt-cache",
     ":guavakt-io",
     ":guavakt-net",
-    ":guavakt-eventbus",
     ":guavakt-concurrent",
-    ":guavakt-reflect",
     ":guavakt",
     ":guavakt-parity",
 )

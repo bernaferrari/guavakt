@@ -425,23 +425,16 @@ final object dev.guavakt.io/Closeables { // dev.guavakt.io/Closeables|null[0]
 }
 
 final object dev.guavakt.io/Files { // dev.guavakt.io/Files|null[0]
-    final fun asByteSink(kotlin/String): dev.guavakt.io/ByteSink // dev.guavakt.io/Files.asByteSink|asByteSink(kotlin.String){}[0]
     final fun asByteSink(okio/FileSystem, okio/Path, kotlin/Boolean = ...): dev.guavakt.io/ByteSink // dev.guavakt.io/Files.asByteSink|asByteSink(okio.FileSystem;okio.Path;kotlin.Boolean){}[0]
-    final fun asByteSource(kotlin/String): dev.guavakt.io/ByteSource // dev.guavakt.io/Files.asByteSource|asByteSource(kotlin.String){}[0]
     final fun asByteSource(okio/FileSystem, okio/Path): dev.guavakt.io/ByteSource // dev.guavakt.io/Files.asByteSource|asByteSource(okio.FileSystem;okio.Path){}[0]
-    final fun asCharSink(kotlin/String): dev.guavakt.io/CharSink // dev.guavakt.io/Files.asCharSink|asCharSink(kotlin.String){}[0]
     final fun asCharSink(okio/FileSystem, okio/Path, kotlin/Boolean = ...): dev.guavakt.io/CharSink // dev.guavakt.io/Files.asCharSink|asCharSink(okio.FileSystem;okio.Path;kotlin.Boolean){}[0]
-    final fun asCharSource(kotlin/String, kotlin/String = ...): dev.guavakt.io/CharSource // dev.guavakt.io/Files.asCharSource|asCharSource(kotlin.String;kotlin.String){}[0]
     final fun asCharSource(okio/FileSystem, okio/Path): dev.guavakt.io/CharSource // dev.guavakt.io/Files.asCharSource|asCharSource(okio.FileSystem;okio.Path){}[0]
-    final fun createTempDir(kotlin/String = ...): kotlin/String // dev.guavakt.io/Files.createTempDir|createTempDir(kotlin.String){}[0]
     final fun getFileExtension(kotlin/String): kotlin/String // dev.guavakt.io/Files.getFileExtension|getFileExtension(kotlin.String){}[0]
     final fun getNameWithoutExtension(kotlin/String): kotlin/String // dev.guavakt.io/Files.getNameWithoutExtension|getNameWithoutExtension(kotlin.String){}[0]
-    final fun readAllBytes(kotlin/String): kotlin/ByteArray // dev.guavakt.io/Files.readAllBytes|readAllBytes(kotlin.String){}[0]
     final fun readAllBytes(okio/FileSystem, okio/Path): kotlin/ByteArray // dev.guavakt.io/Files.readAllBytes|readAllBytes(okio.FileSystem;okio.Path){}[0]
     final fun simplifyPath(kotlin/String): kotlin/String // dev.guavakt.io/Files.simplifyPath|simplifyPath(kotlin.String){}[0]
     final fun toByteArray(kotlin/ByteArray): kotlin/ByteArray // dev.guavakt.io/Files.toByteArray|toByteArray(kotlin.ByteArray){}[0]
     final fun write(kotlin/ByteArray, kotlin.collections/MutableList<kotlin/Byte>) // dev.guavakt.io/Files.write|write(kotlin.ByteArray;kotlin.collections.MutableList<kotlin.Byte>){}[0]
-    final fun write(kotlin/String, kotlin/ByteArray) // dev.guavakt.io/Files.write|write(kotlin.String;kotlin.ByteArray){}[0]
     final fun write(okio/FileSystem, okio/Path, kotlin/ByteArray, kotlin/Boolean = ...) // dev.guavakt.io/Files.write|write(okio.FileSystem;okio.Path;kotlin.ByteArray;kotlin.Boolean){}[0]
 }
 
@@ -455,18 +448,14 @@ final object dev.guavakt.io/Flushables { // dev.guavakt.io/Flushables|null[0]
 }
 
 final object dev.guavakt.io/MoreFiles { // dev.guavakt.io/MoreFiles|null[0]
-    final fun createParentDirectories(kotlin/String): kotlin/String // dev.guavakt.io/MoreFiles.createParentDirectories|createParentDirectories(kotlin.String){}[0]
     final fun createParentDirectories(okio/FileSystem, okio/Path): okio/Path // dev.guavakt.io/MoreFiles.createParentDirectories|createParentDirectories(okio.FileSystem;okio.Path){}[0]
     final fun fileTraverser(): dev.guavakt.io/MoreFiles.FileTraverser // dev.guavakt.io/MoreFiles.fileTraverser|fileTraverser(){}[0]
     final fun getFileExtension(kotlin/String): kotlin/String // dev.guavakt.io/MoreFiles.getFileExtension|getFileExtension(kotlin.String){}[0]
     final fun getNameWithoutExtension(kotlin/String): kotlin/String // dev.guavakt.io/MoreFiles.getNameWithoutExtension|getNameWithoutExtension(kotlin.String){}[0]
-    final fun isDirectory(kotlin/String): kotlin/Boolean // dev.guavakt.io/MoreFiles.isDirectory|isDirectory(kotlin.String){}[0]
     final fun isDirectory(okio/FileSystem, okio/Path): kotlin/Boolean // dev.guavakt.io/MoreFiles.isDirectory|isDirectory(okio.FileSystem;okio.Path){}[0]
 
     final object FileTraverser { // dev.guavakt.io/MoreFiles.FileTraverser|null[0]
-        final fun breadthFirst(kotlin/String): kotlin.collections/List<kotlin/String> // dev.guavakt.io/MoreFiles.FileTraverser.breadthFirst|breadthFirst(kotlin.String){}[0]
         final fun breadthFirst(okio/FileSystem, okio/Path): kotlin.collections/List<okio/Path> // dev.guavakt.io/MoreFiles.FileTraverser.breadthFirst|breadthFirst(okio.FileSystem;okio.Path){}[0]
-        final fun depthFirstPreOrder(kotlin/String): kotlin.collections/List<kotlin/String> // dev.guavakt.io/MoreFiles.FileTraverser.depthFirstPreOrder|depthFirstPreOrder(kotlin.String){}[0]
         final fun depthFirstPreOrder(okio/FileSystem, okio/Path): kotlin.collections/List<okio/Path> // dev.guavakt.io/MoreFiles.FileTraverser.depthFirstPreOrder|depthFirstPreOrder(okio.FileSystem;okio.Path){}[0]
     }
 }
@@ -478,12 +467,3 @@ final object dev.guavakt.io/Resources { // dev.guavakt.io/Resources|null[0]
     final fun toByteArray(kotlin/String): kotlin/ByteArray // dev.guavakt.io/Resources.toByteArray|toByteArray(kotlin.String){}[0]
     final fun toString(kotlin/String, kotlin/String = ...): kotlin/String // dev.guavakt.io/Resources.toString|toString(kotlin.String;kotlin.String){}[0]
 }
-
-final fun dev.guavakt.io/platformCreateParentDirectories(kotlin/String): kotlin/String // dev.guavakt.io/platformCreateParentDirectories|platformCreateParentDirectories(kotlin.String){}[0]
-final fun dev.guavakt.io/platformCreateTempDir(kotlin/String): kotlin/String // dev.guavakt.io/platformCreateTempDir|platformCreateTempDir(kotlin.String){}[0]
-final fun dev.guavakt.io/platformIsDirectory(kotlin/String): kotlin/Boolean // dev.guavakt.io/platformIsDirectory|platformIsDirectory(kotlin.String){}[0]
-final fun dev.guavakt.io/platformReadAllBytes(kotlin/String): kotlin/ByteArray // dev.guavakt.io/platformReadAllBytes|platformReadAllBytes(kotlin.String){}[0]
-final fun dev.guavakt.io/platformSink(kotlin/String): okio/Sink // dev.guavakt.io/platformSink|platformSink(kotlin.String){}[0]
-final fun dev.guavakt.io/platformSource(kotlin/String): okio/Source // dev.guavakt.io/platformSource|platformSource(kotlin.String){}[0]
-final fun dev.guavakt.io/platformTraverse(kotlin/String, kotlin/Boolean): kotlin.collections/List<kotlin/String> // dev.guavakt.io/platformTraverse|platformTraverse(kotlin.String;kotlin.Boolean){}[0]
-final fun dev.guavakt.io/platformWriteBytes(kotlin/String, kotlin/ByteArray) // dev.guavakt.io/platformWriteBytes|platformWriteBytes(kotlin.String;kotlin.ByteArray){}[0]

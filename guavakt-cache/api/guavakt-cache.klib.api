@@ -327,15 +327,6 @@ final object dev.guavakt.cache/LongAddables { // dev.guavakt.cache/LongAddables|
     final fun create(): dev.guavakt.cache/LongAddable // dev.guavakt.cache/LongAddables.create|create(){}[0]
 }
 
-final object dev.guavakt.cache/RemovalListeners { // dev.guavakt.cache/RemovalListeners|null[0]
-    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> asynchronous(dev.guavakt.cache/RemovalListener<#A1, #B1>, dev.guavakt.cache/RemovalListeners.ExecutorLike): dev.guavakt.cache/RemovalListener<#A1, #B1> // dev.guavakt.cache/RemovalListeners.asynchronous|asynchronous(dev.guavakt.cache.RemovalListener<0:0,0:1>;dev.guavakt.cache.RemovalListeners.ExecutorLike){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
-    final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> asynchronous(kotlin/Function1<dev.guavakt.cache/RemovalNotification<#A1, #B1>, kotlin/Unit>, dev.guavakt.cache/RemovalListeners.ExecutorLike): kotlin/Function1<dev.guavakt.cache/RemovalNotification<#A1, #B1>, kotlin/Unit> // dev.guavakt.cache/RemovalListeners.asynchronous|asynchronous(kotlin.Function1<dev.guavakt.cache.RemovalNotification<0:0,0:1>,kotlin.Unit>;dev.guavakt.cache.RemovalListeners.ExecutorLike){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]
-
-    abstract fun interface ExecutorLike { // dev.guavakt.cache/RemovalListeners.ExecutorLike|null[0]
-        abstract fun execute(kotlin/Function0<kotlin/Unit>) // dev.guavakt.cache/RemovalListeners.ExecutorLike.execute|execute(kotlin.Function0<kotlin.Unit>){}[0]
-    }
-}
-
 final fun dev.guavakt.cache/platformIdentityHashCode(kotlin/Any): kotlin/Int // dev.guavakt.cache/platformIdentityHashCode|platformIdentityHashCode(kotlin.Any){}[0]
 final fun dev.guavakt.cache/platformSupportsWeakReferences(): kotlin/Boolean // dev.guavakt.cache/platformSupportsWeakReferences|platformSupportsWeakReferences(){}[0]
 final fun dev.guavakt.cache/pollClearedWeakOrSoftReferences(): kotlin/Int // dev.guavakt.cache/pollClearedWeakOrSoftReferences|pollClearedWeakOrSoftReferences(){}[0]

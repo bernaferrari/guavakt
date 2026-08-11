@@ -35,9 +35,7 @@ kotlin {
             api(project(":guavakt-cache"))
             api(project(":guavakt-io"))
             api(project(":guavakt-net"))
-            api(project(":guavakt-eventbus"))
             api(project(":guavakt-concurrent"))
-            api(project(":guavakt-reflect"))
         }
         commonTest.dependencies {
             implementation(kotlin("test"))

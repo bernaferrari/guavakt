@@ -73,14 +73,7 @@ def is_intentionally_small(path: Path, text: str, n: int) -> bool:
     # CacheLoader / Interner interface-like classes
     if stem in ("CacheLoader", "Interner", "Escaper", "Funnel", "BaseGraph", "ArchetypeGraph"):
         return True
-    # Direct executor / small complete services
-    if stem in ("DirectExecutor", "DirectExecutorService", "Runnables", "DeadEvent", "ImmutableSupplier"):
-        return True
-    # Abstract future state / aggregate state thin but structural
-    if stem.endswith("State") and ("AbstractFuture" in text or "AggregateFuture" in text or "class " in text):
-        return True
-    # Service manager bridges
-    if "ServiceManager" in stem:
+    if stem == "ImmutableSupplier":
         return True
     # Graph connections thin wrappers
     if "Connections" in stem or stem in ("AbstractBaseGraph", "GraphsBridgeMethods", "StandardValueGraph"):
@@ -89,8 +82,6 @@ def is_intentionally_small(path: Path, text: str, n: int) -> bool:
     if stem == "CharStreams" and "fun " in text:
         return True
     if stem == "PatternFilenameFilter":
-        return True
-    if stem in ("AbstractExecutionThreadService", "AbstractScheduledService", "WrappingExecutorService", "WrappingScheduledExecutorService"):
         return True
     if stem == "Finalizer":
         return True

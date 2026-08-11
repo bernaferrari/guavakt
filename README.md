@@ -11,7 +11,9 @@ the better tool.
 
 > **Early alpha.** GuavaKt is independent of Google and uses `dev.guavakt.*` packages. It is not
 > binary-compatible with `com.google.guava:guava`, and it does not aim to reproduce every Java-era
-> convenience API.
+> convenience API. “Alpha” describes release readiness—not a disclaimer for unfinished core
+> algorithms: coordinates, compatibility policy, and long-term maintenance guarantees are not
+> published yet.
 
 ## The point
 
@@ -39,11 +41,7 @@ GuavaKt deliberately stays out of the way when Kotlin or a focused library alrea
 | `kotlinx.coroutines`, `Flow`, `Channel`, `Mutex`, and structured concurrency | New `ListenableFuture`, executor, blocking monitor, or service code |
 | Okio `FileSystem`, `Path`, `Source`, `Sink`, and `ByteString` | A fake portable `java.io` or `java.nio.file` layer |
 | Caffeine on JVM when peak local-cache performance is the goal | Treating a Guava-shaped cache as the JVM performance leader |
-| Explicit dependencies or typed `Flow`/`Channel` pipelines | New EventBus designs |
-
-The last point is intentional: Guava itself recommends against new EventBus use in favour of more
-explicit/reactive designs. GuavaKt's EventBus exists only as a migration-oriented module and is not
-part of the recommended API for new code. See [Guava's guidance](https://github.com/google/guava/wiki/EventBusExplained).
+| Explicit dependencies or typed `Flow`/`Channel` pipelines | Event buses and ambient subscriber registries |
 
 ## A taste
 
@@ -108,22 +106,23 @@ the source tree, but production consumers should not need an all-or-nothing util
 | `guavakt-math` | Primitive/statistical and arbitrary-precision math |
 | `guavakt-io` | Okio-native source/sink and filesystem adapters |
 
-`base`, `escape`, `primitives`, annotations, and the Guava-shaped future/reflection/EventBus
-modules support the core or migration use cases. They are not the reason to adopt GuavaKt.
+`base`, `escape`, `primitives`, and annotations support the core modules. They are not the reason
+to adopt GuavaKt.
 
 ## Status and honesty
 
 There are no published artifacts yet; evaluate the project from source until the first tagged
-release documents supported coordinates. This is alpha software, not a drop-in Guava replacement.
+release documents supported coordinates and maintenance policy. This is alpha software, not a
+drop-in Guava replacement.
 
 High-value contracts are tested directly against pinned Guava 33.6 on the JVM, alongside JS, Wasm,
 and Linux Native test suites. The project has seeded range/graph/math traces, coroutine
 cancellation tests, Bloom-filter wire checks, and reproducible cache/graph/hash benchmarks.
 
-The current JVM parity gate has two known `BigDecimal` scale/presentation discrepancies, so treat
-arbitrary-precision decimal support as evaluation-only until that gate is green. Platform-specific
-facilities—weak references, real blocking, classpath scanning, proxies, and system filesystems—are
-always called out rather than silently approximated.
+Arbitrary-precision decimal values, including scale-sensitive square roots, integral division, and
+exact `Double` construction, are directly checked against the JVM. Reflection, dynamic proxies,
+Java executors/futures/services, and EventBus are intentional non-goals. Filesystem access is
+always explicit Okio `FileSystem` plus `Path`; weak-reference behavior is documented per target.
 
 ## Learn more
 

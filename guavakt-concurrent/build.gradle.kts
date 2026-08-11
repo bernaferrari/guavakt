@@ -7,11 +7,6 @@ plugins {
 }
 
 kotlin {
-    // PlatformLock is an intentional KMP boundary for JVM monitor ownership semantics.
-    compilerOptions {
-        freeCompilerArgs.add("-Xexpect-actual-classes")
-    }
-
     jvm()
     js {
         browser()
@@ -32,7 +27,6 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             api(project(":guavakt-base"))
-            api(project(":guavakt-collect"))
             api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion")
         }
         commonTest.dependencies {

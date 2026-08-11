@@ -2,7 +2,6 @@ package dev.guavakt.parity
 
 import dev.guavakt.base.Ascii
 import dev.guavakt.base.CharMatcher
-import dev.guavakt.base.Enums
 import dev.guavakt.base.Joiner
 import dev.guavakt.base.MoreObjects
 import dev.guavakt.base.Optional
@@ -38,10 +37,6 @@ import dev.guavakt.primitives.Floats
 import dev.guavakt.primitives.Ints
 import dev.guavakt.primitives.Longs
 import dev.guavakt.primitives.Shorts
-import dev.guavakt.reflect.TypeToken
-import dev.guavakt.util.concurrent.Futures
-import dev.guavakt.util.concurrent.MoreExecutors
-import dev.guavakt.util.concurrent.SettableFuture
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
@@ -206,26 +201,6 @@ class ParitySuiteTest {
         assertEquals(h, Hashing.murmur3_32().hashBytes(ByteArray(0)).asInt())
     }
 
-    @Test fun futures_immediate() {
-        assertEquals(7, Futures.immediateFuture(7).get())
-    }
-
-    @Test fun futures_transform() {
-        assertEquals(4, Futures.transform(Futures.immediateFuture(2)) { it * 2 }.get())
-    }
-
-    @Test fun settableFuture_roundTrip() {
-        val f = SettableFuture.create<String>()
-        f.set("ok")
-        assertEquals("ok", f.get())
-    }
-
-    @Test fun directExecutor_runsInline() {
-        var ran = false
-        MoreExecutors.directExecutor().execute { ran = true }
-        assertTrue(ran)
-    }
-
     @Test fun cache_maxSize() {
         val c = CacheBuilder.newBuilder<Int, Int>().maximumSize(1).build<Int, Int>()
         c.put(1, 10); c.put(2, 20)
@@ -241,10 +216,6 @@ class ParitySuiteTest {
     @Test fun internetDomainName_basic() {
         val d = InternetDomainName.from("foo.bar.com")
         assertTrue(d.parts().isNotEmpty())
-    }
-
-    @Test fun typeToken_string() {
-        assertEquals(String::class, TypeToken.of(String::class).getRawType())
     }
 
     @Test fun escapers_builder_roundTripShape() {

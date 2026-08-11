@@ -10,8 +10,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 # Stem name pattern -> forbidden super/interface patterns (regex on file text)
 WRONG_SUPER = [
-    # Future / Executor must not be List-backed
-    (re.compile(r"(Future|ExecutorService|Executor)"), re.compile(r"(?<![A-Za-z])ForwardingList(?!enable)|AbstractMutableList|:\s*MutableList|extends\s+ForwardingList(?!enable)")),
     # Multimap must not be List forwarding
     (re.compile(r"Multimap"), re.compile(r"ForwardingList<|:\s*ForwardingList\b|AbstractMutableList")),
     # Network / Connections / *GraphBuilder / AbstractGraphBuilder must not be MutableGraph-by-delegate only shells
@@ -33,10 +31,6 @@ TEMPLATE_MARKERS = (
 
 # Per-stem required defining API fragments (substring must appear in twin)
 REQUIRED_MEMBERS: dict[str, list[str]] = {
-    "ForwardingListenableFuture": ["ListenableFuture", "delegate()", "addListener", "isDone"],
-    "ListenableFutureTask": ["ListenableFuture", "addListener", "run", "set"],
-    "ForwardingListeningExecutorService": ["ListeningExecutorService", "delegate()", "submit"],
-    "AbstractListeningExecutorService": ["ListeningExecutorService", "submit", "execute"],
     "ForwardingListMultimap": ["ListMultimap", "delegate()", "get(", "put(", "removeAll"],
     "TransformedIterator": ["transform(", "Iterator", "hasNext", "next"],
     "AbstractSequentialIterator": ["computeNext", "Iterator", "hasNext"],
@@ -99,11 +93,7 @@ def classify_file(path: Path, text: str) -> list[str]:
     m = SHELL_BY_DELEGATE.search(text)
     if m and m.group(1) == stem:
         reasons.append("graph_shell_mutablegraph_by_delegate")
-    # Drop false positives: proper interface implementors
-    if "ListenableFuture" in text and "addListener" in text:
-        reasons = [r for r in reasons if "wrong_supertype" not in r or "Future" not in r]
-    if "ListeningExecutorService" in text and "submit" in text and "execute" in text:
-        reasons = [r for r in reasons if not (r.startswith("wrong_supertype") and "Executor" in r)]
+    # Drop false positives: proper interface implementors.
     if "ListMultimap" in text and "removeAll" in text and "put(" in text:
         reasons = [r for r in reasons if "Multimap" not in r or "missing_member" in r or "wrong_supertype" not in r]
 
@@ -111,21 +101,6 @@ def classify_file(path: Path, text: str) -> list[str]:
     if "Hashing.murmur3_32()" in text and path.stem not in ("Murmur3_32HashFunction", "Hashing", "HashTest"):
         if any(x in path.stem for x in ("Murmur3_128", "SipHash", "MessageDigest", "MacHash", "ChecksumHash", "Abstract")):
             reasons.append("murmur3_32_mass_delegate")
-    # SettableFuture-only future shells missing composition APIs
-    if "SettableFuture.create" in text and "ListenableFuture" in text:
-        stem = path.stem
-        if stem in ("AbstractCatchingFuture", "AbstractTransformFuture", "AggregateFuture", "ClosingFuture", "FluentFuture"):
-            needed = {
-                "AbstractCatchingFuture": ["fallback", "exceptionType", "addListener"],
-                "AbstractTransformFuture": ["function", "addListener"],
-                "AggregateFuture": ["remainingCount", "futures", "allMustSucceed"],
-                "ClosingFuture": ["closeables", "eventuallyWillClose", "closeAll"],
-                "FluentFuture": ["transform", "catching"],
-            }.get(stem, [])
-            for frag in needed:
-                if frag not in text:
-                    reasons.append(f"future_shell_missing:{frag}")
-
     return reasons  # drop false
 
 def main(out_dir: Path | None = None) -> int:

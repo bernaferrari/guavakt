@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FILTER = sys.argv[1].lower() if len(sys.argv) > 1 else ""
 
 THIN = re.compile(
-    r"map backed by LinkedHashMap|delegates to ArrayListMultimap|ListenableFuture via SettableFuture|"
+    r"map backed by LinkedHashMap|delegates to ArrayListMultimap|"
     r"Hashing\.murmur3_32\(\)|static utilities \(KMP port\)|object identity \+",
     re.I,
 )

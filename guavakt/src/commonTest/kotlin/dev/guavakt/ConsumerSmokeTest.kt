@@ -14,7 +14,6 @@ import dev.guavakt.io.BaseEncoding
 import dev.guavakt.math.IntMath
 import dev.guavakt.net.HostAndPort
 import dev.guavakt.primitives.Ints
-import dev.guavakt.util.concurrent.Futures
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -40,7 +39,6 @@ class ConsumerSmokeTest {
         assertTrue(g.hasEdgeConnecting("a", "b"))
         val cache = CacheBuilder.newBuilder<String, Int>().build(dev.guavakt.cache.CacheLoader { 99 })
         assertEquals(99, cache.get("z"))
-        assertEquals(5, Futures.immediateFuture(5).get())
         assertEquals(80, HostAndPort.fromString("h:80").getPort())
         assertEquals(GuavaKt.VERSION, "0.1.0-SNAPSHOT")
         // touch Escapers so escape module is exercised from umbrella

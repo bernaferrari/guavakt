@@ -98,12 +98,6 @@ class ImmutableContractTest {
         assertEquals(null, m[Box(1)])
     }
 
-    @Test fun concurrentMap_basic() {
-        val m = Maps.newConcurrentMap<String, Int>()
-        m["x"] = 1
-        assertEquals(1, m["x"])
-    }
-
     @Test fun mapDifference_basic() {
         val d = Maps.difference(mapOf("a" to 1, "b" to 2), mapOf("b" to 3, "c" to 4))
         assertFalse(d.areEqual())

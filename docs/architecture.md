@@ -12,7 +12,7 @@ GuavaKt is a Kotlin-first Multiplatform implementation of selected Guava-shaped 
 
 ## Product boundary
 
-Kotlin stdlib owns ordinary List/Set/Map factories, read-only collection interfaces, nullable values, and collection transformations. `kotlinx.coroutines` remains the primary asynchronous model. GuavaKt invests in concepts without a comparable common Kotlin facility: Multimap, Multiset, BiMap, Table, Range, Graph, Cache, hashing, public-suffix utilities, escapers, and selected Futures-shaped composition APIs.
+Kotlin stdlib owns ordinary List/Set/Map factories, read-only collection interfaces, nullable values, and collection transformations. `kotlinx.coroutines` remains the primary asynchronous model. GuavaKt invests in concepts without a comparable common Kotlin facility: Multimap, Multiset, BiMap, Table, Range, Graph, Cache, hashing, public-suffix utilities, escapers, coroutine rate limiting, and guarded coordination.
 
 Compatibility means tested behavioral familiarity, not identical overload breadth, Java serialization, implementation classes, exception text in every path, or private data layout. The detailed evidence levels are in the [compatibility matrix](compatibility.md).
 
@@ -31,9 +31,7 @@ flowchart TD
   cache[guavakt-cache]
   io[guavakt-io]
   net[guavakt-net]
-  bus[guavakt-eventbus]
   conc[guavakt-concurrent]
-  reflect[guavakt-reflect]
   umbrella[guavakt]
 
   ann --> base
@@ -53,12 +51,7 @@ flowchart TD
   prim --> io
   base --> net
   esc --> net
-  base --> bus
-  col --> bus
   base --> conc
-  col --> conc
-  base --> reflect
-  col --> reflect
   ann --> umbrella
   base --> umbrella
   prim --> umbrella
@@ -70,33 +63,28 @@ flowchart TD
   cache --> umbrella
   io --> umbrella
   net --> umbrella
-  bus --> umbrella
   conc --> umbrella
-  reflect --> umbrella
 ```
 
-The umbrella artifact exposes dependencies for convenience. Published consumers should prefer the smallest package module they need. `guavakt-cache` and `guavakt-concurrent` deliberately expose `kotlinx-coroutines-core`: cache loading accepts an owner `CoroutineScope`, while common rate limiting, future/deferred conversion, and service lifecycle observation use cancellable suspension, `Flow`, and explicit structured ownership as public contracts.
+The umbrella artifact exposes dependencies for convenience. Published consumers should prefer the smallest package module they need. `guavakt-cache` and `guavakt-concurrent` deliberately expose `kotlinx-coroutines-core`: cache loading accepts an owner `CoroutineScope`, while rate limiting and guarded coordination use cancellable suspension and explicit structured ownership as public contracts.
 
 ## Platform policy
 
 Production code belongs in `commonMain` unless it requires a real platform facility. `expect`/`actual` is reserved for:
 
 - clocks and timers;
-- weak/soft reference support and GC queues;
-- blocking locks/conditions and thread identity;
-- JVM proxy/reflection facilities.
+- weak/soft reference support and GC queues.
 
 When a target cannot implement a semantic safely, the API reports the limitation or throws `UnsupportedOperationException`. Busy loops, mutable stand-ins named `Immutable`, and unrelated collection-backed placeholder types are prohibited.
 
 | Capability | JVM | JS / Wasm / Native |
 |---|---|---|
 | Pure algorithms/collections | common implementation | common implementation |
-| Cache synchronization | monitor-backed Guava shape; coroutine facade | Guava-shaped map assumes target execution model; common coroutine facade uses `Mutex`, explicit scope ownership, and per-key shared work |
-| Future/Service blocking wait | supported for migration | explicitly unsupported; common suspending `await`, conversion, and service lifecycle `Flow` are supported instead |
-| Guarded synchronization | reentrant blocking `Monitor` plus common `CoroutineMonitor` | `CoroutineMonitor` uses `Mutex` and state-change wakeups; blocking `Monitor` retains only immediate/reentrant behavior and reports unsatisfied waits honestly |
+| Cache synchronization | common coroutine facade | common coroutine facade uses `Mutex`, explicit scope ownership, and per-key shared work |
+| Guarded synchronization | common `CoroutineMonitor` | `CoroutineMonitor` uses `Mutex` and state-change wakeups; it does not emulate JVM blocking monitors |
 | Weak/soft references | GC-backed | strong holder with capability flag |
 | Filesystem storage | injected Okio `FileSystem` + `Path` | injected Okio `FileSystem` + `Path`; fake/in-memory implementations are portable |
-| Dynamic proxy/ClassLoader | partial JVM bridge | explicitly limited or unsupported |
+| Reflection/proxies/executors | not part of the product | not part of the product |
 
 ## Contract policy
 

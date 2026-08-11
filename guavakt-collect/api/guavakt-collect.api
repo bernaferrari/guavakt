@@ -1094,63 +1094,6 @@ public final class dev/guavakt/collect/FluentIterable$Companion {
 	public final fun of (Ljava/lang/Object;[Ljava/lang/Object;)Ldev/guavakt/collect/FluentIterable;
 }
 
-public abstract class dev/guavakt/collect/ForwardingBlockingDeque : java/util/concurrent/BlockingDeque {
-	public fun <init> ()V
-	public fun add (Ljava/lang/Object;)Z
-	public fun addAll (Ljava/util/Collection;)Z
-	public fun addFirst (Ljava/lang/Object;)V
-	public fun addLast (Ljava/lang/Object;)V
-	public fun clear ()V
-	public fun contains (Ljava/lang/Object;)Z
-	public fun containsAll (Ljava/util/Collection;)Z
-	protected abstract fun delegate ()Ljava/util/concurrent/BlockingDeque;
-	public fun descendingIterator ()Ljava/util/Iterator;
-	public fun drainTo (Ljava/util/Collection;)I
-	public fun drainTo (Ljava/util/Collection;I)I
-	public fun element ()Ljava/lang/Object;
-	public fun getFirst ()Ljava/lang/Object;
-	public fun getLast ()Ljava/lang/Object;
-	public fun getSize ()I
-	public fun isEmpty ()Z
-	public fun iterator ()Ljava/util/Iterator;
-	public fun offer (Ljava/lang/Object;)Z
-	public fun offer (Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z
-	public fun offerFirst (Ljava/lang/Object;)Z
-	public fun offerFirst (Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z
-	public fun offerLast (Ljava/lang/Object;)Z
-	public fun offerLast (Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)Z
-	public fun peek ()Ljava/lang/Object;
-	public fun peekFirst ()Ljava/lang/Object;
-	public fun peekLast ()Ljava/lang/Object;
-	public fun poll ()Ljava/lang/Object;
-	public fun poll (JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-	public fun pollFirst ()Ljava/lang/Object;
-	public fun pollFirst (JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-	public fun pollLast ()Ljava/lang/Object;
-	public fun pollLast (JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-	public fun pop ()Ljava/lang/Object;
-	public fun push (Ljava/lang/Object;)V
-	public fun put (Ljava/lang/Object;)V
-	public fun putFirst (Ljava/lang/Object;)V
-	public fun putLast (Ljava/lang/Object;)V
-	public fun remainingCapacity ()I
-	public fun remove ()Ljava/lang/Object;
-	public fun remove (Ljava/lang/Object;)Z
-	public fun removeAll (Ljava/util/Collection;)Z
-	public fun removeFirst ()Ljava/lang/Object;
-	public fun removeFirstOccurrence (Ljava/lang/Object;)Z
-	public fun removeLast ()Ljava/lang/Object;
-	public fun removeLastOccurrence (Ljava/lang/Object;)Z
-	public fun retainAll (Ljava/util/Collection;)Z
-	public final fun size ()I
-	public fun take ()Ljava/lang/Object;
-	public fun takeFirst ()Ljava/lang/Object;
-	public fun takeLast ()Ljava/lang/Object;
-	public fun toArray ()[Ljava/lang/Object;
-	public fun toArray ([Ljava/lang/Object;)[Ljava/lang/Object;
-	public fun toString ()Ljava/lang/String;
-}
-
 public abstract class dev/guavakt/collect/ForwardingCollection : dev/guavakt/collect/ForwardingObject, java/util/Collection, kotlin/jvm/internal/markers/KMutableCollection {
 	public fun <init> ()V
 	public fun add (Ljava/lang/Object;)Z
@@ -2837,7 +2780,6 @@ public final class dev/guavakt/collect/Maps {
 	public final fun fromProperties (Ljava/util/Map;)Ljava/util/Map;
 	public final fun immutableEntry (Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
 	public final fun keySet (Ljava/util/Map;)Ljava/util/Set;
-	public final fun newConcurrentMap ()Ljava/util/Map;
 	public final fun newHashMap ()Ljava/util/Map;
 	public final fun newHashMap (Ljava/util/Map;)Ljava/util/Map;
 	public final fun newHashMapWithExpectedSize (I)Ljava/util/Map;
@@ -2848,7 +2790,6 @@ public final class dev/guavakt/collect/Maps {
 	public final fun newTreeMap ()Ljava/util/Map;
 	public final fun newTreeMap (Ljava/util/Comparator;)Ljava/util/Map;
 	public final fun newTreeMap (Ljava/util/Map;)Ljava/util/Map;
-	public final fun synchronizedMap (Ljava/util/Map;)Ljava/util/Map;
 	public final fun toMap (Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;)Ljava/util/Map;
 	public final fun transformEntries (Ljava/util/Map;Lkotlin/jvm/functions/Function2;)Ljava/util/Map;
 	public final fun transformValues (Ljava/util/Map;Lkotlin/jvm/functions/Function1;)Ljava/util/Map;
@@ -3141,15 +3082,10 @@ public final class dev/guavakt/collect/Queues {
 	public final fun drain (Lkotlin/collections/ArrayDeque;Ljava/util/Collection;I)I
 	public final fun newArrayDeque ()Lkotlin/collections/ArrayDeque;
 	public final fun newArrayDeque (Ljava/lang/Iterable;)Lkotlin/collections/ArrayDeque;
-	public final fun newConcurrentLinkedQueue ()Ljava/util/List;
-	public final fun newLinkedBlockingQueue ()Ljava/util/List;
-	public final fun newLinkedBlockingQueue (I)Ljava/util/List;
 	public final fun newPriorityQueue ()Ldev/guavakt/collect/PriorityQueue;
 	public final fun newPriorityQueue (Ljava/lang/Iterable;)Ldev/guavakt/collect/PriorityQueue;
 	public final fun newPriorityQueue (Ljava/lang/Iterable;Ljava/util/Comparator;)Ldev/guavakt/collect/PriorityQueue;
 	public final fun newPriorityQueue (Ljava/util/Comparator;)Ldev/guavakt/collect/PriorityQueue;
-	public final fun synchronizedQueue (Ljava/util/List;)Ljava/util/List;
-	public final fun synchronizedQueue (Lkotlin/collections/ArrayDeque;)Lkotlin/collections/ArrayDeque;
 }
 
 public final class dev/guavakt/collect/Range {

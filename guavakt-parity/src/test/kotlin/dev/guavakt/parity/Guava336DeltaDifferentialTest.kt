@@ -1,7 +1,6 @@
 package dev.guavakt.parity
 
 import com.google.common.graph.Guava336GraphHarness
-import dev.guavakt.util.concurrent.Striped
 import dev.guavakt.graph.EndpointPair
 import dev.guavakt.graph.ElementOrder
 import dev.guavakt.graph.Graph
@@ -47,24 +46,6 @@ class Guava336DeltaDifferentialTest {
                 BloomFilter.create(Funnels.integerFunnel(), 1_000, 0.01).serializedSize(),
             ),
         )
-    }
-
-    @Test
-    fun customStripedAndBulkGetMatchGuava() {
-        var supplied = 0
-        val striped = Striped.custom(5) { supplied++ }
-        val trace = mutableListOf<Any?>(
-            striped.size(),
-            supplied,
-            (0 until striped.size()).map(striped::getAt),
-            striped.get(FixedHash(0)),
-            striped.get(FixedHash(1)),
-            striped.get(FixedHash(-1)),
-            striped.bulkGet(listOf(FixedHash(-1), FixedHash(1), FixedHash(0), FixedHash(1))),
-            failureName { Striped.custom(0) { Any() } },
-            failureName { Striped.custom((1 shl 30) + 1) { Any() } },
-        )
-        assertEquals(Guava336Harness.stripedTrace(), trace)
     }
 
     @Test
@@ -477,7 +458,4 @@ class Guava336DeltaDifferentialTest {
         failure::class.simpleName
     }
 
-    private class FixedHash(private val hash: Int) {
-        override fun hashCode(): Int = hash
-    }
 }

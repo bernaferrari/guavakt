@@ -6,11 +6,8 @@ import com.google.common.hash.BloomFilter;
 import com.google.common.hash.Funnels;
 import com.google.common.math.IntMath;
 import com.google.common.math.LongMath;
-import com.google.common.util.concurrent.Striped;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /** Normalized probes for public APIs added in Guava 33.5 and 33.6. */
 public final class Guava336Harness {
@@ -36,23 +33,6 @@ public final class Guava336Harness {
         BloomFilter.create(Funnels.integerFunnel(), 1_000, 0.01).serializedSize());
   }
 
-  public static List<Object> stripedTrace() {
-    AtomicInteger supplied = new AtomicInteger();
-    Striped<Integer> striped = Striped.custom(5, supplied::getAndIncrement);
-    List<Object> trace = new ArrayList<>();
-    trace.add(striped.size());
-    trace.add(supplied.get());
-    trace.add(allStripes(striped));
-    trace.add(striped.get(new FixedHash(0)));
-    trace.add(striped.get(new FixedHash(1)));
-    trace.add(striped.get(new FixedHash(-1)));
-    trace.add(Lists.newArrayList(striped.bulkGet(
-        Arrays.asList(new FixedHash(-1), new FixedHash(1), new FixedHash(0), new FixedHash(1)))));
-    trace.add(failureName(() -> Striped.custom(0, Object::new)));
-    trace.add(failureName(() -> Striped.custom((1 << 30) + 1, Object::new)));
-    return trace;
-  }
-
   public static List<Object> endpointPairTrace() {
     EndpointPair<String> ordered = EndpointPair.ordered("a", "b");
     EndpointPair<String> unordered = EndpointPair.unordered("a", "b");
@@ -72,14 +52,6 @@ public final class Guava336Harness {
         failureName(() -> unordered.adjacentNode("missing")));
   }
 
-  private static List<Integer> allStripes(Striped<Integer> striped) {
-    List<Integer> result = new ArrayList<>();
-    for (int i = 0; i < striped.size(); i++) {
-      result.add(striped.getAt(i));
-    }
-    return result;
-  }
-
   private static String failureName(Runnable action) {
     try {
       action.run();
@@ -89,16 +61,4 @@ public final class Guava336Harness {
     }
   }
 
-  private static final class FixedHash {
-    private final int hash;
-
-    private FixedHash(int hash) {
-      this.hash = hash;
-    }
-
-    @Override
-    public int hashCode() {
-      return hash;
-    }
-  }
 }

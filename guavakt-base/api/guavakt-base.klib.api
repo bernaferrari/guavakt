@@ -423,11 +423,6 @@ final object dev.guavakt.base/Defaults { // dev.guavakt.base/Defaults|null[0]
     final fun defaultValueForShort(): kotlin/Short // dev.guavakt.base/Defaults.defaultValueForShort|defaultValueForShort(){}[0]
 }
 
-final object dev.guavakt.base/Enums { // dev.guavakt.base/Enums|null[0]
-    final fun <#A1: kotlin/Enum<#A1>> getIfPresent(kotlin/Any, kotlin/String): dev.guavakt.base/Optional<#A1> // dev.guavakt.base/Enums.getIfPresent|getIfPresent(kotlin.Any;kotlin.String){0§<kotlin.Enum<0:0>>}[0]
-    final fun stringConverter(kotlin/Any): dev.guavakt.base/Converter<kotlin/String, kotlin/Any> // dev.guavakt.base/Enums.stringConverter|stringConverter(kotlin.Any){}[0]
-}
-
 final object dev.guavakt.base/Functions { // dev.guavakt.base/Functions|null[0]
     final fun <#A1: kotlin/Any?, #B1: kotlin/Any?, #C1: kotlin/Any?> compose(dev.guavakt.base/Function<#B1, #C1>, dev.guavakt.base/Function<#A1, #B1>): dev.guavakt.base/Function<#A1, #C1> // dev.guavakt.base/Functions.compose|compose(dev.guavakt.base.Function<0:1,0:2>;dev.guavakt.base.Function<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>;2§<kotlin.Any?>}[0]
     final fun <#A1: kotlin/Any?, #B1: kotlin/Any?> forMap(kotlin.collections/Map<#A1, #B1>): dev.guavakt.base/Function<#A1, #B1> // dev.guavakt.base/Functions.forMap|forMap(kotlin.collections.Map<0:0,0:1>){0§<kotlin.Any?>;1§<kotlin.Any?>}[0]

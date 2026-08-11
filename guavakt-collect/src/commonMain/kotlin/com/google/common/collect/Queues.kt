@@ -2,22 +2,11 @@ package dev.guavakt.collect
 
 import dev.guavakt.base.Preconditions
 
-/**
- * Guava Queues — queue factories and drain helpers (KMP; no java.util.concurrent queues).
- */
+/** Guava-shaped queue factories and drain helpers that have a portable KMP meaning. */
 object Queues {
     fun <E> newArrayDeque(): ArrayDeque<E> = ArrayDeque()
     fun <E> newArrayDeque(elements: Iterable<E>): ArrayDeque<E> =
         ArrayDeque<E>().also { it.addAll(elements.toList()) }
-
-    /** KMP stand-in for LinkedBlockingQueue — list used as FIFO. */
-    fun <E> newLinkedBlockingQueue(): MutableList<E> = mutableListOf()
-    fun <E> newLinkedBlockingQueue(capacity: Int): MutableList<E> {
-        Preconditions.checkArgument(capacity >= 0)
-        return mutableListOf()
-    }
-
-    fun <E> newConcurrentLinkedQueue(): MutableList<E> = mutableListOf()
 
     fun <E : Comparable<E>> newPriorityQueue(): PriorityQueue<E> = PriorityQueue()
     fun <E> newPriorityQueue(comparator: Comparator<in E>): PriorityQueue<E> = PriorityQueue(comparator)
@@ -56,9 +45,6 @@ object Queues {
         return added
     }
 
-    /** KMP: no real lock; returns the queue unchanged. */
-    fun <E> synchronizedQueue(queue: MutableList<E>): MutableList<E> = queue
-    fun <E> synchronizedQueue(queue: ArrayDeque<E>): ArrayDeque<E> = queue
 }
 
 /** Minimal priority queue (binary heap) for Guava Queues API on KMP. */
