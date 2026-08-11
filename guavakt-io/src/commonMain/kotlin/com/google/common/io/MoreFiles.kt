@@ -7,7 +7,7 @@ import okio.Path
  * Kotlin-first filesystem helpers backed by an explicitly supplied Okio [FileSystem].
  *
  * The name helpers are pure string utilities. Storage operations deliberately require an Okio
- * [FileSystem] and [Path] in common code; JVM `java.nio.file.Path` conveniences live in jvmMain.
+ * [FileSystem] and [Path] on every target.
  */
 object MoreFiles {
     fun getFileExtension(path: String): String {

@@ -48,7 +48,7 @@ almost all production code lives. `jvmMain` is deliberately small and reserved f
 cannot exist honestly on every target:
 
 - GC-backed weak, soft, and phantom references;
-- JVM `java.nio.file.Path` and Java stream bridges kept in `jvmMain` for migration only;
+- Java stream bridges kept in `jvmMain` for migration only;
 - blocking locks, conditions, queues, and schedulers used for JVM migration APIs;
 - Java reflection, dynamic proxies, and classpath scanning.
 

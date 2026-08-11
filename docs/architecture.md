@@ -83,7 +83,6 @@ Production code belongs in `commonMain` unless it requires a real platform facil
 
 - clocks and timers;
 - weak/soft reference support and GC queues;
-- filesystem adapters that cannot be expressed through injected Okio storage;
 - blocking locks/conditions and thread identity;
 - JVM proxy/reflection facilities.
 
@@ -96,8 +95,7 @@ When a target cannot implement a semantic safely, the API reports the limitation
 | Future/Service blocking wait | supported for migration | explicitly unsupported; common suspending `await`, conversion, and service lifecycle `Flow` are supported instead |
 | Guarded synchronization | reentrant blocking `Monitor` plus common `CoroutineMonitor` | `CoroutineMonitor` uses `Mutex` and state-change wakeups; blocking `Monitor` retains only immediate/reentrant behavior and reports unsatisfied waits honestly |
 | Weak/soft references | GC-backed | strong holder with capability flag |
-| Common filesystem storage | injected Okio `FileSystem` + `Path` | injected Okio `FileSystem` + `Path`; fake/in-memory implementations are portable |
-| JDK filesystem convenience | `java.nio.file.Path` extensions in `jvmMain`; no string-path bridge | absent; callers choose a target-appropriate injected filesystem |
+| Filesystem storage | injected Okio `FileSystem` + `Path` | injected Okio `FileSystem` + `Path`; fake/in-memory implementations are portable |
 | Dynamic proxy/ClassLoader | partial JVM bridge | explicitly limited or unsupported |
 
 ## Contract policy

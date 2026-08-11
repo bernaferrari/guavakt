@@ -14,7 +14,7 @@
 | Coroutines / structured concurrency | Prefer for async. GuavaKt concurrent is Guava-shaped + KMP cooperative/JVM bridges — not a coroutines replacement. |
 | `Monitor` guard waits | Prefer `CoroutineMonitor.withLockWhen` in common code. Guava-shaped reentrant blocking waits are a JVM migration tier. |
 | `BlockingQueue` / `BlockingDeque` | Prefer coroutine `Channel` in common code. Forwarding blocking decorators exist only on JVM and delegate to real JDK queues. |
-| File storage | Pass an Okio `FileSystem` and `Path` in common code. JVM-only `java.nio.file.Path` extensions exist for migration; never use a common string path API that fails at runtime elsewhere. |
+| File storage | Pass an Okio `FileSystem` and `Path` on every target. There is no string-path or `java.nio.file.Path` façade. |
 | Java `Method`, `Constructor`, `Proxy`, or `TypeVariable` | Keep these in JVM source sets. Common code uses `KClass`/reified APIs and must not imply full Java generic-reflection identity. |
 
 ## What we *do* port (Kotlin has no full equivalent)

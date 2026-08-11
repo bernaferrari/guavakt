@@ -13,8 +13,7 @@ import okio.buffer
  *
  * Every operation that accesses storage takes both a [FileSystem] and a [Path]. That makes the
  * storage boundary explicit in common code: a caller can choose a system, sandboxed, browser, or
- * in-memory filesystem without compiling an API that will fail on another target. JVM-only
- * `java.nio.file.Path` conveniences are declared in `jvmMain` alongside their JDK dependency.
+ * in-memory filesystem without compiling an API that will fail on another target.
  */
 object Files {
     fun getFileExtension(fullName: String): String {
