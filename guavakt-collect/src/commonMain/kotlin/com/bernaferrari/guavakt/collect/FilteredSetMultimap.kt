@@ -1,0 +1,15 @@
+package com.bernaferrari.guavakt.collect
+
+/** Guava FilteredSetMultimap — list/set multimap (ArrayListMultimap / HashMultimap storage). */
+open class FilteredSetMultimap<K, V> private constructor(
+    private val backing: com.bernaferrari.guavakt.collect.ArrayListMultimap<K, V> = com.bernaferrari.guavakt.collect.ArrayListMultimap.create(),
+) : com.bernaferrari.guavakt.collect.Multimap<K, V> by backing {
+    companion object {
+        fun <K, V> create(): FilteredSetMultimap<K, V> = FilteredSetMultimap()
+        fun <K, V> create(multimap: com.bernaferrari.guavakt.collect.Multimap<out K, out V>): FilteredSetMultimap<K, V> {
+            val m = FilteredSetMultimap<K, V>()
+            m.backing.putAll(multimap)
+            return m
+        }
+    }
+}

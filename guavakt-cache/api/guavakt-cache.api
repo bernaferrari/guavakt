@@ -1,4 +1,4 @@
-public abstract class dev/guavakt/cache/AbstractCache : dev/guavakt/cache/Cache {
+public abstract class com/bernaferrari/guavakt/cache/AbstractCache : com/bernaferrari/guavakt/cache/Cache {
 	public fun <init> ()V
 	public fun asMap ()Ljava/util/Map;
 	public fun cleanUp ()V
@@ -10,16 +10,16 @@ public abstract class dev/guavakt/cache/AbstractCache : dev/guavakt/cache/Cache 
 	public fun put (Ljava/lang/Object;Ljava/lang/Object;)V
 	public fun putAll (Ljava/util/Map;)V
 	public fun size ()J
-	public fun stats ()Ldev/guavakt/cache/CacheStats;
+	public fun stats ()Lcom/bernaferrari/guavakt/cache/CacheStats;
 }
 
-public abstract class dev/guavakt/cache/AbstractLoadingCache : dev/guavakt/cache/AbstractCache, dev/guavakt/cache/LoadingCache {
+public abstract class com/bernaferrari/guavakt/cache/AbstractLoadingCache : com/bernaferrari/guavakt/cache/AbstractCache, com/bernaferrari/guavakt/cache/LoadingCache {
 	public fun <init> ()V
 	public fun getAll (Ljava/lang/Iterable;)Ljava/util/Map;
 	public fun refresh (Ljava/lang/Object;)V
 }
 
-public abstract interface class dev/guavakt/cache/Cache {
+public abstract interface class com/bernaferrari/guavakt/cache/Cache {
 	public abstract fun asMap ()Ljava/util/Map;
 	public abstract fun cleanUp ()V
 	public abstract fun get (Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
@@ -31,41 +31,41 @@ public abstract interface class dev/guavakt/cache/Cache {
 	public abstract fun put (Ljava/lang/Object;Ljava/lang/Object;)V
 	public abstract fun putAll (Ljava/util/Map;)V
 	public abstract fun size ()J
-	public abstract fun stats ()Ldev/guavakt/cache/CacheStats;
+	public abstract fun stats ()Lcom/bernaferrari/guavakt/cache/CacheStats;
 }
 
-public final class dev/guavakt/cache/CacheBuilder {
-	public static final field Companion Ldev/guavakt/cache/CacheBuilder$Companion;
-	public final fun build ()Ldev/guavakt/cache/Cache;
-	public final fun build (Ldev/guavakt/cache/CacheLoader;)Ldev/guavakt/cache/LoadingCache;
-	public final fun buildCoroutine (Lkotlinx/coroutines/CoroutineScope;Ldev/guavakt/cache/SuspendingCacheLoader;)Ldev/guavakt/cache/CoroutineLoadingCache;
-	public final fun concurrencyLevel (I)Ldev/guavakt/cache/CacheBuilder;
+public final class com/bernaferrari/guavakt/cache/CacheBuilder {
+	public static final field Companion Lcom/bernaferrari/guavakt/cache/CacheBuilder$Companion;
+	public final fun build ()Lcom/bernaferrari/guavakt/cache/Cache;
+	public final fun build (Lcom/bernaferrari/guavakt/cache/CacheLoader;)Lcom/bernaferrari/guavakt/cache/LoadingCache;
+	public final fun buildCoroutine (Lkotlinx/coroutines/CoroutineScope;Lcom/bernaferrari/guavakt/cache/SuspendingCacheLoader;)Lcom/bernaferrari/guavakt/cache/CoroutineLoadingCache;
+	public final fun concurrencyLevel (I)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
 	public final fun concurrencyLevelOrDefault ()I
-	public final fun expireAfterAccess-LRDsOJo (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun expireAfterAccessMillis (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun expireAfterWrite-LRDsOJo (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun expireAfterWriteMillis (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun maximumSize (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun maximumWeight (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun recordStats ()Ldev/guavakt/cache/CacheBuilder;
-	public final fun refreshAfterWrite-LRDsOJo (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun refreshAfterWriteMillis (J)Ldev/guavakt/cache/CacheBuilder;
-	public final fun removalListener (Ldev/guavakt/cache/RemovalListener;)Ldev/guavakt/cache/CacheBuilder;
-	public final fun removalListener (Lkotlin/jvm/functions/Function1;)Ldev/guavakt/cache/CacheBuilder;
-	public final fun softValues ()Ldev/guavakt/cache/CacheBuilder;
-	public final fun ticker (Ldev/guavakt/base/Ticker;)Ldev/guavakt/cache/CacheBuilder;
-	public final fun weakKeys ()Ldev/guavakt/cache/CacheBuilder;
-	public final fun weakValues ()Ldev/guavakt/cache/CacheBuilder;
-	public final fun weigher (Ldev/guavakt/cache/Weigher;)Ldev/guavakt/cache/CacheBuilder;
-	public final fun weigher (Lkotlin/jvm/functions/Function2;)Ldev/guavakt/cache/CacheBuilder;
+	public final fun expireAfterAccess-LRDsOJo (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun expireAfterAccessMillis (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun expireAfterWrite-LRDsOJo (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun expireAfterWriteMillis (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun maximumSize (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun maximumWeight (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun recordStats ()Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun refreshAfterWrite-LRDsOJo (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun refreshAfterWriteMillis (J)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun removalListener (Lcom/bernaferrari/guavakt/cache/RemovalListener;)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun removalListener (Lkotlin/jvm/functions/Function1;)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun softValues ()Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun ticker (Lcom/bernaferrari/guavakt/base/Ticker;)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun weakKeys ()Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun weakValues ()Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun weigher (Lcom/bernaferrari/guavakt/cache/Weigher;)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
+	public final fun weigher (Lkotlin/jvm/functions/Function2;)Lcom/bernaferrari/guavakt/cache/CacheBuilder;
 }
 
-public final class dev/guavakt/cache/CacheBuilder$Companion {
-	public final fun newBuilder ()Ldev/guavakt/cache/CacheBuilder;
+public final class com/bernaferrari/guavakt/cache/CacheBuilder$Companion {
+	public final fun newBuilder ()Lcom/bernaferrari/guavakt/cache/CacheBuilder;
 }
 
-public final class dev/guavakt/cache/CacheBuilderSpec {
-	public static final field Companion Ldev/guavakt/cache/CacheBuilderSpec$Companion;
+public final class com/bernaferrari/guavakt/cache/CacheBuilderSpec {
+	public static final field Companion Lcom/bernaferrari/guavakt/cache/CacheBuilderSpec$Companion;
 	public synthetic fun <init> (Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;ZZZZLkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getExpireAfterAccessMillis ()Ljava/lang/Long;
 	public final fun getExpireAfterWriteMillis ()Ljava/lang/Long;
@@ -74,31 +74,31 @@ public final class dev/guavakt/cache/CacheBuilderSpec {
 	public final fun getSoftValues ()Z
 	public final fun getWeakKeys ()Z
 	public final fun getWeakValues ()Z
-	public final fun toCacheBuilder ()Ldev/guavakt/cache/CacheBuilder;
+	public final fun toCacheBuilder ()Lcom/bernaferrari/guavakt/cache/CacheBuilder;
 }
 
-public final class dev/guavakt/cache/CacheBuilderSpec$Companion {
-	public final fun parse (Ljava/lang/String;)Ldev/guavakt/cache/CacheBuilderSpec;
+public final class com/bernaferrari/guavakt/cache/CacheBuilderSpec$Companion {
+	public final fun parse (Ljava/lang/String;)Lcom/bernaferrari/guavakt/cache/CacheBuilderSpec;
 }
 
-public abstract interface class dev/guavakt/cache/CacheLoader {
+public abstract interface class com/bernaferrari/guavakt/cache/CacheLoader {
 	public abstract fun load (Ljava/lang/Object;)Ljava/lang/Object;
 	public fun loadAll (Ljava/lang/Iterable;)Ljava/util/Map;
 }
 
-public final class dev/guavakt/cache/CacheLoader$DefaultImpls {
-	public static fun loadAll (Ldev/guavakt/cache/CacheLoader;Ljava/lang/Iterable;)Ljava/util/Map;
+public final class com/bernaferrari/guavakt/cache/CacheLoader$DefaultImpls {
+	public static fun loadAll (Lcom/bernaferrari/guavakt/cache/CacheLoader;Ljava/lang/Iterable;)Ljava/util/Map;
 }
 
-public final class dev/guavakt/cache/CacheLoader$InvalidCacheLoadException : java/lang/IllegalStateException {
+public final class com/bernaferrari/guavakt/cache/CacheLoader$InvalidCacheLoadException : java/lang/IllegalStateException {
 	public fun <init> (Ljava/lang/String;)V
 }
 
-public final class dev/guavakt/cache/CacheLoader$UnsupportedLoadingOperationException : java/lang/UnsupportedOperationException {
+public final class com/bernaferrari/guavakt/cache/CacheLoader$UnsupportedLoadingOperationException : java/lang/UnsupportedOperationException {
 	public fun <init> ()V
 }
 
-public final class dev/guavakt/cache/CacheStats {
+public final class com/bernaferrari/guavakt/cache/CacheStats {
 	public fun <init> (JJJJJJ)V
 	public final fun component1 ()J
 	public final fun component2 ()J
@@ -106,8 +106,8 @@ public final class dev/guavakt/cache/CacheStats {
 	public final fun component4 ()J
 	public final fun component5 ()J
 	public final fun component6 ()J
-	public final fun copy (JJJJJJ)Ldev/guavakt/cache/CacheStats;
-	public static synthetic fun copy$default (Ldev/guavakt/cache/CacheStats;JJJJJJILjava/lang/Object;)Ldev/guavakt/cache/CacheStats;
+	public final fun copy (JJJJJJ)Lcom/bernaferrari/guavakt/cache/CacheStats;
+	public static synthetic fun copy$default (Lcom/bernaferrari/guavakt/cache/CacheStats;JJJJJJILjava/lang/Object;)Lcom/bernaferrari/guavakt/cache/CacheStats;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getEvictionCount ()J
 	public final fun getHitCount ()J
@@ -122,7 +122,7 @@ public final class dev/guavakt/cache/CacheStats {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/cache/CoroutineCacheStats {
+public final class com/bernaferrari/guavakt/cache/CoroutineCacheStats {
 	public fun <init> (JJJJJJ)V
 	public final fun component1 ()J
 	public final fun component2 ()J
@@ -130,8 +130,8 @@ public final class dev/guavakt/cache/CoroutineCacheStats {
 	public final fun component4 ()J
 	public final fun component5 ()J
 	public final fun component6 ()J
-	public final fun copy (JJJJJJ)Ldev/guavakt/cache/CoroutineCacheStats;
-	public static synthetic fun copy$default (Ldev/guavakt/cache/CoroutineCacheStats;JJJJJJILjava/lang/Object;)Ldev/guavakt/cache/CoroutineCacheStats;
+	public final fun copy (JJJJJJ)Lcom/bernaferrari/guavakt/cache/CoroutineCacheStats;
+	public static synthetic fun copy$default (Lcom/bernaferrari/guavakt/cache/CoroutineCacheStats;JJJJJJILjava/lang/Object;)Lcom/bernaferrari/guavakt/cache/CoroutineCacheStats;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getAverageLoadTimeNanos ()D
 	public final fun getCoalescedRequestCount ()J
@@ -145,18 +145,18 @@ public final class dev/guavakt/cache/CoroutineCacheStats {
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/cache/CoroutineLoadingCache {
-	public fun <init> (Ldev/guavakt/cache/Cache;Lkotlinx/coroutines/CoroutineScope;Ldev/guavakt/cache/SuspendingCacheLoader;Ldev/guavakt/base/Ticker;)V
-	public synthetic fun <init> (Ldev/guavakt/cache/Cache;Lkotlinx/coroutines/CoroutineScope;Ldev/guavakt/cache/SuspendingCacheLoader;Ldev/guavakt/base/Ticker;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/cache/CoroutineLoadingCache {
+	public fun <init> (Lcom/bernaferrari/guavakt/cache/Cache;Lkotlinx/coroutines/CoroutineScope;Lcom/bernaferrari/guavakt/cache/SuspendingCacheLoader;Lcom/bernaferrari/guavakt/base/Ticker;)V
+	public synthetic fun <init> (Lcom/bernaferrari/guavakt/cache/Cache;Lkotlinx/coroutines/CoroutineScope;Lcom/bernaferrari/guavakt/cache/SuspendingCacheLoader;Lcom/bernaferrari/guavakt/base/Ticker;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun asMap ()Ljava/util/Map;
-	public final fun cacheStats ()Ldev/guavakt/cache/CacheStats;
+	public final fun cacheStats ()Lcom/bernaferrari/guavakt/cache/CacheStats;
 	public final fun cleanUp ()V
 	public final fun coroutineStats (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun get (Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun getAll (Ljava/lang/Iterable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun getAllPresent (Ljava/lang/Iterable;)Ljava/util/Map;
 	public final fun getIfPresent (Ljava/lang/Object;)Ljava/lang/Object;
-	public final fun getSynchronousCache ()Ldev/guavakt/cache/Cache;
+	public final fun getSynchronousCache ()Lcom/bernaferrari/guavakt/cache/Cache;
 	public final fun inFlightCount (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun invalidate (Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun invalidateAll (Ljava/lang/Iterable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -167,11 +167,11 @@ public final class dev/guavakt/cache/CoroutineLoadingCache {
 	public final fun size ()J
 }
 
-public abstract class dev/guavakt/cache/ForwardingCache : dev/guavakt/cache/Cache {
+public abstract class com/bernaferrari/guavakt/cache/ForwardingCache : com/bernaferrari/guavakt/cache/Cache {
 	public fun <init> ()V
 	public fun asMap ()Ljava/util/Map;
 	public fun cleanUp ()V
-	protected abstract fun delegate ()Ldev/guavakt/cache/Cache;
+	protected abstract fun delegate ()Lcom/bernaferrari/guavakt/cache/Cache;
 	public fun get (Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 	public fun getAllPresent (Ljava/lang/Iterable;)Ljava/util/Map;
 	public fun getIfPresent (Ljava/lang/Object;)Ljava/lang/Object;
@@ -181,30 +181,30 @@ public abstract class dev/guavakt/cache/ForwardingCache : dev/guavakt/cache/Cach
 	public fun put (Ljava/lang/Object;Ljava/lang/Object;)V
 	public fun putAll (Ljava/util/Map;)V
 	public fun size ()J
-	public fun stats ()Ldev/guavakt/cache/CacheStats;
+	public fun stats ()Lcom/bernaferrari/guavakt/cache/CacheStats;
 }
 
-public abstract class dev/guavakt/cache/ForwardingLoadingCache : dev/guavakt/cache/ForwardingCache, dev/guavakt/cache/LoadingCache {
+public abstract class com/bernaferrari/guavakt/cache/ForwardingLoadingCache : com/bernaferrari/guavakt/cache/ForwardingCache, com/bernaferrari/guavakt/cache/LoadingCache {
 	public fun <init> ()V
-	public synthetic fun delegate ()Ldev/guavakt/cache/Cache;
-	protected abstract fun delegate ()Ldev/guavakt/cache/LoadingCache;
+	public synthetic fun delegate ()Lcom/bernaferrari/guavakt/cache/Cache;
+	protected abstract fun delegate ()Lcom/bernaferrari/guavakt/cache/LoadingCache;
 	public fun get (Ljava/lang/Object;)Ljava/lang/Object;
 	public fun getAll (Ljava/lang/Iterable;)Ljava/util/Map;
 	public fun refresh (Ljava/lang/Object;)V
 }
 
-public abstract interface annotation class dev/guavakt/cache/IgnoreJRERequirement : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/cache/IgnoreJRERequirement : java/lang/annotation/Annotation {
 }
 
-public abstract interface class dev/guavakt/cache/LoadingCache : dev/guavakt/cache/Cache {
+public abstract interface class com/bernaferrari/guavakt/cache/LoadingCache : com/bernaferrari/guavakt/cache/Cache {
 	public abstract fun get (Ljava/lang/Object;)Ljava/lang/Object;
 	public abstract fun getAll (Ljava/lang/Iterable;)Ljava/util/Map;
 	public abstract fun refresh (Ljava/lang/Object;)V
 }
 
-public final class dev/guavakt/cache/LocalCache : dev/guavakt/cache/LoadingCache {
-	public fun <init> (JJLdev/guavakt/base/Ticker;ZLdev/guavakt/cache/CacheLoader;JLkotlin/jvm/functions/Function1;Ldev/guavakt/base/internal/Strength;Ldev/guavakt/base/internal/Strength;JLkotlin/jvm/functions/Function2;JI)V
-	public synthetic fun <init> (JJLdev/guavakt/base/Ticker;ZLdev/guavakt/cache/CacheLoader;JLkotlin/jvm/functions/Function1;Ldev/guavakt/base/internal/Strength;Ldev/guavakt/base/internal/Strength;JLkotlin/jvm/functions/Function2;JIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/cache/LocalCache : com/bernaferrari/guavakt/cache/LoadingCache {
+	public fun <init> (JJLcom/bernaferrari/guavakt/base/Ticker;ZLcom/bernaferrari/guavakt/cache/CacheLoader;JLkotlin/jvm/functions/Function1;Lcom/bernaferrari/guavakt/base/internal/Strength;Lcom/bernaferrari/guavakt/base/internal/Strength;JLkotlin/jvm/functions/Function2;JI)V
+	public synthetic fun <init> (JJLcom/bernaferrari/guavakt/base/Ticker;ZLcom/bernaferrari/guavakt/cache/CacheLoader;JLkotlin/jvm/functions/Function1;Lcom/bernaferrari/guavakt/base/internal/Strength;Lcom/bernaferrari/guavakt/base/internal/Strength;JLkotlin/jvm/functions/Function2;JIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun asMap ()Ljava/util/Map;
 	public fun cleanUp ()V
 	public final fun concurrencyLevel ()I
@@ -217,84 +217,84 @@ public final class dev/guavakt/cache/LocalCache : dev/guavakt/cache/LoadingCache
 	public fun invalidateAll ()V
 	public fun invalidateAll (Ljava/lang/Iterable;)V
 	public final fun isWeakKeysEnabled ()Z
-	public final fun keyStrength ()Ldev/guavakt/base/internal/Strength;
+	public final fun keyStrength ()Lcom/bernaferrari/guavakt/base/internal/Strength;
 	public fun put (Ljava/lang/Object;Ljava/lang/Object;)V
 	public fun putAll (Ljava/util/Map;)V
 	public fun refresh (Ljava/lang/Object;)V
 	public fun size ()J
-	public fun stats ()Ldev/guavakt/cache/CacheStats;
+	public fun stats ()Lcom/bernaferrari/guavakt/cache/CacheStats;
 	public final fun usesPlatformWeakOrSoftValues ()Z
-	public final fun valueStrength ()Ldev/guavakt/base/internal/Strength;
+	public final fun valueStrength ()Lcom/bernaferrari/guavakt/base/internal/Strength;
 }
 
-public abstract interface class dev/guavakt/cache/LongAddable {
+public abstract interface class com/bernaferrari/guavakt/cache/LongAddable {
 	public abstract fun add (J)V
 	public abstract fun increment ()V
 	public abstract fun sum ()J
 }
 
-public final class dev/guavakt/cache/LongAddables {
-	public static final field INSTANCE Ldev/guavakt/cache/LongAddables;
-	public final fun create ()Ldev/guavakt/cache/LongAddable;
+public final class com/bernaferrari/guavakt/cache/LongAddables {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/cache/LongAddables;
+	public final fun create ()Lcom/bernaferrari/guavakt/cache/LongAddable;
 }
 
-public abstract interface annotation class dev/guavakt/cache/ParametricNullness : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/cache/ParametricNullness : java/lang/annotation/Annotation {
 }
 
-public final class dev/guavakt/cache/PlatformReferencesKt {
+public final class com/bernaferrari/guavakt/cache/PlatformReferencesKt {
 	public static final fun platformIdentityHashCode (Ljava/lang/Object;)I
 	public static final fun platformSupportsWeakReferences ()Z
 	public static final fun pollClearedWeakOrSoftReferences ()I
 }
 
-public final class dev/guavakt/cache/PlatformSoftRef {
+public final class com/bernaferrari/guavakt/cache/PlatformSoftRef {
 	public fun <init> (Ljava/lang/Object;)V
 	public final fun clear ()V
 	public final fun get ()Ljava/lang/Object;
 }
 
-public final class dev/guavakt/cache/PlatformWeakRef {
+public final class com/bernaferrari/guavakt/cache/PlatformWeakRef {
 	public fun <init> (Ljava/lang/Object;)V
 	public final fun clear ()V
 	public final fun get ()Ljava/lang/Object;
 }
 
-public abstract class dev/guavakt/cache/RemovalCause : java/lang/Enum {
-	public static final field COLLECTED Ldev/guavakt/cache/RemovalCause;
-	public static final field EXPIRED Ldev/guavakt/cache/RemovalCause;
-	public static final field EXPLICIT Ldev/guavakt/cache/RemovalCause;
-	public static final field REPLACED Ldev/guavakt/cache/RemovalCause;
-	public static final field SIZE Ldev/guavakt/cache/RemovalCause;
+public abstract class com/bernaferrari/guavakt/cache/RemovalCause : java/lang/Enum {
+	public static final field COLLECTED Lcom/bernaferrari/guavakt/cache/RemovalCause;
+	public static final field EXPIRED Lcom/bernaferrari/guavakt/cache/RemovalCause;
+	public static final field EXPLICIT Lcom/bernaferrari/guavakt/cache/RemovalCause;
+	public static final field REPLACED Lcom/bernaferrari/guavakt/cache/RemovalCause;
+	public static final field SIZE Lcom/bernaferrari/guavakt/cache/RemovalCause;
 	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/cache/RemovalCause;
-	public static fun values ()[Ldev/guavakt/cache/RemovalCause;
+	public static fun valueOf (Ljava/lang/String;)Lcom/bernaferrari/guavakt/cache/RemovalCause;
+	public static fun values ()[Lcom/bernaferrari/guavakt/cache/RemovalCause;
 	public abstract fun wasEvicted ()Z
 	public final fun wireName ()Ljava/lang/String;
 }
 
-public abstract interface class dev/guavakt/cache/RemovalListener {
-	public abstract fun onRemoval (Ldev/guavakt/cache/RemovalNotification;)V
+public abstract interface class com/bernaferrari/guavakt/cache/RemovalListener {
+	public abstract fun onRemoval (Lcom/bernaferrari/guavakt/cache/RemovalNotification;)V
 }
 
-public final class dev/guavakt/cache/RemovalNotification {
-	public static final field Companion Ldev/guavakt/cache/RemovalNotification$Companion;
-	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/Object;Ldev/guavakt/cache/RemovalCause;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun getCause ()Ldev/guavakt/cache/RemovalCause;
+public final class com/bernaferrari/guavakt/cache/RemovalNotification {
+	public static final field Companion Lcom/bernaferrari/guavakt/cache/RemovalNotification$Companion;
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/Object;Lcom/bernaferrari/guavakt/cache/RemovalCause;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getCause ()Lcom/bernaferrari/guavakt/cache/RemovalCause;
 	public final fun getKey ()Ljava/lang/Object;
 	public final fun getValue ()Ljava/lang/Object;
 	public final fun wasEvicted ()Z
 }
 
-public final class dev/guavakt/cache/RemovalNotification$Companion {
-	public final fun create (Ljava/lang/Object;Ljava/lang/Object;Ldev/guavakt/cache/RemovalCause;)Ldev/guavakt/cache/RemovalNotification;
+public final class com/bernaferrari/guavakt/cache/RemovalNotification$Companion {
+	public final fun create (Ljava/lang/Object;Ljava/lang/Object;Lcom/bernaferrari/guavakt/cache/RemovalCause;)Lcom/bernaferrari/guavakt/cache/RemovalNotification;
 }
 
-public abstract interface class dev/guavakt/cache/SuspendingCacheLoader {
+public abstract interface class com/bernaferrari/guavakt/cache/SuspendingCacheLoader {
 	public abstract fun load (Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
-public abstract interface class dev/guavakt/cache/Weigher {
+public abstract interface class com/bernaferrari/guavakt/cache/Weigher {
 	public abstract fun weigh (Ljava/lang/Object;Ljava/lang/Object;)I
 }
 

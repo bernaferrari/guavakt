@@ -55,7 +55,7 @@ tasks.register<JavaExec>("jmhGraph") {
     inputs.property("jmhForks", providers.gradleProperty("jmhForks").orElse("2"))
     outputs.file(jmhResult)
     args(
-        "dev.guavakt.graph.GraphBenchmark",
+        "com.bernaferrari.guavakt.graph.GraphBenchmark",
         "-wi", providers.gradleProperty("jmhWarmupIterations").orElse("3").get(),
         "-i", providers.gradleProperty("jmhMeasurementIterations").orElse("5").get(),
         "-f", providers.gradleProperty("jmhForks").orElse("2").get(),

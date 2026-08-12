@@ -8,7 +8,7 @@ and how to make a change without turning a Kotlin Multiplatform library into a J
 
 GuavaKt is a Kotlin-first Multiplatform library for useful Guava-shaped capabilities. It is not an
 official Google project and does **not** replace `com.google.guava:guava` at source or binary level.
-Public APIs use `dev.guavakt.*` so GuavaKt and Guava can coexist on the JVM.
+Public APIs use `com.bernaferrari.guavakt.*` so GuavaKt and Guava can coexist on the JVM.
 
 Use Kotlin's standard library for ordinary `List`, `Set`, `Map`, transformations, and nullability.
 Use `kotlinx.coroutines` for new asynchronous code. GuavaKt earns its place where Kotlin has no
@@ -27,7 +27,7 @@ Read these documents in order when orienting yourself:
 ## Repository map
 
 `settings.gradle.kts` lists every module. Production code is split by capability; the umbrella
-artifact is `dev.guavakt:guavakt` and `guavakt-parity` is the JVM oracle/differential test module.
+artifact is `com.bernaferrari.guavakt:guavakt` and `guavakt-parity` is the JVM oracle/differential test module.
 
 | Area | Modules | Purpose |
 |---|---|---|
@@ -38,7 +38,7 @@ artifact is `dev.guavakt:guavakt` and `guavakt-parity` is the JVM oracle/differe
 | Verification | `parity` | Direct Guava/JDK differential and long-running oracle tests |
 
 Physical source paths follow Guava's package layout for ease of comparison, while Kotlin package
-names remain `dev.guavakt.*`. Do not infer a compatibility promise from a familiar filename: public
+names remain `com.bernaferrari.guavakt.*`. Do not infer a compatibility promise from a familiar filename: public
 contract and tests are what matter.
 
 ## Where implementation belongs

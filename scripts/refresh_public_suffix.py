@@ -262,7 +262,7 @@ def render_patterns(rules: set[Rule], upstream: dict[str, object]) -> str:
         f"// VERSION: {upstream['version']}\n"
         f"// COMMIT: {upstream['commit']}\n"
         f"// SHA256: {upstream['sha256']}\n\n"
-        "package dev.guavakt.thirdparty.publicsuffix\n\n"
+        "package com.bernaferrari.guavakt.thirdparty.publicsuffix\n\n"
         "/** Compact, generated public-suffix trie. See docs/public-suffix.md for refresh discipline. */\n"
         "object PublicSuffixPatterns {\n"
     )

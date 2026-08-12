@@ -6,7 +6,7 @@ Publishing is intentionally not automatic. The public source repository and POM/
 
 ## One-time owner setup
 
-1. Verify ownership of the `dev.guavakt` namespace in the Maven Central Portal before publishing under that coordinate.
+1. Verify ownership of the `com.bernaferrari.guavakt` namespace in the Maven Central Portal before publishing under that coordinate.
 3. Generate a Central user token and an OpenPGP signing key.
 4. Store credentials only in the release environment as Gradle properties or environment-backed Gradle properties; never commit secrets.
 

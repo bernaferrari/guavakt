@@ -2,26 +2,20 @@
 
 **Kotlin Multiplatform primitives for the parts Kotlin’s standard library does not cover.**
 
-![GuavaKt — Kotlin-first Multiplatform](assets/guavakt-social.png)
+![GuavaKt — Kotlin-first Multiplatform](assets/opengraph-image.png)
 
 GuavaKt brings the portable, high-leverage ideas from Guava to Kotlin: rich collections, ranges,
 graphs, hashing, networking helpers, exact math, and coroutine-aware coordination. It is designed
 for `commonMain`, written in Kotlin, and uses coroutines and Okio where they are the natural fit.
 
-It is independent of Google, uses `dev.guavakt.*` packages, and is not binary-compatible with
+It is independent of Google, uses `com.bernaferrari.guavakt.*` packages, and is not binary-compatible with
 `com.google.guava:guava`. This is a Kotlin-first library, not a line-by-line port of Java-era
 Guava.
 
 ## Install
 
 ```kotlin
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation("dev.guavakt:guavakt-collect:0.1.0")
-}
+implementation("com.bernaferrari.guavakt:guavakt-collect:0.1.0")
 ```
 
 Choose the module for the capability you need:
@@ -54,38 +48,105 @@ Choose the module for the capability you need:
 `Range` complements Kotlin ranges rather than replacing them: use `0..10` for an ordinary loop or
 membership check; use GuavaKt when boundaries, range algebra, or range collections matter.
 
-## A taste
+## Examples
+
+### One key, several values—without nested collection bookkeeping
 
 ```kotlin
-import dev.guavakt.collect.ArrayListMultimap
-import dev.guavakt.collect.Range
-import dev.guavakt.collect.TreeRangeSet
+import com.bernaferrari.guavakt.collect.ArrayListMultimap
 
-val tags = ArrayListMultimap.create<String, String>()
-tags.put("kotlin", "multiplatform")
-tags.put("kotlin", "coroutines")
+val tagsByProject = ArrayListMultimap.create<String, String>().apply {
+    putAll("guavakt", listOf("kotlin", "multiplatform"))
+}
+tagsByProject["guavakt"] += "coroutines"
 
-val maintenance = TreeRangeSet.create<Int>()
-maintenance.add(Range.closedOpen(100, 200))
-maintenance.contains(150) // true
-maintenance.contains(200) // false
+val tags = tagsByProject["guavakt"]
+// [kotlin, multiplatform, coroutines]
 ```
 
+`get(key)` is a live value collection: adding through it updates the multimap and its key
+bookkeeping. Use an ordinary `Map<K, V>` when each key has one value.
+
+### Merge and query interval collections
+
 ```kotlin
-import dev.guavakt.cache.CacheBuilder
+import com.bernaferrari.guavakt.collect.Range
+import com.bernaferrari.guavakt.collect.TreeRangeSet
+
+val maintenance = TreeRangeSet.create<Int>().apply {
+    add(Range.closedOpen(100, 200))
+    add(Range.closedOpen(180, 250))
+}
+
+val windows = maintenance.asRanges() // one coalesced [100, 250) window
+val downAt225 = maintenance.contains(225) // true
+val downAt250 = maintenance.contains(250) // false
+```
+
+`RangeSet` turns overlapping or touching intervals into disjoint windows. That is where `Range`
+earns its place; for a plain loop or simple bound, prefer Kotlin's `0..10` or `0..<10`.
+
+### Hash a domain value without reflection
+
+```kotlin
+import com.bernaferrari.guavakt.hash.Funnel
+import com.bernaferrari.guavakt.hash.Hashing
+
+data class BuildKey(val branch: String, val revision: String)
+
+val buildKeyFunnel = Funnel<BuildKey> { key, sink ->
+    sink.putString(key.branch).putString(key.revision)
+}
+
+val fingerprint = Hashing.murmur3_128()
+    .hashObject(BuildKey("main", "9d3b6a2"), buildKeyFunnel)
+```
+
+Funnels make the byte format and field order explicit, so the same hash is produced on every
+target without reflection or JVM serialization.
+
+### Model a directed dependency graph
+
+```kotlin
+import com.bernaferrari.guavakt.graph.GraphBuilder
+
+val dependencies = GraphBuilder.directed<String>().build<String>().apply {
+    putEdge("app", "domain")
+    putEdge("domain", "storage")
+}
+
+val appDependencies = dependencies.successors("app")
+// [domain]
+```
+
+The graph keeps direction, node identity, and edge queries as first-class concepts instead of
+encoding them in an incidental `Map<String, Set<String>>`.
+
+### Cache suspending work with an explicit lifetime
+
+```kotlin
+import com.bernaferrari.guavakt.cache.CacheBuilder
+import kotlinx.coroutines.CoroutineScope
 import kotlin.time.Duration.Companion.minutes
 
-val users = CacheBuilder.newBuilder<UserId, User>()
-    .maximumSize(1_000)
-    .expireAfterAccess(30.minutes)
-    .refreshAfterWrite(5.minutes)
-    .buildCoroutine(applicationScope) { id -> api.fetchUser(id) }
+data class User(val id: String, val name: String)
 
-val user = users.get(id) // suspends; same-key misses share one load
+class UserRepository(
+    scope: CoroutineScope,
+    private val fetchUser: suspend (String) -> User,
+) {
+    private val users = CacheBuilder.newBuilder<String, User>()
+        .maximumSize(1_000)
+        .expireAfterAccess(30.minutes)
+        .buildCoroutine(scope) { id -> fetchUser(id) }
+
+    suspend fun get(id: String): User = users.get(id)
+}
 ```
 
-The supplied scope owns cache loads and refreshes. Cancelling one caller stops only its wait;
-cancelling the owner scope stops the shared work.
+Give the cache an application or feature scope—not an individual request scope. Same-key misses
+share one owner-scoped load; cancelling one caller stops only its wait, while cancelling the owner
+scope stops shared work.
 
 ## Keep Kotlin and focused libraries for everything else
 
@@ -105,6 +166,6 @@ services, EventBus, blocking queues, or a `java.io`/`java.nio.file` facade.
 - [Compatibility matrix](docs/compatibility.md) — supported concepts and intentional differences
 - [Kotlin-first guide](docs/kotlin-first.md) — choosing Kotlin, coroutines, Okio, or GuavaKt
 - [Architecture](docs/architecture.md) — modules and targets
-- [Stability policy](docs/stability.md), [changelog](CHANGELOG.md), and [security policy](SECURITY.md)
+- [Stability policy](docs/stability.md) and [changelog](CHANGELOG.md)
 - [Documentation index](docs/README.md) — benchmarks, fuzzing, public-suffix refreshes, and releases
 - [Contributor guide](AGENTS.md) — project conventions and verification commands

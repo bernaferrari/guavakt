@@ -28,7 +28,7 @@ When `status` says `REFRESH_REQUIRED`, run the generator explicitly. It is inten
 python3 scripts/refresh_public_suffix.py generate \
   --output guavakt-net/src/commonMain/kotlin/com/google/thirdparty/publicsuffix/PublicSuffixPatterns.kt \
   --lock-output public_suffix.lock.json
-./gradlew :guavakt-net:jvmTest :guavakt-parity:test --tests dev.guavakt.parity.NetDifferentialTest \
+./gradlew :guavakt-net:jvmTest :guavakt-parity:test --tests com.bernaferrari.guavakt.parity.NetDifferentialTest \
   --no-daemon -Pkotlin.incremental=false
 ```
 

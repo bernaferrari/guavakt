@@ -6,7 +6,7 @@
 The scope is intentionally smaller than Guava: the [compatibility matrix](compatibility.md) and
 [Kotlin-first guide](kotlin-first.md) define what is supported and what is deliberately excluded.
 
-Every public API in a published `dev.guavakt:*` module is part of the `0.1.x` compatibility
+Every public API in a published `com.bernaferrari.guavakt:*` module is part of the `0.1.x` compatibility
 contract unless its KDoc or the compatibility matrix marks it platform-limited. Private types,
 test/parity modules, build scripts, benchmark harnesses, generated data, and `internal` declarations
 are not public API.
@@ -44,7 +44,8 @@ the compatibility matrix rather than inferred from a target name.
 - Performance work requires a reproducible benchmark or trace; throughput from one machine is not a
   compatibility guarantee.
 - Public reports should include the module/version, target, Kotlin version, and a minimal
-  reproduction. Security reports follow the [security policy](../SECURITY.md).
+  reproduction. Report suspected vulnerabilities privately through GitHub's
+  [security-advisory flow](https://github.com/bernaferrari/guavakt/security/advisories/new).
 
 ## Release approval
 

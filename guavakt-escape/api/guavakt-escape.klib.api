@@ -5,101 +5,101 @@
 // - Show manifest properties: true
 // - Show declarations: true
 
-// Library unique name: <dev.guavakt:guavakt-escape>
-open annotation class dev.guavakt.escape/IgnoreJRERequirement : kotlin/Annotation { // dev.guavakt.escape/IgnoreJRERequirement|null[0]
-    constructor <init>() // dev.guavakt.escape/IgnoreJRERequirement.<init>|<init>(){}[0]
+// Library unique name: <com.bernaferrari.guavakt:guavakt-escape>
+open annotation class com.bernaferrari.guavakt.escape/IgnoreJRERequirement : kotlin/Annotation { // com.bernaferrari.guavakt.escape/IgnoreJRERequirement|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.escape/IgnoreJRERequirement.<init>|<init>(){}[0]
 }
 
-open annotation class dev.guavakt.escape/ParametricNullness : kotlin/Annotation { // dev.guavakt.escape/ParametricNullness|null[0]
-    constructor <init>() // dev.guavakt.escape/ParametricNullness.<init>|<init>(){}[0]
+open annotation class com.bernaferrari.guavakt.escape/ParametricNullness : kotlin/Annotation { // com.bernaferrari.guavakt.escape/ParametricNullness|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.escape/ParametricNullness.<init>|<init>(){}[0]
 }
 
-open annotation class dev.guavakt.html/ParametricNullness : kotlin/Annotation { // dev.guavakt.html/ParametricNullness|null[0]
-    constructor <init>() // dev.guavakt.html/ParametricNullness.<init>|<init>(){}[0]
+open annotation class com.bernaferrari.guavakt.html/ParametricNullness : kotlin/Annotation { // com.bernaferrari.guavakt.html/ParametricNullness|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.html/ParametricNullness.<init>|<init>(){}[0]
 }
 
-open annotation class dev.guavakt.xml/ParametricNullness : kotlin/Annotation { // dev.guavakt.xml/ParametricNullness|null[0]
-    constructor <init>() // dev.guavakt.xml/ParametricNullness.<init>|<init>(){}[0]
+open annotation class com.bernaferrari.guavakt.xml/ParametricNullness : kotlin/Annotation { // com.bernaferrari.guavakt.xml/ParametricNullness|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.xml/ParametricNullness.<init>|<init>(){}[0]
 }
 
-abstract class dev.guavakt.escape/ArrayBasedCharEscaper : dev.guavakt.escape/CharEscaper { // dev.guavakt.escape/ArrayBasedCharEscaper|null[0]
-    constructor <init>(dev.guavakt.escape/ArrayBasedEscaperMap, kotlin/Char, kotlin/Char) // dev.guavakt.escape/ArrayBasedCharEscaper.<init>|<init>(dev.guavakt.escape.ArrayBasedEscaperMap;kotlin.Char;kotlin.Char){}[0]
-    constructor <init>(kotlin.collections/Map<kotlin/Char, kotlin/String>, kotlin/Char, kotlin/Char) // dev.guavakt.escape/ArrayBasedCharEscaper.<init>|<init>(kotlin.collections.Map<kotlin.Char,kotlin.String>;kotlin.Char;kotlin.Char){}[0]
+abstract class com.bernaferrari.guavakt.escape/ArrayBasedCharEscaper : com.bernaferrari.guavakt.escape/CharEscaper { // com.bernaferrari.guavakt.escape/ArrayBasedCharEscaper|null[0]
+    constructor <init>(com.bernaferrari.guavakt.escape/ArrayBasedEscaperMap, kotlin/Char, kotlin/Char) // com.bernaferrari.guavakt.escape/ArrayBasedCharEscaper.<init>|<init>(com.bernaferrari.guavakt.escape.ArrayBasedEscaperMap;kotlin.Char;kotlin.Char){}[0]
+    constructor <init>(kotlin.collections/Map<kotlin/Char, kotlin/String>, kotlin/Char, kotlin/Char) // com.bernaferrari.guavakt.escape/ArrayBasedCharEscaper.<init>|<init>(kotlin.collections.Map<kotlin.Char,kotlin.String>;kotlin.Char;kotlin.Char){}[0]
 
-    abstract fun escapeUnsafe(kotlin/Char): kotlin/CharArray? // dev.guavakt.escape/ArrayBasedCharEscaper.escapeUnsafe|escapeUnsafe(kotlin.Char){}[0]
-    final fun escape(kotlin/Char): kotlin/CharArray? // dev.guavakt.escape/ArrayBasedCharEscaper.escape|escape(kotlin.Char){}[0]
-    final fun escape(kotlin/String): kotlin/String // dev.guavakt.escape/ArrayBasedCharEscaper.escape|escape(kotlin.String){}[0]
+    abstract fun escapeUnsafe(kotlin/Char): kotlin/CharArray? // com.bernaferrari.guavakt.escape/ArrayBasedCharEscaper.escapeUnsafe|escapeUnsafe(kotlin.Char){}[0]
+    final fun escape(kotlin/Char): kotlin/CharArray? // com.bernaferrari.guavakt.escape/ArrayBasedCharEscaper.escape|escape(kotlin.Char){}[0]
+    final fun escape(kotlin/String): kotlin/String // com.bernaferrari.guavakt.escape/ArrayBasedCharEscaper.escape|escape(kotlin.String){}[0]
 }
 
-abstract class dev.guavakt.escape/ArrayBasedUnicodeEscaper : dev.guavakt.escape/UnicodeEscaper { // dev.guavakt.escape/ArrayBasedUnicodeEscaper|null[0]
-    constructor <init>(dev.guavakt.escape/ArrayBasedEscaperMap, kotlin/Int, kotlin/Int, kotlin/String?) // dev.guavakt.escape/ArrayBasedUnicodeEscaper.<init>|<init>(dev.guavakt.escape.ArrayBasedEscaperMap;kotlin.Int;kotlin.Int;kotlin.String?){}[0]
-    constructor <init>(kotlin.collections/Map<kotlin/Char, kotlin/String>, kotlin/Int, kotlin/Int, kotlin/String?) // dev.guavakt.escape/ArrayBasedUnicodeEscaper.<init>|<init>(kotlin.collections.Map<kotlin.Char,kotlin.String>;kotlin.Int;kotlin.Int;kotlin.String?){}[0]
+abstract class com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper : com.bernaferrari.guavakt.escape/UnicodeEscaper { // com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper|null[0]
+    constructor <init>(com.bernaferrari.guavakt.escape/ArrayBasedEscaperMap, kotlin/Int, kotlin/Int, kotlin/String?) // com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper.<init>|<init>(com.bernaferrari.guavakt.escape.ArrayBasedEscaperMap;kotlin.Int;kotlin.Int;kotlin.String?){}[0]
+    constructor <init>(kotlin.collections/Map<kotlin/Char, kotlin/String>, kotlin/Int, kotlin/Int, kotlin/String?) // com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper.<init>|<init>(kotlin.collections.Map<kotlin.Char,kotlin.String>;kotlin.Int;kotlin.Int;kotlin.String?){}[0]
 
-    abstract fun escapeUnsafe(kotlin/Int): kotlin/CharArray? // dev.guavakt.escape/ArrayBasedUnicodeEscaper.escapeUnsafe|escapeUnsafe(kotlin.Int){}[0]
-    final fun escape(kotlin/Int): kotlin/CharArray? // dev.guavakt.escape/ArrayBasedUnicodeEscaper.escape|escape(kotlin.Int){}[0]
-    final fun escape(kotlin/String): kotlin/String // dev.guavakt.escape/ArrayBasedUnicodeEscaper.escape|escape(kotlin.String){}[0]
-    final fun nextEscapeIndex(kotlin/CharSequence, kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.escape/ArrayBasedUnicodeEscaper.nextEscapeIndex|nextEscapeIndex(kotlin.CharSequence;kotlin.Int;kotlin.Int){}[0]
+    abstract fun escapeUnsafe(kotlin/Int): kotlin/CharArray? // com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper.escapeUnsafe|escapeUnsafe(kotlin.Int){}[0]
+    final fun escape(kotlin/Int): kotlin/CharArray? // com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper.escape|escape(kotlin.Int){}[0]
+    final fun escape(kotlin/String): kotlin/String // com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper.escape|escape(kotlin.String){}[0]
+    final fun nextEscapeIndex(kotlin/CharSequence, kotlin/Int, kotlin/Int): kotlin/Int // com.bernaferrari.guavakt.escape/ArrayBasedUnicodeEscaper.nextEscapeIndex|nextEscapeIndex(kotlin.CharSequence;kotlin.Int;kotlin.Int){}[0]
 }
 
-abstract class dev.guavakt.escape/CharEscaper : dev.guavakt.escape/Escaper { // dev.guavakt.escape/CharEscaper|null[0]
-    constructor <init>() // dev.guavakt.escape/CharEscaper.<init>|<init>(){}[0]
+abstract class com.bernaferrari.guavakt.escape/CharEscaper : com.bernaferrari.guavakt.escape/Escaper { // com.bernaferrari.guavakt.escape/CharEscaper|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.escape/CharEscaper.<init>|<init>(){}[0]
 
-    abstract fun escape(kotlin/Char): kotlin/CharArray? // dev.guavakt.escape/CharEscaper.escape|escape(kotlin.Char){}[0]
-    final fun escapeSlow(kotlin/String, kotlin/Int): kotlin/String // dev.guavakt.escape/CharEscaper.escapeSlow|escapeSlow(kotlin.String;kotlin.Int){}[0]
-    open fun escape(kotlin/String): kotlin/String // dev.guavakt.escape/CharEscaper.escape|escape(kotlin.String){}[0]
+    abstract fun escape(kotlin/Char): kotlin/CharArray? // com.bernaferrari.guavakt.escape/CharEscaper.escape|escape(kotlin.Char){}[0]
+    final fun escapeSlow(kotlin/String, kotlin/Int): kotlin/String // com.bernaferrari.guavakt.escape/CharEscaper.escapeSlow|escapeSlow(kotlin.String;kotlin.Int){}[0]
+    open fun escape(kotlin/String): kotlin/String // com.bernaferrari.guavakt.escape/CharEscaper.escape|escape(kotlin.String){}[0]
 }
 
-abstract class dev.guavakt.escape/Escaper { // dev.guavakt.escape/Escaper|null[0]
-    constructor <init>() // dev.guavakt.escape/Escaper.<init>|<init>(){}[0]
+abstract class com.bernaferrari.guavakt.escape/Escaper { // com.bernaferrari.guavakt.escape/Escaper|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.escape/Escaper.<init>|<init>(){}[0]
 
-    abstract fun escape(kotlin/String): kotlin/String // dev.guavakt.escape/Escaper.escape|escape(kotlin.String){}[0]
+    abstract fun escape(kotlin/String): kotlin/String // com.bernaferrari.guavakt.escape/Escaper.escape|escape(kotlin.String){}[0]
 }
 
-abstract class dev.guavakt.escape/UnicodeEscaper : dev.guavakt.escape/Escaper { // dev.guavakt.escape/UnicodeEscaper|null[0]
-    constructor <init>() // dev.guavakt.escape/UnicodeEscaper.<init>|<init>(){}[0]
+abstract class com.bernaferrari.guavakt.escape/UnicodeEscaper : com.bernaferrari.guavakt.escape/Escaper { // com.bernaferrari.guavakt.escape/UnicodeEscaper|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.escape/UnicodeEscaper.<init>|<init>(){}[0]
 
-    abstract fun escape(kotlin/Int): kotlin/CharArray? // dev.guavakt.escape/UnicodeEscaper.escape|escape(kotlin.Int){}[0]
-    final fun escapeSlow(kotlin/String, kotlin/Int): kotlin/String // dev.guavakt.escape/UnicodeEscaper.escapeSlow|escapeSlow(kotlin.String;kotlin.Int){}[0]
-    open fun escape(kotlin/String): kotlin/String // dev.guavakt.escape/UnicodeEscaper.escape|escape(kotlin.String){}[0]
-    open fun nextEscapeIndex(kotlin/CharSequence, kotlin/Int, kotlin/Int): kotlin/Int // dev.guavakt.escape/UnicodeEscaper.nextEscapeIndex|nextEscapeIndex(kotlin.CharSequence;kotlin.Int;kotlin.Int){}[0]
+    abstract fun escape(kotlin/Int): kotlin/CharArray? // com.bernaferrari.guavakt.escape/UnicodeEscaper.escape|escape(kotlin.Int){}[0]
+    final fun escapeSlow(kotlin/String, kotlin/Int): kotlin/String // com.bernaferrari.guavakt.escape/UnicodeEscaper.escapeSlow|escapeSlow(kotlin.String;kotlin.Int){}[0]
+    open fun escape(kotlin/String): kotlin/String // com.bernaferrari.guavakt.escape/UnicodeEscaper.escape|escape(kotlin.String){}[0]
+    open fun nextEscapeIndex(kotlin/CharSequence, kotlin/Int, kotlin/Int): kotlin/Int // com.bernaferrari.guavakt.escape/UnicodeEscaper.nextEscapeIndex|nextEscapeIndex(kotlin.CharSequence;kotlin.Int;kotlin.Int){}[0]
 }
 
-final class dev.guavakt.escape/ArrayBasedEscaperMap { // dev.guavakt.escape/ArrayBasedEscaperMap|null[0]
-    final object Companion { // dev.guavakt.escape/ArrayBasedEscaperMap.Companion|null[0]
-        final fun create(kotlin.collections/Map<kotlin/Char, kotlin/String>): dev.guavakt.escape/ArrayBasedEscaperMap // dev.guavakt.escape/ArrayBasedEscaperMap.Companion.create|create(kotlin.collections.Map<kotlin.Char,kotlin.String>){}[0]
+final class com.bernaferrari.guavakt.escape/ArrayBasedEscaperMap { // com.bernaferrari.guavakt.escape/ArrayBasedEscaperMap|null[0]
+    final object Companion { // com.bernaferrari.guavakt.escape/ArrayBasedEscaperMap.Companion|null[0]
+        final fun create(kotlin.collections/Map<kotlin/Char, kotlin/String>): com.bernaferrari.guavakt.escape/ArrayBasedEscaperMap // com.bernaferrari.guavakt.escape/ArrayBasedEscaperMap.Companion.create|create(kotlin.collections.Map<kotlin.Char,kotlin.String>){}[0]
     }
 }
 
-final class dev.guavakt.escape/CharEscaperBuilder { // dev.guavakt.escape/CharEscaperBuilder|null[0]
-    constructor <init>() // dev.guavakt.escape/CharEscaperBuilder.<init>|<init>(){}[0]
+final class com.bernaferrari.guavakt.escape/CharEscaperBuilder { // com.bernaferrari.guavakt.escape/CharEscaperBuilder|null[0]
+    constructor <init>() // com.bernaferrari.guavakt.escape/CharEscaperBuilder.<init>|<init>(){}[0]
 
-    final fun addEscape(kotlin/Char, kotlin/String): dev.guavakt.escape/CharEscaperBuilder // dev.guavakt.escape/CharEscaperBuilder.addEscape|addEscape(kotlin.Char;kotlin.String){}[0]
-    final fun addEscapes(kotlin/CharArray, kotlin/String): dev.guavakt.escape/CharEscaperBuilder // dev.guavakt.escape/CharEscaperBuilder.addEscapes|addEscapes(kotlin.CharArray;kotlin.String){}[0]
-    final fun toArray(): kotlin/Array<kotlin/String?> // dev.guavakt.escape/CharEscaperBuilder.toArray|toArray(){}[0]
-    final fun toEscaper(): dev.guavakt.escape/CharEscaper // dev.guavakt.escape/CharEscaperBuilder.toEscaper|toEscaper(){}[0]
+    final fun addEscape(kotlin/Char, kotlin/String): com.bernaferrari.guavakt.escape/CharEscaperBuilder // com.bernaferrari.guavakt.escape/CharEscaperBuilder.addEscape|addEscape(kotlin.Char;kotlin.String){}[0]
+    final fun addEscapes(kotlin/CharArray, kotlin/String): com.bernaferrari.guavakt.escape/CharEscaperBuilder // com.bernaferrari.guavakt.escape/CharEscaperBuilder.addEscapes|addEscapes(kotlin.CharArray;kotlin.String){}[0]
+    final fun toArray(): kotlin/Array<kotlin/String?> // com.bernaferrari.guavakt.escape/CharEscaperBuilder.toArray|toArray(){}[0]
+    final fun toEscaper(): com.bernaferrari.guavakt.escape/CharEscaper // com.bernaferrari.guavakt.escape/CharEscaperBuilder.toEscaper|toEscaper(){}[0]
 }
 
-final object dev.guavakt.escape/Escapers { // dev.guavakt.escape/Escapers|null[0]
-    final fun builder(): dev.guavakt.escape/Escapers.Builder // dev.guavakt.escape/Escapers.builder|builder(){}[0]
-    final fun computeReplacement(dev.guavakt.escape/CharEscaper, kotlin/Char): kotlin/String? // dev.guavakt.escape/Escapers.computeReplacement|computeReplacement(dev.guavakt.escape.CharEscaper;kotlin.Char){}[0]
-    final fun computeReplacement(dev.guavakt.escape/UnicodeEscaper, kotlin/Int): kotlin/String? // dev.guavakt.escape/Escapers.computeReplacement|computeReplacement(dev.guavakt.escape.UnicodeEscaper;kotlin.Int){}[0]
-    final fun nullEscaper(): dev.guavakt.escape/Escaper // dev.guavakt.escape/Escapers.nullEscaper|nullEscaper(){}[0]
+final object com.bernaferrari.guavakt.escape/Escapers { // com.bernaferrari.guavakt.escape/Escapers|null[0]
+    final fun builder(): com.bernaferrari.guavakt.escape/Escapers.Builder // com.bernaferrari.guavakt.escape/Escapers.builder|builder(){}[0]
+    final fun computeReplacement(com.bernaferrari.guavakt.escape/CharEscaper, kotlin/Char): kotlin/String? // com.bernaferrari.guavakt.escape/Escapers.computeReplacement|computeReplacement(com.bernaferrari.guavakt.escape.CharEscaper;kotlin.Char){}[0]
+    final fun computeReplacement(com.bernaferrari.guavakt.escape/UnicodeEscaper, kotlin/Int): kotlin/String? // com.bernaferrari.guavakt.escape/Escapers.computeReplacement|computeReplacement(com.bernaferrari.guavakt.escape.UnicodeEscaper;kotlin.Int){}[0]
+    final fun nullEscaper(): com.bernaferrari.guavakt.escape/Escaper // com.bernaferrari.guavakt.escape/Escapers.nullEscaper|nullEscaper(){}[0]
 
-    final class Builder { // dev.guavakt.escape/Escapers.Builder|null[0]
-        constructor <init>() // dev.guavakt.escape/Escapers.Builder.<init>|<init>(){}[0]
+    final class Builder { // com.bernaferrari.guavakt.escape/Escapers.Builder|null[0]
+        constructor <init>() // com.bernaferrari.guavakt.escape/Escapers.Builder.<init>|<init>(){}[0]
 
-        final fun addEscape(kotlin/Char, kotlin/String): dev.guavakt.escape/Escapers.Builder // dev.guavakt.escape/Escapers.Builder.addEscape|addEscape(kotlin.Char;kotlin.String){}[0]
-        final fun build(): dev.guavakt.escape/Escaper // dev.guavakt.escape/Escapers.Builder.build|build(){}[0]
-        final fun setSafeRange(kotlin/Char, kotlin/Char): dev.guavakt.escape/Escapers.Builder // dev.guavakt.escape/Escapers.Builder.setSafeRange|setSafeRange(kotlin.Char;kotlin.Char){}[0]
-        final fun setUnsafeReplacement(kotlin/String?): dev.guavakt.escape/Escapers.Builder // dev.guavakt.escape/Escapers.Builder.setUnsafeReplacement|setUnsafeReplacement(kotlin.String?){}[0]
+        final fun addEscape(kotlin/Char, kotlin/String): com.bernaferrari.guavakt.escape/Escapers.Builder // com.bernaferrari.guavakt.escape/Escapers.Builder.addEscape|addEscape(kotlin.Char;kotlin.String){}[0]
+        final fun build(): com.bernaferrari.guavakt.escape/Escaper // com.bernaferrari.guavakt.escape/Escapers.Builder.build|build(){}[0]
+        final fun setSafeRange(kotlin/Char, kotlin/Char): com.bernaferrari.guavakt.escape/Escapers.Builder // com.bernaferrari.guavakt.escape/Escapers.Builder.setSafeRange|setSafeRange(kotlin.Char;kotlin.Char){}[0]
+        final fun setUnsafeReplacement(kotlin/String?): com.bernaferrari.guavakt.escape/Escapers.Builder // com.bernaferrari.guavakt.escape/Escapers.Builder.setUnsafeReplacement|setUnsafeReplacement(kotlin.String?){}[0]
     }
 }
 
-final object dev.guavakt.html/HtmlEscapers { // dev.guavakt.html/HtmlEscapers|null[0]
-    final fun htmlEscaper(): dev.guavakt.escape/Escaper // dev.guavakt.html/HtmlEscapers.htmlEscaper|htmlEscaper(){}[0]
+final object com.bernaferrari.guavakt.html/HtmlEscapers { // com.bernaferrari.guavakt.html/HtmlEscapers|null[0]
+    final fun htmlEscaper(): com.bernaferrari.guavakt.escape/Escaper // com.bernaferrari.guavakt.html/HtmlEscapers.htmlEscaper|htmlEscaper(){}[0]
 }
 
-final object dev.guavakt.xml/XmlEscapers { // dev.guavakt.xml/XmlEscapers|null[0]
-    final fun xmlAttributeEscaper(): dev.guavakt.escape/Escaper // dev.guavakt.xml/XmlEscapers.xmlAttributeEscaper|xmlAttributeEscaper(){}[0]
-    final fun xmlContentEscaper(): dev.guavakt.escape/Escaper // dev.guavakt.xml/XmlEscapers.xmlContentEscaper|xmlContentEscaper(){}[0]
+final object com.bernaferrari.guavakt.xml/XmlEscapers { // com.bernaferrari.guavakt.xml/XmlEscapers|null[0]
+    final fun xmlAttributeEscaper(): com.bernaferrari.guavakt.escape/Escaper // com.bernaferrari.guavakt.xml/XmlEscapers.xmlAttributeEscaper|xmlAttributeEscaper(){}[0]
+    final fun xmlContentEscaper(): com.bernaferrari.guavakt.escape/Escaper // com.bernaferrari.guavakt.xml/XmlEscapers.xmlContentEscaper|xmlContentEscaper(){}[0]
 }

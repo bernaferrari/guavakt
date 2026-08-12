@@ -8,7 +8,7 @@ plugins {
 }
 
 allprojects {
-    group = "dev.guavakt"
+    group = "com.bernaferrari.guavakt"
     version = "0.1.0"
 
     repositories {

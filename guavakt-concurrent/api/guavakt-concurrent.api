@@ -1,22 +1,22 @@
-public final class dev/guavakt/concurrent/CoroutineMonitor {
+public final class com/bernaferrari/guavakt/concurrent/CoroutineMonitor {
 	public fun <init> ()V
-	public final fun await (Ldev/guavakt/concurrent/CoroutineMonitor$Guard;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun await (Lcom/bernaferrari/guavakt/concurrent/CoroutineMonitor$Guard;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun isLocked ()Z
-	public final fun newGuard (Lkotlin/jvm/functions/Function0;)Ldev/guavakt/concurrent/CoroutineMonitor$Guard;
-	public final fun tryWithLockWhen-dWUq8MI (Ldev/guavakt/concurrent/CoroutineMonitor$Guard;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun newGuard (Lkotlin/jvm/functions/Function0;)Lcom/bernaferrari/guavakt/concurrent/CoroutineMonitor$Guard;
+	public final fun tryWithLockWhen-dWUq8MI (Lcom/bernaferrari/guavakt/concurrent/CoroutineMonitor$Guard;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun withLock (Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public final fun withLockWhen (Ldev/guavakt/concurrent/CoroutineMonitor$Guard;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun withLockWhen (Lcom/bernaferrari/guavakt/concurrent/CoroutineMonitor$Guard;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
-public abstract class dev/guavakt/concurrent/CoroutineMonitor$Guard {
-	public fun <init> (Ldev/guavakt/concurrent/CoroutineMonitor;)V
-	public final fun getMonitor ()Ldev/guavakt/concurrent/CoroutineMonitor;
+public abstract class com/bernaferrari/guavakt/concurrent/CoroutineMonitor$Guard {
+	public fun <init> (Lcom/bernaferrari/guavakt/concurrent/CoroutineMonitor;)V
+	public final fun getMonitor ()Lcom/bernaferrari/guavakt/concurrent/CoroutineMonitor;
 	public abstract fun isSatisfied ()Z
 }
 
-public final class dev/guavakt/concurrent/CoroutineRateLimiter {
-	public static final field Companion Ldev/guavakt/concurrent/CoroutineRateLimiter$Companion;
-	public synthetic fun <init> (Ldev/guavakt/base/Ticker;Ldev/guavakt/concurrent/SmoothRateState;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/concurrent/CoroutineRateLimiter {
+	public static final field Companion Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiter$Companion;
+	public synthetic fun <init> (Lcom/bernaferrari/guavakt/base/Ticker;Lcom/bernaferrari/guavakt/concurrent/SmoothRateState;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun acquire-3nIYWDw (ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun acquire-5sfh64U (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 	public final fun rate (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -28,14 +28,14 @@ public final class dev/guavakt/concurrent/CoroutineRateLimiter {
 	public final fun tryAcquire-VtjQ1oo (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
-public final class dev/guavakt/concurrent/CoroutineRateLimiter$Companion {
-	public final fun create (D)Ldev/guavakt/concurrent/CoroutineRateLimiter;
-	public final fun create (DLdev/guavakt/base/Ticker;)Ldev/guavakt/concurrent/CoroutineRateLimiter;
-	public final fun create-8Mi8wO0 (DJLdev/guavakt/base/Ticker;)Ldev/guavakt/concurrent/CoroutineRateLimiter;
-	public final fun create-HG0u8IE (DJ)Ldev/guavakt/concurrent/CoroutineRateLimiter;
+public final class com/bernaferrari/guavakt/concurrent/CoroutineRateLimiter$Companion {
+	public final fun create (D)Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiter;
+	public final fun create (DLcom/bernaferrari/guavakt/base/Ticker;)Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiter;
+	public final fun create-8Mi8wO0 (DJLcom/bernaferrari/guavakt/base/Ticker;)Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiter;
+	public final fun create-HG0u8IE (DJ)Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiter;
 }
 
-public final class dev/guavakt/concurrent/CoroutineRateLimiterStats {
+public final class com/bernaferrari/guavakt/concurrent/CoroutineRateLimiterStats {
 	public fun <init> (JJJJJJ)V
 	public final fun component1 ()J
 	public final fun component2 ()J
@@ -43,8 +43,8 @@ public final class dev/guavakt/concurrent/CoroutineRateLimiterStats {
 	public final fun component4 ()J
 	public final fun component5 ()J
 	public final fun component6 ()J
-	public final fun copy (JJJJJJ)Ldev/guavakt/concurrent/CoroutineRateLimiterStats;
-	public static synthetic fun copy$default (Ldev/guavakt/concurrent/CoroutineRateLimiterStats;JJJJJJILjava/lang/Object;)Ldev/guavakt/concurrent/CoroutineRateLimiterStats;
+	public final fun copy (JJJJJJ)Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiterStats;
+	public static synthetic fun copy$default (Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiterStats;JJJJJJILjava/lang/Object;)Lcom/bernaferrari/guavakt/concurrent/CoroutineRateLimiterStats;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getAcceptedAcquisitionCount ()J
 	public final fun getAcquiredPermitCount ()J

@@ -56,7 +56,7 @@ tasks.register<JavaExec>("jmhHash") {
     inputs.property("jmhForks", providers.gradleProperty("jmhForks").orElse("2"))
     outputs.file(jmhResult)
     args(
-        "dev.guavakt.hash.HashBenchmark",
+        "com.bernaferrari.guavakt.hash.HashBenchmark",
         "-wi", providers.gradleProperty("jmhWarmupIterations").orElse("3").get(),
         "-i", providers.gradleProperty("jmhMeasurementIterations").orElse("5").get(),
         "-f", providers.gradleProperty("jmhForks").orElse("2").get(),

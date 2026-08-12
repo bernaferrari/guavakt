@@ -1,24 +1,24 @@
-public abstract class dev/guavakt/graph/AbstractBaseGraph : dev/guavakt/graph/AbstractGraph {
+public abstract class com/bernaferrari/guavakt/graph/AbstractBaseGraph : com/bernaferrari/guavakt/graph/AbstractGraph {
 	public fun <init> ()V
 }
 
-public class dev/guavakt/graph/AbstractDirectedNetworkConnections : dev/guavakt/graph/StandardNetworkConnections {
+public class com/bernaferrari/guavakt/graph/AbstractDirectedNetworkConnections : com/bernaferrari/guavakt/graph/StandardNetworkConnections {
 	public fun <init> ()V
 }
 
-public abstract class dev/guavakt/graph/AbstractGraph : dev/guavakt/graph/Graph {
+public abstract class com/bernaferrari/guavakt/graph/AbstractGraph : com/bernaferrari/guavakt/graph/Graph {
 	public fun <init> ()V
 	public fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun allowsSelfLoops ()Z
-	public fun asNetwork ()Ldev/guavakt/graph/Network;
+	public fun asNetwork ()Lcom/bernaferrari/guavakt/graph/Network;
 	public fun degree (Ljava/lang/Object;)I
 	public fun edges ()Ljava/util/Set;
 	public fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun inDegree (Ljava/lang/Object;)I
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun nodes ()Ljava/util/Set;
 	public fun outDegree (Ljava/lang/Object;)I
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -27,35 +27,35 @@ public abstract class dev/guavakt/graph/AbstractGraph : dev/guavakt/graph/Graph 
 	public abstract fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public abstract class dev/guavakt/graph/AbstractGraphBuilder {
+public abstract class com/bernaferrari/guavakt/graph/AbstractGraphBuilder {
 	public fun <init> (Z)V
-	public final fun allowsSelfLoops (Z)Ldev/guavakt/graph/AbstractGraphBuilder;
+	public final fun allowsSelfLoops (Z)Lcom/bernaferrari/guavakt/graph/AbstractGraphBuilder;
 	public final fun getAllowsSelfLoops ()Z
 	public final fun getDirected ()Z
-	public final fun getNodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public final fun getNodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	protected final fun setAllowsSelfLoops (Z)V
-	protected final fun setNodeOrder (Ldev/guavakt/graph/ElementOrder;)V
+	protected final fun setNodeOrder (Lcom/bernaferrari/guavakt/graph/ElementOrder;)V
 }
 
-public abstract class dev/guavakt/graph/AbstractNetwork : dev/guavakt/graph/Network {
+public abstract class com/bernaferrari/guavakt/graph/AbstractNetwork : com/bernaferrari/guavakt/graph/Network {
 	public fun <init> ()V
 	public fun adjacentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun allowsParallelEdges ()Z
 	public abstract fun allowsSelfLoops ()Z
-	public fun asGraph ()Ldev/guavakt/graph/Graph;
+	public fun asGraph ()Lcom/bernaferrari/guavakt/graph/Graph;
 	public fun degree (Ljava/lang/Object;)I
 	public fun edgeConnectingOrNull (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-	public fun edgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun edgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun edges ()Ljava/util/Set;
 	public abstract fun edgesConnecting (Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
 	public fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun inDegree (Ljava/lang/Object;)I
 	public abstract fun inEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
-	public abstract fun incidentNodes (Ljava/lang/Object;)Ldev/guavakt/graph/EndpointPair;
+	public abstract fun incidentNodes (Ljava/lang/Object;)Lcom/bernaferrari/guavakt/graph/EndpointPair;
 	public abstract fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun nodes ()Ljava/util/Set;
 	public fun outDegree (Ljava/lang/Object;)I
 	public abstract fun outEdges (Ljava/lang/Object;)Ljava/util/Set;
@@ -65,25 +65,25 @@ public abstract class dev/guavakt/graph/AbstractNetwork : dev/guavakt/graph/Netw
 	public abstract fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public class dev/guavakt/graph/AbstractUndirectedNetworkConnections : dev/guavakt/graph/StandardNetworkConnections {
+public class com/bernaferrari/guavakt/graph/AbstractUndirectedNetworkConnections : com/bernaferrari/guavakt/graph/StandardNetworkConnections {
 	public fun <init> ()V
 }
 
-public abstract class dev/guavakt/graph/AbstractValueGraph : dev/guavakt/graph/ValueGraph {
+public abstract class com/bernaferrari/guavakt/graph/AbstractValueGraph : com/bernaferrari/guavakt/graph/ValueGraph {
 	public fun <init> ()V
 	public fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun allowsSelfLoops ()Z
-	public fun asGraph ()Ldev/guavakt/graph/Graph;
-	public fun asNetwork ()Ldev/guavakt/graph/Network;
+	public fun asGraph ()Lcom/bernaferrari/guavakt/graph/Graph;
+	public fun asNetwork ()Lcom/bernaferrari/guavakt/graph/Network;
 	public fun degree (Ljava/lang/Object;)I
 	public abstract fun edgeValueOrDefault (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun edges ()Ljava/util/Set;
 	public fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun inDegree (Ljava/lang/Object;)I
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun nodes ()Ljava/util/Set;
 	public fun outDegree (Ljava/lang/Object;)I
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -92,69 +92,69 @@ public abstract class dev/guavakt/graph/AbstractValueGraph : dev/guavakt/graph/V
 	public abstract fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public abstract class dev/guavakt/graph/BaseGraph : dev/guavakt/graph/AbstractGraph {
+public abstract class com/bernaferrari/guavakt/graph/BaseGraph : com/bernaferrari/guavakt/graph/AbstractGraph {
 	public fun <init> ()V
 }
 
-public class dev/guavakt/graph/DirectedGraphConnections : dev/guavakt/graph/StandardGraphConnections {
-	public static final field Companion Ldev/guavakt/graph/DirectedGraphConnections$Companion;
+public class com/bernaferrari/guavakt/graph/DirectedGraphConnections : com/bernaferrari/guavakt/graph/StandardGraphConnections {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/DirectedGraphConnections$Companion;
 	public fun <init> ()V
 }
 
-public final class dev/guavakt/graph/DirectedGraphConnections$Companion {
-	public final fun of ()Ldev/guavakt/graph/DirectedGraphConnections;
+public final class com/bernaferrari/guavakt/graph/DirectedGraphConnections$Companion {
+	public final fun of ()Lcom/bernaferrari/guavakt/graph/DirectedGraphConnections;
 }
 
-public class dev/guavakt/graph/DirectedMultiNetworkConnections : dev/guavakt/graph/DirectedGraphConnections {
-	public static final field Companion Ldev/guavakt/graph/DirectedMultiNetworkConnections$Companion;
+public class com/bernaferrari/guavakt/graph/DirectedMultiNetworkConnections : com/bernaferrari/guavakt/graph/DirectedGraphConnections {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/DirectedMultiNetworkConnections$Companion;
 	public fun <init> ()V
 }
 
-public final class dev/guavakt/graph/DirectedMultiNetworkConnections$Companion {
-	public final fun of ()Ldev/guavakt/graph/DirectedMultiNetworkConnections;
+public final class com/bernaferrari/guavakt/graph/DirectedMultiNetworkConnections$Companion {
+	public final fun of ()Lcom/bernaferrari/guavakt/graph/DirectedMultiNetworkConnections;
 }
 
-public class dev/guavakt/graph/DirectedNetworkConnections : dev/guavakt/graph/DirectedGraphConnections {
-	public static final field Companion Ldev/guavakt/graph/DirectedNetworkConnections$Companion;
+public class com/bernaferrari/guavakt/graph/DirectedNetworkConnections : com/bernaferrari/guavakt/graph/DirectedGraphConnections {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/DirectedNetworkConnections$Companion;
 	public fun <init> ()V
 }
 
-public final class dev/guavakt/graph/DirectedNetworkConnections$Companion {
-	public final fun of ()Ldev/guavakt/graph/DirectedNetworkConnections;
+public final class com/bernaferrari/guavakt/graph/DirectedNetworkConnections$Companion {
+	public final fun of ()Lcom/bernaferrari/guavakt/graph/DirectedNetworkConnections;
 }
 
-public final class dev/guavakt/graph/ElementOrder {
-	public static final field Companion Ldev/guavakt/graph/ElementOrder$Companion;
-	public synthetic fun <init> (Ldev/guavakt/graph/ElementOrder$Type;Ljava/util/Comparator;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun cast ()Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/ElementOrder {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/ElementOrder$Companion;
+	public synthetic fun <init> (Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;Ljava/util/Comparator;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun cast ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public final fun comparator ()Ljava/util/Comparator;
 	public final fun createMap (I)Ljava/util/Map;
 	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
-	public final fun type ()Ldev/guavakt/graph/ElementOrder$Type;
+	public final fun type ()Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;
 }
 
-public final class dev/guavakt/graph/ElementOrder$Companion {
-	public final fun insertion ()Ldev/guavakt/graph/ElementOrder;
-	public final fun natural ()Ldev/guavakt/graph/ElementOrder;
-	public final fun sorted (Ljava/util/Comparator;)Ldev/guavakt/graph/ElementOrder;
-	public final fun stable ()Ldev/guavakt/graph/ElementOrder;
-	public final fun unordered ()Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/ElementOrder$Companion {
+	public final fun insertion ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public final fun natural ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public final fun sorted (Ljava/util/Comparator;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public final fun stable ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public final fun unordered ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 }
 
-public final class dev/guavakt/graph/ElementOrder$Type : java/lang/Enum {
-	public static final field INSERTION Ldev/guavakt/graph/ElementOrder$Type;
-	public static final field SORTED Ldev/guavakt/graph/ElementOrder$Type;
-	public static final field STABLE Ldev/guavakt/graph/ElementOrder$Type;
-	public static final field UNORDERED Ldev/guavakt/graph/ElementOrder$Type;
+public final class com/bernaferrari/guavakt/graph/ElementOrder$Type : java/lang/Enum {
+	public static final field INSERTION Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;
+	public static final field SORTED Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;
+	public static final field STABLE Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;
+	public static final field UNORDERED Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/graph/ElementOrder$Type;
-	public static fun values ()[Ldev/guavakt/graph/ElementOrder$Type;
+	public static fun valueOf (Ljava/lang/String;)Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;
+	public static fun values ()[Lcom/bernaferrari/guavakt/graph/ElementOrder$Type;
 }
 
-public final class dev/guavakt/graph/EndpointPair : java/lang/Iterable, kotlin/jvm/internal/markers/KMappedMarker {
-	public static final field Companion Ldev/guavakt/graph/EndpointPair$Companion;
+public final class com/bernaferrari/guavakt/graph/EndpointPair : java/lang/Iterable, kotlin/jvm/internal/markers/KMappedMarker {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/EndpointPair$Companion;
 	public final fun adjacentNode (Ljava/lang/Object;)Ljava/lang/Object;
 	public final fun component1 ()Ljava/lang/Object;
 	public final fun component2 ()Ljava/lang/Object;
@@ -170,35 +170,35 @@ public final class dev/guavakt/graph/EndpointPair : java/lang/Iterable, kotlin/j
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/graph/EndpointPair$Companion {
-	public final fun ordered (Ljava/lang/Object;Ljava/lang/Object;)Ldev/guavakt/graph/EndpointPair;
-	public final fun unordered (Ljava/lang/Object;Ljava/lang/Object;)Ldev/guavakt/graph/EndpointPair;
+public final class com/bernaferrari/guavakt/graph/EndpointPair$Companion {
+	public final fun ordered (Ljava/lang/Object;Ljava/lang/Object;)Lcom/bernaferrari/guavakt/graph/EndpointPair;
+	public final fun unordered (Ljava/lang/Object;Ljava/lang/Object;)Lcom/bernaferrari/guavakt/graph/EndpointPair;
 }
 
-public class dev/guavakt/graph/EndpointPairIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
-	public static final field Companion Ldev/guavakt/graph/EndpointPairIterator$Companion;
+public class com/bernaferrari/guavakt/graph/EndpointPairIterator : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/EndpointPairIterator$Companion;
 	protected fun <init> (Ljava/util/List;)V
 	public fun hasNext ()Z
 	public fun next ()Ljava/lang/Object;
 	public fun remove ()V
 }
 
-public final class dev/guavakt/graph/EndpointPairIterator$Companion {
-	public final fun create (Ljava/lang/Iterable;)Ldev/guavakt/graph/EndpointPairIterator;
-	public final fun empty ()Ldev/guavakt/graph/EndpointPairIterator;
+public final class com/bernaferrari/guavakt/graph/EndpointPairIterator$Companion {
+	public final fun create (Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/graph/EndpointPairIterator;
+	public final fun empty ()Lcom/bernaferrari/guavakt/graph/EndpointPairIterator;
 }
 
-public abstract class dev/guavakt/graph/ForwardingGraph : dev/guavakt/graph/AbstractGraph {
+public abstract class com/bernaferrari/guavakt/graph/ForwardingGraph : com/bernaferrari/guavakt/graph/AbstractGraph {
 	public fun <init> ()V
 	public fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public fun allowsSelfLoops ()Z
-	protected abstract fun delegate ()Ldev/guavakt/graph/Graph;
+	protected abstract fun delegate ()Lcom/bernaferrari/guavakt/graph/Graph;
 	public fun edges ()Ljava/util/Set;
 	public fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun nodes ()Ljava/util/Set;
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
 	public fun predecessors (Ljava/lang/Object;)Ljava/util/Set;
@@ -206,19 +206,19 @@ public abstract class dev/guavakt/graph/ForwardingGraph : dev/guavakt/graph/Abst
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public abstract class dev/guavakt/graph/ForwardingNetwork : dev/guavakt/graph/AbstractNetwork {
+public abstract class com/bernaferrari/guavakt/graph/ForwardingNetwork : com/bernaferrari/guavakt/graph/AbstractNetwork {
 	public fun <init> ()V
 	public fun allowsParallelEdges ()Z
 	public fun allowsSelfLoops ()Z
-	protected abstract fun delegate ()Ldev/guavakt/graph/Network;
-	public fun edgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	protected abstract fun delegate ()Lcom/bernaferrari/guavakt/graph/Network;
+	public fun edgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun edges ()Ljava/util/Set;
 	public fun edgesConnecting (Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
 	public fun inEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
-	public fun incidentNodes (Ljava/lang/Object;)Ldev/guavakt/graph/EndpointPair;
+	public fun incidentNodes (Ljava/lang/Object;)Lcom/bernaferrari/guavakt/graph/EndpointPair;
 	public fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun nodes ()Ljava/util/Set;
 	public fun outEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -227,15 +227,15 @@ public abstract class dev/guavakt/graph/ForwardingNetwork : dev/guavakt/graph/Ab
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public abstract class dev/guavakt/graph/ForwardingValueGraph : dev/guavakt/graph/AbstractValueGraph {
+public abstract class com/bernaferrari/guavakt/graph/ForwardingValueGraph : com/bernaferrari/guavakt/graph/AbstractValueGraph {
 	public fun <init> ()V
 	public fun allowsSelfLoops ()Z
-	protected abstract fun delegate ()Ldev/guavakt/graph/ValueGraph;
+	protected abstract fun delegate ()Lcom/bernaferrari/guavakt/graph/ValueGraph;
 	public fun edgeValueOrDefault (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun nodes ()Ljava/util/Set;
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
 	public fun predecessors (Ljava/lang/Object;)Ljava/util/Set;
@@ -243,18 +243,18 @@ public abstract class dev/guavakt/graph/ForwardingValueGraph : dev/guavakt/graph
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public abstract interface class dev/guavakt/graph/Graph : dev/guavakt/graph/PredecessorsFunction, dev/guavakt/graph/SuccessorsFunction {
+public abstract interface class com/bernaferrari/guavakt/graph/Graph : com/bernaferrari/guavakt/graph/PredecessorsFunction, com/bernaferrari/guavakt/graph/SuccessorsFunction {
 	public abstract fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun allowsSelfLoops ()Z
-	public fun asNetwork ()Ldev/guavakt/graph/Network;
+	public fun asNetwork ()Lcom/bernaferrari/guavakt/graph/Network;
 	public abstract fun degree (Ljava/lang/Object;)I
 	public abstract fun edges ()Ljava/util/Set;
 	public abstract fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public abstract fun inDegree (Ljava/lang/Object;)I
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun nodes ()Ljava/util/Set;
 	public abstract fun outDegree (Ljava/lang/Object;)I
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -263,28 +263,28 @@ public abstract interface class dev/guavakt/graph/Graph : dev/guavakt/graph/Pred
 	public abstract fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/Graph$DefaultImpls {
-	public static fun asNetwork (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/Network;
-	public static fun incidentEdgeOrder (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/ElementOrder;
-	public static fun nodeOrder (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/Graph$DefaultImpls {
+	public static fun asNetwork (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/Network;
+	public static fun incidentEdgeOrder (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public static fun nodeOrder (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
 }
 
-public final class dev/guavakt/graph/GraphBuilder {
-	public static final field Companion Ldev/guavakt/graph/GraphBuilder$Companion;
-	public synthetic fun <init> (ZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun allowsSelfLoops (Z)Ldev/guavakt/graph/GraphBuilder;
-	public final fun build ()Ldev/guavakt/graph/MutableGraph;
-	public final fun incidentEdgeOrder (Ldev/guavakt/graph/ElementOrder;)Ldev/guavakt/graph/GraphBuilder;
-	public final fun nodeOrder (Ldev/guavakt/graph/ElementOrder;)Ldev/guavakt/graph/GraphBuilder;
+public final class com/bernaferrari/guavakt/graph/GraphBuilder {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/GraphBuilder$Companion;
+	public synthetic fun <init> (ZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun allowsSelfLoops (Z)Lcom/bernaferrari/guavakt/graph/GraphBuilder;
+	public final fun build ()Lcom/bernaferrari/guavakt/graph/MutableGraph;
+	public final fun incidentEdgeOrder (Lcom/bernaferrari/guavakt/graph/ElementOrder;)Lcom/bernaferrari/guavakt/graph/GraphBuilder;
+	public final fun nodeOrder (Lcom/bernaferrari/guavakt/graph/ElementOrder;)Lcom/bernaferrari/guavakt/graph/GraphBuilder;
 }
 
-public final class dev/guavakt/graph/GraphBuilder$Companion {
-	public final fun directed ()Ldev/guavakt/graph/GraphBuilder;
-	public final fun from (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/GraphBuilder;
-	public final fun undirected ()Ldev/guavakt/graph/GraphBuilder;
+public final class com/bernaferrari/guavakt/graph/GraphBuilder$Companion {
+	public final fun directed ()Lcom/bernaferrari/guavakt/graph/GraphBuilder;
+	public final fun from (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/GraphBuilder;
+	public final fun undirected ()Lcom/bernaferrari/guavakt/graph/GraphBuilder;
 }
 
-public abstract interface class dev/guavakt/graph/GraphConnections {
+public abstract interface class com/bernaferrari/guavakt/graph/GraphConnections {
 	public abstract fun addPredecessor (Ljava/lang/Object;Ljava/lang/Object;)V
 	public abstract fun addSuccessor (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	public abstract fun adjacentNode (Ljava/lang/Object;)Ljava/lang/Object;
@@ -297,41 +297,41 @@ public abstract interface class dev/guavakt/graph/GraphConnections {
 	public abstract fun value (Ljava/lang/Object;)Ljava/lang/Object;
 }
 
-public final class dev/guavakt/graph/Graphs {
-	public static final field INSTANCE Ldev/guavakt/graph/Graphs;
-	public final fun copyOf (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/MutableGraph;
-	public final fun copyOf (Ldev/guavakt/graph/Network;)Ldev/guavakt/graph/MutableNetwork;
-	public final fun copyOf (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/MutableValueGraph;
-	public final fun hasCycle (Ldev/guavakt/graph/Graph;)Z
-	public final fun hasCycle (Ldev/guavakt/graph/Network;)Z
-	public final fun inducedSubgraph (Ldev/guavakt/graph/Graph;Ljava/lang/Iterable;)Ldev/guavakt/graph/MutableGraph;
-	public final fun inducedSubgraph (Ldev/guavakt/graph/Network;Ljava/lang/Iterable;)Ldev/guavakt/graph/MutableNetwork;
-	public final fun inducedSubgraph (Ldev/guavakt/graph/ValueGraph;Ljava/lang/Iterable;)Ldev/guavakt/graph/MutableValueGraph;
-	public final fun reachableNodes (Ldev/guavakt/graph/SuccessorsFunction;Ljava/lang/Object;)Ljava/util/Set;
-	public final fun transitiveClosure (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/ImmutableGraph;
-	public final fun transitiveClosure (Ldev/guavakt/graph/Graph;Ldev/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;)Ldev/guavakt/graph/ImmutableGraph;
-	public final fun transpose (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/Graph;
-	public final fun transpose (Ldev/guavakt/graph/Network;)Ldev/guavakt/graph/Network;
-	public final fun transpose (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/ValueGraph;
+public final class com/bernaferrari/guavakt/graph/Graphs {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/graph/Graphs;
+	public final fun copyOf (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/MutableGraph;
+	public final fun copyOf (Lcom/bernaferrari/guavakt/graph/Network;)Lcom/bernaferrari/guavakt/graph/MutableNetwork;
+	public final fun copyOf (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/MutableValueGraph;
+	public final fun hasCycle (Lcom/bernaferrari/guavakt/graph/Graph;)Z
+	public final fun hasCycle (Lcom/bernaferrari/guavakt/graph/Network;)Z
+	public final fun inducedSubgraph (Lcom/bernaferrari/guavakt/graph/Graph;Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/graph/MutableGraph;
+	public final fun inducedSubgraph (Lcom/bernaferrari/guavakt/graph/Network;Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/graph/MutableNetwork;
+	public final fun inducedSubgraph (Lcom/bernaferrari/guavakt/graph/ValueGraph;Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/graph/MutableValueGraph;
+	public final fun reachableNodes (Lcom/bernaferrari/guavakt/graph/SuccessorsFunction;Ljava/lang/Object;)Ljava/util/Set;
+	public final fun transitiveClosure (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/ImmutableGraph;
+	public final fun transitiveClosure (Lcom/bernaferrari/guavakt/graph/Graph;Lcom/bernaferrari/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;)Lcom/bernaferrari/guavakt/graph/ImmutableGraph;
+	public final fun transpose (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/Graph;
+	public final fun transpose (Lcom/bernaferrari/guavakt/graph/Network;)Lcom/bernaferrari/guavakt/graph/Network;
+	public final fun transpose (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/ValueGraph;
 }
 
-public final class dev/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy : java/lang/Enum {
-	public static final field ADD_SELF_LOOPS_ALWAYS Ldev/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
-	public static final field ADD_SELF_LOOPS_FOR_CYCLES Ldev/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
+public final class com/bernaferrari/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy : java/lang/Enum {
+	public static final field ADD_SELF_LOOPS_ALWAYS Lcom/bernaferrari/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
+	public static final field ADD_SELF_LOOPS_FOR_CYCLES Lcom/bernaferrari/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
-	public static fun values ()[Ldev/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
+	public static fun valueOf (Ljava/lang/String;)Lcom/bernaferrari/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
+	public static fun values ()[Lcom/bernaferrari/guavakt/graph/Graphs$TransitiveClosureSelfLoopStrategy;
 }
 
-public abstract interface annotation class dev/guavakt/graph/IgnoreJRERequirement : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/graph/IgnoreJRERequirement : java/lang/annotation/Annotation {
 }
 
-public final class dev/guavakt/graph/ImmutableGraph : dev/guavakt/graph/AbstractGraph {
-	public static final field Companion Ldev/guavakt/graph/ImmutableGraph$Companion;
-	public synthetic fun <init> (Ldev/guavakt/graph/Graph;Ljava/util/Map;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/graph/ImmutableGraph : com/bernaferrari/guavakt/graph/AbstractGraph {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/ImmutableGraph$Companion;
+	public synthetic fun <init> (Lcom/bernaferrari/guavakt/graph/Graph;Ljava/util/Map;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun allowsSelfLoops ()Z
 	public fun edges ()Ljava/util/Set;
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun isDirected ()Z
 	public fun nodes ()Ljava/util/Set;
@@ -341,20 +341,20 @@ public final class dev/guavakt/graph/ImmutableGraph : dev/guavakt/graph/Abstract
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/ImmutableGraph$Companion {
-	public final fun copyOf (Ldev/guavakt/graph/Graph;)Ldev/guavakt/graph/ImmutableGraph;
+public final class com/bernaferrari/guavakt/graph/ImmutableGraph$Companion {
+	public final fun copyOf (Lcom/bernaferrari/guavakt/graph/Graph;)Lcom/bernaferrari/guavakt/graph/ImmutableGraph;
 }
 
-public final class dev/guavakt/graph/ImmutableNetwork : dev/guavakt/graph/AbstractNetwork {
-	public static final field Companion Ldev/guavakt/graph/ImmutableNetwork$Companion;
-	public synthetic fun <init> (Ldev/guavakt/graph/Network;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/graph/ImmutableNetwork : com/bernaferrari/guavakt/graph/AbstractNetwork {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/ImmutableNetwork$Companion;
+	public synthetic fun <init> (Lcom/bernaferrari/guavakt/graph/Network;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun allowsParallelEdges ()Z
 	public fun allowsSelfLoops ()Z
 	public fun edges ()Ljava/util/Set;
 	public fun edgesConnecting (Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
 	public fun inEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
-	public fun incidentNodes (Ljava/lang/Object;)Ldev/guavakt/graph/EndpointPair;
+	public fun incidentNodes (Ljava/lang/Object;)Lcom/bernaferrari/guavakt/graph/EndpointPair;
 	public fun isDirected ()Z
 	public fun nodes ()Ljava/util/Set;
 	public fun outEdges (Ljava/lang/Object;)Ljava/util/Set;
@@ -364,16 +364,16 @@ public final class dev/guavakt/graph/ImmutableNetwork : dev/guavakt/graph/Abstra
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/ImmutableNetwork$Companion {
-	public final fun copyOf (Ldev/guavakt/graph/Network;)Ldev/guavakt/graph/ImmutableNetwork;
+public final class com/bernaferrari/guavakt/graph/ImmutableNetwork$Companion {
+	public final fun copyOf (Lcom/bernaferrari/guavakt/graph/Network;)Lcom/bernaferrari/guavakt/graph/ImmutableNetwork;
 }
 
-public final class dev/guavakt/graph/ImmutableValueGraph : dev/guavakt/graph/AbstractValueGraph {
-	public static final field Companion Ldev/guavakt/graph/ImmutableValueGraph$Companion;
-	public synthetic fun <init> (Ldev/guavakt/graph/ValueGraph;Ljava/util/Map;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/graph/ImmutableValueGraph : com/bernaferrari/guavakt/graph/AbstractValueGraph {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/ImmutableValueGraph$Companion;
+	public synthetic fun <init> (Lcom/bernaferrari/guavakt/graph/ValueGraph;Ljava/util/Map;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun allowsSelfLoops ()Z
 	public fun edgeValueOrDefault (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun isDirected ()Z
 	public fun nodes ()Ljava/util/Set;
@@ -383,12 +383,12 @@ public final class dev/guavakt/graph/ImmutableValueGraph : dev/guavakt/graph/Abs
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/ImmutableValueGraph$Companion {
-	public final fun copyOf (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/ImmutableValueGraph;
+public final class com/bernaferrari/guavakt/graph/ImmutableValueGraph$Companion {
+	public final fun copyOf (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/ImmutableValueGraph;
 }
 
-public class dev/guavakt/graph/IncidentEdgeSet : kotlin/collections/AbstractMutableSet {
-	public static final field Companion Ldev/guavakt/graph/IncidentEdgeSet$Companion;
+public class com/bernaferrari/guavakt/graph/IncidentEdgeSet : kotlin/collections/AbstractMutableSet {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/IncidentEdgeSet$Companion;
 	protected fun <init> ()V
 	protected fun <init> (Ljava/util/LinkedHashSet;)V
 	public synthetic fun <init> (Ljava/util/LinkedHashSet;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -401,14 +401,14 @@ public class dev/guavakt/graph/IncidentEdgeSet : kotlin/collections/AbstractMuta
 	public fun remove (Ljava/lang/Object;)Z
 }
 
-public final class dev/guavakt/graph/IncidentEdgeSet$Companion {
-	public final fun create ()Ldev/guavakt/graph/IncidentEdgeSet;
-	public final fun create (Ljava/util/Collection;)Ldev/guavakt/graph/IncidentEdgeSet;
-	public final fun createWithExpectedSize (I)Ldev/guavakt/graph/IncidentEdgeSet;
+public final class com/bernaferrari/guavakt/graph/IncidentEdgeSet$Companion {
+	public final fun create ()Lcom/bernaferrari/guavakt/graph/IncidentEdgeSet;
+	public final fun create (Ljava/util/Collection;)Lcom/bernaferrari/guavakt/graph/IncidentEdgeSet;
+	public final fun createWithExpectedSize (I)Lcom/bernaferrari/guavakt/graph/IncidentEdgeSet;
 }
 
-public class dev/guavakt/graph/InvalidatableSet : kotlin/collections/AbstractMutableSet {
-	public static final field Companion Ldev/guavakt/graph/InvalidatableSet$Companion;
+public class com/bernaferrari/guavakt/graph/InvalidatableSet : kotlin/collections/AbstractMutableSet {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/InvalidatableSet$Companion;
 	protected fun <init> ()V
 	protected fun <init> (Ljava/util/LinkedHashSet;)V
 	public synthetic fun <init> (Ljava/util/LinkedHashSet;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -421,83 +421,83 @@ public class dev/guavakt/graph/InvalidatableSet : kotlin/collections/AbstractMut
 	public fun remove (Ljava/lang/Object;)Z
 }
 
-public final class dev/guavakt/graph/InvalidatableSet$Companion {
-	public final fun create ()Ldev/guavakt/graph/InvalidatableSet;
-	public final fun create (Ljava/util/Collection;)Ldev/guavakt/graph/InvalidatableSet;
-	public final fun createWithExpectedSize (I)Ldev/guavakt/graph/InvalidatableSet;
+public final class com/bernaferrari/guavakt/graph/InvalidatableSet$Companion {
+	public final fun create ()Lcom/bernaferrari/guavakt/graph/InvalidatableSet;
+	public final fun create (Ljava/util/Collection;)Lcom/bernaferrari/guavakt/graph/InvalidatableSet;
+	public final fun createWithExpectedSize (I)Lcom/bernaferrari/guavakt/graph/InvalidatableSet;
 }
 
-public class dev/guavakt/graph/MapIteratorCache : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
-	public static final field Companion Ldev/guavakt/graph/MapIteratorCache$Companion;
+public class com/bernaferrari/guavakt/graph/MapIteratorCache : java/util/Iterator, kotlin/jvm/internal/markers/KMappedMarker {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/MapIteratorCache$Companion;
 	protected fun <init> (Ljava/util/List;)V
 	public fun hasNext ()Z
 	public fun next ()Ljava/lang/Object;
 	public fun remove ()V
 }
 
-public final class dev/guavakt/graph/MapIteratorCache$Companion {
-	public final fun create (Ljava/lang/Iterable;)Ldev/guavakt/graph/MapIteratorCache;
-	public final fun empty ()Ldev/guavakt/graph/MapIteratorCache;
+public final class com/bernaferrari/guavakt/graph/MapIteratorCache$Companion {
+	public final fun create (Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/graph/MapIteratorCache;
+	public final fun empty ()Lcom/bernaferrari/guavakt/graph/MapIteratorCache;
 }
 
-public abstract interface class dev/guavakt/graph/MutableGraph : dev/guavakt/graph/Graph {
+public abstract interface class com/bernaferrari/guavakt/graph/MutableGraph : com/bernaferrari/guavakt/graph/Graph {
 	public abstract fun addNode (Ljava/lang/Object;)Z
 	public abstract fun putEdge (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public abstract fun removeEdge (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public abstract fun removeNode (Ljava/lang/Object;)Z
 }
 
-public final class dev/guavakt/graph/MutableGraph$DefaultImpls {
-	public static fun asNetwork (Ldev/guavakt/graph/MutableGraph;)Ldev/guavakt/graph/Network;
-	public static fun incidentEdgeOrder (Ldev/guavakt/graph/MutableGraph;)Ldev/guavakt/graph/ElementOrder;
-	public static fun nodeOrder (Ldev/guavakt/graph/MutableGraph;)Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/MutableGraph$DefaultImpls {
+	public static fun asNetwork (Lcom/bernaferrari/guavakt/graph/MutableGraph;)Lcom/bernaferrari/guavakt/graph/Network;
+	public static fun incidentEdgeOrder (Lcom/bernaferrari/guavakt/graph/MutableGraph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public static fun nodeOrder (Lcom/bernaferrari/guavakt/graph/MutableGraph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
 }
 
-public abstract interface class dev/guavakt/graph/MutableNetwork : dev/guavakt/graph/Network {
+public abstract interface class com/bernaferrari/guavakt/graph/MutableNetwork : com/bernaferrari/guavakt/graph/Network {
 	public abstract fun addEdge (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 	public abstract fun addNode (Ljava/lang/Object;)Z
 	public abstract fun removeEdge (Ljava/lang/Object;)Z
 	public abstract fun removeNode (Ljava/lang/Object;)Z
 }
 
-public final class dev/guavakt/graph/MutableNetwork$DefaultImpls {
-	public static fun asGraph (Ldev/guavakt/graph/MutableNetwork;)Ldev/guavakt/graph/Graph;
-	public static fun edgeOrder (Ldev/guavakt/graph/MutableNetwork;)Ldev/guavakt/graph/ElementOrder;
-	public static fun nodeOrder (Ldev/guavakt/graph/MutableNetwork;)Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/MutableNetwork$DefaultImpls {
+	public static fun asGraph (Lcom/bernaferrari/guavakt/graph/MutableNetwork;)Lcom/bernaferrari/guavakt/graph/Graph;
+	public static fun edgeOrder (Lcom/bernaferrari/guavakt/graph/MutableNetwork;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public static fun nodeOrder (Lcom/bernaferrari/guavakt/graph/MutableNetwork;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
 }
 
-public abstract interface class dev/guavakt/graph/MutableValueGraph : dev/guavakt/graph/ValueGraph {
+public abstract interface class com/bernaferrari/guavakt/graph/MutableValueGraph : com/bernaferrari/guavakt/graph/ValueGraph {
 	public abstract fun addNode (Ljava/lang/Object;)Z
 	public abstract fun putEdgeValue (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	public abstract fun removeEdge (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	public abstract fun removeNode (Ljava/lang/Object;)Z
 }
 
-public final class dev/guavakt/graph/MutableValueGraph$DefaultImpls {
-	public static fun asGraph (Ldev/guavakt/graph/MutableValueGraph;)Ldev/guavakt/graph/Graph;
-	public static fun asNetwork (Ldev/guavakt/graph/MutableValueGraph;)Ldev/guavakt/graph/Network;
-	public static fun incidentEdgeOrder (Ldev/guavakt/graph/MutableValueGraph;)Ldev/guavakt/graph/ElementOrder;
-	public static fun nodeOrder (Ldev/guavakt/graph/MutableValueGraph;)Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/MutableValueGraph$DefaultImpls {
+	public static fun asGraph (Lcom/bernaferrari/guavakt/graph/MutableValueGraph;)Lcom/bernaferrari/guavakt/graph/Graph;
+	public static fun asNetwork (Lcom/bernaferrari/guavakt/graph/MutableValueGraph;)Lcom/bernaferrari/guavakt/graph/Network;
+	public static fun incidentEdgeOrder (Lcom/bernaferrari/guavakt/graph/MutableValueGraph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public static fun nodeOrder (Lcom/bernaferrari/guavakt/graph/MutableValueGraph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
 }
 
-public abstract interface class dev/guavakt/graph/Network : dev/guavakt/graph/PredecessorsFunction, dev/guavakt/graph/SuccessorsFunction {
+public abstract interface class com/bernaferrari/guavakt/graph/Network : com/bernaferrari/guavakt/graph/PredecessorsFunction, com/bernaferrari/guavakt/graph/SuccessorsFunction {
 	public abstract fun adjacentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun allowsParallelEdges ()Z
 	public abstract fun allowsSelfLoops ()Z
-	public fun asGraph ()Ldev/guavakt/graph/Graph;
+	public fun asGraph ()Lcom/bernaferrari/guavakt/graph/Graph;
 	public abstract fun degree (Ljava/lang/Object;)I
 	public abstract fun edgeConnectingOrNull (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-	public fun edgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun edgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun edges ()Ljava/util/Set;
 	public abstract fun edgesConnecting (Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public abstract fun inDegree (Ljava/lang/Object;)I
 	public abstract fun inEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
-	public abstract fun incidentNodes (Ljava/lang/Object;)Ldev/guavakt/graph/EndpointPair;
+	public abstract fun incidentNodes (Ljava/lang/Object;)Lcom/bernaferrari/guavakt/graph/EndpointPair;
 	public abstract fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun nodes ()Ljava/util/Set;
 	public abstract fun outDegree (Ljava/lang/Object;)I
 	public abstract fun outEdges (Ljava/lang/Object;)Ljava/util/Set;
@@ -507,29 +507,29 @@ public abstract interface class dev/guavakt/graph/Network : dev/guavakt/graph/Pr
 	public abstract fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/Network$DefaultImpls {
-	public static fun asGraph (Ldev/guavakt/graph/Network;)Ldev/guavakt/graph/Graph;
-	public static fun edgeOrder (Ldev/guavakt/graph/Network;)Ldev/guavakt/graph/ElementOrder;
-	public static fun nodeOrder (Ldev/guavakt/graph/Network;)Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/Network$DefaultImpls {
+	public static fun asGraph (Lcom/bernaferrari/guavakt/graph/Network;)Lcom/bernaferrari/guavakt/graph/Graph;
+	public static fun edgeOrder (Lcom/bernaferrari/guavakt/graph/Network;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public static fun nodeOrder (Lcom/bernaferrari/guavakt/graph/Network;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
 }
 
-public final class dev/guavakt/graph/NetworkBuilder {
-	public static final field Companion Ldev/guavakt/graph/NetworkBuilder$Companion;
-	public synthetic fun <init> (ZZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun allowsParallelEdges (Z)Ldev/guavakt/graph/NetworkBuilder;
-	public final fun allowsSelfLoops (Z)Ldev/guavakt/graph/NetworkBuilder;
-	public final fun build ()Ldev/guavakt/graph/MutableNetwork;
-	public final fun edgeOrder (Ldev/guavakt/graph/ElementOrder;)Ldev/guavakt/graph/NetworkBuilder;
-	public final fun nodeOrder (Ldev/guavakt/graph/ElementOrder;)Ldev/guavakt/graph/NetworkBuilder;
+public final class com/bernaferrari/guavakt/graph/NetworkBuilder {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/NetworkBuilder$Companion;
+	public synthetic fun <init> (ZZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun allowsParallelEdges (Z)Lcom/bernaferrari/guavakt/graph/NetworkBuilder;
+	public final fun allowsSelfLoops (Z)Lcom/bernaferrari/guavakt/graph/NetworkBuilder;
+	public final fun build ()Lcom/bernaferrari/guavakt/graph/MutableNetwork;
+	public final fun edgeOrder (Lcom/bernaferrari/guavakt/graph/ElementOrder;)Lcom/bernaferrari/guavakt/graph/NetworkBuilder;
+	public final fun nodeOrder (Lcom/bernaferrari/guavakt/graph/ElementOrder;)Lcom/bernaferrari/guavakt/graph/NetworkBuilder;
 }
 
-public final class dev/guavakt/graph/NetworkBuilder$Companion {
-	public final fun directed ()Ldev/guavakt/graph/NetworkBuilder;
-	public final fun from (Ldev/guavakt/graph/Network;)Ldev/guavakt/graph/NetworkBuilder;
-	public final fun undirected ()Ldev/guavakt/graph/NetworkBuilder;
+public final class com/bernaferrari/guavakt/graph/NetworkBuilder$Companion {
+	public final fun directed ()Lcom/bernaferrari/guavakt/graph/NetworkBuilder;
+	public final fun from (Lcom/bernaferrari/guavakt/graph/Network;)Lcom/bernaferrari/guavakt/graph/NetworkBuilder;
+	public final fun undirected ()Lcom/bernaferrari/guavakt/graph/NetworkBuilder;
 }
 
-public abstract interface class dev/guavakt/graph/NetworkConnections {
+public abstract interface class com/bernaferrari/guavakt/graph/NetworkConnections {
 	public abstract fun addInEdge (Ljava/lang/Object;Ljava/lang/Object;Z)V
 	public abstract fun addOutEdge (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	public abstract fun adjacentNode (Ljava/lang/Object;)Ljava/lang/Object;
@@ -544,14 +544,14 @@ public abstract interface class dev/guavakt/graph/NetworkConnections {
 	public abstract fun successors ()Ljava/util/Set;
 }
 
-public abstract interface annotation class dev/guavakt/graph/ParametricNullness : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/graph/ParametricNullness : java/lang/annotation/Annotation {
 }
 
-public abstract interface class dev/guavakt/graph/PredecessorsFunction {
+public abstract interface class com/bernaferrari/guavakt/graph/PredecessorsFunction {
 	public abstract fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
 }
 
-public class dev/guavakt/graph/StandardGraphConnections : dev/guavakt/graph/GraphConnections {
+public class com/bernaferrari/guavakt/graph/StandardGraphConnections : com/bernaferrari/guavakt/graph/GraphConnections {
 	public fun <init> ()V
 	public fun addPredecessor (Ljava/lang/Object;Ljava/lang/Object;)V
 	public fun addSuccessor (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -565,21 +565,21 @@ public class dev/guavakt/graph/StandardGraphConnections : dev/guavakt/graph/Grap
 	public fun value (Ljava/lang/Object;)Ljava/lang/Object;
 }
 
-public final class dev/guavakt/graph/StandardMutableGraph : dev/guavakt/graph/MutableGraph {
-	public fun <init> (ZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;)V
-	public synthetic fun <init> (ZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/graph/StandardMutableGraph : com/bernaferrari/guavakt/graph/MutableGraph {
+	public fun <init> (ZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;)V
+	public synthetic fun <init> (ZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun addNode (Ljava/lang/Object;)Z
 	public fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public fun allowsSelfLoops ()Z
-	public fun asNetwork ()Ldev/guavakt/graph/Network;
+	public fun asNetwork ()Lcom/bernaferrari/guavakt/graph/Network;
 	public fun degree (Ljava/lang/Object;)I
 	public fun edges ()Ljava/util/Set;
 	public fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun inDegree (Ljava/lang/Object;)I
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun nodes ()Ljava/util/Set;
 	public fun outDegree (Ljava/lang/Object;)I
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -591,28 +591,28 @@ public final class dev/guavakt/graph/StandardMutableGraph : dev/guavakt/graph/Mu
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public class dev/guavakt/graph/StandardMutableNetwork : dev/guavakt/graph/MutableNetwork {
-	public fun <init> (ZZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;)V
-	public synthetic fun <init> (ZZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public class com/bernaferrari/guavakt/graph/StandardMutableNetwork : com/bernaferrari/guavakt/graph/MutableNetwork {
+	public fun <init> (ZZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;)V
+	public synthetic fun <init> (ZZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun addEdge (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun addNode (Ljava/lang/Object;)Z
 	public fun adjacentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public fun allowsParallelEdges ()Z
 	public fun allowsSelfLoops ()Z
-	public fun asGraph ()Ldev/guavakt/graph/Graph;
+	public fun asGraph ()Lcom/bernaferrari/guavakt/graph/Graph;
 	public fun degree (Ljava/lang/Object;)I
 	public fun edgeConnectingOrNull (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-	public fun edgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun edgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun edges ()Ljava/util/Set;
 	public fun edgesConnecting (Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
 	public fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun inDegree (Ljava/lang/Object;)I
 	public fun inEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
-	public fun incidentNodes (Ljava/lang/Object;)Ldev/guavakt/graph/EndpointPair;
+	public fun incidentNodes (Ljava/lang/Object;)Lcom/bernaferrari/guavakt/graph/EndpointPair;
 	public fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun nodes ()Ljava/util/Set;
 	public fun outDegree (Ljava/lang/Object;)I
 	public fun outEdges (Ljava/lang/Object;)Ljava/util/Set;
@@ -624,23 +624,23 @@ public class dev/guavakt/graph/StandardMutableNetwork : dev/guavakt/graph/Mutabl
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public class dev/guavakt/graph/StandardMutableValueGraph : dev/guavakt/graph/MutableValueGraph {
-	public fun <init> (ZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;)V
-	public synthetic fun <init> (ZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+public class com/bernaferrari/guavakt/graph/StandardMutableValueGraph : com/bernaferrari/guavakt/graph/MutableValueGraph {
+	public fun <init> (ZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;)V
+	public synthetic fun <init> (ZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun addNode (Ljava/lang/Object;)Z
 	public fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public fun allowsSelfLoops ()Z
-	public fun asGraph ()Ldev/guavakt/graph/Graph;
-	public fun asNetwork ()Ldev/guavakt/graph/Network;
+	public fun asGraph ()Lcom/bernaferrari/guavakt/graph/Graph;
+	public fun asNetwork ()Lcom/bernaferrari/guavakt/graph/Network;
 	public fun degree (Ljava/lang/Object;)I
 	public fun edgeValueOrDefault (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	public fun edges ()Ljava/util/Set;
 	public fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public fun inDegree (Ljava/lang/Object;)I
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public fun nodes ()Ljava/util/Set;
 	public fun outDegree (Ljava/lang/Object;)I
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -652,13 +652,13 @@ public class dev/guavakt/graph/StandardMutableValueGraph : dev/guavakt/graph/Mut
 	public fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/StandardNetwork : dev/guavakt/graph/StandardMutableNetwork {
+public final class com/bernaferrari/guavakt/graph/StandardNetwork : com/bernaferrari/guavakt/graph/StandardMutableNetwork {
 	public fun <init> (ZZZ)V
 	public fun edges ()Ljava/util/Set;
 	public fun nodes ()Ljava/util/Set;
 }
 
-public class dev/guavakt/graph/StandardNetworkConnections : dev/guavakt/graph/NetworkConnections {
+public class com/bernaferrari/guavakt/graph/StandardNetworkConnections : com/bernaferrari/guavakt/graph/NetworkConnections {
 	public fun <init> ()V
 	public fun addInEdge (Ljava/lang/Object;Ljava/lang/Object;Z)V
 	public fun addOutEdge (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -674,17 +674,17 @@ public class dev/guavakt/graph/StandardNetworkConnections : dev/guavakt/graph/Ne
 	public fun successors ()Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/StandardValueGraph : dev/guavakt/graph/StandardMutableValueGraph {
+public final class com/bernaferrari/guavakt/graph/StandardValueGraph : com/bernaferrari/guavakt/graph/StandardMutableValueGraph {
 	public fun <init> (ZZ)V
 }
 
-public abstract interface class dev/guavakt/graph/SuccessorsFunction {
+public abstract interface class com/bernaferrari/guavakt/graph/SuccessorsFunction {
 	public abstract fun successors (Ljava/lang/Object;)Ljava/lang/Iterable;
 }
 
-public final class dev/guavakt/graph/Traverser {
-	public static final field Companion Ldev/guavakt/graph/Traverser$Companion;
-	public synthetic fun <init> (Ldev/guavakt/graph/SuccessorsFunction;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+public final class com/bernaferrari/guavakt/graph/Traverser {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/Traverser$Companion;
+	public synthetic fun <init> (Lcom/bernaferrari/guavakt/graph/SuccessorsFunction;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun breadthFirst (Ljava/lang/Iterable;)Ljava/lang/Iterable;
 	public final fun breadthFirst (Ljava/lang/Object;)Ljava/lang/Iterable;
 	public final fun depthFirstPostOrder (Ljava/lang/Iterable;)Ljava/lang/Iterable;
@@ -693,13 +693,13 @@ public final class dev/guavakt/graph/Traverser {
 	public final fun depthFirstPreOrder (Ljava/lang/Object;)Ljava/lang/Iterable;
 }
 
-public final class dev/guavakt/graph/Traverser$Companion {
-	public final fun forGraph (Ldev/guavakt/graph/SuccessorsFunction;)Ldev/guavakt/graph/Traverser;
-	public final fun forTree (Ldev/guavakt/graph/SuccessorsFunction;)Ldev/guavakt/graph/Traverser;
+public final class com/bernaferrari/guavakt/graph/Traverser$Companion {
+	public final fun forGraph (Lcom/bernaferrari/guavakt/graph/SuccessorsFunction;)Lcom/bernaferrari/guavakt/graph/Traverser;
+	public final fun forTree (Lcom/bernaferrari/guavakt/graph/SuccessorsFunction;)Lcom/bernaferrari/guavakt/graph/Traverser;
 }
 
-public class dev/guavakt/graph/UndirectedGraphConnections : dev/guavakt/graph/GraphConnections {
-	public static final field Companion Ldev/guavakt/graph/UndirectedGraphConnections$Companion;
+public class com/bernaferrari/guavakt/graph/UndirectedGraphConnections : com/bernaferrari/guavakt/graph/GraphConnections {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/UndirectedGraphConnections$Companion;
 	public fun <init> ()V
 	public fun addPredecessor (Ljava/lang/Object;Ljava/lang/Object;)V
 	public fun addSuccessor (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -713,42 +713,42 @@ public class dev/guavakt/graph/UndirectedGraphConnections : dev/guavakt/graph/Gr
 	public fun value (Ljava/lang/Object;)Ljava/lang/Object;
 }
 
-public final class dev/guavakt/graph/UndirectedGraphConnections$Companion {
-	public final fun of ()Ldev/guavakt/graph/UndirectedGraphConnections;
+public final class com/bernaferrari/guavakt/graph/UndirectedGraphConnections$Companion {
+	public final fun of ()Lcom/bernaferrari/guavakt/graph/UndirectedGraphConnections;
 }
 
-public class dev/guavakt/graph/UndirectedMultiNetworkConnections : dev/guavakt/graph/UndirectedGraphConnections {
-	public static final field Companion Ldev/guavakt/graph/UndirectedMultiNetworkConnections$Companion;
+public class com/bernaferrari/guavakt/graph/UndirectedMultiNetworkConnections : com/bernaferrari/guavakt/graph/UndirectedGraphConnections {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/UndirectedMultiNetworkConnections$Companion;
 	public fun <init> ()V
 }
 
-public final class dev/guavakt/graph/UndirectedMultiNetworkConnections$Companion {
-	public final fun of ()Ldev/guavakt/graph/UndirectedMultiNetworkConnections;
+public final class com/bernaferrari/guavakt/graph/UndirectedMultiNetworkConnections$Companion {
+	public final fun of ()Lcom/bernaferrari/guavakt/graph/UndirectedMultiNetworkConnections;
 }
 
-public class dev/guavakt/graph/UndirectedNetworkConnections : dev/guavakt/graph/UndirectedGraphConnections {
-	public static final field Companion Ldev/guavakt/graph/UndirectedNetworkConnections$Companion;
+public class com/bernaferrari/guavakt/graph/UndirectedNetworkConnections : com/bernaferrari/guavakt/graph/UndirectedGraphConnections {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/UndirectedNetworkConnections$Companion;
 	public fun <init> ()V
 }
 
-public final class dev/guavakt/graph/UndirectedNetworkConnections$Companion {
-	public final fun of ()Ldev/guavakt/graph/UndirectedNetworkConnections;
+public final class com/bernaferrari/guavakt/graph/UndirectedNetworkConnections$Companion {
+	public final fun of ()Lcom/bernaferrari/guavakt/graph/UndirectedNetworkConnections;
 }
 
-public abstract interface class dev/guavakt/graph/ValueGraph : dev/guavakt/graph/PredecessorsFunction, dev/guavakt/graph/SuccessorsFunction {
+public abstract interface class com/bernaferrari/guavakt/graph/ValueGraph : com/bernaferrari/guavakt/graph/PredecessorsFunction, com/bernaferrari/guavakt/graph/SuccessorsFunction {
 	public abstract fun adjacentNodes (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun allowsSelfLoops ()Z
-	public fun asGraph ()Ldev/guavakt/graph/Graph;
-	public fun asNetwork ()Ldev/guavakt/graph/Network;
+	public fun asGraph ()Lcom/bernaferrari/guavakt/graph/Graph;
+	public fun asNetwork ()Lcom/bernaferrari/guavakt/graph/Network;
 	public abstract fun degree (Ljava/lang/Object;)I
 	public abstract fun edgeValueOrDefault (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	public abstract fun edges ()Ljava/util/Set;
 	public abstract fun hasEdgeConnecting (Ljava/lang/Object;Ljava/lang/Object;)Z
 	public abstract fun inDegree (Ljava/lang/Object;)I
-	public fun incidentEdgeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun incidentEdgeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun incidentEdges (Ljava/lang/Object;)Ljava/util/Set;
 	public abstract fun isDirected ()Z
-	public fun nodeOrder ()Ldev/guavakt/graph/ElementOrder;
+	public fun nodeOrder ()Lcom/bernaferrari/guavakt/graph/ElementOrder;
 	public abstract fun nodes ()Ljava/util/Set;
 	public abstract fun outDegree (Ljava/lang/Object;)I
 	public synthetic fun predecessors (Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -757,25 +757,25 @@ public abstract interface class dev/guavakt/graph/ValueGraph : dev/guavakt/graph
 	public abstract fun successors (Ljava/lang/Object;)Ljava/util/Set;
 }
 
-public final class dev/guavakt/graph/ValueGraph$DefaultImpls {
-	public static fun asGraph (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/Graph;
-	public static fun asNetwork (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/Network;
-	public static fun incidentEdgeOrder (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/ElementOrder;
-	public static fun nodeOrder (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/ElementOrder;
+public final class com/bernaferrari/guavakt/graph/ValueGraph$DefaultImpls {
+	public static fun asGraph (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/Graph;
+	public static fun asNetwork (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/Network;
+	public static fun incidentEdgeOrder (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
+	public static fun nodeOrder (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/ElementOrder;
 }
 
-public final class dev/guavakt/graph/ValueGraphBuilder {
-	public static final field Companion Ldev/guavakt/graph/ValueGraphBuilder$Companion;
-	public synthetic fun <init> (ZZLdev/guavakt/graph/ElementOrder;Ldev/guavakt/graph/ElementOrder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun allowsSelfLoops (Z)Ldev/guavakt/graph/ValueGraphBuilder;
-	public final fun build ()Ldev/guavakt/graph/MutableValueGraph;
-	public final fun incidentEdgeOrder (Ldev/guavakt/graph/ElementOrder;)Ldev/guavakt/graph/ValueGraphBuilder;
-	public final fun nodeOrder (Ldev/guavakt/graph/ElementOrder;)Ldev/guavakt/graph/ValueGraphBuilder;
+public final class com/bernaferrari/guavakt/graph/ValueGraphBuilder {
+	public static final field Companion Lcom/bernaferrari/guavakt/graph/ValueGraphBuilder$Companion;
+	public synthetic fun <init> (ZZLcom/bernaferrari/guavakt/graph/ElementOrder;Lcom/bernaferrari/guavakt/graph/ElementOrder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun allowsSelfLoops (Z)Lcom/bernaferrari/guavakt/graph/ValueGraphBuilder;
+	public final fun build ()Lcom/bernaferrari/guavakt/graph/MutableValueGraph;
+	public final fun incidentEdgeOrder (Lcom/bernaferrari/guavakt/graph/ElementOrder;)Lcom/bernaferrari/guavakt/graph/ValueGraphBuilder;
+	public final fun nodeOrder (Lcom/bernaferrari/guavakt/graph/ElementOrder;)Lcom/bernaferrari/guavakt/graph/ValueGraphBuilder;
 }
 
-public final class dev/guavakt/graph/ValueGraphBuilder$Companion {
-	public final fun directed ()Ldev/guavakt/graph/ValueGraphBuilder;
-	public final fun from (Ldev/guavakt/graph/ValueGraph;)Ldev/guavakt/graph/ValueGraphBuilder;
-	public final fun undirected ()Ldev/guavakt/graph/ValueGraphBuilder;
+public final class com/bernaferrari/guavakt/graph/ValueGraphBuilder$Companion {
+	public final fun directed ()Lcom/bernaferrari/guavakt/graph/ValueGraphBuilder;
+	public final fun from (Lcom/bernaferrari/guavakt/graph/ValueGraph;)Lcom/bernaferrari/guavakt/graph/ValueGraphBuilder;
+	public final fun undirected ()Lcom/bernaferrari/guavakt/graph/ValueGraphBuilder;
 }
 

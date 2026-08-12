@@ -1,33 +1,33 @@
-public final class dev/guavakt/io/AppendableWriter : dev/guavakt/io/AutoCloseable {
+public final class com/bernaferrari/guavakt/io/AppendableWriter : com/bernaferrari/guavakt/io/AutoCloseable {
 	public fun <init> (Ljava/lang/Appendable;)V
-	public final fun append (Ljava/lang/CharSequence;)Ldev/guavakt/io/AppendableWriter;
+	public final fun append (Ljava/lang/CharSequence;)Lcom/bernaferrari/guavakt/io/AppendableWriter;
 	public fun close ()V
 	public final fun write (I)V
 	public final fun write (Ljava/lang/String;)V
 	public final fun write ([CII)V
 }
 
-public abstract interface class dev/guavakt/io/AutoCloseable {
+public abstract interface class com/bernaferrari/guavakt/io/AutoCloseable {
 	public abstract fun close ()V
 }
 
-public abstract class dev/guavakt/io/BaseEncoding {
-	public static final field Companion Ldev/guavakt/io/BaseEncoding$Companion;
+public abstract class com/bernaferrari/guavakt/io/BaseEncoding {
+	public static final field Companion Lcom/bernaferrari/guavakt/io/BaseEncoding$Companion;
 	public fun <init> ()V
 	public abstract fun decode (Ljava/lang/CharSequence;)[B
 	public abstract fun encode ([B)Ljava/lang/String;
 	public abstract fun encode ([BII)Ljava/lang/String;
-	public final fun omitPadding ()Ldev/guavakt/io/BaseEncoding;
-	public final fun withPadChar (C)Ldev/guavakt/io/BaseEncoding;
+	public final fun omitPadding ()Lcom/bernaferrari/guavakt/io/BaseEncoding;
+	public final fun withPadChar (C)Lcom/bernaferrari/guavakt/io/BaseEncoding;
 }
 
-public final class dev/guavakt/io/BaseEncoding$Companion {
-	public final fun base16 ()Ldev/guavakt/io/BaseEncoding;
-	public final fun base64 ()Ldev/guavakt/io/BaseEncoding;
-	public final fun base64Url ()Ldev/guavakt/io/BaseEncoding;
+public final class com/bernaferrari/guavakt/io/BaseEncoding$Companion {
+	public final fun base16 ()Lcom/bernaferrari/guavakt/io/BaseEncoding;
+	public final fun base64 ()Lcom/bernaferrari/guavakt/io/BaseEncoding;
+	public final fun base64Url ()Lcom/bernaferrari/guavakt/io/BaseEncoding;
 }
 
-public abstract interface class dev/guavakt/io/ByteArrayDataInput {
+public abstract interface class com/bernaferrari/guavakt/io/ByteArrayDataInput {
 	public abstract fun available ()I
 	public abstract fun readBoolean ()Z
 	public abstract fun readByte ()B
@@ -46,7 +46,7 @@ public abstract interface class dev/guavakt/io/ByteArrayDataInput {
 	public abstract fun skipBytes (I)I
 }
 
-public abstract interface class dev/guavakt/io/ByteArrayDataOutput {
+public abstract interface class com/bernaferrari/guavakt/io/ByteArrayDataOutput {
 	public abstract fun size ()I
 	public abstract fun toByteArray ()[B
 	public abstract fun write (I)V
@@ -65,7 +65,7 @@ public abstract interface class dev/guavakt/io/ByteArrayDataOutput {
 	public abstract fun writeUTF (Ljava/lang/String;)V
 }
 
-public final class dev/guavakt/io/ByteArrayInputLike : dev/guavakt/io/AutoCloseable {
+public final class com/bernaferrari/guavakt/io/ByteArrayInputLike : com/bernaferrari/guavakt/io/AutoCloseable {
 	public fun <init> ([B)V
 	public fun close ()V
 	public final fun read ()I
@@ -73,7 +73,7 @@ public final class dev/guavakt/io/ByteArrayInputLike : dev/guavakt/io/AutoClosea
 	public final fun read ([BII)I
 }
 
-public class dev/guavakt/io/ByteArrayOutputLike : dev/guavakt/io/AutoCloseable {
+public class com/bernaferrari/guavakt/io/ByteArrayOutputLike : com/bernaferrari/guavakt/io/AutoCloseable {
 	public fun <init> ()V
 	public fun close ()V
 	public final fun toByteArray ()[B
@@ -81,70 +81,70 @@ public class dev/guavakt/io/ByteArrayOutputLike : dev/guavakt/io/AutoCloseable {
 	public final fun write ([BII)V
 }
 
-public abstract interface class dev/guavakt/io/ByteProcessor {
+public abstract interface class com/bernaferrari/guavakt/io/ByteProcessor {
 	public abstract fun getResult ()Ljava/lang/Object;
 	public abstract fun processBytes ([BII)Z
 }
 
-public abstract class dev/guavakt/io/ByteSink : dev/guavakt/io/ByteSinkLike {
+public abstract class com/bernaferrari/guavakt/io/ByteSink : com/bernaferrari/guavakt/io/ByteSinkLike {
 	public fun <init> ()V
-	public final fun asCharSink ()Ldev/guavakt/io/CharSink;
+	public final fun asCharSink ()Lcom/bernaferrari/guavakt/io/CharSink;
 	public fun openBufferedSink ()Lokio/BufferedSink;
 	public abstract fun openSink ()Lokio/Sink;
-	public final fun openStream ()Ldev/guavakt/io/ByteArrayOutputLike;
+	public final fun openStream ()Lcom/bernaferrari/guavakt/io/ByteArrayOutputLike;
 	public final fun write ([B)V
 	public final fun writeFrom (Lokio/Source;)J
 }
 
-public abstract interface class dev/guavakt/io/ByteSinkLike {
-	public abstract fun openStream ()Ldev/guavakt/io/ByteArrayOutputLike;
+public abstract interface class com/bernaferrari/guavakt/io/ByteSinkLike {
+	public abstract fun openStream ()Lcom/bernaferrari/guavakt/io/ByteArrayOutputLike;
 }
 
-public abstract class dev/guavakt/io/ByteSource {
-	public static final field Companion Ldev/guavakt/io/ByteSource$Companion;
+public abstract class com/bernaferrari/guavakt/io/ByteSource {
+	public static final field Companion Lcom/bernaferrari/guavakt/io/ByteSource$Companion;
 	public fun <init> ()V
-	public final fun contentEquals (Ldev/guavakt/io/ByteSource;)Z
-	public final fun copyTo (Ldev/guavakt/io/ByteSink;)J
-	public final fun copyTo (Ldev/guavakt/io/ByteSinkLike;)J
+	public final fun contentEquals (Lcom/bernaferrari/guavakt/io/ByteSource;)Z
+	public final fun copyTo (Lcom/bernaferrari/guavakt/io/ByteSink;)J
+	public final fun copyTo (Lcom/bernaferrari/guavakt/io/ByteSinkLike;)J
 	public final fun copyTo (Lokio/Sink;)J
 	public final fun isEmpty ()Z
 	public fun openBufferedSource ()Lokio/BufferedSource;
 	public fun openSource ()Lokio/Source;
-	public abstract fun openStream ()Ldev/guavakt/io/ByteArrayInputLike;
+	public abstract fun openStream ()Lcom/bernaferrari/guavakt/io/ByteArrayInputLike;
 	public final fun read ()[B
-	public fun read (Ldev/guavakt/io/ByteProcessor;)Ljava/lang/Object;
+	public fun read (Lcom/bernaferrari/guavakt/io/ByteProcessor;)Ljava/lang/Object;
 	public fun size ()J
 	public fun sizeIfKnown ()Ljava/lang/Long;
-	public final fun slice (JJ)Ldev/guavakt/io/ByteSource;
+	public final fun slice (JJ)Lcom/bernaferrari/guavakt/io/ByteSource;
 }
 
-public final class dev/guavakt/io/ByteSource$Companion {
-	public final fun concat (Ljava/lang/Iterable;)Ldev/guavakt/io/ByteSource;
-	public final fun concat ([Ldev/guavakt/io/ByteSource;)Ldev/guavakt/io/ByteSource;
-	public final fun empty ()Ldev/guavakt/io/ByteSource;
-	public final fun fromSource (Ljava/lang/Long;Lkotlin/jvm/functions/Function0;)Ldev/guavakt/io/ByteSource;
-	public static synthetic fun fromSource$default (Ldev/guavakt/io/ByteSource$Companion;Ljava/lang/Long;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Ldev/guavakt/io/ByteSource;
-	public final fun wrap ([B)Ldev/guavakt/io/ByteSource;
+public final class com/bernaferrari/guavakt/io/ByteSource$Companion {
+	public final fun concat (Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/io/ByteSource;
+	public final fun concat ([Lcom/bernaferrari/guavakt/io/ByteSource;)Lcom/bernaferrari/guavakt/io/ByteSource;
+	public final fun empty ()Lcom/bernaferrari/guavakt/io/ByteSource;
+	public final fun fromSource (Ljava/lang/Long;Lkotlin/jvm/functions/Function0;)Lcom/bernaferrari/guavakt/io/ByteSource;
+	public static synthetic fun fromSource$default (Lcom/bernaferrari/guavakt/io/ByteSource$Companion;Ljava/lang/Long;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/bernaferrari/guavakt/io/ByteSource;
+	public final fun wrap ([B)Lcom/bernaferrari/guavakt/io/ByteSource;
 }
 
-public final class dev/guavakt/io/ByteStreams {
-	public static final field INSTANCE Ldev/guavakt/io/ByteStreams;
+public final class com/bernaferrari/guavakt/io/ByteStreams {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/ByteStreams;
 	public final fun copy ([BLjava/util/List;)J
 	public final fun copy ([B[BI)I
-	public static synthetic fun copy$default (Ldev/guavakt/io/ByteStreams;[B[BIILjava/lang/Object;)I
+	public static synthetic fun copy$default (Lcom/bernaferrari/guavakt/io/ByteStreams;[B[BIILjava/lang/Object;)I
 	public final fun exhaust ([B)J
 	public final fun limit ([BJ)[B
-	public final fun newDataInput ([B)Ldev/guavakt/io/ByteArrayDataInput;
-	public final fun newDataInput ([BI)Ldev/guavakt/io/ByteArrayDataInput;
-	public final fun newDataOutput ()Ldev/guavakt/io/ByteArrayDataOutput;
-	public final fun newDataOutput (I)Ldev/guavakt/io/ByteArrayDataOutput;
+	public final fun newDataInput ([B)Lcom/bernaferrari/guavakt/io/ByteArrayDataInput;
+	public final fun newDataInput ([BI)Lcom/bernaferrari/guavakt/io/ByteArrayDataInput;
+	public final fun newDataOutput ()Lcom/bernaferrari/guavakt/io/ByteArrayDataOutput;
+	public final fun newDataOutput (I)Lcom/bernaferrari/guavakt/io/ByteArrayDataOutput;
 	public final fun nullOutputStream ()Lkotlin/jvm/functions/Function1;
 	public final fun read ([BII)[B
-	public final fun readBytes ([BLdev/guavakt/io/ByteProcessor;)Ljava/lang/Object;
+	public final fun readBytes ([BLcom/bernaferrari/guavakt/io/ByteProcessor;)Ljava/lang/Object;
 	public final fun toByteArray ([B)[B
 }
 
-public final class dev/guavakt/io/ByteStreams$ByteArrayDataInput : dev/guavakt/io/ByteArrayDataInput {
+public final class com/bernaferrari/guavakt/io/ByteStreams$ByteArrayDataInput : com/bernaferrari/guavakt/io/ByteArrayDataInput {
 	public fun <init> ([BI)V
 	public synthetic fun <init> ([BIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun available ()I
@@ -165,7 +165,7 @@ public final class dev/guavakt/io/ByteStreams$ByteArrayDataInput : dev/guavakt/i
 	public fun skipBytes (I)I
 }
 
-public final class dev/guavakt/io/ByteStreams$ByteArrayDataOutput : dev/guavakt/io/ByteArrayDataOutput {
+public final class com/bernaferrari/guavakt/io/ByteStreams$ByteArrayDataOutput : com/bernaferrari/guavakt/io/ByteArrayDataOutput {
 	public fun <init> ()V
 	public fun <init> (I)V
 	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -187,19 +187,19 @@ public final class dev/guavakt/io/ByteStreams$ByteArrayDataOutput : dev/guavakt/
 	public fun writeUTF (Ljava/lang/String;)V
 }
 
-public class dev/guavakt/io/CharReaderLike : dev/guavakt/io/AutoCloseable {
-	public static final field Companion Ldev/guavakt/io/CharReaderLike$Companion;
+public class com/bernaferrari/guavakt/io/CharReaderLike : com/bernaferrari/guavakt/io/AutoCloseable {
+	public static final field Companion Lcom/bernaferrari/guavakt/io/CharReaderLike$Companion;
 	public fun <init> (Ljava/lang/String;)V
 	public fun close ()V
 	public fun read ()I
 	public fun read ([C)I
 }
 
-public final class dev/guavakt/io/CharReaderLike$Companion {
-	public final fun fromUtf8 (Lokio/BufferedSource;)Ldev/guavakt/io/CharReaderLike;
+public final class com/bernaferrari/guavakt/io/CharReaderLike$Companion {
+	public final fun fromUtf8 (Lokio/BufferedSource;)Lcom/bernaferrari/guavakt/io/CharReaderLike;
 }
 
-public final class dev/guavakt/io/CharSequenceReader : dev/guavakt/io/AutoCloseable {
+public final class com/bernaferrari/guavakt/io/CharSequenceReader : com/bernaferrari/guavakt/io/AutoCloseable {
 	public fun <init> (Ljava/lang/CharSequence;)V
 	public fun close ()V
 	public final fun mark (I)V
@@ -212,77 +212,77 @@ public final class dev/guavakt/io/CharSequenceReader : dev/guavakt/io/AutoClosea
 	public final fun skip (J)J
 }
 
-public abstract class dev/guavakt/io/CharSink {
-	public static final field Companion Ldev/guavakt/io/CharSink$Companion;
+public abstract class com/bernaferrari/guavakt/io/CharSink {
+	public static final field Companion Lcom/bernaferrari/guavakt/io/CharSink$Companion;
 	public fun <init> ()V
 	public abstract fun openBufferedSink ()Lokio/BufferedSink;
 	public final fun write (Ljava/lang/CharSequence;)V
-	public final fun writeFrom (Ldev/guavakt/io/CharSource;)J
+	public final fun writeFrom (Lcom/bernaferrari/guavakt/io/CharSource;)J
 	public final fun writeLines (Ljava/lang/Iterable;Ljava/lang/String;)V
-	public static synthetic fun writeLines$default (Ldev/guavakt/io/CharSink;Ljava/lang/Iterable;Ljava/lang/String;ILjava/lang/Object;)V
+	public static synthetic fun writeLines$default (Lcom/bernaferrari/guavakt/io/CharSink;Ljava/lang/Iterable;Ljava/lang/String;ILjava/lang/Object;)V
 }
 
-public final class dev/guavakt/io/CharSink$Companion {
+public final class com/bernaferrari/guavakt/io/CharSink$Companion {
 }
 
-public abstract class dev/guavakt/io/CharSource {
-	public static final field Companion Ldev/guavakt/io/CharSource$Companion;
+public abstract class com/bernaferrari/guavakt/io/CharSource {
+	public static final field Companion Lcom/bernaferrari/guavakt/io/CharSource$Companion;
 	public fun <init> ()V
-	public final fun asByteSource (Ljava/lang/String;)Ldev/guavakt/io/ByteSource;
-	public static synthetic fun asByteSource$default (Ldev/guavakt/io/CharSource;Ljava/lang/String;ILjava/lang/Object;)Ldev/guavakt/io/ByteSource;
-	public final fun copyTo (Ldev/guavakt/io/CharSink;)J
+	public final fun asByteSource (Ljava/lang/String;)Lcom/bernaferrari/guavakt/io/ByteSource;
+	public static synthetic fun asByteSource$default (Lcom/bernaferrari/guavakt/io/CharSource;Ljava/lang/String;ILjava/lang/Object;)Lcom/bernaferrari/guavakt/io/ByteSource;
+	public final fun copyTo (Lcom/bernaferrari/guavakt/io/CharSink;)J
 	public final fun copyTo (Ljava/lang/Appendable;)J
 	public final fun isEmpty ()Z
 	public final fun length ()J
 	public fun lengthIfKnown ()Ljava/lang/Long;
-	public fun openReader ()Ldev/guavakt/io/CharReaderLike;
-	public abstract fun openStream ()Ldev/guavakt/io/CharReaderLike;
+	public fun openReader ()Lcom/bernaferrari/guavakt/io/CharReaderLike;
+	public abstract fun openStream ()Lcom/bernaferrari/guavakt/io/CharReaderLike;
 	public final fun read ()Ljava/lang/String;
 	public final fun readFirstLine ()Ljava/lang/String;
 	public final fun readLines ()Ljava/util/List;
-	public final fun readLines (Ldev/guavakt/io/LineProcessor;)Ljava/lang/Object;
+	public final fun readLines (Lcom/bernaferrari/guavakt/io/LineProcessor;)Ljava/lang/Object;
 }
 
-public final class dev/guavakt/io/CharSource$Companion {
-	public final fun concat (Ljava/lang/Iterable;)Ldev/guavakt/io/CharSource;
-	public final fun concat ([Ldev/guavakt/io/CharSource;)Ldev/guavakt/io/CharSource;
-	public final fun empty ()Ldev/guavakt/io/CharSource;
-	public final fun fromReader (Lkotlin/jvm/functions/Function0;)Ldev/guavakt/io/CharSource;
-	public final fun wrap (Ljava/lang/CharSequence;)Ldev/guavakt/io/CharSource;
+public final class com/bernaferrari/guavakt/io/CharSource$Companion {
+	public final fun concat (Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/io/CharSource;
+	public final fun concat ([Lcom/bernaferrari/guavakt/io/CharSource;)Lcom/bernaferrari/guavakt/io/CharSource;
+	public final fun empty ()Lcom/bernaferrari/guavakt/io/CharSource;
+	public final fun fromReader (Lkotlin/jvm/functions/Function0;)Lcom/bernaferrari/guavakt/io/CharSource;
+	public final fun wrap (Ljava/lang/CharSequence;)Lcom/bernaferrari/guavakt/io/CharSource;
 }
 
-public final class dev/guavakt/io/CharStreams {
-	public static final field INSTANCE Ldev/guavakt/io/CharStreams;
+public final class com/bernaferrari/guavakt/io/CharStreams {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/CharStreams;
 	public final fun asWriter (Ljava/lang/Appendable;)Ljava/lang/Appendable;
 	public final fun copy (Ljava/lang/CharSequence;Ljava/lang/Appendable;)J
 	public final fun copy (Ljava/lang/CharSequence;Ljava/lang/StringBuilder;)J
 	public final fun nullWriter ()Ljava/lang/Appendable;
 	public final fun readLines (Ljava/lang/CharSequence;)Ljava/util/List;
-	public final fun readLines (Ljava/lang/CharSequence;Ldev/guavakt/io/LineProcessor;)Ljava/lang/Object;
+	public final fun readLines (Ljava/lang/CharSequence;Lcom/bernaferrari/guavakt/io/LineProcessor;)Ljava/lang/Object;
 	public final fun skipFully (Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 	public final fun toString (Ljava/lang/CharSequence;)Ljava/lang/String;
 }
 
-public final class dev/guavakt/io/Closeables {
-	public static final field INSTANCE Ldev/guavakt/io/Closeables;
-	public final fun close (Ldev/guavakt/io/AutoCloseable;Z)V
-	public final fun closeQuietly (Ldev/guavakt/io/AutoCloseable;)V
+public final class com/bernaferrari/guavakt/io/Closeables {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/Closeables;
+	public final fun close (Lcom/bernaferrari/guavakt/io/AutoCloseable;Z)V
+	public final fun closeQuietly (Lcom/bernaferrari/guavakt/io/AutoCloseable;)V
 }
 
-public final class dev/guavakt/io/Closer {
-	public static final field Companion Ldev/guavakt/io/Closer$Companion;
+public final class com/bernaferrari/guavakt/io/Closer {
+	public static final field Companion Lcom/bernaferrari/guavakt/io/Closer$Companion;
 	public final fun close ()V
-	public final fun register (Ldev/guavakt/io/AutoCloseable;)Ldev/guavakt/io/AutoCloseable;
+	public final fun register (Lcom/bernaferrari/guavakt/io/AutoCloseable;)Lcom/bernaferrari/guavakt/io/AutoCloseable;
 	public final fun rethrow (Ljava/lang/Exception;)Ljava/lang/RuntimeException;
 	public final fun rethrow (Ljava/lang/Exception;Ljava/lang/Object;)Ljava/lang/Void;
 }
 
-public final class dev/guavakt/io/Closer$Companion {
-	public final fun create ()Ldev/guavakt/io/Closer;
+public final class com/bernaferrari/guavakt/io/Closer$Companion {
+	public final fun create ()Lcom/bernaferrari/guavakt/io/Closer;
 }
 
-public final class dev/guavakt/io/CountingInputStream : dev/guavakt/io/AutoCloseable {
-	public fun <init> (Ldev/guavakt/io/ByteArrayInputLike;)V
+public final class com/bernaferrari/guavakt/io/CountingInputStream : com/bernaferrari/guavakt/io/AutoCloseable {
+	public fun <init> (Lcom/bernaferrari/guavakt/io/ByteArrayInputLike;)V
 	public fun close ()V
 	public final fun getCount ()J
 	public final fun read ()I
@@ -290,20 +290,20 @@ public final class dev/guavakt/io/CountingInputStream : dev/guavakt/io/AutoClose
 	public final fun skip (J)J
 }
 
-public final class dev/guavakt/io/CountingOutputStream : dev/guavakt/io/AutoCloseable {
-	public fun <init> (Ldev/guavakt/io/ByteArrayOutputLike;)V
+public final class com/bernaferrari/guavakt/io/CountingOutputStream : com/bernaferrari/guavakt/io/AutoCloseable {
+	public fun <init> (Lcom/bernaferrari/guavakt/io/ByteArrayOutputLike;)V
 	public fun close ()V
 	public final fun getCount ()J
 	public final fun write (I)V
 	public final fun write ([BII)V
 }
 
-public final class dev/guavakt/io/FileBackedOutputStream {
+public final class com/bernaferrari/guavakt/io/FileBackedOutputStream {
 	public fun <init> (ILokio/FileSystem;Lokio/Path;Z)V
 	public synthetic fun <init> (ILokio/FileSystem;Lokio/Path;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun <init> (IZ)V
 	public synthetic fun <init> (IZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun asByteSource ()Ldev/guavakt/io/ByteSource;
+	public final fun asByteSource ()Lcom/bernaferrari/guavakt/io/ByteSource;
 	public final fun close ()V
 	public final fun flush ()V
 	public final fun getCount ()I
@@ -314,22 +314,22 @@ public final class dev/guavakt/io/FileBackedOutputStream {
 	public final fun write ([BII)V
 }
 
-public final class dev/guavakt/io/FileWriteMode : java/lang/Enum {
-	public static final field INSTANCE Ldev/guavakt/io/FileWriteMode;
+public final class com/bernaferrari/guavakt/io/FileWriteMode : java/lang/Enum {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/FileWriteMode;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/io/FileWriteMode;
-	public static fun values ()[Ldev/guavakt/io/FileWriteMode;
+	public static fun valueOf (Ljava/lang/String;)Lcom/bernaferrari/guavakt/io/FileWriteMode;
+	public static fun values ()[Lcom/bernaferrari/guavakt/io/FileWriteMode;
 	public final fun wireName ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/io/Files {
-	public static final field INSTANCE Ldev/guavakt/io/Files;
-	public final fun asByteSink (Lokio/FileSystem;Lokio/Path;Z)Ldev/guavakt/io/ByteSink;
-	public static synthetic fun asByteSink$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Ldev/guavakt/io/ByteSink;
-	public final fun asByteSource (Lokio/FileSystem;Lokio/Path;)Ldev/guavakt/io/ByteSource;
-	public final fun asCharSink (Lokio/FileSystem;Lokio/Path;Z)Ldev/guavakt/io/CharSink;
-	public static synthetic fun asCharSink$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Ldev/guavakt/io/CharSink;
-	public final fun asCharSource (Lokio/FileSystem;Lokio/Path;)Ldev/guavakt/io/CharSource;
+public final class com/bernaferrari/guavakt/io/Files {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/Files;
+	public final fun asByteSink (Lokio/FileSystem;Lokio/Path;Z)Lcom/bernaferrari/guavakt/io/ByteSink;
+	public static synthetic fun asByteSink$default (Lcom/bernaferrari/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Lcom/bernaferrari/guavakt/io/ByteSink;
+	public final fun asByteSource (Lokio/FileSystem;Lokio/Path;)Lcom/bernaferrari/guavakt/io/ByteSource;
+	public final fun asCharSink (Lokio/FileSystem;Lokio/Path;Z)Lcom/bernaferrari/guavakt/io/CharSink;
+	public static synthetic fun asCharSink$default (Lcom/bernaferrari/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;ZILjava/lang/Object;)Lcom/bernaferrari/guavakt/io/CharSink;
+	public final fun asCharSource (Lokio/FileSystem;Lokio/Path;)Lcom/bernaferrari/guavakt/io/CharSource;
 	public final fun getFileExtension (Ljava/lang/String;)Ljava/lang/String;
 	public final fun getNameWithoutExtension (Ljava/lang/String;)Ljava/lang/String;
 	public final fun readAllBytes (Lokio/FileSystem;Lokio/Path;)[B
@@ -337,23 +337,23 @@ public final class dev/guavakt/io/Files {
 	public final fun toByteArray ([B)[B
 	public final fun write (Lokio/FileSystem;Lokio/Path;[BZ)V
 	public final fun write ([BLjava/util/List;)V
-	public static synthetic fun write$default (Ldev/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;[BZILjava/lang/Object;)V
+	public static synthetic fun write$default (Lcom/bernaferrari/guavakt/io/Files;Lokio/FileSystem;Lokio/Path;[BZILjava/lang/Object;)V
 }
 
-public final class dev/guavakt/io/Flushables {
-	public static final field INSTANCE Ldev/guavakt/io/Flushables;
-	public final fun flush (Ldev/guavakt/io/Flushables$Flushable;Z)V
-	public final fun flushQuietly (Ldev/guavakt/io/Flushables$Flushable;)V
+public final class com/bernaferrari/guavakt/io/Flushables {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/Flushables;
+	public final fun flush (Lcom/bernaferrari/guavakt/io/Flushables$Flushable;Z)V
+	public final fun flushQuietly (Lcom/bernaferrari/guavakt/io/Flushables$Flushable;)V
 }
 
-public abstract interface class dev/guavakt/io/Flushables$Flushable {
+public abstract interface class com/bernaferrari/guavakt/io/Flushables$Flushable {
 	public abstract fun flush ()V
 }
 
-public abstract interface annotation class dev/guavakt/io/IgnoreJRERequirement : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/io/IgnoreJRERequirement : java/lang/annotation/Annotation {
 }
 
-public class dev/guavakt/io/InsecureRecursiveDeleteException : java/lang/RuntimeException {
+public class com/bernaferrari/guavakt/io/InsecureRecursiveDeleteException : java/lang/RuntimeException {
 	public fun <init> ()V
 	public fun <init> (Ljava/lang/String;)V
 	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -361,18 +361,18 @@ public class dev/guavakt/io/InsecureRecursiveDeleteException : java/lang/Runtime
 	public final fun hasMessage ()Z
 }
 
-public abstract interface class dev/guavakt/io/LineProcessor {
+public abstract interface class com/bernaferrari/guavakt/io/LineProcessor {
 	public abstract fun getResult ()Ljava/lang/Object;
 	public abstract fun processLine (Ljava/lang/String;)Z
 }
 
-public final class dev/guavakt/io/LineReader {
-	public fun <init> (Ldev/guavakt/io/CharReaderLike;)V
+public final class com/bernaferrari/guavakt/io/LineReader {
+	public fun <init> (Lcom/bernaferrari/guavakt/io/CharReaderLike;)V
 	public final fun readLine ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/io/LittleEndianDataInputStream : dev/guavakt/io/AutoCloseable {
-	public fun <init> (Ldev/guavakt/io/ByteArrayInputLike;)V
+public final class com/bernaferrari/guavakt/io/LittleEndianDataInputStream : com/bernaferrari/guavakt/io/AutoCloseable {
+	public fun <init> (Lcom/bernaferrari/guavakt/io/ByteArrayInputLike;)V
 	public fun close ()V
 	public final fun readByte ()B
 	public final fun readDouble ()D
@@ -383,8 +383,8 @@ public final class dev/guavakt/io/LittleEndianDataInputStream : dev/guavakt/io/A
 	public final fun readUnsignedByte ()I
 }
 
-public final class dev/guavakt/io/LittleEndianDataOutputStream : dev/guavakt/io/AutoCloseable {
-	public fun <init> (Ldev/guavakt/io/ByteArrayOutputLike;)V
+public final class com/bernaferrari/guavakt/io/LittleEndianDataOutputStream : com/bernaferrari/guavakt/io/AutoCloseable {
+	public fun <init> (Lcom/bernaferrari/guavakt/io/ByteArrayOutputLike;)V
 	public fun close ()V
 	public final fun write (I)V
 	public final fun writeByte (I)V
@@ -395,65 +395,65 @@ public final class dev/guavakt/io/LittleEndianDataOutputStream : dev/guavakt/io/
 	public final fun writeShort (I)V
 }
 
-public final class dev/guavakt/io/MoreFiles {
-	public static final field INSTANCE Ldev/guavakt/io/MoreFiles;
+public final class com/bernaferrari/guavakt/io/MoreFiles {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/MoreFiles;
 	public final fun createParentDirectories (Lokio/FileSystem;Lokio/Path;)Lokio/Path;
-	public final fun fileTraverser ()Ldev/guavakt/io/MoreFiles$FileTraverser;
+	public final fun fileTraverser ()Lcom/bernaferrari/guavakt/io/MoreFiles$FileTraverser;
 	public final fun getFileExtension (Ljava/lang/String;)Ljava/lang/String;
 	public final fun getNameWithoutExtension (Ljava/lang/String;)Ljava/lang/String;
 	public final fun isDirectory (Lokio/FileSystem;Lokio/Path;)Z
 }
 
-public final class dev/guavakt/io/MoreFiles$FileTraverser {
-	public static final field INSTANCE Ldev/guavakt/io/MoreFiles$FileTraverser;
+public final class com/bernaferrari/guavakt/io/MoreFiles$FileTraverser {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/MoreFiles$FileTraverser;
 	public final fun breadthFirst (Lokio/FileSystem;Lokio/Path;)Ljava/util/List;
 	public final fun depthFirstPreOrder (Lokio/FileSystem;Lokio/Path;)Ljava/util/List;
 }
 
-public final class dev/guavakt/io/MultiInputStream : dev/guavakt/io/AutoCloseable {
+public final class com/bernaferrari/guavakt/io/MultiInputStream : com/bernaferrari/guavakt/io/AutoCloseable {
 	public fun <init> (Ljava/util/Iterator;)V
 	public fun close ()V
 	public final fun read ()I
 	public final fun read ([B)I
 }
 
-public final class dev/guavakt/io/MultiReader : dev/guavakt/io/AutoCloseable {
+public final class com/bernaferrari/guavakt/io/MultiReader : com/bernaferrari/guavakt/io/AutoCloseable {
 	public fun <init> (Ljava/util/Iterator;)V
 	public fun close ()V
 	public final fun read ([C)I
 }
 
-public abstract interface annotation class dev/guavakt/io/ParametricNullness : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/io/ParametricNullness : java/lang/annotation/Annotation {
 }
 
-public final class dev/guavakt/io/PatternFilenameFilter {
+public final class com/bernaferrari/guavakt/io/PatternFilenameFilter {
 	public fun <init> (Ljava/lang/String;)V
 	public final fun accept (Ljava/lang/String;)Z
 	public final fun accept (Ljava/lang/String;Ljava/lang/String;)Z
 }
 
-public final class dev/guavakt/io/ReaderInputStream : dev/guavakt/io/AutoCloseable {
-	public fun <init> (Ldev/guavakt/io/CharReaderLike;)V
+public final class com/bernaferrari/guavakt/io/ReaderInputStream : com/bernaferrari/guavakt/io/AutoCloseable {
+	public fun <init> (Lcom/bernaferrari/guavakt/io/CharReaderLike;)V
 	public fun close ()V
 	public final fun read ([B)I
 	public final fun read ([BII)I
 }
 
-public final class dev/guavakt/io/RecursiveDeleteOption : java/lang/Enum {
-	public static final field INSTANCE Ldev/guavakt/io/RecursiveDeleteOption;
+public final class com/bernaferrari/guavakt/io/RecursiveDeleteOption : java/lang/Enum {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/RecursiveDeleteOption;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
-	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/io/RecursiveDeleteOption;
-	public static fun values ()[Ldev/guavakt/io/RecursiveDeleteOption;
+	public static fun valueOf (Ljava/lang/String;)Lcom/bernaferrari/guavakt/io/RecursiveDeleteOption;
+	public static fun values ()[Lcom/bernaferrari/guavakt/io/RecursiveDeleteOption;
 	public final fun wireName ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/io/Resources {
-	public static final field INSTANCE Ldev/guavakt/io/Resources;
-	public final fun getResource (Ljava/lang/String;)Ldev/guavakt/io/ByteSource;
+public final class com/bernaferrari/guavakt/io/Resources {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/io/Resources;
+	public final fun getResource (Ljava/lang/String;)Lcom/bernaferrari/guavakt/io/ByteSource;
 	public final fun readLines (Ljava/lang/String;)Ljava/util/List;
 	public final fun register (Ljava/lang/String;[B)V
 	public final fun toByteArray (Ljava/lang/String;)[B
 	public final fun toString (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-	public static synthetic fun toString$default (Ldev/guavakt/io/Resources;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+	public static synthetic fun toString$default (Lcom/bernaferrari/guavakt/io/Resources;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
 }
 

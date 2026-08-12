@@ -5,7 +5,7 @@ plugins {
 dependencies {
     implementation(project(":guavakt"))
     testImplementation(kotlin("test"))
-    // Collision-free dev.guavakt packages allow compile-time differential tests.
+    // Collision-free com.bernaferrari.guavakt packages allow compile-time differential tests.
     testImplementation("com.google.guava:guava:33.6.0-jre")
 }
 

@@ -5,7 +5,7 @@ These snippets describe the public `0.1.0` API.
 ## A live Multimap view
 
 ```kotlin
-import dev.guavakt.collect.ArrayListMultimap
+import com.bernaferrari.guavakt.collect.ArrayListMultimap
 
 val byLanguage = ArrayListMultimap.create<String, String>()
 val kotlinLibraries = byLanguage.get("kotlin")
@@ -19,8 +19,8 @@ check(byLanguage.containsEntry("kotlin", "guavakt"))
 ## Okio-first filesystem I/O
 
 ```kotlin
-import dev.guavakt.io.ByteSource
-import dev.guavakt.io.Files
+import com.bernaferrari.guavakt.io.ByteSource
+import com.bernaferrari.guavakt.io.Files
 import okio.FileSystem
 import okio.Path
 
@@ -37,8 +37,8 @@ shared code.
 ## Hash an Okio stream
 
 ```kotlin
-import dev.guavakt.hash.Hashing
-import dev.guavakt.hash.hashing
+import com.bernaferrari.guavakt.hash.Hashing
+import com.bernaferrari.guavakt.hash.hashing
 import okio.Buffer
 
 val source = Buffer().writeUtf8("portable payload").hashing(Hashing.sha256())
@@ -54,9 +54,9 @@ wrappers. They delegate close to the wrapped Okio resource and never hash unread
 ## Hash a domain object explicitly
 
 ```kotlin
-import dev.guavakt.hash.BloomFilter
-import dev.guavakt.hash.Funnel
-import dev.guavakt.hash.Hashing
+import com.bernaferrari.guavakt.hash.BloomFilter
+import com.bernaferrari.guavakt.hash.Funnel
+import com.bernaferrari.guavakt.hash.Hashing
 
 data class Event(val id: Long, val active: Boolean, val title: String)
 
@@ -77,8 +77,8 @@ to reflection-based object hashing, and the same funnel can be reused for `hashO
 ## A directed dependency graph
 
 ```kotlin
-import dev.guavakt.graph.GraphBuilder
-import dev.guavakt.graph.Graphs
+import com.bernaferrari.guavakt.graph.GraphBuilder
+import com.bernaferrari.guavakt.graph.Graphs
 
 val graph = GraphBuilder.directed<String>().build<String>()
 graph.putEdge("app", "domain")
@@ -93,8 +93,8 @@ The transposed graph is a live read-only view. Later changes to `graph` are visi
 ## A bounded loading cache
 
 ```kotlin
-import dev.guavakt.cache.CacheBuilder
-import dev.guavakt.cache.CacheLoader
+import com.bernaferrari.guavakt.cache.CacheBuilder
+import com.bernaferrari.guavakt.cache.CacheLoader
 
 val cache = CacheBuilder.newBuilder<String, Int>()
     .maximumSize(100)

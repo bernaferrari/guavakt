@@ -80,7 +80,7 @@ def main() -> int:
 
     guava = public_guava_types(args.upstream)
     guavakt = guavakt_types()
-    expected = {name.replace("com.google.common.", "dev.guavakt.", 1) for name in guava}
+    expected = {name.replace("com.google.common.", "com.bernaferrari.guavakt.", 1) for name in guava}
     missing = sorted(expected - guavakt)
     covered = expected & guavakt
     by_package = Counter(name.rsplit(".", 1)[0] for name in missing)

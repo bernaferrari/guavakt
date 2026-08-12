@@ -1,5 +1,5 @@
-public final class dev/guavakt/GuavaKt {
-	public static final field INSTANCE Ldev/guavakt/GuavaKt;
+public final class com/bernaferrari/guavakt/GuavaKt {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/GuavaKt;
 	public static final field VERSION Ljava/lang/String;
 }
 

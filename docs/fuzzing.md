@@ -6,8 +6,8 @@ For a prolonged JVM oracle run, increase both controls explicitly:
 
 ```bash
 ./gradlew :guavakt-parity:test \
-  --tests dev.guavakt.parity.BigIntegerMathDifferentialTest \
-  --tests dev.guavakt.parity.RangeDifferentialTest \
+  --tests com.bernaferrari.guavakt.parity.BigIntegerMathDifferentialTest \
+  --tests com.bernaferrari.guavakt.parity.RangeDifferentialTest \
   -PfuzzSeeds=128 -PfuzzCases=1024 \
   --no-daemon -Pkotlin.incremental=false
 ```

@@ -31,7 +31,7 @@ binary compatible with Guava, and it is deliberately not a complete Guava rewrit
 
 ## Arbitrary precision
 
-`dev.guavakt.math.BigInteger` and `BigDecimal` are common immutable values, not JVM wrappers.
+`com.bernaferrari.guavakt.math.BigInteger` and `BigDecimal` are common immutable values, not JVM wrappers.
 `BigInteger` supports arithmetic, radix and signed-byte conversion, two's-complement operations,
 modular arithmetic, roots, and probable primes. `BigDecimal` supports scale-preserving arithmetic,
 exact and rounded division, `MathContext`, point operations, plain/engineering rendering, square
@@ -57,7 +57,7 @@ structured coroutines, and Okio instead.
 
 ## Permanent differences
 
-1. Public packages are `dev.guavakt.*`; `com.google.common.*` is reserved for Guava and is never
+1. Public packages are `com.bernaferrari.guavakt.*`; `com.google.common.*` is reserved for Guava and is never
    emitted by GuavaKt.
 2. Kotlin stdlib replaces most List/Set/Map/Optional-style convenience APIs in new code.
 3. Coroutines are the only asynchronous abstraction GuavaKt adds; Java concurrency abstractions

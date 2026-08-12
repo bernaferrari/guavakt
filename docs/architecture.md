@@ -3,12 +3,12 @@
 | Field | Value |
 |---|---|
 | Maturity | 0.1.0 |
-| Group | `dev.guavakt` |
+| Group | `com.bernaferrari.guavakt` |
 | Version | `0.1.0` |
 | Targets | JVM, JS IR, Wasm JS, iOS, macOS, Linux x64, Mingw x64 |
 | License | Apache-2.0 with Guava attribution |
 
-GuavaKt is a Kotlin-first Multiplatform implementation of selected Guava-shaped concepts. It is neither a source transcription nor a binary replacement for Guava. Public packages deliberately use `dev.guavakt.*`, so GuavaKt and Guava can coexist on the JVM for differential tests and migration.
+GuavaKt is a Kotlin-first Multiplatform implementation of selected Guava-shaped concepts. It is neither a source transcription nor a binary replacement for Guava. Public packages deliberately use `com.bernaferrari.guavakt.*`, so GuavaKt and Guava can coexist on the JVM for differential tests and migration.
 
 ## Product boundary
 

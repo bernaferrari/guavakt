@@ -1,5 +1,5 @@
-public final class dev/guavakt/primitives/Booleans {
-	public static final field INSTANCE Ldev/guavakt/primitives/Booleans;
+public final class com/bernaferrari/guavakt/primitives/Booleans {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Booleans;
 	public final fun compare (ZZ)I
 	public final fun concat ([[Z)[Z
 	public final fun contains ([ZZ)Z
@@ -10,9 +10,9 @@ public final class dev/guavakt/primitives/Booleans {
 	public final fun trueFirst ()Ljava/util/Comparator;
 }
 
-public final class dev/guavakt/primitives/Bytes {
+public final class com/bernaferrari/guavakt/primitives/Bytes {
 	public static final field BYTES I
-	public static final field INSTANCE Ldev/guavakt/primitives/Bytes;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Bytes;
 	public final fun asList ([B)Ljava/util/List;
 	public final fun concat ([[B)[B
 	public final fun contains ([BB)Z
@@ -23,9 +23,9 @@ public final class dev/guavakt/primitives/Bytes {
 	public final fun reverse ([BII)V
 }
 
-public final class dev/guavakt/primitives/Chars {
+public final class com/bernaferrari/guavakt/primitives/Chars {
 	public static final field BYTES I
-	public static final field INSTANCE Ldev/guavakt/primitives/Chars;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Chars;
 	public final fun checkedCast (J)C
 	public final fun compare (CC)I
 	public final fun concat ([[C)[C
@@ -37,9 +37,9 @@ public final class dev/guavakt/primitives/Chars {
 	public final fun saturatedCast (J)C
 }
 
-public final class dev/guavakt/primitives/Doubles {
+public final class com/bernaferrari/guavakt/primitives/Doubles {
 	public static final field BYTES I
-	public static final field INSTANCE Ldev/guavakt/primitives/Doubles;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Doubles;
 	public final fun compare (DD)I
 	public final fun constrainToRange (DDD)D
 	public final fun contains ([DD)Z
@@ -52,9 +52,9 @@ public final class dev/guavakt/primitives/Doubles {
 	public final fun tryParse (Ljava/lang/String;)Ljava/lang/Double;
 }
 
-public final class dev/guavakt/primitives/Floats {
+public final class com/bernaferrari/guavakt/primitives/Floats {
 	public static final field BYTES I
-	public static final field INSTANCE Ldev/guavakt/primitives/Floats;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Floats;
 	public final fun compare (FF)I
 	public final fun contains ([FF)Z
 	public final fun hashCode (F)I
@@ -65,11 +65,11 @@ public final class dev/guavakt/primitives/Floats {
 	public final fun tryParse (Ljava/lang/String;)Ljava/lang/Float;
 }
 
-public abstract interface annotation class dev/guavakt/primitives/IgnoreJRERequirement : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/primitives/IgnoreJRERequirement : java/lang/annotation/Annotation {
 }
 
-public final class dev/guavakt/primitives/ImmutableDoubleArray {
-	public static final field Companion Ldev/guavakt/primitives/ImmutableDoubleArray$Companion;
+public final class com/bernaferrari/guavakt/primitives/ImmutableDoubleArray {
+	public static final field Companion Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Companion;
 	public synthetic fun <init> ([DLkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun asList ()Ljava/util/List;
 	public final fun contains (D)Z
@@ -83,28 +83,28 @@ public final class dev/guavakt/primitives/ImmutableDoubleArray {
 	public final fun toArray ()[D
 }
 
-public final class dev/guavakt/primitives/ImmutableDoubleArray$Builder {
+public final class com/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Builder {
 	public fun <init> ()V
 	public fun <init> (I)V
 	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun add (D)Ldev/guavakt/primitives/ImmutableDoubleArray$Builder;
-	public final fun addAll (Ljava/lang/Iterable;)Ldev/guavakt/primitives/ImmutableDoubleArray$Builder;
-	public final fun addAll ([D)Ldev/guavakt/primitives/ImmutableDoubleArray$Builder;
-	public final fun build ()Ldev/guavakt/primitives/ImmutableDoubleArray;
+	public final fun add (D)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Builder;
+	public final fun addAll (Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Builder;
+	public final fun addAll ([D)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Builder;
+	public final fun build ()Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray;
 }
 
-public final class dev/guavakt/primitives/ImmutableDoubleArray$Companion {
-	public final fun builder ()Ldev/guavakt/primitives/ImmutableDoubleArray$Builder;
-	public final fun builder (I)Ldev/guavakt/primitives/ImmutableDoubleArray$Builder;
-	public final fun copyOf (Ljava/util/Collection;)Ldev/guavakt/primitives/ImmutableDoubleArray;
-	public final fun copyOf ([D)Ldev/guavakt/primitives/ImmutableDoubleArray;
-	public final fun of ()Ldev/guavakt/primitives/ImmutableDoubleArray;
-	public final fun of (D)Ldev/guavakt/primitives/ImmutableDoubleArray;
-	public final fun of (DD)Ldev/guavakt/primitives/ImmutableDoubleArray;
+public final class com/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Companion {
+	public final fun builder ()Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Builder;
+	public final fun builder (I)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray$Builder;
+	public final fun copyOf (Ljava/util/Collection;)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray;
+	public final fun copyOf ([D)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray;
+	public final fun of ()Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray;
+	public final fun of (D)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray;
+	public final fun of (DD)Lcom/bernaferrari/guavakt/primitives/ImmutableDoubleArray;
 }
 
-public final class dev/guavakt/primitives/ImmutableIntArray {
-	public static final field Companion Ldev/guavakt/primitives/ImmutableIntArray$Companion;
+public final class com/bernaferrari/guavakt/primitives/ImmutableIntArray {
+	public static final field Companion Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray$Companion;
 	public synthetic fun <init> ([ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun asList ()Ljava/util/List;
 	public final fun contains (I)Z
@@ -118,28 +118,28 @@ public final class dev/guavakt/primitives/ImmutableIntArray {
 	public final fun toArray ()[I
 }
 
-public final class dev/guavakt/primitives/ImmutableIntArray$Builder {
+public final class com/bernaferrari/guavakt/primitives/ImmutableIntArray$Builder {
 	public fun <init> ()V
 	public fun <init> (I)V
 	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun add (I)Ldev/guavakt/primitives/ImmutableIntArray$Builder;
-	public final fun addAll (Ljava/lang/Iterable;)Ldev/guavakt/primitives/ImmutableIntArray$Builder;
-	public final fun addAll ([I)Ldev/guavakt/primitives/ImmutableIntArray$Builder;
-	public final fun build ()Ldev/guavakt/primitives/ImmutableIntArray;
+	public final fun add (I)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray$Builder;
+	public final fun addAll (Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray$Builder;
+	public final fun addAll ([I)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray$Builder;
+	public final fun build ()Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray;
 }
 
-public final class dev/guavakt/primitives/ImmutableIntArray$Companion {
-	public final fun builder ()Ldev/guavakt/primitives/ImmutableIntArray$Builder;
-	public final fun builder (I)Ldev/guavakt/primitives/ImmutableIntArray$Builder;
-	public final fun copyOf (Ljava/util/Collection;)Ldev/guavakt/primitives/ImmutableIntArray;
-	public final fun copyOf ([I)Ldev/guavakt/primitives/ImmutableIntArray;
-	public final fun of ()Ldev/guavakt/primitives/ImmutableIntArray;
-	public final fun of (I)Ldev/guavakt/primitives/ImmutableIntArray;
-	public final fun of (II)Ldev/guavakt/primitives/ImmutableIntArray;
+public final class com/bernaferrari/guavakt/primitives/ImmutableIntArray$Companion {
+	public final fun builder ()Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray$Builder;
+	public final fun builder (I)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray$Builder;
+	public final fun copyOf (Ljava/util/Collection;)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray;
+	public final fun copyOf ([I)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray;
+	public final fun of ()Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray;
+	public final fun of (I)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray;
+	public final fun of (II)Lcom/bernaferrari/guavakt/primitives/ImmutableIntArray;
 }
 
-public final class dev/guavakt/primitives/ImmutableLongArray {
-	public static final field Companion Ldev/guavakt/primitives/ImmutableLongArray$Companion;
+public final class com/bernaferrari/guavakt/primitives/ImmutableLongArray {
+	public static final field Companion Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray$Companion;
 	public synthetic fun <init> ([JLkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun asList ()Ljava/util/List;
 	public final fun contains (J)Z
@@ -153,29 +153,29 @@ public final class dev/guavakt/primitives/ImmutableLongArray {
 	public final fun toArray ()[J
 }
 
-public final class dev/guavakt/primitives/ImmutableLongArray$Builder {
+public final class com/bernaferrari/guavakt/primitives/ImmutableLongArray$Builder {
 	public fun <init> ()V
 	public fun <init> (I)V
 	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun add (J)Ldev/guavakt/primitives/ImmutableLongArray$Builder;
-	public final fun addAll (Ljava/lang/Iterable;)Ldev/guavakt/primitives/ImmutableLongArray$Builder;
-	public final fun addAll ([J)Ldev/guavakt/primitives/ImmutableLongArray$Builder;
-	public final fun build ()Ldev/guavakt/primitives/ImmutableLongArray;
+	public final fun add (J)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray$Builder;
+	public final fun addAll (Ljava/lang/Iterable;)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray$Builder;
+	public final fun addAll ([J)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray$Builder;
+	public final fun build ()Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray;
 }
 
-public final class dev/guavakt/primitives/ImmutableLongArray$Companion {
-	public final fun builder ()Ldev/guavakt/primitives/ImmutableLongArray$Builder;
-	public final fun builder (I)Ldev/guavakt/primitives/ImmutableLongArray$Builder;
-	public final fun copyOf (Ljava/util/Collection;)Ldev/guavakt/primitives/ImmutableLongArray;
-	public final fun copyOf ([J)Ldev/guavakt/primitives/ImmutableLongArray;
-	public final fun of ()Ldev/guavakt/primitives/ImmutableLongArray;
-	public final fun of (J)Ldev/guavakt/primitives/ImmutableLongArray;
-	public final fun of (JJ)Ldev/guavakt/primitives/ImmutableLongArray;
+public final class com/bernaferrari/guavakt/primitives/ImmutableLongArray$Companion {
+	public final fun builder ()Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray$Builder;
+	public final fun builder (I)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray$Builder;
+	public final fun copyOf (Ljava/util/Collection;)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray;
+	public final fun copyOf ([J)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray;
+	public final fun of ()Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray;
+	public final fun of (J)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray;
+	public final fun of (JJ)Lcom/bernaferrari/guavakt/primitives/ImmutableLongArray;
 }
 
-public final class dev/guavakt/primitives/Ints {
+public final class com/bernaferrari/guavakt/primitives/Ints {
 	public static final field BYTES I
-	public static final field INSTANCE Ldev/guavakt/primitives/Ints;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Ints;
 	public static final field MAX_POWER_OF_TWO I
 	public final fun asList ([I)Ljava/util/List;
 	public final fun checkedCast (J)I
@@ -195,9 +195,9 @@ public final class dev/guavakt/primitives/Ints {
 	public final fun tryParse (Ljava/lang/String;I)Ljava/lang/Integer;
 }
 
-public final class dev/guavakt/primitives/Longs {
+public final class com/bernaferrari/guavakt/primitives/Longs {
 	public static final field BYTES I
-	public static final field INSTANCE Ldev/guavakt/primitives/Longs;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Longs;
 	public static final field MAX_POWER_OF_TWO J
 	public final fun compare (JJ)I
 	public final fun concat ([[J)[J
@@ -215,11 +215,11 @@ public final class dev/guavakt/primitives/Longs {
 	public final fun tryParse (Ljava/lang/String;I)Ljava/lang/Long;
 }
 
-public abstract interface annotation class dev/guavakt/primitives/ParametricNullness : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/primitives/ParametricNullness : java/lang/annotation/Annotation {
 }
 
-public final class dev/guavakt/primitives/Primitives {
-	public static final field INSTANCE Ldev/guavakt/primitives/Primitives;
+public final class com/bernaferrari/guavakt/primitives/Primitives {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Primitives;
 	public final fun allPrimitiveTypes ()Ljava/util/Set;
 	public final fun allWrapperTypes ()Ljava/util/Set;
 	public final fun isWrapperType (Lkotlin/reflect/KClass;)Z
@@ -227,9 +227,9 @@ public final class dev/guavakt/primitives/Primitives {
 	public final fun wrap (Lkotlin/reflect/KClass;)Lkotlin/reflect/KClass;
 }
 
-public final class dev/guavakt/primitives/Shorts {
+public final class com/bernaferrari/guavakt/primitives/Shorts {
 	public static final field BYTES I
-	public static final field INSTANCE Ldev/guavakt/primitives/Shorts;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/Shorts;
 	public static final field MAX_POWER_OF_TWO S
 	public final fun checkedCast (J)S
 	public final fun compare (SS)I
@@ -242,8 +242,8 @@ public final class dev/guavakt/primitives/Shorts {
 	public final fun saturatedCast (J)S
 }
 
-public final class dev/guavakt/primitives/SignedBytes {
-	public static final field INSTANCE Ldev/guavakt/primitives/SignedBytes;
+public final class com/bernaferrari/guavakt/primitives/SignedBytes {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/SignedBytes;
 	public static final field MAX_POWER_OF_TWO B
 	public final fun checkedCast (J)B
 	public final fun compare (BB)I
@@ -256,8 +256,8 @@ public final class dev/guavakt/primitives/SignedBytes {
 	public final fun sortDescending ([BII)V
 }
 
-public final class dev/guavakt/primitives/UnsignedBytes {
-	public static final field INSTANCE Ldev/guavakt/primitives/UnsignedBytes;
+public final class com/bernaferrari/guavakt/primitives/UnsignedBytes {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/UnsignedBytes;
 	public static final field MAX_POWER_OF_TWO B
 	public static final field MAX_VALUE B
 	public final fun checkedCast (J)B
@@ -278,18 +278,18 @@ public final class dev/guavakt/primitives/UnsignedBytes {
 	public final fun toString (BI)Ljava/lang/String;
 }
 
-public final class dev/guavakt/primitives/UnsignedInteger : java/lang/Comparable {
-	public static final field Companion Ldev/guavakt/primitives/UnsignedInteger$Companion;
+public final class com/bernaferrari/guavakt/primitives/UnsignedInteger : java/lang/Comparable {
+	public static final field Companion Lcom/bernaferrari/guavakt/primitives/UnsignedInteger$Companion;
 	public synthetic fun <init> (ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public fun compareTo (Ldev/guavakt/primitives/UnsignedInteger;)I
+	public fun compareTo (Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;)I
 	public synthetic fun compareTo (Ljava/lang/Object;)I
-	public final fun dividedBy (Ldev/guavakt/primitives/UnsignedInteger;)Ldev/guavakt/primitives/UnsignedInteger;
+	public final fun dividedBy (Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;)Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
 	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I
-	public final fun minus (Ldev/guavakt/primitives/UnsignedInteger;)Ldev/guavakt/primitives/UnsignedInteger;
-	public final fun mod (Ldev/guavakt/primitives/UnsignedInteger;)Ldev/guavakt/primitives/UnsignedInteger;
-	public final fun plus (Ldev/guavakt/primitives/UnsignedInteger;)Ldev/guavakt/primitives/UnsignedInteger;
-	public final fun times (Ldev/guavakt/primitives/UnsignedInteger;)Ldev/guavakt/primitives/UnsignedInteger;
+	public final fun minus (Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;)Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
+	public final fun mod (Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;)Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
+	public final fun plus (Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;)Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
+	public final fun times (Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;)Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
 	public final fun toDouble ()D
 	public final fun toFloat ()F
 	public final fun toInt ()I
@@ -297,16 +297,16 @@ public final class dev/guavakt/primitives/UnsignedInteger : java/lang/Comparable
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/primitives/UnsignedInteger$Companion {
-	public final fun fromIntBits (I)Ldev/guavakt/primitives/UnsignedInteger;
-	public final fun getMAX_VALUE ()Ldev/guavakt/primitives/UnsignedInteger;
-	public final fun getONE ()Ldev/guavakt/primitives/UnsignedInteger;
-	public final fun getZERO ()Ldev/guavakt/primitives/UnsignedInteger;
-	public final fun valueOf (J)Ldev/guavakt/primitives/UnsignedInteger;
+public final class com/bernaferrari/guavakt/primitives/UnsignedInteger$Companion {
+	public final fun fromIntBits (I)Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
+	public final fun getMAX_VALUE ()Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
+	public final fun getONE ()Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
+	public final fun getZERO ()Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
+	public final fun valueOf (J)Lcom/bernaferrari/guavakt/primitives/UnsignedInteger;
 }
 
-public final class dev/guavakt/primitives/UnsignedInts {
-	public static final field INSTANCE Ldev/guavakt/primitives/UnsignedInts;
+public final class com/bernaferrari/guavakt/primitives/UnsignedInts {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/UnsignedInts;
 	public final fun compare (II)I
 	public final fun divide (II)I
 	public final fun parseUnsignedInt (Ljava/lang/String;)I
@@ -317,18 +317,18 @@ public final class dev/guavakt/primitives/UnsignedInts {
 	public final fun toString (II)Ljava/lang/String;
 }
 
-public final class dev/guavakt/primitives/UnsignedLong : java/lang/Comparable {
-	public static final field Companion Ldev/guavakt/primitives/UnsignedLong$Companion;
+public final class com/bernaferrari/guavakt/primitives/UnsignedLong : java/lang/Comparable {
+	public static final field Companion Lcom/bernaferrari/guavakt/primitives/UnsignedLong$Companion;
 	public synthetic fun <init> (JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public fun compareTo (Ldev/guavakt/primitives/UnsignedLong;)I
+	public fun compareTo (Lcom/bernaferrari/guavakt/primitives/UnsignedLong;)I
 	public synthetic fun compareTo (Ljava/lang/Object;)I
-	public final fun dividedBy (Ldev/guavakt/primitives/UnsignedLong;)Ldev/guavakt/primitives/UnsignedLong;
+	public final fun dividedBy (Lcom/bernaferrari/guavakt/primitives/UnsignedLong;)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
 	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I
-	public final fun minus (Ldev/guavakt/primitives/UnsignedLong;)Ldev/guavakt/primitives/UnsignedLong;
-	public final fun mod (Ldev/guavakt/primitives/UnsignedLong;)Ldev/guavakt/primitives/UnsignedLong;
-	public final fun plus (Ldev/guavakt/primitives/UnsignedLong;)Ldev/guavakt/primitives/UnsignedLong;
-	public final fun times (Ldev/guavakt/primitives/UnsignedLong;)Ldev/guavakt/primitives/UnsignedLong;
+	public final fun minus (Lcom/bernaferrari/guavakt/primitives/UnsignedLong;)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun mod (Lcom/bernaferrari/guavakt/primitives/UnsignedLong;)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun plus (Lcom/bernaferrari/guavakt/primitives/UnsignedLong;)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun times (Lcom/bernaferrari/guavakt/primitives/UnsignedLong;)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
 	public final fun toBigEndianBytes ()[B
 	public final fun toDouble ()D
 	public final fun toLong ()J
@@ -336,18 +336,18 @@ public final class dev/guavakt/primitives/UnsignedLong : java/lang/Comparable {
 	public final fun toString (I)Ljava/lang/String;
 }
 
-public final class dev/guavakt/primitives/UnsignedLong$Companion {
-	public final fun fromLongBits (J)Ldev/guavakt/primitives/UnsignedLong;
-	public final fun getMAX_VALUE ()Ldev/guavakt/primitives/UnsignedLong;
-	public final fun getONE ()Ldev/guavakt/primitives/UnsignedLong;
-	public final fun getZERO ()Ldev/guavakt/primitives/UnsignedLong;
-	public final fun valueOf (J)Ldev/guavakt/primitives/UnsignedLong;
-	public final fun valueOf (Ljava/lang/String;)Ldev/guavakt/primitives/UnsignedLong;
-	public final fun valueOf (Ljava/lang/String;I)Ldev/guavakt/primitives/UnsignedLong;
+public final class com/bernaferrari/guavakt/primitives/UnsignedLong$Companion {
+	public final fun fromLongBits (J)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun getMAX_VALUE ()Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun getONE ()Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun getZERO ()Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun valueOf (J)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun valueOf (Ljava/lang/String;)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
+	public final fun valueOf (Ljava/lang/String;I)Lcom/bernaferrari/guavakt/primitives/UnsignedLong;
 }
 
-public final class dev/guavakt/primitives/UnsignedLongs {
-	public static final field INSTANCE Ldev/guavakt/primitives/UnsignedLongs;
+public final class com/bernaferrari/guavakt/primitives/UnsignedLongs {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/primitives/UnsignedLongs;
 	public static final field MAX_VALUE J
 	public final fun compare (JJ)I
 	public final fun decode (Ljava/lang/String;)J

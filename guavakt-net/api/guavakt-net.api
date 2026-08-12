@@ -1,5 +1,5 @@
-public final class dev/guavakt/net/HostAndPort {
-	public static final field Companion Ldev/guavakt/net/HostAndPort$Companion;
+public final class com/bernaferrari/guavakt/net/HostAndPort {
+	public static final field Companion Lcom/bernaferrari/guavakt/net/HostAndPort$Companion;
 	public synthetic fun <init> (Ljava/lang/String;IZLkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getHost ()Ljava/lang/String;
@@ -7,32 +7,32 @@ public final class dev/guavakt/net/HostAndPort {
 	public final fun getPortOrDefault (I)I
 	public final fun hasPort ()Z
 	public fun hashCode ()I
-	public final fun requireBracketsForIPv6 ()Ldev/guavakt/net/HostAndPort;
+	public final fun requireBracketsForIPv6 ()Lcom/bernaferrari/guavakt/net/HostAndPort;
 	public fun toString ()Ljava/lang/String;
-	public final fun withDefaultPort (I)Ldev/guavakt/net/HostAndPort;
+	public final fun withDefaultPort (I)Lcom/bernaferrari/guavakt/net/HostAndPort;
 }
 
-public final class dev/guavakt/net/HostAndPort$Companion {
-	public final fun fromHost (Ljava/lang/String;)Ldev/guavakt/net/HostAndPort;
-	public final fun fromParts (Ljava/lang/String;I)Ldev/guavakt/net/HostAndPort;
-	public final fun fromString (Ljava/lang/String;)Ldev/guavakt/net/HostAndPort;
+public final class com/bernaferrari/guavakt/net/HostAndPort$Companion {
+	public final fun fromHost (Ljava/lang/String;)Lcom/bernaferrari/guavakt/net/HostAndPort;
+	public final fun fromParts (Ljava/lang/String;I)Lcom/bernaferrari/guavakt/net/HostAndPort;
+	public final fun fromString (Ljava/lang/String;)Lcom/bernaferrari/guavakt/net/HostAndPort;
 }
 
-public final class dev/guavakt/net/HostSpecifier {
-	public static final field Companion Ldev/guavakt/net/HostSpecifier$Companion;
+public final class com/bernaferrari/guavakt/net/HostSpecifier {
+	public static final field Companion Lcom/bernaferrari/guavakt/net/HostSpecifier$Companion;
 	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public fun equals (Ljava/lang/Object;)Z
 	public fun hashCode ()I
 	public fun toString ()Ljava/lang/String;
 }
 
-public final class dev/guavakt/net/HostSpecifier$Companion {
-	public final fun from (Ljava/lang/String;)Ldev/guavakt/net/HostSpecifier;
-	public final fun fromValid (Ljava/lang/String;)Ldev/guavakt/net/HostSpecifier;
+public final class com/bernaferrari/guavakt/net/HostSpecifier$Companion {
+	public final fun from (Ljava/lang/String;)Lcom/bernaferrari/guavakt/net/HostSpecifier;
+	public final fun fromValid (Ljava/lang/String;)Lcom/bernaferrari/guavakt/net/HostSpecifier;
 	public final fun isValid (Ljava/lang/String;)Z
 }
 
-public final class dev/guavakt/net/HttpHeaders {
+public final class com/bernaferrari/guavakt/net/HttpHeaders {
 	public static final field ACCEPT Ljava/lang/String;
 	public static final field ACCEPT_CHARSET Ljava/lang/String;
 	public static final field ACCEPT_ENCODING Ljava/lang/String;
@@ -80,7 +80,7 @@ public final class dev/guavakt/net/HttpHeaders {
 	public static final field IF_NONE_MATCH Ljava/lang/String;
 	public static final field IF_RANGE Ljava/lang/String;
 	public static final field IF_UNMODIFIED_SINCE Ljava/lang/String;
-	public static final field INSTANCE Ldev/guavakt/net/HttpHeaders;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/net/HttpHeaders;
 	public static final field KEEP_ALIVE Ljava/lang/String;
 	public static final field LAST_EVENT_ID Ljava/lang/String;
 	public static final field LAST_MODIFIED Ljava/lang/String;
@@ -115,11 +115,11 @@ public final class dev/guavakt/net/HttpHeaders {
 	public static final field X_WEBKIT_CSP_REPORT_ONLY Ljava/lang/String;
 }
 
-public abstract interface annotation class dev/guavakt/net/IgnoreJRERequirement : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/net/IgnoreJRERequirement : java/lang/annotation/Annotation {
 }
 
-public final class dev/guavakt/net/InetAddresses {
-	public static final field INSTANCE Ldev/guavakt/net/InetAddresses;
+public final class com/bernaferrari/guavakt/net/InetAddresses {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/net/InetAddresses;
 	public final fun coerceToInteger ([B)I
 	public final fun decrement ([B)[B
 	public final fun forString (Ljava/lang/String;)[B
@@ -133,7 +133,7 @@ public final class dev/guavakt/net/InetAddresses {
 	public final fun getCompatIPv4Address ([B)[B
 	public final fun getEmbeddedIPv4ClientAddress ([B)[B
 	public final fun getIsatapIPv4Address ([B)[B
-	public final fun getTeredoInfo ([B)Ldev/guavakt/net/InetAddresses$TeredoInfo;
+	public final fun getTeredoInfo ([B)Lcom/bernaferrari/guavakt/net/InetAddresses$TeredoInfo;
 	public final fun hasEmbeddedIPv4ClientAddress ([B)Z
 	public final fun increment ([B)[B
 	public final fun is6to4Address ([B)Z
@@ -151,7 +151,7 @@ public final class dev/guavakt/net/InetAddresses {
 	public final fun toUriString ([B)Ljava/lang/String;
 }
 
-public final class dev/guavakt/net/InetAddresses$TeredoInfo {
+public final class com/bernaferrari/guavakt/net/InetAddresses$TeredoInfo {
 	public fun <init> ([B[BII)V
 	public final fun getClient ()[B
 	public final fun getFlags ()I
@@ -159,10 +159,10 @@ public final class dev/guavakt/net/InetAddresses$TeredoInfo {
 	public final fun getServer ()[B
 }
 
-public final class dev/guavakt/net/InternetDomainName {
-	public static final field Companion Ldev/guavakt/net/InternetDomainName$Companion;
+public final class com/bernaferrari/guavakt/net/InternetDomainName {
+	public static final field Companion Lcom/bernaferrari/guavakt/net/InternetDomainName$Companion;
 	public synthetic fun <init> (Ljava/lang/String;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-	public final fun child (Ljava/lang/String;)Ldev/guavakt/net/InternetDomainName;
+	public final fun child (Ljava/lang/String;)Lcom/bernaferrari/guavakt/net/InternetDomainName;
 	public final fun hasParent ()Z
 	public final fun hasPublicSuffix ()Z
 	public final fun hasRegistrySuffix ()Z
@@ -171,32 +171,32 @@ public final class dev/guavakt/net/InternetDomainName {
 	public final fun isTopPrivateDomain ()Z
 	public final fun isUnderPublicSuffix ()Z
 	public final fun isUnderRegistrySuffix ()Z
-	public final fun parent ()Ldev/guavakt/net/InternetDomainName;
+	public final fun parent ()Lcom/bernaferrari/guavakt/net/InternetDomainName;
 	public final fun parts ()Ljava/util/List;
 	public final fun publicSuffix ()Ljava/lang/String;
 	public final fun registrySuffix ()Ljava/lang/String;
 	public fun toString ()Ljava/lang/String;
-	public final fun topDomainUnderRegistrySuffix ()Ldev/guavakt/net/InternetDomainName;
-	public final fun topPrivateDomain ()Ldev/guavakt/net/InternetDomainName;
+	public final fun topDomainUnderRegistrySuffix ()Lcom/bernaferrari/guavakt/net/InternetDomainName;
+	public final fun topPrivateDomain ()Lcom/bernaferrari/guavakt/net/InternetDomainName;
 }
 
-public final class dev/guavakt/net/InternetDomainName$Companion {
-	public final fun from (Ljava/lang/String;)Ldev/guavakt/net/InternetDomainName;
+public final class com/bernaferrari/guavakt/net/InternetDomainName$Companion {
+	public final fun from (Ljava/lang/String;)Lcom/bernaferrari/guavakt/net/InternetDomainName;
 	public final fun isValid (Ljava/lang/String;)Z
 }
 
-public final class dev/guavakt/net/MediaType {
-	public static final field INSTANCE Ldev/guavakt/net/MediaType;
-	public final fun parse (Ljava/lang/String;)Ldev/guavakt/net/MediaType$Parsed;
+public final class com/bernaferrari/guavakt/net/MediaType {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/net/MediaType;
+	public final fun parse (Ljava/lang/String;)Lcom/bernaferrari/guavakt/net/MediaType$Parsed;
 }
 
-public final class dev/guavakt/net/MediaType$Parsed {
+public final class com/bernaferrari/guavakt/net/MediaType$Parsed {
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
 	public final fun component1 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
 	public final fun component3 ()Ljava/util/Map;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Ldev/guavakt/net/MediaType$Parsed;
-	public static synthetic fun copy$default (Ldev/guavakt/net/MediaType$Parsed;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Ldev/guavakt/net/MediaType$Parsed;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)Lcom/bernaferrari/guavakt/net/MediaType$Parsed;
+	public static synthetic fun copy$default (Lcom/bernaferrari/guavakt/net/MediaType$Parsed;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Lcom/bernaferrari/guavakt/net/MediaType$Parsed;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getParameters ()Ljava/util/Map;
 	public final fun getSubtype ()Ljava/lang/String;
@@ -205,36 +205,36 @@ public final class dev/guavakt/net/MediaType$Parsed {
 	public fun toString ()Ljava/lang/String;
 }
 
-public abstract interface annotation class dev/guavakt/net/ParametricNullness : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/net/ParametricNullness : java/lang/annotation/Annotation {
 }
 
-public final class dev/guavakt/net/PercentEscaper : dev/guavakt/escape/Escaper {
-	public static final field Companion Ldev/guavakt/net/PercentEscaper$Companion;
+public final class com/bernaferrari/guavakt/net/PercentEscaper : com/bernaferrari/guavakt/escape/Escaper {
+	public static final field Companion Lcom/bernaferrari/guavakt/net/PercentEscaper$Companion;
 	public fun <init> (Ljava/lang/String;Z)V
 	public fun escape (Ljava/lang/String;)Ljava/lang/String;
 }
 
-public final class dev/guavakt/net/PercentEscaper$Companion {
+public final class com/bernaferrari/guavakt/net/PercentEscaper$Companion {
 }
 
-public final class dev/guavakt/net/UrlEscapers {
-	public static final field INSTANCE Ldev/guavakt/net/UrlEscapers;
-	public final fun urlFormParameterEscaper ()Ldev/guavakt/escape/Escaper;
-	public final fun urlFragmentEscaper ()Ldev/guavakt/escape/Escaper;
-	public final fun urlPathSegmentEscaper ()Ldev/guavakt/escape/Escaper;
+public final class com/bernaferrari/guavakt/net/UrlEscapers {
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/net/UrlEscapers;
+	public final fun urlFormParameterEscaper ()Lcom/bernaferrari/guavakt/escape/Escaper;
+	public final fun urlFragmentEscaper ()Lcom/bernaferrari/guavakt/escape/Escaper;
+	public final fun urlPathSegmentEscaper ()Lcom/bernaferrari/guavakt/escape/Escaper;
 }
 
-public final class dev/guavakt/thirdparty/publicsuffix/PublicSuffixPatterns {
+public final class com/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixPatterns {
 	public static final field CHUNK_SHIFT I
-	public static final field INSTANCE Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixPatterns;
+	public static final field INSTANCE Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixPatterns;
 	public final fun getSTRING_POOL ()Ljava/util/List;
-	public final fun getTRIE ()Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixTrie;
+	public final fun getTRIE ()Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixTrie;
 	public final fun getTRIE_DATA ()Ljava/util/List;
 }
 
-public final class dev/guavakt/thirdparty/publicsuffix/PublicSuffixTrie {
+public final class com/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixTrie {
 	public static final field CHILDREN_MASK I
-	public static final field Companion Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixTrie$Companion;
+	public static final field Companion Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixTrie$Companion;
 	public static final field EXACT_SHIFT I
 	public static final field EXCLUSION_MASK I
 	public static final field EXCLUSION_SHIFT I
@@ -243,30 +243,30 @@ public final class dev/guavakt/thirdparty/publicsuffix/PublicSuffixTrie {
 	public static final field WILDCARD_SHIFT I
 	public fun <init> (Ljava/util/List;Ljava/util/List;I)V
 	public final fun findSuffixIndex (Ljava/util/List;)I
-	public final fun findSuffixIndex (Ljava/util/List;Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;)I
+	public final fun findSuffixIndex (Ljava/util/List;Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;)I
 	public final fun getPublicSuffix (Ljava/lang/String;)Ljava/lang/String;
-	public final fun getPublicSuffix (Ljava/lang/String;Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;)Ljava/lang/String;
-	public final fun getPublicSuffixType (Ljava/lang/String;)Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;
+	public final fun getPublicSuffix (Ljava/lang/String;Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;)Ljava/lang/String;
+	public final fun getPublicSuffixType (Ljava/lang/String;)Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;
 	public final fun getRegistrySuffix (Ljava/lang/String;)Ljava/lang/String;
 	public final fun isPublicSuffix (Ljava/lang/String;)Z
 	public final fun isRegistrySuffix (Ljava/lang/String;)Z
 }
 
-public final class dev/guavakt/thirdparty/publicsuffix/PublicSuffixTrie$Companion {
+public final class com/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixTrie$Companion {
 }
 
-public final class dev/guavakt/thirdparty/publicsuffix/PublicSuffixType : java/lang/Enum {
-	public static final field Companion Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType$Companion;
-	public static final field PRIVATE Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;
-	public static final field REGISTRY Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;
+public final class com/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType : java/lang/Enum {
+	public static final field Companion Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType$Companion;
+	public static final field PRIVATE Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;
+	public static final field REGISTRY Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;
 	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public final fun getInnerNodeCode ()C
 	public final fun getLeafNodeCode ()C
-	public static fun valueOf (Ljava/lang/String;)Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;
-	public static fun values ()[Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;
+	public static fun valueOf (Ljava/lang/String;)Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;
+	public static fun values ()[Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;
 }
 
-public final class dev/guavakt/thirdparty/publicsuffix/PublicSuffixType$Companion {
-	public final fun fromCode (C)Ldev/guavakt/thirdparty/publicsuffix/PublicSuffixType;
+public final class com/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType$Companion {
+	public final fun fromCode (C)Lcom/bernaferrari/guavakt/thirdparty/publicsuffix/PublicSuffixType;
 }
 

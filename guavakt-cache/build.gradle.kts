@@ -61,7 +61,7 @@ tasks.register<JavaExec>("jmhCoroutineCache") {
     inputs.property("jmhForks", providers.gradleProperty("jmhForks").orElse("2"))
     outputs.file(jmhResult)
     args(
-        "dev.guavakt.cache.CoroutineLoadingCacheBenchmark",
+        "com.bernaferrari.guavakt.cache.CoroutineLoadingCacheBenchmark",
         "-wi", providers.gradleProperty("jmhWarmupIterations").orElse("3").get(),
         "-i", providers.gradleProperty("jmhMeasurementIterations").orElse("5").get(),
         "-f", providers.gradleProperty("jmhForks").orElse("2").get(),

@@ -1,0 +1,3 @@
+package com.bernaferrari.guavakt.cache
+
+internal actual inline fun <T> platformCacheSync(lock: Any, block: () -> T): T = block()

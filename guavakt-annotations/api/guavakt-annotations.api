@@ -1,18 +1,18 @@
-public abstract interface annotation class dev/guavakt/annotations/Beta : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/annotations/Beta : java/lang/annotation/Annotation {
 }
 
-public abstract interface annotation class dev/guavakt/annotations/GwtCompatible : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/annotations/GwtCompatible : java/lang/annotation/Annotation {
 	public abstract fun emulated ()Z
 	public abstract fun serializable ()Z
 }
 
-public abstract interface annotation class dev/guavakt/annotations/GwtIncompatible : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/annotations/GwtIncompatible : java/lang/annotation/Annotation {
 	public abstract fun value ()Ljava/lang/String;
 }
 
-public abstract interface annotation class dev/guavakt/annotations/J2ktIncompatible : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/annotations/J2ktIncompatible : java/lang/annotation/Annotation {
 }
 
-public abstract interface annotation class dev/guavakt/annotations/VisibleForTesting : java/lang/annotation/Annotation {
+public abstract interface annotation class com/bernaferrari/guavakt/annotations/VisibleForTesting : java/lang/annotation/Annotation {
 }
 
