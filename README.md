@@ -15,10 +15,11 @@ Guava.
 ## Install
 
 ```kotlin
-implementation("com.bernaferrari.guavakt:guavakt-collect:0.1.0")
+implementation("com.bernaferrari.guavakt:guavakt:0.1.0")
 ```
 
-Choose the module for the capability you need:
+`guavakt` includes every module. Individual artifacts are also available when a smaller dependency
+surface is useful:
 
 | Module | Includes |
 |---|---|
@@ -166,6 +167,7 @@ services, EventBus, blocking queues, or a `java.io`/`java.nio.file` facade.
 - [Compatibility matrix](docs/compatibility.md) — supported concepts and intentional differences
 - [Kotlin-first guide](docs/kotlin-first.md) — choosing Kotlin, coroutines, Okio, or GuavaKt
 - [Architecture](docs/architecture.md) — modules and targets
-- [Stability policy](docs/stability.md) and [changelog](CHANGELOG.md)
+- [Changelog](CHANGELOG.md)
 - [Documentation index](docs/README.md) — benchmarks, fuzzing, public-suffix refreshes, and releases
-- [Contributor guide](AGENTS.md) — project conventions and verification commands
+- [Integration and fork guide](AGENTS.md) — adding GuavaKt to an application or fork
+- [Contributing](CONTRIBUTING.md) — changing GuavaKt itself
