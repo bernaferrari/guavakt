@@ -30,7 +30,8 @@ object Sets {
     fun <E : Comparable<E>> newTreeSet(elements: Iterable<E>): MutableSet<E> =
         ComparatorTreeSet<E>(null).apply { addAll(elements) }
 
-    fun <E> newIdentityHashSet(): MutableSet<E> = LinkedHashSet()
+    /** Set membership uses reference equality (`===`), including for equal-but-distinct values. */
+    fun <E> newIdentityHashSet(): MutableSet<E> = IdentityHashSetKmp()
     fun <E> newConcurrentHashSet(): MutableSet<E> = LinkedHashSet()
     fun <E> newCopyOnWriteArraySet(): MutableSet<E> = LinkedHashSet()
     fun <E> newCopyOnWriteArraySet(elements: Iterable<E>): MutableSet<E> =

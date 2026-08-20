@@ -213,4 +213,65 @@ object Iterables {
             else chunk + List(size - chunk.size) { null }
         }
     }
+
+    /** Lazily splits [iterable] immediately after every element that satisfies [predicate]. */
+    fun <T> splitAfter(iterable: Iterable<T>, predicate: (T) -> Boolean): Iterable<List<T>> =
+        splitWhen(iterable, shouldSplitAfter = { _, current, _ -> predicate(current) })
+
+    /** Lazily splits [iterable] immediately before every element that satisfies [predicate]. */
+    fun <T> splitBefore(iterable: Iterable<T>, predicate: (T) -> Boolean): Iterable<List<T>> =
+        splitWhen(iterable, shouldSplitBefore = { hasPrevious, _, current, _ -> hasPrevious && predicate(current) })
+
+    /** Lazily splits [iterable] between adjacent elements when [predicate] returns true. */
+    fun <T> splitBetween(iterable: Iterable<T>, predicate: (T, T) -> Boolean): Iterable<List<T>> =
+        splitWhen(iterable, shouldSplitBefore = { hasPrevious, previous, current, _ ->
+            if (!hasPrevious) {
+                false
+            } else {
+                @Suppress("UNCHECKED_CAST")
+                predicate(previous as T, current)
+            }
+        })
+
+    private fun <T> splitWhen(
+        iterable: Iterable<T>,
+        shouldSplitBefore: (hasPrevious: Boolean, previous: T?, current: T, index: Int) -> Boolean = { _, _, _, _ -> false },
+        shouldSplitAfter: (hasPrevious: Boolean, current: T, index: Int) -> Boolean = { _, _, _ -> false },
+    ): Iterable<List<T>> = Iterable {
+        val source = iterable.iterator()
+        object : Iterator<List<T>> {
+            private var buffered: T? = null
+            private var hasBuffered = false
+            private var previous: T? = null
+            private var hasPrevious = false
+            private var index = 0
+
+            override fun hasNext(): Boolean = hasBuffered || source.hasNext()
+
+            override fun next(): List<T> {
+                if (!hasNext()) throw NoSuchElementException()
+                val result = ArrayList<T>()
+                while (hasBuffered || source.hasNext()) {
+                    val current = if (hasBuffered) {
+                        hasBuffered = false
+                        @Suppress("UNCHECKED_CAST")
+                        buffered as T
+                    } else {
+                        source.next()
+                    }
+                    if (result.isNotEmpty() && shouldSplitBefore(hasPrevious, previous, current, index)) {
+                        buffered = current
+                        hasBuffered = true
+                        break
+                    }
+                    result.add(current)
+                    previous = current
+                    hasPrevious = true
+                    index++
+                    if (shouldSplitAfter(hasPrevious, current, index - 1)) break
+                }
+                return result
+            }
+        }
+    }
 }

@@ -20,6 +20,17 @@ object Streams {
         }
     }
 
+    /**
+     * Lazily zips any number of iterables, stopping at the shortest input. Each emitted list has
+     * one value from every input in the same position.
+     */
+    fun <T> zip(inputs: Iterable<Iterable<T>>): Sequence<List<T>> = sequence {
+        val iterators = inputs.map { it.iterator() }
+        while (iterators.all { it.hasNext() }) {
+            yield(iterators.map { it.next() })
+        }
+    }
+
     fun <T> concat(vararg inputs: Iterable<T>): Sequence<T> = sequence {
         for (input in inputs) yieldAll(input)
     }

@@ -18,7 +18,7 @@ binary compatible with Guava, and it is deliberately not a complete Guava rewrit
 | Area | Level | Supported focus | Deliberate boundary |
 |---|---|---|---|
 | `base` | Differential / contract-tested | Preconditions, `Optional`, strings, `Splitter`, `Joiner`, `CharMatcher`, converters, suppliers, clocks, and portable regex behavior | Kotlin nullability and stdlib collections are preferred; no Java enum/reflection helpers |
-| `collect` | Differential / contract-tested | Multimaps, multisets, `BiMap`, `Table`, immutable snapshots, traversal helpers, `KClass`-based class-to-instance maps, live views, comparator-aware sorted types | Ordinary collections remain stdlib territory; no fake concurrent/synchronized maps or Java blocking queues |
+| `collect` | Differential / contract-tested | Multimaps, multisets, `BiMap`, `Table`, immutable snapshots, traversal helpers, `KClass`-based class-to-instance maps, live views, explicit-equality and canonical-key collections, queue lists, comparator-aware sorted types | Ordinary collections remain stdlib territory; no fake concurrent/synchronized maps or Java blocking queues |
 | ranges | Differential / contract-tested | `Range`, `RangeSet`, `RangeMap`, `ContiguousSet`, including arbitrary-precision `DiscreteDomain.bigIntegers()` | Kotlin sets/maps replace Java `Navigable*` interfaces |
 | `graph` | Differential / contract-tested | `Graph`, `ValueGraph`, `Network`, traversal, ordering, mutation, transpose/copy utilities | No Java binary compatibility or private implementation parity |
 | `hash` | Differential / contract-tested | Streaming hashes, HMAC, checksums, Bloom filters, funnels, Okio hashing sources/sinks | Algorithms document their allocation/performance trade-offs per target |
